@@ -10,6 +10,7 @@ import Clients from './Home/Clients'
 import FAQSection from './Home/FAQSection'
 import NewEvents from './Home/NewEvents'
 import Blogs from './Home/Blogs'
+import Testimonials from './Home/Testimonials'
 
 export default function Home() {
   return (
@@ -25,7 +26,9 @@ export default function Home() {
        <Clients />
       <FAQSection />
       <NewEvents />
+      
       <Blogs />
+      <Testimonials />
     </>
   )
 }
