@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #1a202c;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+} */
+
+/* ::-webkit-scrollbar-thumb {
+  background: #1e40af;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1e3a8a;
+} */
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+/* Utility Classes */
+.container-responsive {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+
+.header-section {
+  background-color: #af131e;
+}
+
+/* .header-section {
+    background-color: #253046;
+} */
+nav.header-menu a {
+  color: white;
+}
+
+.css-uks7c6-MuiSvgIcon-root {
+  border-radius: 50% !important;
+  padding: 7px !important;
+}
+
+.banner-number {
+
+  background-color: #ff000017;
+}
+
+@media (max-width: 640px) {
+  .container-responsive {
+    padding: 0 0.75rem;
+  }
+}
+
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.sign-in-gradient-btn {
+    color: #fff;
+    cursor: pointer;
+
+    background:#313080;
+
+    border: 1px solid transparent;
+    border-radius: 25px;
+
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    min-height: 42px;
+    padding: 0 20px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+
+    display: inline-flex;
+    position: relative;
+
+    box-shadow:
+        0 3px 10px rgba(20, 93, 160, 0.18);
+}
+
+/* Hover */
+
+.sign-in-gradient-btn:hover {
+    color: #fff;
+
+    background: linear-gradient(
+        135deg,
+        #145da0,
+        #0d9488
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 20px #f9f9f94d;
+}
+
+/* Arrow */
+
+.sign-in-gradient-icon {
+    transition: transform 0.3s ease;
+}
+
+.sign-in-gradient-btn:hover .sign-in-gradient-icon {
+    transform: translateX(4px);
+}
+
+/* Click */
+
+.sign-in-gradient-btn:active {
+    transform: translateY(0);
+
+    box-shadow:
+        0 3px 10px rgba(20, 93, 160, 0.2);
+}
+.explore-colleges-btn {
+    color: #2E3281;
+    background: #FFFFFF;
+
+    border: 1px solid rgba(46, 50, 129, 0.18);
+    border-radius: 999px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: fit-content;
+    padding: 12px 24px;
+
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.3s ease,
+        gap 0.3s ease;
+
+    box-shadow:
+        0 6px 20px rgba(46, 50, 129, 0.08);
+}
+
+/* Hover */
+.explore-colleges-btn:hover {
+    color: #FFFFFF;
+
+    background: linear-gradient(
+        135deg,
+        #145DA0,
+        #0D9488
+    );
+
+    border-color: transparent;
+
+    gap: 12px;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 22px rgba(20, 93, 160, 0.25);
+}
+
+/* Arrow */
+.explore-colleges-icon {
+    transition: transform 0.3s ease;
+}
+
+.explore-colleges-btn:hover .explore-colleges-icon {
+    transform: translateX(4px);
+}
+
+/* Click */
+.explore-colleges-btn:active {
+    transform: translateY(0);
+}
