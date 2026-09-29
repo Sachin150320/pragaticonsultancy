@@ -81,7 +81,7 @@ function AnimatedCounter({
 
   return (
     <span ref={ref}>
-      {count.toLocaleString()}
+      {count}
       {suffix}
     </span>
   );

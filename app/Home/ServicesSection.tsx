@@ -524,6 +524,8 @@ function TrustItem({
         hover:-translate-y-1
       "
     >
+
+      
       <div
         className="
           mb-2
@@ -550,5 +552,13 @@ function TrustItem({
         {subtitle}
       </p>
     </div>
+
+
+
+
+
+
+
+
   );
 }
