@@ -5,7 +5,7 @@ import Link from 'next/link';
 import {
     ChevronRight,
     ExpandMore,
-    TrendingUp,
+
     School,
 } from '@mui/icons-material';
 

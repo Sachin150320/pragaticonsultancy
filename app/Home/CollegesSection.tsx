@@ -8,9 +8,9 @@ import {
   Assignment,
   AttachMoney,
   HomeRepairService,
-  Star,
+
   Phone,
-  ArrowForward
+ 
 } from '@mui/icons-material';
 
 interface College {

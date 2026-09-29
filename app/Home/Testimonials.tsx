@@ -3,7 +3,6 @@
 import {
   FormatQuote,
   Star,
-  School,
 } from '@mui/icons-material';
 
 export default function TestimonialsSection() {
