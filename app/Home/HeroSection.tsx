@@ -1,6 +1,6 @@
 
 "use client";
-
+import Link from 'next/link';
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -249,29 +249,71 @@ export default function HeroSection() {
             {/* =====================================================
                 BUTTONS
             ====================================================== */}
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
 
-              <button
-                type="button"
-                className="group inline-flex items-center justify-center gap-2 rounded-xl bg-blue-700 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-700/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-800 hover:shadow-xl md:text-base"
+              <Link
+                href="/contact"
+                className="
+                  group
+                  inline-flex
+                  items-center
+                  justify-center
+                  gap-2
+                  rounded-xl
+                  bg-[#2e3281]
+                  px-6
+                  py-3.5
+                  text-sm
+                  font-bold
+                  text-white
+                  shadow-lg
+                  shadow-[#2e3281]/20
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:bg-[#4b8fc5]
+                  hover:shadow-xl
+                "
               >
+                Talk to Our Experts
 
-                Get Free Counselling
+                <ArrowRight
+                  size={17}
+                  className="
+                    transition-transform
+                    duration-300
+                    group-hover:translate-x-1
+                  "
+                />
 
-                <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
 
-              </button>
-
-              <button
-                type="button"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-blue-700 bg-white px-7 py-3.5 text-sm font-bold text-blue-700 transition-all duration-300 hover:bg-blue-700 hover:text-white md:text-base"
+              <Link
+                href="/courses"
+                className="
+                  inline-flex
+                  items-center
+                  justify-center
+                  gap-2
+                  rounded-xl
+                  border
+                  border-[#2e3281]/15
+                  bg-white
+                  px-6
+                  py-3.5
+                  text-sm
+                  font-bold
+                  text-[#2e3281]
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:border-[#4b8fc5]
+                  hover:text-[#4b8fc5]
+                  hover:shadow-lg
+                "
               >
-
-                <GraduationCap className="h-5 w-5" />
-
-                Explore Courses
-
-              </button>
+                Explore Opportunities
+              </Link>
 
             </div>
 
@@ -299,7 +341,7 @@ export default function HeroSection() {
 
               {/* Bottom Content */}
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-
+{/* 
                 <div className="max-w-sm rounded-2xl border border-white/20 bg-white/15 p-5 shadow-lg backdrop-blur-md">
 
                   <div className="flex items-center gap-3">
@@ -322,7 +364,7 @@ export default function HeroSection() {
 
                   </div>
 
-                </div>
+                </div> */}
 
               </div>
 

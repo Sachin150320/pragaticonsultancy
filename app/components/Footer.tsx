@@ -12,8 +12,6 @@ interface CollegeCategory {
 
 export default function Footer() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
-  const [activeRegionCategory, setActiveRegionCategory] =
-    useState<string | null>(null);
 
   /* =========================================================
      KARNATAKA / MAIN COLLEGE DIRECTORY
@@ -170,214 +168,35 @@ export default function Footer() {
   ];
 
   /* =========================================================
-     NORTH & EAST INDIA DIRECTORY
-     BUTTONS: MBBS / ENGINEERING / MANAGEMENT / NURSING
+     NORTH & EAST INDIA CITIES
   ========================================================= */
 
-  const regionalCategories: CollegeCategory[] = [
-    {
-      title: 'MBBS Colleges',
-      count: '200+',
-      colleges: [
-        /* North India */
-
-        'All India Institute of Medical Sciences, New Delhi',
-        'Maulana Azad Medical College, New Delhi',
-        'University College of Medical Sciences, Delhi',
-        'Lady Hardinge Medical College, New Delhi',
-        'Vardhman Mahavir Medical College, New Delhi',
-        'Dr. Ram Manohar Lohia Hospital, New Delhi',
-        'King George’s Medical University, Lucknow',
-        'Sanjay Gandhi Postgraduate Institute of Medical Sciences, Lucknow',
-        'Dr. Ram Manohar Lohia Institute of Medical Sciences, Lucknow',
-        'Banaras Hindu University, Varanasi',
-        'Aligarh Muslim University',
-        'Postgraduate Institute of Medical Education and Research, Chandigarh',
-        'Government Medical College, Chandigarh',
-        'Dayanand Medical College and Hospital, Ludhiana',
-        'Christian Medical College, Ludhiana',
-        'Government Medical College, Patiala',
-        'Government Medical College, Amritsar',
-        'All India Institute of Medical Sciences, Rishikesh',
-        'Government Medical College, Srinagar',
-        'Sher-i-Kashmir Institute of Medical Sciences',
-        'Baba Farid University of Health Sciences',
-        'Rohilkhand Medical College and Hospital',
-        'Era’s Lucknow Medical College and Hospital',
-        'Hind Institute of Medical Sciences, Lucknow',
-        'Subharti Medical College, Meerut',
-        'Santosh Medical College, Ghaziabad',
-
-        /* East India */
-
-        'All India Institute of Medical Sciences, Bhubaneswar',
-        'SCB Medical College and Hospital, Cuttack',
-        'VSS Institute of Medical Sciences and Research',
-        'MKCG Medical College and Hospital',
-        'Institute of Medical Sciences and SUM Hospital',
-        'Medical College and Hospital, Kolkata',
-        'Nil Ratan Sircar Medical College and Hospital',
-        'R. G. Kar Medical College and Hospital',
-        'Calcutta National Medical College',
-        'IPGMER and SSKM Hospital',
-        'North Bengal Medical College',
-        'Patna Medical College and Hospital',
-        'Nalanda Medical College and Hospital',
-        'Indira Gandhi Institute of Medical Sciences, Patna',
-        'Darbhanga Medical College and Hospital',
-        'Rajendra Institute of Medical Sciences, Ranchi',
-        'MGM Medical College, Jamshedpur',
-        'Government Medical College, Dhanbad',
-        'AIIMS Patna',
-        'AIIMS Deoghar',
-        'AIIMS Kalyani',
-        'AIIMS Raipur',
-      ],
-    },
-
-    {
-      title: 'Engineering Colleges',
-      count: '250+',
-      colleges: [
-        /* North India */
-
-        'Indian Institute of Technology Delhi',
-        'Delhi Technological University',
-        'Netaji Subhas University of Technology',
-        'Indraprastha Institute of Information Technology Delhi',
-        'Indian Institute of Technology Roorkee',
-        'National Institute of Technology Delhi',
-        'National Institute of Technology Kurukshetra',
-        'Punjab Engineering College, Chandigarh',
-        'Thapar Institute of Engineering and Technology',
-        'Indian Institute of Technology Jammu',
-        'National Institute of Technology Srinagar',
-        'Indian Institute of Technology Kanpur',
-        'Indian Institute of Technology BHU',
-        'Motilal Nehru National Institute of Technology Allahabad',
-        'Indian Institute of Technology Ropar',
-        'Dr. B. R. Ambedkar National Institute of Technology Jalandhar',
-        'Chandigarh University',
-        'Lovely Professional University',
-        'Amity University Noida',
-        'Sharda University',
-        'Bennett University',
-
-        /* East India */
-
-        'Indian Institute of Technology Kharagpur',
-        'Indian Institute of Technology Bhubaneswar',
-        'National Institute of Technology Rourkela',
-        'National Institute of Technology Durgapur',
-        'Indian Institute of Engineering Science and Technology Shibpur',
-        'Jadavpur University',
-        'University of Calcutta',
-        'Kalyani Government Engineering College',
-        'Heritage Institute of Technology Kolkata',
-        'Techno India University',
-        'KIIT University',
-        'Siksha O Anusandhan University',
-        'Veer Surendra Sai University of Technology',
-        'Ravenshaw University',
-        'College of Engineering and Technology Bhubaneswar',
-        'Birla Institute of Technology Mesra',
-        'National Institute of Technology Jamshedpur',
-        'Indian Institute of Technology Patna',
-        'National Institute of Technology Patna',
-        'KIIT School of Technology',
-      ],
-    },
-
-    {
-      title: 'Management Colleges',
-      count: '200+',
-      colleges: [
-        /* North India */
-
-        'Indian Institute of Management Ahmedabad',
-        'Indian Institute of Management Lucknow',
-        'Indian Institute of Management Indore',
-        'Indian Institute of Management Rohtak',
-        'Indian Institute of Management Jammu',
-        'Indian Institute of Management Amritsar',
-        'Faculty of Management Studies, Delhi',
-        'Indian Institute of Foreign Trade, Delhi',
-        'Management Development Institute, Gurugram',
-        'Indian School of Business, Mohali',
-        'Amity Business School, Noida',
-        'IMT Ghaziabad',
-        'BIMTECH Greater Noida',
-        'Sharda University School of Business Studies',
-        'Chandigarh University',
-        'Lovely Professional University',
-
-        /* East India */
-
-        'Indian Institute of Management Calcutta',
-        'Indian Institute of Management Ranchi',
-        'Indian Institute of Management Bodh Gaya',
-        'Indian Institute of Management Sambalpur',
-        'Indian Institute of Management Shillong',
-        'Xavier Labour Relations Institute',
-        'Xavier University Bhubaneswar',
-        'Indian Institute of Social Welfare and Business Management',
-        'Goenka College of Commerce and Business Administration',
-        'St. Xavier’s University Kolkata',
-        'KIIT School of Management',
-        'International Management Institute Kolkata',
-        'Birla Institute of Management Technology',
-        'Tata Institute of Social Sciences Guwahati',
-        'Assam University',
-        'Tezpur University',
-      ],
-    },
-
-    {
-      title: 'Nursing Colleges',
-      count: '150+',
-      colleges: [
-        /* North India */
-
-        'College of Nursing, AIIMS New Delhi',
-        'Lady Hardinge Medical College Nursing',
-        'Safdarjung Hospital College of Nursing',
-        'RML Hospital College of Nursing',
-        'University College of Nursing, Delhi',
-        'Postgraduate Institute of Medical Education and Research Nursing',
-        'Government College of Nursing Chandigarh',
-        'Christian Medical College Ludhiana Nursing',
-        'Dayanand Medical College Nursing',
-        'King George’s Medical University College of Nursing',
-        'SGPGIMS College of Nursing',
-        'Banaras Hindu University College of Nursing',
-        'Aligarh Muslim University College of Nursing',
-        'AIIMS Rishikesh College of Nursing',
-        'AIIMS Jammu College of Nursing',
-        'AIIMS Bathinda College of Nursing',
-        'AIIMS Gorakhpur College of Nursing',
-        'AIIMS Rae Bareli College of Nursing',
-
-        /* East India */
-
-        'AIIMS Bhubaneswar College of Nursing',
-        'SCB Medical College College of Nursing',
-        'Medical College Kolkata College of Nursing',
-        'R. G. Kar Medical College Nursing',
-        'IPGMER College of Nursing',
-        'AIIMS Kalyani College of Nursing',
-        'AIIMS Patna College of Nursing',
-        'Patna Medical College College of Nursing',
-        'Nalanda Medical College College of Nursing',
-        'AIIMS Deoghar College of Nursing',
-        'Rajendra Institute of Medical Sciences College of Nursing',
-        'MGM Medical College College of Nursing',
-        'AIIMS Raipur College of Nursing',
-        'Government College of Nursing Odisha',
-        'Kalinga Institute of Nursing Sciences',
-        'Institute of Medical Sciences and SUM Hospital Nursing',
-      ],
-    },
+  const northEastCities = [
+    'New Delhi',
+    'Assam',
+    'Arunachal Pradesh',
+    'Meghalaya',
+    'Manipur',
+    'Mazuram',
+    'Tripura',
+    'Sikkim',
+    'Nagaland',
+    'Himachal Pradesh ',
+    'Punjab ',
+    'Rajasthan',
+    'Uttarakhand',
+    'Uttar Pradesh',
+    'Madya Pradesh',
+    'Odissa',
+    'Karnataka',
+    'Andrapradesh',
+    'Telangana',
+    'Maharastra',
   ];
+
+  /* =========================================================
+     QUICK LINKS
+  ========================================================= */
 
   const quickLinks = [
     ['Home', '/'],
@@ -391,35 +210,20 @@ export default function Footer() {
   ];
 
   /* =========================================================
-     CLICK HANDLERS
+     CLICK HANDLER
   ========================================================= */
 
   const handleCategoryClick = (title: string) => {
     setActiveCategory(
       activeCategory === title ? null : title
     );
-
-    setActiveRegionCategory(null);
-  };
-
-  const handleRegionCategoryClick = (title: string) => {
-    setActiveRegionCategory(
-      activeRegionCategory === title ? null : title
-    );
-
-    setActiveCategory(null);
   };
 
   const activeCollegeCategory = collegeCategories.find(
     (category) => category.title === activeCategory
   );
 
-  const activeRegionalCategory = regionalCategories.find(
-    (category) => category.title === activeRegionCategory
-  );
-
-  const activeList =
-    activeCollegeCategory || activeRegionalCategory;
+  const showNorthEast = activeCategory === 'North & East Colleges';
 
   return (
     <footer className="relative overflow-hidden bg-[#070b19] font-sans text-white">
@@ -461,10 +265,12 @@ export default function Footer() {
           </div>
 
           {/* =================================================
-              MAIN STREAM BUTTONS
+              FIVE MAIN BUTTONS
           ================================================= */}
 
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
+
+            {/* KARNATAKA COLLEGE CATEGORIES */}
 
             {collegeCategories.map((category) => {
 
@@ -551,144 +357,102 @@ export default function Footer() {
               );
             })}
 
-          </div>
+            {/* =================================================
+                NORTH & EAST COLLEGES - 5TH BUTTON
+            ================================================= */}
 
-          {/* =================================================
-              NORTH & EAST INDIA
-          ================================================= */}
+            <button
+              type="button"
+              onClick={() =>
+                handleCategoryClick('North & East Colleges')
+              }
+              className={`
+                group
+                flex
+                items-center
+                justify-between
+                gap-4
+                rounded-xl
+                px-5
+                py-4
+                text-left
+                transition-all
+                duration-300
 
-          <div className="mt-12">
+                ${
+                  showNorthEast
+                    ? 'bg-[rgb(50_48_127)] text-white shadow-md'
+                    : 'bg-[#e5f4fc] text-[rgb(50_48_127)] hover:bg-[#d4edf9]'
+                }
+              `}
+            >
 
-            <div className="mb-7">
+              <div>
 
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#4b8fc5]">
-                Regional Directory
+                <span className="block text-sm font-bold">
+                  North & East Colleges
+                </span>
+
+                <span
+                  className={`
+                    mt-1
+                    block
+                    text-[11px]
+
+                    ${
+                      showNorthEast
+                        ? 'text-blue-100'
+                        : 'text-[rgb(75_143_197)]'
+                    }
+                  `}
+                >
+                  500+ Institutions
+                </span>
+
+              </div>
+
+              <span
+                className={`
+                  flex
+                  h-8
+                  w-8
+                  flex-shrink-0
+                  items-center
+                  justify-center
+                  rounded-full
+                  text-sm
+                  font-bold
+                  transition-all
+                  duration-300
+
+                  ${
+                    showNorthEast
+                      ? 'bg-white text-[rgb(50_48_127)]'
+                      : 'bg-[rgb(50_48_127)] text-white group-hover:bg-[rgb(75_143_197)]'
+                  }
+                `}
+              >
+                {showNorthEast ? '−' : '+'}
               </span>
 
-              <h2 className="mt-2 text-2xl font-extrabold text-white sm:text-3xl">
-                North and East Colleges
-              </h2>
-
-              <p className="mt-2 text-sm text-slate-400">
-                Explore colleges across North and East India by stream.
-              </p>
-
-            </div>
-
-            {/* REGIONAL BUTTONS */}
-
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-
-              {regionalCategories.map((category) => {
-
-                const isActive =
-                  activeRegionCategory === category.title;
-
-                return (
-                  <button
-                    key={category.title}
-                    type="button"
-                    onClick={() =>
-                      handleRegionCategoryClick(category.title)
-                    }
-                    className={`
-                      group
-                      flex
-                      items-center
-                      justify-between
-                      gap-4
-                      rounded-xl
-                      px-5
-                      py-4
-                      text-left
-                      transition-all
-                      duration-300
-
-                      ${
-                        isActive
-                          ? 'bg-[rgb(50_48_127)] text-white shadow-md'
-                          : 'bg-[#e5f4fc] text-[rgb(50_48_127)] hover:bg-[#d4edf9]'
-                      }
-                    `}
-                  >
-
-                    <div>
-
-                      <span className="block text-sm font-bold">
-                        {category.title.replace(
-                          ' Colleges',
-                          ''
-                        )}
-                      </span>
-
-                      <span
-                        className={`
-                          mt-1
-                          block
-                          text-[11px]
-
-                          ${
-                            isActive
-                              ? 'text-blue-100'
-                              : 'text-[rgb(75_143_197)]'
-                          }
-                        `}
-                      >
-                        {category.count} Institutions
-                      </span>
-
-                    </div>
-
-                    <span
-                      className={`
-                        flex
-                        h-8
-                        w-8
-                        flex-shrink-0
-                        items-center
-                        justify-center
-                        rounded-full
-                        text-sm
-                        font-bold
-                        transition-all
-                        duration-300
-
-                        ${
-                          isActive
-                            ? 'bg-white text-[rgb(50_48_127)]'
-                            : 'bg-[rgb(50_48_127)] text-white group-hover:bg-[rgb(75_143_197)]'
-                        }
-                      `}
-                    >
-                      {isActive ? '−' : '+'}
-                    </span>
-
-                  </button>
-                );
-              })}
-
-            </div>
+            </button>
 
           </div>
 
           {/* =================================================
-              ACTIVE COLLEGE LIST
+              ACTIVE KARNATAKA COLLEGE LIST
           ================================================= */}
 
-          {activeList && (
+          {activeCollegeCategory && (
 
             <div className="mt-6 rounded-2xl bg-[#f4f9fd] p-5 sm:p-6">
-
-              {/* Header */}
 
               <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
 
                 <div>
 
                   <h3 className="text-xl font-bold text-[#2e3281]">
-                    {activeRegionalCategory
-                      ? `North & East ${activeList.title}`
-                      : activeList.title}
+                    {activeCollegeCategory.title}
                   </h3>
 
                   <p className="mt-1 text-xs text-slate-500">
@@ -712,11 +476,9 @@ export default function Footer() {
 
               </div>
 
-              {/* College Names */}
-
               <div className="grid grid-cols-1 gap-x-8 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
 
-                {activeList.colleges.map((college) => (
+                {activeCollegeCategory.colleges.map((college) => (
 
                   <Link
                     key={college}
@@ -766,6 +528,96 @@ export default function Footer() {
 
           )}
 
+          {/* =================================================
+              NORTH & EAST CITY LIST
+          ================================================= */}
+
+          {showNorthEast && (
+
+            <div className="mt-6 rounded-2xl bg-[#f4f9fd] p-5 sm:p-6">
+
+              <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+
+                <div>
+
+                  <h3 className="text-xl font-bold text-[#2e3281]">
+                    North & East Colleges
+                  </h3>
+
+                  <p className="mt-1 text-xs text-slate-500">
+                    Explore colleges by city across North and East India
+                  </p>
+
+                </div>
+
+                <Link
+                  href="/colleges"
+                  className="
+                    text-xs
+                    font-bold
+                    text-[#2e3281]
+                    transition-colors
+                    hover:text-[#4b8fc5]
+                  "
+                >
+                  View All Colleges →
+                </Link>
+
+              </div>
+
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
+
+                {northEastCities.map((city) => (
+
+                  <Link
+                    key={city}
+                    href="/colleges"
+                    className="
+                      group
+                      flex
+                      items-center
+                      gap-2
+                      rounded-lg
+                      bg-white
+                      px-3
+                      py-3
+                      text-sm
+                      font-medium
+                      text-slate-700
+                      transition-all
+                      duration-200
+                      hover:bg-[#2e3281]
+                      hover:text-white
+                    "
+                  >
+
+                    <span
+                      className="
+                        text-xs
+                        text-[#4b8fc5]
+                        transition-transform
+                        duration-200
+                        group-hover:translate-x-1
+                        group-hover:text-white
+                      "
+                    >
+                      →
+                    </span>
+
+                    <span>
+                      {city}
+                    </span>
+
+                  </Link>
+
+                ))}
+
+              </div>
+
+            </div>
+
+          )}
+
         </div>
 
       </div>
@@ -802,7 +654,7 @@ export default function Footer() {
               medical, engineering, management and nursing institutions.
             </p>
 
-            {/* Contact */}
+            {/* CONTACT */}
 
             <div className="mt-6 space-y-3">
 
@@ -888,7 +740,7 @@ export default function Footer() {
 
             </div>
 
-            {/* Social */}
+            {/* SOCIAL */}
 
             <div className="mt-7">
 
@@ -1088,6 +940,8 @@ export default function Footer() {
               "
             >
 
+              {/* OFFICE */}
+
               <div className="flex gap-4">
 
                 <div
@@ -1124,6 +978,8 @@ export default function Footer() {
               </div>
 
               <div className="my-5 h-px bg-white/10" />
+
+              {/* PHONE */}
 
               <a
                 href="tel:08048518464"
@@ -1169,6 +1025,8 @@ export default function Footer() {
 
               </a>
 
+              {/* EMAIL */}
+
               <a
                 href="mailto:info@pragaticonsultancy.com"
                 className="
@@ -1213,6 +1071,8 @@ export default function Footer() {
                 </div>
 
               </a>
+
+              {/* MAP */}
 
               <div className="mt-6">
 

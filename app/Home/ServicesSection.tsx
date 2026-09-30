@@ -74,7 +74,7 @@ export default function WhatWeProvide() {
 
   return (
     <>
-      <section className="w-full bg-white px-4 py-14 sm:px-6 md:px-8 md:py-16">
+      <section className="w-full bg-gray-100 px-4 py-14 sm:px-6 md:px-8 md:py-16">
         <div className="mx-auto max-w-7xl">
 
           {/* Heading */}

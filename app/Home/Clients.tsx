@@ -50,7 +50,7 @@ export default function ClientsSection() {
     const scrollingClients = [...clients, ...clients]
 
     return (
-        <section className="relative   overflow-hidden bg-[#F6F7FC] py-12 md:py-16">
+        <section className="relative   overflow-hidden bg-[rgb(167_19_32_/_8%)] py-12 md:py-16">
             <div className="container-responsive mx-auto px-4">
 
                 <div className="flex-1 text-center">
@@ -84,10 +84,10 @@ export default function ClientsSection() {
                 <div className="relative">
 
                     {/* Left Fade */}
-                    <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r from-white to-transparent md:w-28" />
+                    <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r  md:w-28" />
 
                     {/* Right Fade */}
-                    <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l from-white to-transparent md:w-28" />
+                    <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l  md:w-28" />
 
                     {/* Scrolling Container */}
                     <div className="overflow-hidden py-4">
@@ -144,12 +144,12 @@ export default function ClientsSection() {
                 </div>
 
                 {/* Bottom Text */}
-                <div className="mt-7 text-center">
+                {/* <div className="mt-7 text-center">
                     <p className="text-xs text-gray-400 md:text-sm">
                         Trusted partnerships that help students make informed admission
                         decisions.
                     </p>
-                </div>
+                </div> */}
             </div>
 
             {/* Infinite Scroll Animation */}
