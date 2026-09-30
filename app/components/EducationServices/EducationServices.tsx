@@ -19,19 +19,20 @@ export default function EducationalServices() {
     return (
         <>
             {/* =========================================================
-          BREADCRUMB
-      ========================================================= */}
+                BREADCRUMB
+            ========================================================= */}
             <BreadcrumbBanner
                 title="Educational Services"
                 description="PRAGATI CONSULTANCY SERVICES"
             />
 
             {/* =========================================================
-          INTRODUCTION
-      ========================================================= */}
+                INTRODUCTION
+            ========================================================= */}
             <section className="bg-white py-14 sm:py-16 lg:py-20">
                 <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
                     <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+
                         {/* Image */}
                         <div className="relative">
                             <div className="absolute -left-3 -top-3 h-20 w-20 rounded-2xl bg-[rgb(167_19_32_/_8%)]" />
@@ -106,10 +107,11 @@ export default function EducationalServices() {
             </section>
 
             {/* =========================================================
-          OUR APPROACH
-      ========================================================= */}
+                OUR APPROACH
+            ========================================================= */}
             <section className="bg-[#f8f8f8] py-14 sm:py-16 lg:py-20">
                 <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+
                     {/* Heading */}
                     <div className="mx-auto max-w-2xl text-center">
                         <div className="mb-3 flex items-center justify-center gap-3">
@@ -132,8 +134,9 @@ export default function EducationalServices() {
                         </p>
                     </div>
 
-                    {/* Cards */}
+                    {/* Service Cards */}
                     <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
                         <ServiceCard
                             icon={<Lightbulb size={24} />}
                             title="Career Counselling"
@@ -169,17 +172,20 @@ export default function EducationalServices() {
                             title="Student Support"
                             description="Providing assistance and guidance to students and parents during their education journey."
                         />
+
                     </div>
                 </div>
             </section>
 
             {/* =========================================================
-          HOW WE HELP
-      ========================================================= */}
+                HOW WE HELP
+            ========================================================= */}
             <section className="bg-white py-14 sm:py-16 lg:py-20">
                 <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+
                     <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-                        {/* Left */}
+
+                        {/* Left Content */}
                         <div>
                             <div className="mb-4 flex items-center gap-3">
                                 <span className="h-[2px] w-9 bg-[#a71320]" />
@@ -208,8 +214,9 @@ export default function EducationalServices() {
                             </Link>
                         </div>
 
-                        {/* Steps */}
+                        {/* Process Steps */}
                         <div className="space-y-4">
+
                             <ProcessStep
                                 number="01"
                                 title="Understand the Student"
@@ -233,6 +240,7 @@ export default function EducationalServices() {
                                 title="Move Towards Admission"
                                 description="We provide support and guidance as students move forward with their educational admission process."
                             />
+
                         </div>
                     </div>
                 </div>
@@ -248,6 +256,7 @@ export default function EducationalServices() {
 function Feature({ text }: { text: string }) {
     return (
         <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-4 py-3">
+
             <CheckCircle2
                 size={19}
                 className="shrink-0 text-[#a71320]"
@@ -256,6 +265,7 @@ function Feature({ text }: { text: string }) {
             <span className="text-sm font-medium text-slate-700">
                 {text}
             </span>
+
         </div>
     );
 }
@@ -275,6 +285,7 @@ function ServiceCard({
 }) {
     return (
         <div className="group rounded-xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-[#a71320]/30 hover:shadow-lg">
+
             <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[rgb(167_19_32_/_8%)] text-[#a71320] transition group-hover:bg-[#a71320] group-hover:text-white">
                 {icon}
             </div>
@@ -286,6 +297,7 @@ function ServiceCard({
             <p className="mt-2 text-sm leading-6 text-slate-600">
                 {description}
             </p>
+
         </div>
     );
 }
@@ -305,6 +317,7 @@ function ProcessStep({
 }) {
     return (
         <div className="flex gap-4 rounded-xl border border-slate-200 bg-white p-5 transition hover:border-[#a71320]/30 hover:shadow-md">
+
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#a71320] text-sm font-bold text-white">
                 {number}
             </div>
@@ -318,62 +331,7 @@ function ProcessStep({
                     {description}
                 </p>
             </div>
-        </div>
-    );
-}
 
-/* =========================================================
-   STAT
-========================================================= */
-
-function Stat({
-    value,
-    label,
-}: {
-    value: string;
-    label: string;
-}) {
-    return (
-        <div className="rounded-xl border border-white/20 bg-white/10 p-4 text-center">
-            <p className="text-2xl font-bold text-white sm:text-3xl">
-                {value}
-            </p>
-
-            <p className="mt-1 text-xs leading-5 text-white/80">
-                {label}
-            </p>
-        </div>
-    );
-}
-
-/* =========================================================
-   REASON
-========================================================= */
-
-function Reason({
-    icon,
-    title,
-    text,
-}: {
-    icon: React.ReactNode;
-    title: string;
-    text: string;
-}) {
-    return (
-        <div className="flex gap-4 rounded-xl border border-slate-200 bg-white p-5 transition duration-300 hover:-translate-y-1 hover:shadow-md">
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[rgb(167_19_32_/_8%)] text-[#a71320]">
-                {icon}
-            </div>
-
-            <div>
-                <h3 className="font-bold text-slate-900">
-                    {title}
-                </h3>
-
-                <p className="mt-1 text-sm leading-6 text-slate-600">
-                    {text}
-                </p>
-            </div>
         </div>
     );
 }

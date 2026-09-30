@@ -6,7 +6,6 @@ import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
   CheckCircle2,
-  GraduationCap,
   Users,
   Building2,
   Globe2,

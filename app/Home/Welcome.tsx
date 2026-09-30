@@ -2,7 +2,7 @@
 'use client';
 
 
-import { ArrowRight, GraduationCap, Globe2, BookOpen, Sparkles } from 'lucide-react';
+import { GraduationCap, Globe2, BookOpen, Sparkles } from 'lucide-react';
 
 export default function WelcomeSection() {
   return (
