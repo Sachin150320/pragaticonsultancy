@@ -1,4 +1,4 @@
-import EducationServices from "@/app/Components/EducationServices/EducationServices";
+import EducationServices from "@/app/components/EducationServices/EducationServices";
 
 export default function Page() {
   return <EducationServices />;
