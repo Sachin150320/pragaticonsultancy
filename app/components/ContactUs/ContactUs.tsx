@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import BreadcrumbBanner from "@/app/Components/BreadcrumbBanner";
+import BreadcrumbBanner from "@/app/components/BreadcrumbBanner";
 
 export default function ContactUs() {
   const [submitted, setSubmitted] = useState(false);

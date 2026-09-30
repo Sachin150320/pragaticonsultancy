@@ -13,7 +13,7 @@ import {
     Users,
 } from "lucide-react";
 
-import BreadcrumbBanner from "@/app/Components/BreadcrumbBanner";
+import BreadcrumbBanner from "@/app/components/BreadcrumbBanner";
 
 export default function EducationalServices() {
     return (

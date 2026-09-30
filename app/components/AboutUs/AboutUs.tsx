@@ -1,5 +1,5 @@
 
-import BreadcrumbBanner from "@/app/Components/BreadcrumbBanner";
+import BreadcrumbBanner from "@/app/components/BreadcrumbBanner";
 import Image from "next/image";
 
 const courses = [
