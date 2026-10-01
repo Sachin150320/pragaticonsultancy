@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone } from "lucide-react";
 
 interface CollegeCategory {
   title: string;
