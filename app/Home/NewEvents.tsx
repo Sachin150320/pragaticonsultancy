@@ -106,7 +106,7 @@ export default function NewsEventsSection() {
 
           
  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-900 mb-4">
-                     Updates
+                     Notifications
                 </h2>
  <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
                Stay updated with the latest medical admission news,

@@ -116,7 +116,7 @@ export default function HeroSection() {
             </div>
 
             {/* Heading */}
-            <h1 className="max-w-3xl text-4xl font-extrabold leading-[1.1] tracking-tight text-gray-900 sm:text-5xl md:text-5xl lg:text-5xl">
+            <h1 className="max-w-3xl text-3xl font-extrabold leading-[1.1] tracking-tight text-gray-900 sm:text-5xl md:text-5xl lg:text-5xl">
 
               Shape Your Future With
 
@@ -163,7 +163,7 @@ export default function HeroSection() {
             {/* =====================================================
                 STATS
             ====================================================== */}
-            <div className="mt-8 grid grid-cols-4 gap-3 sm:gap-4">
+           <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
 
               {/* Students */}
               <div className="banner-number group rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-5">
