@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -21,6 +22,7 @@ export default function EducationalServices() {
             {/* =========================================================
                 BREADCRUMB
             ========================================================= */}
+
             <BreadcrumbBanner
                 title="Educational Services"
                 description="PRAGATI CONSULTANCY SERVICES"
@@ -29,77 +31,120 @@ export default function EducationalServices() {
             {/* =========================================================
                 INTRODUCTION
             ========================================================= */}
-            <section className="bg-white py-14 sm:py-16 lg:py-20">
-                <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-                    <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
 
-                        {/* Image */}
+            <section className="bg-white py-16 md:py-20 lg:py-24">
+                <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div className="grid items-center gap-12 lg:grid-cols-[1fr_0.9fr] lg:gap-20">
+
+                        {/* LEFT CONTENT */}
+
+                        <div>
+                            <h2 className="w-full text-3xl font-bold leading-tight text-[#2E3281] sm:text-4xl md:text-5xl">
+                                Guiding Students Towards the{" "}
+                                <span>
+                                    Right Career Path
+                                </span>
+                            </h2>
+
+                            <p className="mt-7 text-[16px] leading-8 text-slate-600">
+                                Pragati Consultancy Services has launched a unique career
+                                counseling program to help you make a wise career decision.
+                                This program is aimed at guiding the students towards a
+                                career path that best suits their interests, aptitude and
+                                capability.
+                            </p>
+
+                            <p className="mt-4 text-[16px] leading-8 text-slate-600">
+                                Pragati Consultancy Services attempts to address this
+                                crucial issue of career selection and development procedures
+                                by designing a systematic and step-by-step process of career
+                                development.
+                            </p>
+
+                            <p className="mt-4 text-[16px] leading-8 text-slate-600">
+                                It is one of the oldest and leading ISO 9001-2008 certified
+                                Educational consultancy in Bangalore with presence in over
+                                10 cities across India and also in Nepal. We have guided
+                                thousands of aspiring students towards achieving their goals.
+                            </p>
+
+                            <p className="mt-4 text-[16px] leading-8 text-slate-600">
+                                We have also proved our global presence by guiding aspiring
+                                MBBS students to prominent universities in China.
+                            </p>
+
+                            {/* FEATURES */}
+
+                            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                                <Feature text="Career Counselling" />
+                                <Feature text="Course Selection Guidance" />
+                                <Feature text="College Selection" />
+                                <Feature text="Admission Assistance" />
+                            </div>
+                        </div>
+
+                        {/* RIGHT IMAGE */}
+
                         <div className="relative">
-                            <div className="absolute -left-3 -top-3 h-20 w-20 rounded-2xl bg-[rgb(167_19_32_/_8%)]" />
+                            {/* Decorative Background */}
 
-                            <div className="relative overflow-hidden rounded-2xl">
+                            <div className="absolute -right-4 -top-4 h-32 w-32 rounded-full bg-red-50" />
+
+                            <div className="absolute -bottom-5 -left-5 h-24 w-24 rounded-2xl bg-red-100" />
+
+                            {/* Main Image */}
+
+                            <div className="relative overflow-hidden rounded-3xl">
                                 <Image
                                     src="/images/banner-1.jpg"
                                     alt="Educational Services"
                                     width={900}
                                     height={600}
-                                    className="h-[320px] w-full object-cover transition duration-500 hover:scale-105 sm:h-[400px]"
+                                    className="h-[430px] w-full object-cover transition-transform duration-700 hover:scale-105"
                                 />
-                            </div>
-                        </div>
 
-                        {/* Content */}
-                        <div className="pt-5 lg:pt-0">
-                            <div className="mb-4 flex items-center gap-3">
-                                <span className="h-[2px] w-9 bg-[#a71320]" />
+                                {/* Overlay */}
 
-                                <span className="text-sm font-semibold uppercase tracking-[0.12em] text-[#a71320]">
-                                    Educational Services
-                                </span>
-                            </div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
-                            <h2 className="text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">
-                                Guiding Students Towards the
-                                <span className="block text-[#a71320]">
-                                    Right Career Path
-                                </span>
-                            </h2>
+                                {/* Quote */}
 
-                            <div className="mt-5 space-y-4 text-[15px] leading-7 text-slate-600 sm:text-base">
-                                <p>
-                                    Pragati Consultancy Services has launched a unique career
-                                    counseling program to help you make a wise career decision.
-                                    This program is aimed at guiding the students towards a
-                                    career path that best suits their interests, aptitude and
-                                    capability.
-                                </p>
+                                <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/20 bg-white/95 p-5 shadow-xl backdrop-blur-md md:p-6">
+                                    <div className="flex gap-3">
+                                        <span className="text-4xl font-serif leading-none">
+                                            “
+                                        </span>
 
-                                <p>
-                                    Pragati Consultancy Services attempts to address this
-                                    crucial issue of career selection and development procedures
-                                    by designing a systematic and step-by-step process of career
-                                    development.
-                                </p>
+                                        <div>
+                                            <p className="text-sm leading-6 text-slate-700 md:text-base md:leading-7">
+                                                The power of education extends beyond the
+                                                development of skills we need for economic
+                                                success. It can contribute to nation-building
+                                                and reconciliation.
+                                            </p>
 
-                                <p>
-                                    It is one of the oldest and leading ISO 9001-2008 certified
-                                    Educational consultancy in Bangalore with presence in over
-                                    10 cities across India and also in Nepal. We have guided
-                                    thousands of aspiring students towards achieving their goals.
-                                </p>
+                                            <div className="mt-3 flex items-center gap-3">
+                                                <span className="h-[2px] w-7 bg-[#a71320]" />
 
-                                <p>
-                                    We have also proved our global presence by guiding aspiring
-                                    MBBS students to prominent universities in China.
-                                </p>
+                                                <span className="text-xs font-bold tracking-wider text-slate-900">
+                                                    Nelson Mandela
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
-                            {/* Features */}
-                            <div className="mt-7 grid gap-3 sm:grid-cols-2">
-                                <Feature text="Career Counselling" />
-                                <Feature text="Course Selection Guidance" />
-                                <Feature text="College Selection" />
-                                <Feature text="Admission Assistance" />
+                            {/* Floating Image */}
+
+                            <div className="absolute -bottom-8 -right-5 hidden w-36 overflow-hidden rounded-2xl border-4 border-white bg-white shadow-xl md:block lg:-right-8">
+                                <Image
+                                    src="/images/banner-1.jpg"
+                                    alt="Education consultancy"
+                                    width={300}
+                                    height={200}
+                                    className="h-32 w-full object-cover"
+                                />
                             </div>
                         </div>
                     </div>
@@ -107,35 +152,31 @@ export default function EducationalServices() {
             </section>
 
             {/* =========================================================
-                OUR APPROACH
+                OUR EDUCATIONAL APPROACH
             ========================================================= */}
-            <section className="bg-[#f8f8f8] py-14 sm:py-16 lg:py-20">
-                <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+
+            <section className="bg-slate-50 py-16 md:py-20 lg:py-24">
+                <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
                     {/* Heading */}
-                    <div className="mx-auto max-w-2xl text-center">
-                        <div className="mb-3 flex items-center justify-center gap-3">
-                            <span className="h-[2px] w-8 bg-[#a71320]" />
 
-                            <span className="text-sm font-semibold uppercase tracking-[0.12em] text-[#a71320]">
-                                Our Services
+                    <div className="mb-12 w-full">
+                        <h2 className="w-full text-3xl font-bold leading-tight text-[#2E3281] sm:text-4xl md:text-5xl">
+                            Our Educational{" "}
+                            <span >
+                                Approach
                             </span>
-
-                            <span className="h-[2px] w-8 bg-[#a71320]" />
-                        </div>
-
-                        <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-                            Our Educational Approach
                         </h2>
 
-                        <p className="mt-4 text-[15px] leading-7 text-slate-600">
+                        <p className="mt-6 w-full text-[16px] leading-8 text-slate-600">
                             We provide structured guidance to help students understand
                             their options and move towards the right educational path.
                         </p>
                     </div>
 
-                    {/* Service Cards */}
-                    <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                    {/* SERVICE CARDS */}
+
+                    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
 
                         <ServiceCard
                             icon={<Lightbulb size={24} />}
@@ -180,26 +221,23 @@ export default function EducationalServices() {
             {/* =========================================================
                 HOW WE HELP
             ========================================================= */}
-            <section className="bg-white py-14 sm:py-16 lg:py-20">
-                <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+
+            <section className="bg-white py-16 md:py-20 lg:py-24">
+                <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
                     <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
 
-                        {/* Left Content */}
+                        {/* LEFT CONTENT */}
+
                         <div>
-                            <div className="mb-4 flex items-center gap-3">
-                                <span className="h-[2px] w-9 bg-[#a71320]" />
-
-                                <span className="text-sm font-semibold uppercase tracking-[0.12em] text-[#a71320]">
-                                    Our Process
+                            <h2 className="w-full text-3xl font-bold leading-tight text-[#2E3281] sm:text-4xl md:text-5xl">
+                                How We Help{" "}
+                                <span >
+                                    Students
                                 </span>
-                            </div>
-
-                            <h2 className="text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">
-                                How We Help Students
                             </h2>
 
-                            <p className="mt-5 text-[15px] leading-7 text-slate-600">
+                            <p className="mt-6 text-[16px] leading-8 text-slate-600">
                                 Our career development process follows a systematic approach
                                 to understand student requirements and guide them towards
                                 suitable educational opportunities.
@@ -214,7 +252,8 @@ export default function EducationalServices() {
                             </Link>
                         </div>
 
-                        {/* Process Steps */}
+                        {/* PROCESS STEPS */}
+
                         <div className="space-y-4">
 
                             <ProcessStep
@@ -245,9 +284,45 @@ export default function EducationalServices() {
                     </div>
                 </div>
             </section>
+
+            {/* =========================================================
+                CTA
+            ========================================================= */}
+
+            <section className="bg-[rgb(46_52_131)] py-16 md:py-20">
+                <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
+
+                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white/15 text-3xl text-white">
+                        <GraduationCap size={32} />
+                    </div>
+
+                    <h2 className="mt-6 w-full text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
+                        Start Your{" "}
+                        <span >
+                            Educational Journey
+                        </span>
+                    </h2>
+
+                    <p className="mt-7 text-[16px] leading-8 text-white/90 md:text-lg">
+                        Get the right guidance to choose your course, college and
+                        career path. Our team is here to support students and parents
+                        throughout the admission journey.
+                    </p>
+
+                    <Link
+                        href="/contact-us"
+                        className="mt-7 inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-[#2E3281] transition hover:bg-red-50"
+                    >
+                        Contact Us
+                        <ArrowRight size={18} />
+                    </Link>
+
+                </div>
+            </section>
         </>
     );
 }
+
 
 /* =========================================================
    FEATURE
@@ -270,6 +345,7 @@ function Feature({ text }: { text: string }) {
     );
 }
 
+
 /* =========================================================
    SERVICE CARD
 ========================================================= */
@@ -284,15 +360,49 @@ function ServiceCard({
     description: string;
 }) {
     return (
-        <div className="group rounded-xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-[#a71320]/30 hover:shadow-lg">
+        <div
+            className="
+                group
+                rounded-xl
+                border
+                border-slate-200
+                bg-white
+                p-6
+                transition
+                duration-300
+                hover:-translate-y-1
+                hover:border-[#a71320]/30
+                hover:shadow-lg
+            "
+        >
 
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[rgb(167_19_32_/_8%)] text-[#a71320] transition group-hover:bg-[#a71320] group-hover:text-white">
+            {/* Icon */}
+
+            <div
+                className="
+                    flex
+                    h-12
+                    w-12
+                    items-center
+                    justify-center
+                    rounded-lg
+                    bg-[rgb(167_19_32_/_8%)]
+                    text-[#a71320]
+                    transition
+                    group-hover:bg-[#a71320]
+                    group-hover:text-white
+                "
+            >
                 {icon}
             </div>
 
-            <h3 className="mt-5 text-lg font-bold text-slate-900">
+            {/* Title */}
+
+            <h3 className="mt-5 text-lg font-bold text-[#2E3281]">
                 {title}
             </h3>
+
+            {/* Description */}
 
             <p className="mt-2 text-sm leading-6 text-slate-600">
                 {description}
@@ -301,6 +411,7 @@ function ServiceCard({
         </div>
     );
 }
+
 
 /* =========================================================
    PROCESS STEP
@@ -316,11 +427,42 @@ function ProcessStep({
     description: string;
 }) {
     return (
-        <div className="flex gap-4 rounded-xl border border-slate-200 bg-white p-5 transition hover:border-[#a71320]/30 hover:shadow-md">
+        <div
+            className="
+                flex
+                gap-4
+                rounded-xl
+                border
+                border-slate-200
+                bg-white
+                p-5
+                transition
+                hover:border-[#a71320]/30
+                hover:shadow-md
+            "
+        >
 
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#a71320] text-sm font-bold text-white">
+            {/* Number */}
+
+            <div
+                className="
+                    flex
+                    h-11
+                    w-11
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-lg
+                    bg-[#a71320]
+                    text-sm
+                    font-bold
+                    text-white
+                "
+            >
                 {number}
             </div>
+
+            {/* Content */}
 
             <div>
                 <h3 className="text-base font-bold text-slate-900">

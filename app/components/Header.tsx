@@ -80,15 +80,15 @@ const menuItems: MenuItem[] = [
     children: [
       {
         label: "Medical Colleges",
-        href: "/colleges/medical",
+        href: "medical-college",
       },
       {
         label: "Engineering Colleges",
-        href: "Engineering Colleges",
+        href: "engineering-college",
       },
       {
         label: "Management Colleges",
-        href: "Management Colleges",
+        href: "management-college",
       },
       {
         label: "Nursing Colleges",
