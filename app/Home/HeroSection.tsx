@@ -116,7 +116,7 @@ export default function HeroSection() {
             </div>
 
             {/* Heading */}
-            <h1 className="max-w-3xl text-2xl font-extrabold leading-[1.1] tracking-tight text-gray-900 sm:text-5xl md:text-5xl lg:text-4xl">
+            <h1 className="max-w-3xl text-2xl font-extrabold leading-[1.1] tracking-tight text-gray-900 sm:text-5xl md:text-5xl lg:text-[44px]">
 
               Shape Your Future With
 
