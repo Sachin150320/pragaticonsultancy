@@ -3,16 +3,15 @@
 import React, { useState } from 'react';
 
 import {
-  Shield,
-  HealthAndSafety,
-  AttachMoney,
-  NotificationsActive,
-  VerifiedUser,
-  TrendingDown,
-  Lightbulb,
+  Explore,
+  School,
   LocalHospital,
-  Info,
-  CallReceived,
+  Public,
+  HealthAndSafety,
+  BusinessCenter,
+  AttachMoney,
+  SupportAgent,
+  VerifiedUser,
 } from '@mui/icons-material';
 
 export default function WhatWeProvide() {
@@ -21,54 +20,59 @@ export default function WhatWeProvide() {
   const services = [
     {
       id: 1,
-      title: 'Bonds & Service Rules',
-      icon: Shield,
-      description: 'Complete information about bonds and service rules.',
+      title: 'Career & Course Guidance',
+      icon: Explore,
+      description:
+        'Get personalized guidance to choose the right career path and course based on your interests, goals and academic profile.',
     },
     {
       id: 2,
-      title: 'Broad & Super Speciality Info',
-      icon: HealthAndSafety,
-      description: 'Detailed speciality information for all colleges.',
+      title: 'College Admission Counselling',
+      icon: School,
+      description:
+        'Get expert assistance in selecting suitable colleges, understanding admission procedures and completing the counselling process.',
     },
     {
       id: 3,
-      title: 'Updated Fees Structure',
-      icon: AttachMoney,
-      description: 'Latest fee details and payment information.',
+      title: 'MBBS & Medical Admissions',
+      icon: LocalHospital,
+      description:
+        'Complete guidance for MBBS and other medical admissions, including college selection, counselling and admission procedures.',
     },
     {
       id: 4,
-      title: 'Karnataka State Counselling Notifications',
-      icon: NotificationsActive,
+      title: 'Study Abroad Consultancy',
+      icon: Public,
       description:
-        'Stay updated with the latest KEA counselling notifications.',
+        'Guidance for students planning to study abroad, including course selection, university options and admission assistance.',
     },
     {
       id: 5,
-      title: 'Accreditations and Affiliations',
-      icon: VerifiedUser,
-      description: 'Verified college credentials and affiliations.',
+      title: 'Allied Health & Nursing Admissions',
+      icon: HealthAndSafety,
+      description:
+        'Explore suitable allied health and nursing courses with guidance on colleges, eligibility, admissions and career opportunities.',
     },
     {
       id: 6,
-      title: 'Category Wise Cut-off',
-      icon: TrendingDown,
-      description: 'Category-specific cutoff analysis and trends.',
+      title: 'Management & Professional Courses',
+      icon: BusinessCenter,
+      description:
+        'Get guidance for management and professional courses with assistance in selecting the right program and institution.',
     },
     {
       id: 7,
-      title: 'Most Accurate Counselling Predictor',
-      icon: Lightbulb,
+      title: 'Scholarship & Fee Guidance',
+      icon: AttachMoney,
       description:
-        'Useful guidance for college selection and counselling.',
+        'Understand course fees, scholarship opportunities and available financial support to plan your education effectively.',
     },
     {
       id: 8,
-      title: 'Hospital Patient Flow Details',
-      icon: LocalHospital,
+      title: 'Complete Admission Assistance',
+      icon: SupportAgent,
       description:
-        'Information about college hospital facilities and patient flow.',
+        'End-to-end admission support from course and college selection to counselling, documentation and final admission.',
     },
   ];
 
@@ -77,25 +81,34 @@ export default function WhatWeProvide() {
       <section className="w-full bg-gray-100 px-4 py-14 sm:px-6 md:px-8 md:py-16">
         <div className="mx-auto max-w-7xl">
 
-          {/* Heading */}
+          {/* ================= HEADING ================= */}
           <div className="mx-auto mb-12 max-w-3xl text-center md:mb-16">
             <h2 className="mb-4 text-3xl font-bold text-[#2E3281] sm:text-4xl md:text-5xl">
               What We Provide?
             </h2>
 
             <p className="text-sm leading-7 text-gray-600 sm:text-base md:text-lg">
-              Karnataka-focused admission support — college details,
-              KEA counselling notifications, predictor, cut-offs,
-              fees, bonds and more.
+              Complete education and admission guidance to help students
+              choose the right course, college and career path with confidence.
             </p>
           </div>
 
-          {/* Main Content */}
+          {/* ================= MAIN CONTENT ================= */}
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
 
-            {/* ================= LEFT ================= */}
+            {/* ================= LEFT SERVICES ================= */}
             <div className="flex items-center justify-center">
-              <div className="grid w-full max-w-2xl grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
+              <div
+                className="
+                  grid
+                  w-full
+                  max-w-2xl
+                  grid-cols-1
+                  gap-5
+                  sm:grid-cols-2
+                  md:grid-cols-3
+                "
+              >
 
                 {/* Service 1 */}
                 <ServiceCard
@@ -121,25 +134,30 @@ export default function WhatWeProvide() {
                   onClick={() => setActiveService(services[3])}
                 />
 
-                {/* Center Circle */}
+                {/* ================= CENTER CIRCLE ================= */}
                 <div className="hidden items-center justify-center md:flex">
                   <div
                     className="
-                      flex h-36 w-36
-                      items-center justify-center
+                      flex
+                      h-36
+                      w-36
+                      items-center
+                      justify-center
                       rounded-full
                       bg-gradient-to-br
                       from-[#2E3281]
                       to-[#145da0]
                       shadow-[0_15px_40px_rgba(46,50,129,0.25)]
-                      transition-all duration-300
+                      transition-all
+                      duration-300
                       hover:scale-105
                       hover:shadow-[0_20px_45px_rgba(46,50,129,0.35)]
-                      lg:h-40 lg:w-40
+                      lg:h-40
+                      lg:w-40
                     "
                   >
                     <div className="text-center">
-                      <Lightbulb
+                      <School
                         className="mx-auto mb-2 text-white"
                         sx={{ fontSize: 38 }}
                       />
@@ -180,24 +198,28 @@ export default function WhatWeProvide() {
               </div>
             </div>
 
-            {/* ================= RIGHT ================= */}
+            {/* ================= RIGHT IMAGE ================= */}
             <div>
               <div
                 className="
-                  flex h-full flex-col
+                  flex
+                  h-full
+                  flex-col
                   overflow-hidden
                   rounded-3xl
-                  border border-[#dcecf6]
+                  border
+                  border-[#dcecf6]
                   bg-white
                   shadow-[0_10px_35px_rgba(46,50,129,0.10)]
                 "
               >
 
-                {/* Image Area */}
+                {/* ================= IMAGE AREA ================= */}
                 <div
                   className="
                     relative
-                    flex min-h-[350px]
+                    flex
+                    min-h-[350px]
                     flex-1
                     items-center
                     justify-center
@@ -242,7 +264,7 @@ export default function WhatWeProvide() {
                       "
                     />
 
-                    {/* Decorations */}
+                    {/* Decoration 1 */}
                     <span
                       className="
                         absolute
@@ -256,6 +278,7 @@ export default function WhatWeProvide() {
                       ✨
                     </span>
 
+                    {/* Decoration 2 */}
                     <span
                       className="
                         absolute
@@ -269,6 +292,7 @@ export default function WhatWeProvide() {
                       ✦
                     </span>
 
+                    {/* Decoration 3 */}
                     <span
                       className="
                         absolute
@@ -284,28 +308,28 @@ export default function WhatWeProvide() {
                   </div>
                 </div>
 
-                {/* Trust Indicators */}
+                {/* ================= TRUST INDICATORS ================= */}
                 <div className="border-t border-[#dcecf6] bg-white p-5 sm:p-6">
                   <div className="grid grid-cols-3 gap-3">
 
-                    {/* Trusted */}
+                    {/* Course Guidance */}
                     <TrustItem
-                      icon={<Shield fontSize="small" />}
-                      title="Trusted"
-                      subtitle="Information"
-                    />
-
-                    {/* Expert */}
-                    <TrustItem
-                      icon={<Info fontSize="small" />}
-                      title="Expert"
+                      icon={<School fontSize="small" />}
+                      title="Course"
                       subtitle="Guidance"
                     />
 
-                    {/* Support */}
+                    {/* Expert Counselling */}
                     <TrustItem
-                      icon={<CallReceived fontSize="small" />}
-                      title="End-to-End"
+                      icon={<VerifiedUser fontSize="small" />}
+                      title="Expert"
+                      subtitle="Counselling"
+                    />
+
+                    {/* Admission Support */}
+                    <TrustItem
+                      icon={<SupportAgent fontSize="small" />}
+                      title="Admission"
                       subtitle="Support"
                     />
 
@@ -349,10 +373,11 @@ export default function WhatWeProvide() {
             onClick={(e) => e.stopPropagation()}
           >
 
-            {/* Close */}
+            {/* ================= CLOSE BUTTON ================= */}
             <button
               type="button"
               onClick={() => setActiveService(null)}
+              aria-label="Close"
               className="
                 absolute
                 right-4
@@ -374,7 +399,7 @@ export default function WhatWeProvide() {
               ×
             </button>
 
-            {/* Icon */}
+            {/* ================= ICON ================= */}
             <div
               className="
                 mb-5
@@ -393,17 +418,17 @@ export default function WhatWeProvide() {
               })}
             </div>
 
-            {/* Title */}
+            {/* ================= TITLE ================= */}
             <h3 className="mb-3 pr-8 text-xl font-bold text-[#2E3281]">
               {activeService.title}
             </h3>
 
-            {/* Description */}
+            {/* ================= DESCRIPTION ================= */}
             <p className="text-sm leading-7 text-gray-600">
               {activeService.description}
             </p>
 
-            {/* Close */}
+            {/* ================= CLOSE ================= */}
             <button
               type="button"
               onClick={() => setActiveService(null)}
@@ -452,6 +477,13 @@ function ServiceCard({
   return (
     <div
       onClick={onClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          onClick();
+        }
+      }}
       className="
         group
         cursor-pointer
@@ -469,6 +501,8 @@ function ServiceCard({
         sm:p-5
       "
     >
+
+      {/* Icon */}
       <div
         className="
           mb-3
@@ -489,9 +523,11 @@ function ServiceCard({
         <Icon fontSize="medium" />
       </div>
 
+      {/* Title */}
       <h3 className="text-sm font-bold leading-5 text-gray-900">
         {service.title}
       </h3>
+
     </div>
   );
 }
@@ -525,7 +561,7 @@ function TrustItem({
       "
     >
 
-      
+      {/* Icon */}
       <div
         className="
           mb-2
@@ -546,19 +582,22 @@ function TrustItem({
         {icon}
       </div>
 
-      <p className="text-[10px] font-bold leading-4 text-gray-900 sm:text-xs md:text-sm">
+      {/* Text */}
+      <p
+        className="
+          text-[10px]
+          font-bold
+          leading-4
+          text-gray-900
+          sm:text-xs
+          md:text-sm
+        "
+      >
         {title}
         <br />
         {subtitle}
       </p>
+
     </div>
-
-
-
-
-
-
-
-
   );
 }
