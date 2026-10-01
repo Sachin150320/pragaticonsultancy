@@ -71,7 +71,7 @@ const menuItems: MenuItem[] = [
         label: "Education Services",
         href: "education-services",
       },
-     
+
     ],
   },
 
@@ -223,8 +223,7 @@ export default function Header() {
             onClick={closeMobileMenu}
             className="flex items-center flex-shrink-0"
           >
-            <div className="relative w-[105px] h-[55px] sm:w-[130px] sm:h-[55px] md:w-[180px] md:h-[50px]">
-
+            <div className="relative w-[140px] h-[60px] sm:w-[155px] sm:h-[60px] md:w-[180px] md:h-[50px]">
               <Image
                 src="/images/logos/logo.png"
                 alt="Pragati Educational Consultancy"
@@ -232,7 +231,6 @@ export default function Header() {
                 priority
                 className="object-contain"
               />
-
             </div>
           </Link>
 
@@ -620,10 +618,9 @@ export default function Header() {
                           className={`
                             transition-transform
                             duration-300
-                            ${
-                              isDropdownOpen
-                                ? "rotate-180 text-blue-600"
-                                : ""
+                            ${isDropdownOpen
+                              ? "rotate-180 text-blue-600"
+                              : ""
                             }
                           `}
                         />
@@ -637,10 +634,9 @@ export default function Header() {
                           overflow-hidden
                           transition-all
                           duration-300
-                          ${
-                            isDropdownOpen
-                              ? "max-h-[500px] opacity-100"
-                              : "max-h-0 opacity-0"
+                          ${isDropdownOpen
+                            ? "max-h-[500px] opacity-100"
+                            : "max-h-0 opacity-0"
                           }
                         `}
                       >
