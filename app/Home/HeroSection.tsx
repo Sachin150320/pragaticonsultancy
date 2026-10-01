@@ -116,15 +116,15 @@ export default function HeroSection() {
             </div>
 
             {/* Heading */}
-            <h1 className="max-w-3xl text-3xl font-extrabold leading-[1.1] tracking-tight text-gray-900 sm:text-5xl md:text-5xl lg:text-5xl">
+            <h1 className="max-w-3xl text-2xl font-extrabold leading-[1.1] tracking-tight text-gray-900 sm:text-5xl md:text-5xl lg:text-4xl">
 
               Shape Your Future With
 
               <span className="mt-1 mb-3 block bg-gradient-to-r from-blue-700 to-cyan-500 bg-clip-text text-transparent py-2">
-                Pragati Consultancy
+                Pragati Consultancy Services
               </span>
 
-              Services
+             
 
             </h1>
 
