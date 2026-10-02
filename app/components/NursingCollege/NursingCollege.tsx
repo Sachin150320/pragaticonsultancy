@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+
 import {
   ArrowRight,
   Building2,
@@ -9,13 +10,12 @@ import {
   MapPin,
   Search,
   GraduationCap,
-  BriefcaseBusiness,
+  HeartPulse,
 } from "lucide-react";
 
 import BreadcrumbBanner from "@/app/components/BreadcrumbBanner";
 
 type College = {
-  id: number;
   name: string;
   slug: string;
   location: string;
@@ -24,7 +24,7 @@ type College = {
 };
 
 type Category = {
-  id: string;
+  key: string;
   quota: string;
   course: string;
   description: string;
@@ -33,361 +33,311 @@ type Category = {
 
 const categories: Category[] = [
   {
-    id: "state-bba",
+    key: "state-bsc-nursing",
     quota: "STATE QUOTA",
-    course: "BBA",
+    course: "B.SC NURSING",
     description:
-      "Explore undergraduate management colleges and business administration programs available through state admission routes.",
+      "Explore B.Sc Nursing colleges available through state counselling and understand your nursing admission options.",
     colleges: [
       {
-        id: 101,
-        name: "Christ University",
-        slug: "christ-university",
+        name: "Government College of Nursing, Bengaluru",
+        slug: "government-college-of-nursing-bengaluru",
         location: "Bengaluru, Karnataka",
-        type: "Private",
+        type: "Government",
         description:
-          "A well-established university offering undergraduate management and business administration programs with a broad academic environment.",
+          "A government nursing institution in Bengaluru offering undergraduate nursing education with clinical and practical training.",
       },
       {
-        id: 102,
-        name: "Mount Carmel College",
-        slug: "mount-carmel-college",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
+        name: "Government College of Nursing, Mysuru",
+        slug: "government-college-of-nursing-mysuru",
+        location: "Mysuru, Karnataka",
+        type: "Government",
         description:
-          "An established institution offering undergraduate programs in management, commerce and related business disciplines.",
+          "A government nursing institution offering undergraduate nursing education supported by clinical learning and healthcare training.",
       },
       {
-        id: 103,
-        name: "Kristu Jayanti College",
-        slug: "kristu-jayanti-college",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
+        name: "Government College of Nursing, Hassan",
+        slug: "government-college-of-nursing-hassan",
+        location: "Hassan, Karnataka",
+        type: "Government",
         description:
-          "A Bengaluru-based institution offering undergraduate management and business-focused programs with academic and practical learning.",
+          "A nursing institution providing undergraduate education with practical training and exposure to healthcare services.",
       },
       {
-        id: 104,
-        name: "Jain University",
-        slug: "jain-university",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
+        name: "Government College of Nursing, Mandya",
+        slug: "government-college-of-nursing-mandya",
+        location: "Mandya, Karnataka",
+        type: "Government",
         description:
-          "A private university offering undergraduate programs in business administration, management and related disciplines.",
+          "A government nursing college offering undergraduate nursing education and clinical learning opportunities.",
       },
       {
-        id: 105,
-        name: "Presidency University",
-        slug: "presidency-university",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
+        name: "Government College of Nursing, Ballari",
+        slug: "government-college-of-nursing-ballari",
+        location: "Ballari, Karnataka",
+        type: "Government",
         description:
-          "A university offering undergraduate management and business programs supported by modern academic facilities.",
+          "A government nursing institution providing nursing education with practical and hospital-based training.",
       },
       {
-        id: 106,
-        name: "Alliance University",
-        slug: "alliance-university",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
+        name: "Government College of Nursing, Shivamogga",
+        slug: "government-college-of-nursing-shivamogga",
+        location: "Shivamogga, Karnataka",
+        type: "Government",
         description:
-          "A university offering undergraduate business and management education across various areas of specialization.",
+          "A nursing education institution offering undergraduate nursing programs with clinical exposure.",
       },
       {
-        id: 107,
-        name: "Acharya Institute of Graduate Studies",
-        slug: "acharya-institute-of-graduate-studies",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
+        name: "Government College of Nursing, Belagavi",
+        slug: "government-college-of-nursing-belagavi",
+        location: "Belagavi, Karnataka",
+        type: "Government",
         description:
-          "An institution offering undergraduate programs in management, commerce and other business-related disciplines.",
+          "A government nursing institution providing undergraduate nursing education and practical healthcare training.",
       },
       {
-        id: 108,
-        name: "Reva University",
-        slug: "reva-university",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
+        name: "Government College of Nursing, Kalaburagi",
+        slug: "government-college-of-nursing-kalaburagi",
+        location: "Kalaburagi, Karnataka",
+        type: "Government",
         description:
-          "A university offering undergraduate business administration and management programs with industry-oriented learning opportunities.",
+          "A government nursing institution offering undergraduate nursing education and clinical learning opportunities.",
       },
     ],
   },
 
   {
-    id: "state-mba",
+    key: "state-gnm",
     quota: "STATE QUOTA",
-    course: "MBA",
+    course: "GNM",
     description:
-      "Explore postgraduate management colleges and MBA programs available through state-level admission routes.",
+      "Explore General Nursing and Midwifery colleges available through state admission routes.",
     colleges: [
       {
-        id: 201,
-        name: "Christ University",
-        slug: "christ-university",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
-        description:
-          "A university offering postgraduate management education across various business and management specializations.",
-      },
-      {
-        id: 202,
-        name: "Bangalore University",
-        slug: "bangalore-university",
+        name: "Government College of Nursing, Bengaluru",
+        slug: "government-college-of-nursing-bengaluru-gnm",
         location: "Bengaluru, Karnataka",
         type: "Government",
         description:
-          "A public university offering postgraduate management education and business-related academic programs.",
+          "A nursing institution offering nursing education and practical training for students pursuing healthcare careers.",
       },
       {
-        id: 203,
-        name: "Bangalore Institute of Technology",
-        slug: "bangalore-institute-of-technology",
+        name: "Government College of Nursing, Mysuru",
+        slug: "government-college-of-nursing-mysuru-gnm",
+        location: "Mysuru, Karnataka",
+        type: "Government",
+        description:
+          "A government nursing institution providing nursing education supported by clinical and practical learning.",
+      },
+      {
+        name: "Government College of Nursing, Hassan",
+        slug: "government-college-of-nursing-hassan-gnm",
+        location: "Hassan, Karnataka",
+        type: "Government",
+        description:
+          "An institution offering nursing education with practical exposure to hospital and healthcare environments.",
+      },
+      {
+        name: "Government College of Nursing, Mandya",
+        slug: "government-college-of-nursing-mandya-gnm",
+        location: "Mandya, Karnataka",
+        type: "Government",
+        description:
+          "A nursing education institution providing theoretical and practical healthcare training.",
+      },
+      {
+        name: "Government College of Nursing, Ballari",
+        slug: "government-college-of-nursing-ballari-gnm",
+        location: "Ballari, Karnataka",
+        type: "Government",
+        description:
+          "A government nursing institution offering nursing education with clinical and practical training opportunities.",
+      },
+      {
+        name: "Bangalore Baptist Hospital College of Nursing",
+        slug: "bangalore-baptist-hospital-college-of-nursing",
         location: "Bengaluru, Karnataka",
         type: "Private",
         description:
-          "An established institution offering postgraduate management education alongside technical and professional programs.",
+          "A nursing institution associated with a healthcare facility offering nursing education and clinical exposure.",
       },
       {
-        id: 204,
-        name: "B.M.S. College of Engineering",
-        slug: "bms-college-of-engineering",
+        name: "St. John's College of Nursing",
+        slug: "st-johns-college-of-nursing",
         location: "Bengaluru, Karnataka",
         type: "Private",
         description:
-          "An established institution providing postgraduate management education and professional programs.",
+          "A nursing institution offering professional nursing education supported by clinical and practical learning.",
       },
       {
-        id: 205,
-        name: "M.S. Ramaiah University of Applied Sciences",
-        slug: "ms-ramaiah-university-of-applied-sciences",
+        name: "Vydehi Institute of Nursing Sciences",
+        slug: "vydehi-institute-of-nursing-sciences",
         location: "Bengaluru, Karnataka",
         type: "Private",
         description:
-          "A university offering postgraduate business and management programs with practical and application-oriented education.",
-      },
-      {
-        id: 206,
-        name: "Jain University",
-        slug: "jain-university",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
-        description:
-          "A private university offering MBA and postgraduate management programs across multiple business disciplines.",
-      },
-      {
-        id: 207,
-        name: "Alliance University",
-        slug: "alliance-university",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
-        description:
-          "A university offering postgraduate management education with programs covering various areas of business administration.",
-      },
-      {
-        id: 208,
-        name: "Acharya Institute of Graduate Studies",
-        slug: "acharya-institute-of-graduate-studies",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
-        description:
-          "An institution offering postgraduate management education and business-related professional programs.",
+          "A nursing institution offering nursing education with access to academic and clinical learning facilities.",
       },
     ],
   },
 
   {
-    id: "central-bba",
+    key: "central-bsc-nursing",
     quota: "CENTRAL QUOTA",
-    course: "BBA",
+    course: "B.SC NURSING",
     description:
-      "Explore management institutions and undergraduate business programs available through national-level admission routes.",
+      "Explore nursing institutions and undergraduate nursing programs available through national-level admission routes.",
     colleges: [
       {
-        id: 301,
-        name: "Indian Institute of Management Indore",
-        slug: "indian-institute-of-management-indore",
-        location: "Indore, Madhya Pradesh",
+        name: "All India Institute of Medical Sciences, New Delhi",
+        slug: "aiims-new-delhi-bsc-nursing",
+        location: "New Delhi",
         type: "Government",
         description:
-          "A centrally funded management institution offering integrated and postgraduate management education.",
+          "A centrally funded medical institution offering nursing education along with comprehensive healthcare and clinical training.",
       },
       {
-        id: 302,
-        name: "Indian Institute of Management Rohtak",
-        slug: "indian-institute-of-management-rohtak",
-        location: "Rohtak, Haryana",
+        name: "All India Institute of Medical Sciences, Rishikesh",
+        slug: "aiims-rishikesh-bsc-nursing",
+        location: "Rishikesh, Uttarakhand",
         type: "Government",
         description:
-          "A centrally funded management institution offering integrated and postgraduate programs in management.",
+          "A central medical institution providing nursing education supported by hospital-based clinical learning.",
       },
       {
-        id: 303,
-        name: "Indian Institute of Management Jammu",
-        slug: "indian-institute-of-management-jammu",
-        location: "Jammu, Jammu and Kashmir",
+        name: "All India Institute of Medical Sciences, Bhopal",
+        slug: "aiims-bhopal-bsc-nursing",
+        location: "Bhopal, Madhya Pradesh",
         type: "Government",
         description:
-          "A management institution offering integrated and postgraduate management education.",
+          "A centrally funded medical institution offering nursing education and clinical healthcare training.",
       },
       {
-        id: 304,
-        name: "Indian Institute of Management Bodh Gaya",
-        slug: "indian-institute-of-management-bodh-gaya",
-        location: "Bodh Gaya, Bihar",
+        name: "All India Institute of Medical Sciences, Bhubaneswar",
+        slug: "aiims-bhubaneswar-bsc-nursing",
+        location: "Bhubaneswar, Odisha",
         type: "Government",
         description:
-          "A centrally funded management institution offering integrated and postgraduate management programs.",
+          "A central medical institution offering nursing education supported by academic and clinical facilities.",
       },
       {
-        id: 305,
-        name: "Indian Institute of Management Ranchi",
-        slug: "indian-institute-of-management-ranchi",
-        location: "Ranchi, Jharkhand",
+        name: "All India Institute of Medical Sciences, Jodhpur",
+        slug: "aiims-jodhpur-bsc-nursing",
+        location: "Jodhpur, Rajasthan",
         type: "Government",
         description:
-          "A management institution providing undergraduate-level integrated and postgraduate management education.",
+          "A centrally funded institution providing nursing education and healthcare training opportunities.",
       },
       {
-        id: 306,
-        name: "Indian Institute of Management Amritsar",
-        slug: "indian-institute-of-management-amritsar",
-        location: "Amritsar, Punjab",
+        name: "All India Institute of Medical Sciences, Patna",
+        slug: "aiims-patna-bsc-nursing",
+        location: "Patna, Bihar",
         type: "Government",
         description:
-          "A centrally funded management institution offering management education and professional programs.",
+          "A central government institution offering nursing education with clinical and practical training.",
       },
       {
-        id: 307,
-        name: "Indian Institute of Management Visakhapatnam",
-        slug: "indian-institute-of-management-visakhapatnam",
-        location: "Visakhapatnam, Andhra Pradesh",
+        name: "All India Institute of Medical Sciences, Raipur",
+        slug: "aiims-raipur-bsc-nursing",
+        location: "Raipur, Chhattisgarh",
         type: "Government",
         description:
-          "A management institution offering professional and postgraduate education in business and management.",
+          "A centrally funded medical institution offering nursing education and healthcare training.",
       },
       {
-        id: 308,
-        name: "Indian Institute of Management Sirmaur",
-        slug: "indian-institute-of-management-sirmaur",
-        location: "Sirmaur, Himachal Pradesh",
+        name: "All India Institute of Medical Sciences, Deoghar",
+        slug: "aiims-deoghar-bsc-nursing",
+        location: "Deoghar, Jharkhand",
         type: "Government",
         description:
-          "A centrally funded management institution offering programs in business administration and management.",
+          "A central medical institution offering nursing education and practical healthcare learning.",
       },
     ],
   },
 
   {
-    id: "central-mba",
+    key: "central-msc-nursing",
     quota: "CENTRAL QUOTA",
-    course: "MBA",
+    course: "M.SC NURSING",
     description:
-      "Explore leading management institutions and postgraduate business programs available through national-level admission routes.",
+      "Explore postgraduate nursing institutions and M.Sc Nursing programs available through central admission routes.",
     colleges: [
       {
-        id: 401,
-        name: "Indian Institute of Management Ahmedabad",
-        slug: "indian-institute-of-management-ahmedabad",
-        location: "Ahmedabad, Gujarat",
+        name: "All India Institute of Medical Sciences, New Delhi",
+        slug: "aiims-new-delhi-msc-nursing",
+        location: "New Delhi",
         type: "Government",
         description:
-          "A premier management institution offering postgraduate management education, executive programs and research opportunities.",
+          "A leading central medical institution offering postgraduate nursing education across various nursing specializations.",
       },
       {
-        id: 402,
-        name: "Indian Institute of Management Bangalore",
-        slug: "indian-institute-of-management-bangalore",
-        location: "Bengaluru, Karnataka",
+        name: "Postgraduate Institute of Medical Education and Research",
+        slug: "pgimer-msc-nursing",
+        location: "Chandigarh",
         type: "Government",
         description:
-          "A leading management institution offering postgraduate, executive and research programs in management.",
+          "A major medical education and research institution offering advanced nursing education and clinical training.",
       },
       {
-        id: 403,
-        name: "Indian Institute of Management Calcutta",
-        slug: "indian-institute-of-management-calcutta",
-        location: "Kolkata, West Bengal",
+        name: "Jawaharlal Institute of Postgraduate Medical Education and Research",
+        slug: "jipmer-msc-nursing",
+        location: "Puducherry",
         type: "Government",
         description:
-          "A centrally funded management institution offering postgraduate management education and research programs.",
+          "A centrally administered medical institution offering postgraduate nursing education and clinical learning.",
       },
       {
-        id: 404,
-        name: "Indian Institute of Management Lucknow",
-        slug: "indian-institute-of-management-lucknow",
-        location: "Lucknow, Uttar Pradesh",
+        name: "All India Institute of Medical Sciences, Rishikesh",
+        slug: "aiims-rishikesh-msc-nursing",
+        location: "Rishikesh, Uttarakhand",
         type: "Government",
         description:
-          "A management institution offering postgraduate programs across various areas of business and management.",
+          "A central medical institution offering postgraduate nursing education supported by clinical facilities.",
       },
       {
-        id: 405,
-        name: "Indian Institute of Management Kozhikode",
-        slug: "indian-institute-of-management-kozhikode",
-        location: "Kozhikode, Kerala",
+        name: "All India Institute of Medical Sciences, Bhopal",
+        slug: "aiims-bhopal-msc-nursing",
+        location: "Bhopal, Madhya Pradesh",
         type: "Government",
         description:
-          "A centrally funded management institution offering postgraduate and executive management education.",
+          "A centrally funded medical institution providing postgraduate nursing education and clinical training.",
       },
       {
-        id: 406,
-        name: "Indian Institute of Management Indore",
-        slug: "indian-institute-of-management-indore",
-        location: "Indore, Madhya Pradesh",
+        name: "All India Institute of Medical Sciences, Bhubaneswar",
+        slug: "aiims-bhubaneswar-msc-nursing",
+        location: "Bhubaneswar, Odisha",
         type: "Government",
         description:
-          "A management institution offering postgraduate programs in management, business administration and related disciplines.",
+          "A central medical institution offering postgraduate nursing programs with academic and clinical facilities.",
       },
       {
-        id: 407,
-        name: "Indian Institute of Management Shillong",
-        slug: "indian-institute-of-management-shillong",
-        location: "Shillong, Meghalaya",
+        name: "All India Institute of Medical Sciences, Jodhpur",
+        slug: "aiims-jodhpur-msc-nursing",
+        location: "Jodhpur, Rajasthan",
         type: "Government",
         description:
-          "A centrally funded management institution offering postgraduate and executive management programs.",
+          "A central medical institution providing postgraduate nursing education and clinical learning opportunities.",
       },
       {
-        id: 408,
-        name: "Indian Institute of Management Udaipur",
-        slug: "indian-institute-of-management-udaipur",
-        location: "Udaipur, Rajasthan",
+        name: "All India Institute of Medical Sciences, Patna",
+        slug: "aiims-patna-msc-nursing",
+        location: "Patna, Bihar",
         type: "Government",
         description:
-          "A management institution offering postgraduate business education and research opportunities.",
-      },
-      {
-        id: 409,
-        name: "Indian Institute of Management Tiruchirappalli",
-        slug: "indian-institute-of-management-tiruchirappalli",
-        location: "Tiruchirappalli, Tamil Nadu",
-        type: "Government",
-        description:
-          "A centrally funded management institution offering postgraduate and executive education in management.",
-      },
-      {
-        id: 410,
-        name: "Indian Institute of Management Ranchi",
-        slug: "indian-institute-of-management-ranchi",
-        location: "Ranchi, Jharkhand",
-        type: "Government",
-        description:
-          "A management institution offering postgraduate management education across business and professional disciplines.",
+          "A centrally funded medical institution offering postgraduate nursing education and healthcare training.",
       },
     ],
   },
 ];
 
-export default function ManagementCollegesPage() {
+export default function NursingCollegesPage() {
   const [activeCategory, setActiveCategory] =
-    useState("state-bba");
+    useState("state-bsc-nursing");
 
   const [search, setSearch] = useState("");
 
   const activeData =
     categories.find(
-      (category) => category.id === activeCategory
+      (category) => category.key === activeCategory
     ) || categories[0];
 
   const filteredColleges = useMemo(() => {
@@ -405,17 +355,19 @@ export default function ManagementCollegesPage() {
     );
   }, [activeData, search]);
 
-  const handleCategoryChange = (id: string) => {
-    setActiveCategory(id);
+  const handleCategoryChange = (key: string) => {
+    setActiveCategory(key);
     setSearch("");
   };
 
   return (
     <main className="min-h-screen bg-white">
 
+      {/* BREADCRUMB */}
+
       <BreadcrumbBanner
-        title="Management Colleges"
-        description="Explore management colleges, courses and admission opportunities"
+        title="Nursing Colleges"
+        description="Explore nursing colleges, courses and admission opportunities"
       />
 
       {/* INTRO */}
@@ -426,16 +378,16 @@ export default function ManagementCollegesPage() {
           <div className="w-full text-center">
 
             <span className="inline-flex items-center gap-2 rounded-full bg-[#2E3281]/10 px-4 py-2 text-xs font-bold uppercase tracking-[1.5px] text-[#2E3281]">
-              <BriefcaseBusiness size={16} />
-              Management Admissions
+              <HeartPulse size={16} />
+              Nursing Admissions
             </span>
 
             <h1 className="mt-5 text-3xl font-bold leading-tight text-[#2E3281] sm:text-4xl md:text-5xl">
-              Find The Right Management College
+              Find The Right Nursing College
             </h1>
 
             <p className="mt-5 text-[16px] leading-7 text-slate-600">
-              Explore management colleges based on your preferred
+              Explore nursing colleges based on your preferred
               course and admission quota. Select an option below to
               view the relevant college list.
             </p>
@@ -448,6 +400,7 @@ export default function ManagementCollegesPage() {
       {/* COLLEGE FINDER */}
 
       <section className="bg-white py-14 sm:py-20">
+
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           <div className="grid gap-8 lg:grid-cols-[280px_minmax(0,1fr)]">
@@ -475,19 +428,20 @@ export default function ManagementCollegesPage() {
                   {categories.map((category) => {
 
                     const isActive =
-                      activeCategory === category.id;
+                      activeCategory === category.key;
 
                     return (
                       <button
-                        key={category.id}
+                        key={category.key}
                         type="button"
                         onClick={() =>
-                          handleCategoryChange(category.id)
+                          handleCategoryChange(category.key)
                         }
-                        className={`group relative overflow-hidden rounded-xl border p-4 text-left transition-all duration-300 ${isActive
+                        className={`group relative overflow-hidden rounded-xl border p-4 text-left transition-all duration-300 ${
+                          isActive
                             ? "border-[#2E3281] bg-[#2E3281] shadow-lg"
                             : "border-slate-200 bg-white hover:border-[#2E3281] hover:shadow-md"
-                          }`}
+                        }`}
                       >
 
                         <div className="flex items-center justify-between gap-2">
@@ -495,19 +449,21 @@ export default function ManagementCollegesPage() {
                           <div>
 
                             <p
-                              className={`text-[11px] font-bold tracking-[1px] ${isActive
+                              className={`text-[11px] font-bold tracking-[1px] ${
+                                isActive
                                   ? "text-blue-100"
                                   : "text-[#a71320]"
-                                }`}
+                              }`}
                             >
                               {category.quota}
                             </p>
 
                             <p
-                              className={`mt-1 text-lg font-bold ${isActive
+                              className={`mt-1 text-lg font-bold ${
+                                isActive
                                   ? "text-white"
                                   : "text-[#2E3281]"
-                                }`}
+                              }`}
                             >
                               {category.course}
                             </p>
@@ -515,10 +471,11 @@ export default function ManagementCollegesPage() {
                           </div>
 
                           <div
-                            className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${isActive
+                            className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
+                              isActive
                                 ? "bg-white/15 text-white"
                                 : "bg-[#2E3281]/10 text-[#2E3281]"
-                              }`}
+                            }`}
                           >
 
                             {isActive ? (
@@ -546,7 +503,7 @@ export default function ManagementCollegesPage() {
                 <div className="mt-5 overflow-hidden rounded-xl bg-[#a71320] p-5 text-white">
 
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/15">
-                    <GraduationCap size={21} />
+                    <HeartPulse size={21} />
                   </div>
 
                   <h3 className="mt-4 font-bold">
@@ -554,7 +511,7 @@ export default function ManagementCollegesPage() {
                   </h3>
 
                   <p className="mt-2 text-xs leading-5 text-red-100">
-                    Get guidance on management courses, colleges,
+                    Get guidance on nursing courses, colleges,
                     counselling and admission procedures.
                   </p>
 
@@ -576,6 +533,8 @@ export default function ManagementCollegesPage() {
 
             <div className="min-w-0">
 
+              {/* SEARCH HEADER */}
+
               <div className="mb-7 rounded-2xl border border-slate-200 bg-[#f8f9fc] p-5">
 
                 <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
@@ -587,7 +546,7 @@ export default function ManagementCollegesPage() {
                     </p>
 
                     <h2 className="mt-1 text-2xl font-bold text-[#2E3281] sm:text-3xl">
-                      {activeData.course} Management Colleges
+                      {activeData.course} Nursing Colleges
                     </h2>
 
                     <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
@@ -608,7 +567,9 @@ export default function ManagementCollegesPage() {
                     <input
                       type="text"
                       value={search}
-                      onChange={(e) => setSearch(e.target.value)}
+                      onChange={(event) =>
+                        setSearch(event.target.value)
+                      }
                       placeholder="Search college..."
                       className="h-12 w-full rounded-xl border border-slate-200 bg-white pl-11 pr-4 text-sm text-slate-700 outline-none transition focus:border-[#2E3281] focus:ring-2 focus:ring-[#2E3281]/10"
                     />
@@ -622,28 +583,34 @@ export default function ManagementCollegesPage() {
               {/* COLLEGE CARDS */}
 
               {filteredColleges.length > 0 ? (
+
                 <div className="grid gap-5 md:grid-cols-2">
 
                   {filteredColleges.map((college) => (
 
                     <article
-                      key={college.id}
+                      key={college.slug}
                       className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#2E3281]/30 hover:shadow-xl"
                     >
+
+                      {/* TOP BORDER */}
 
                       <div className="absolute left-0 top-0 h-1 w-full bg-[#2E3281] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                       <div className="flex items-start justify-between gap-3">
 
                         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#2E3281]/10 text-[#2E3281] transition-all duration-300 group-hover:bg-[#2E3281] group-hover:text-white">
+
                           <Building2 size={22} />
+
                         </div>
 
                         <span
-                          className={`rounded-full px-3 py-1.5 text-[11px] font-bold ${college.type === "Government"
+                          className={`rounded-full px-3 py-1.5 text-[11px] font-bold ${
+                            college.type === "Government"
                               ? "bg-[#2E3281]/10 text-[#2E3281]"
                               : "bg-[#a71320]/10 text-[#a71320]"
-                            }`}
+                          }`}
                         >
                           {college.type}
                         </span>
@@ -671,6 +638,8 @@ export default function ManagementCollegesPage() {
                         {college.description}
                       </p>
 
+                      {/* CARD FOOTER */}
+
                       <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-4">
 
                         <span className="text-xs font-medium text-slate-400">
@@ -678,7 +647,7 @@ export default function ManagementCollegesPage() {
                         </span>
 
                         <Link
-                          href={`/management-colleges/${college.slug}`}
+                          href={`/nursing-colleges/${college.slug}`}
                           className="inline-flex items-center gap-2 rounded-lg bg-[#2E3281] px-4 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#a71320]"
                         >
                           View Details
@@ -697,12 +666,17 @@ export default function ManagementCollegesPage() {
                   ))}
 
                 </div>
+
               ) : (
+
+                /* NO RESULTS */
 
                 <div className="rounded-2xl border border-dashed border-slate-300 bg-[#f8f9fc] px-6 py-16 text-center">
 
                   <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#2E3281]/10 text-[#2E3281]">
+
                     <Search size={24} />
+
                   </div>
 
                   <h3 className="mt-5 text-xl font-bold text-[#2E3281]">
@@ -710,9 +684,9 @@ export default function ManagementCollegesPage() {
                   </h3>
 
                   <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-500">
-                    We could not find a college matching your
-                    search. Try searching with a different name
-                    or location.
+                    We could not find a nursing college matching
+                    your search. Try searching with a different
+                    name or location.
                   </p>
 
                   <button
@@ -732,6 +706,7 @@ export default function ManagementCollegesPage() {
           </div>
 
         </div>
+
       </section>
 
       {/* CTA */}
@@ -749,23 +724,24 @@ export default function ManagementCollegesPage() {
             <div className="relative">
 
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-white/10 text-white">
-                <BriefcaseBusiness size={28} />
+                <HeartPulse size={28} />
               </div>
 
               <h2 className="mt-5 text-2xl font-bold text-white sm:text-3xl">
-                Need Help Choosing Your Management College?
+                Need Help Choosing Your Nursing College?
               </h2>
 
               <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-blue-100 sm:text-base">
-                Get personalised guidance on management courses,
-                college options, counselling and admission procedures.
+                Get personalised guidance on nursing courses,
+                college options, counselling and admission
+                procedures.
               </p>
 
               <Link
                 href="/contact"
                 className="mt-7 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-[#2E3281] transition-all hover:bg-[#a71320] hover:text-white"
               >
-                Get Admission Guidance
+                Get Nursing Admission Guidance
                 <ArrowRight size={18} />
               </Link>
 

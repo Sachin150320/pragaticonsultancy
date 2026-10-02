@@ -92,7 +92,7 @@ const menuItems: MenuItem[] = [
       },
       {
         label: "Nursing Colleges",
-        href: "Nursing Colleges",
+        href: "nursing-college",
       },
     ],
   },

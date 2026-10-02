@@ -501,11 +501,10 @@ export default function EngineeringCollegesPage() {
                         onClick={() =>
                           handleCategoryChange(category.id)
                         }
-                        className={`group relative overflow-hidden rounded-xl border p-4 text-left transition-all duration-300 ${
-                          isActive
+                        className={`group relative overflow-hidden rounded-xl border p-4 text-left transition-all duration-300 ${isActive
                             ? "border-[#2E3281] bg-[#2E3281] shadow-lg"
                             : "border-slate-200 bg-white hover:border-[#2E3281] hover:shadow-md"
-                        }`}
+                          }`}
                       >
 
                         <div className="flex items-center justify-between gap-2">
@@ -513,21 +512,19 @@ export default function EngineeringCollegesPage() {
                           <div>
 
                             <p
-                              className={`text-[11px] font-bold tracking-[1px] ${
-                                isActive
+                              className={`text-[11px] font-bold tracking-[1px] ${isActive
                                   ? "text-blue-100"
                                   : "text-[#a71320]"
-                              }`}
+                                }`}
                             >
                               {category.quota}
                             </p>
 
                             <p
-                              className={`mt-1 text-lg font-bold ${
-                                isActive
+                              className={`mt-1 text-lg font-bold ${isActive
                                   ? "text-white"
                                   : "text-[#2E3281]"
-                              }`}
+                                }`}
                             >
                               {category.course}
                             </p>
@@ -535,11 +532,10 @@ export default function EngineeringCollegesPage() {
                           </div>
 
                           <div
-                            className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
-                              isActive
+                            className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${isActive
                                 ? "bg-white/15 text-white"
                                 : "bg-[#2E3281]/10 text-[#2E3281]"
-                            }`}
+                              }`}
                           >
                             {isActive ? (
                               <CheckCircle2 size={18} />
@@ -577,7 +573,7 @@ export default function EngineeringCollegesPage() {
                   </p>
 
                   <Link
-                    href="/contact-us"
+                    href="/contact"
                     className="mt-4 inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-bold text-[#a71320] transition hover:bg-slate-100"
                   >
                     Talk To Us
@@ -594,38 +590,40 @@ export default function EngineeringCollegesPage() {
 
             <div className="min-w-0">
 
-              <div className="mb-7">
+              <div className="mb-7 rounded-2xl border border-slate-200 bg-[#f8f9fc] p-5">
 
-                <p className="text-sm font-bold uppercase tracking-[1.5px] text-[#a71320]">
-                  {activeData.quota}
-                </p>
+                <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
 
-                <h2 className="mt-1 text-2xl font-bold text-[#2E3281] sm:text-3xl">
-                  {activeData.course} Engineering Colleges
-                </h2>
+                  <div>
 
-                <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500">
-                  {activeData.description}
-                </p>
+                    <p className="text-xs font-bold uppercase tracking-[1.5px] text-[#a71320]">
+                      {activeData.quota}
+                    </p>
 
-                {/* SEARCH */}
+                    <h2 className="mt-1 text-2xl font-bold text-[#2E3281] sm:text-3xl">
+                      {activeData.course} Engineering Colleges
+                    </h2>
 
-                <div className="mt-6">
+                    <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
+                      {activeData.description}
+                    </p>
 
-                  <div className="relative">
+                  </div>
+
+                  {/* SEARCH */}
+
+                  <div className="relative w-full sm:max-w-xs">
 
                     <Search
-                      size={19}
+                      size={18}
                       className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
                     />
 
                     <input
                       type="text"
                       value={search}
-                      onChange={(e) =>
-                        setSearch(e.target.value)
-                      }
-                      placeholder="Search college by name, location or type..."
+                      onChange={(e) => setSearch(e.target.value)}
+                      placeholder="Search college..."
                       className="h-12 w-full rounded-xl border border-slate-200 bg-white pl-11 pr-4 text-sm text-slate-700 outline-none transition focus:border-[#2E3281] focus:ring-2 focus:ring-[#2E3281]/10"
                     />
 
@@ -655,11 +653,10 @@ export default function EngineeringCollegesPage() {
                         </div>
 
                         <span
-                          className={`rounded-full px-3 py-1.5 text-[11px] font-bold ${
-                            college.type === "Government"
+                          className={`rounded-full px-3 py-1.5 text-[11px] font-bold ${college.type === "Government"
                               ? "bg-[#2E3281]/10 text-[#2E3281]"
                               : "bg-[#a71320]/10 text-[#a71320]"
-                          }`}
+                            }`}
                         >
                           {college.type}
                         </span>
@@ -697,7 +694,7 @@ export default function EngineeringCollegesPage() {
                           href={`/engineering-colleges/${college.slug}`}
                           className="inline-flex items-center gap-2 rounded-lg bg-[#2E3281] px-4 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#a71320]"
                         >
-                          View College
+                          View Details
                           <ArrowRight
                             size={16}
                             className="transition-transform group-hover:translate-x-1"
@@ -773,7 +770,7 @@ export default function EngineeringCollegesPage() {
               </p>
 
               <Link
-                href="/contact-us"
+                href="/contact"
                 className="mt-7 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-[#2E3281] transition-all hover:bg-[#a71320] hover:text-white"
               >
                 Get Admission Guidance
