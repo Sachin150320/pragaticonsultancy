@@ -9,7 +9,7 @@ import {
   CheckCircle2,
   MapPin,
   Search,
-  GraduationCap,
+
   HeartPulse,
 } from "lucide-react";
 
