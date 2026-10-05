@@ -726,7 +726,7 @@ export default function EngineeringCollegesPage() {
       ===================================================== */}
 
       <BreadcrumbBanner
-        title="Engineering Colleges"
+        title="Top Engineering Colleges In Bangalore"
         description="Explore engineering colleges, courses and admission opportunities"
       />
 

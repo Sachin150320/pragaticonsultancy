@@ -55,7 +55,7 @@ export default function BreadcrumbBanner({
         </div>
 
         {/* Title */}
-        <h1 className="max-w-4xl text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+        <h1 className="max-w-4xl text-4xl font-bold text-white md:text-5xl lg:text-5xl">
           {title}
         </h1>
 
