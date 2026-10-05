@@ -244,7 +244,7 @@ export default function EducationalServices() {
                             </p>
 
                             <Link
-                                href="/contact-us"
+                                href="/contact"
                                 className="mt-7 inline-flex items-center gap-2 rounded-lg bg-[#a71320] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#8d101b]"
                             >
                                 Talk To Us
@@ -310,10 +310,10 @@ export default function EducationalServices() {
                     </p>
 
                     <Link
-                        href="/contact-us"
+                        href="/contact"
                         className="mt-7 inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-[#2E3281] transition hover:bg-red-50"
                     >
-                        Contact Us
+                          Contact Us
                         <ArrowRight size={18} />
                     </Link>
 

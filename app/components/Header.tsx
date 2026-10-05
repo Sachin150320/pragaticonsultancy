@@ -43,23 +43,24 @@ const menuItems: MenuItem[] = [
   },
 
   {
-    label: "Courses",
-    children: [
+  label: "Courses",
+  children: [
+    {
+      label: "MBBS",
+      href: "/mbbs",
+    },
+  
       {
-        label: "MBBS",
-        href: "/courses/mbbs",
+        label: "Engineering",
+        href: "/engineering",
       },
       {
-        label: "BDS",
-        href: "/courses/bds",
+        label: "Management",
+        href: "/management",
       },
       {
         label: "Nursing",
-        href: "/courses/nursing",
-      },
-      {
-        label: "Pharmacy",
-        href: "/courses/pharmacy",
+        href: "/nursing",
       },
     ],
   },

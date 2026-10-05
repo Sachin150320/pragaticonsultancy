@@ -2,14 +2,13 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+
 import {
   ArrowRight,
-  Building2,
-  CheckCircle2,
+  BriefcaseBusiness,
+  GraduationCap,
   MapPin,
   Search,
-  GraduationCap,
-  BriefcaseBusiness,
 } from "lucide-react";
 
 import BreadcrumbBanner from "@/app/components/BreadcrumbBanner";
@@ -20,398 +19,416 @@ type College = {
   slug: string;
   location: string;
   type: string;
-  description: string;
-};
-
-type Category = {
-  id: string;
-  quota: string;
   course: string;
   description: string;
-  colleges: College[];
+  image: string;
+  logo: string;
 };
 
-const categories: Category[] = [
+const colleges: College[] = [
   {
-    id: "state-bba",
-    quota: "STATE QUOTA",
+    id: 101,
+    name: "Christ University",
+    slug: "christ-university",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "BBA / MBA",
+    description:
+      "A well-established university offering management and business programs with a strong academic and professional learning environment.",
+    image:
+      "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=christuniversity.in&sz=128",
+  },
+  {
+    id: 102,
+    name: "Mount Carmel College",
+    slug: "mount-carmel-college",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
     course: "BBA",
     description:
-      "Explore undergraduate management colleges and business administration programs available through state admission routes.",
-    colleges: [
-      {
-        id: 101,
-        name: "Christ University",
-        slug: "christ-university",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
-        description:
-          "A well-established university offering undergraduate management and business administration programs with a broad academic environment.",
-      },
-      {
-        id: 102,
-        name: "Mount Carmel College",
-        slug: "mount-carmel-college",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
-        description:
-          "An established institution offering undergraduate programs in management, commerce and related business disciplines.",
-      },
-      {
-        id: 103,
-        name: "Kristu Jayanti College",
-        slug: "kristu-jayanti-college",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
-        description:
-          "A Bengaluru-based institution offering undergraduate management and business-focused programs with academic and practical learning.",
-      },
-      {
-        id: 104,
-        name: "Jain University",
-        slug: "jain-university",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
-        description:
-          "A private university offering undergraduate programs in business administration, management and related disciplines.",
-      },
-      {
-        id: 105,
-        name: "Presidency University",
-        slug: "presidency-university",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
-        description:
-          "A university offering undergraduate management and business programs supported by modern academic facilities.",
-      },
-      {
-        id: 106,
-        name: "Alliance University",
-        slug: "alliance-university",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
-        description:
-          "A university offering undergraduate business and management education across various areas of specialization.",
-      },
-      {
-        id: 107,
-        name: "Acharya Institute of Graduate Studies",
-        slug: "acharya-institute-of-graduate-studies",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
-        description:
-          "An institution offering undergraduate programs in management, commerce and other business-related disciplines.",
-      },
-      {
-        id: 108,
-        name: "Reva University",
-        slug: "reva-university",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
-        description:
-          "A university offering undergraduate business administration and management programs with industry-oriented learning opportunities.",
-      },
-    ],
+      "An established Bengaluru institution offering undergraduate programs in management, commerce and business-related disciplines.",
+    image:
+      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=mccblr.edu.in&sz=128",
   },
-
   {
-    id: "state-mba",
-    quota: "STATE QUOTA",
-    course: "MBA",
-    description:
-      "Explore postgraduate management colleges and MBA programs available through state-level admission routes.",
-    colleges: [
-      {
-        id: 201,
-        name: "Christ University",
-        slug: "christ-university",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
-        description:
-          "A university offering postgraduate management education across various business and management specializations.",
-      },
-      {
-        id: 202,
-        name: "Bangalore University",
-        slug: "bangalore-university",
-        location: "Bengaluru, Karnataka",
-        type: "Government",
-        description:
-          "A public university offering postgraduate management education and business-related academic programs.",
-      },
-      {
-        id: 203,
-        name: "Bangalore Institute of Technology",
-        slug: "bangalore-institute-of-technology",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
-        description:
-          "An established institution offering postgraduate management education alongside technical and professional programs.",
-      },
-      {
-        id: 204,
-        name: "B.M.S. College of Engineering",
-        slug: "bms-college-of-engineering",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
-        description:
-          "An established institution providing postgraduate management education and professional programs.",
-      },
-      {
-        id: 205,
-        name: "M.S. Ramaiah University of Applied Sciences",
-        slug: "ms-ramaiah-university-of-applied-sciences",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
-        description:
-          "A university offering postgraduate business and management programs with practical and application-oriented education.",
-      },
-      {
-        id: 206,
-        name: "Jain University",
-        slug: "jain-university",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
-        description:
-          "A private university offering MBA and postgraduate management programs across multiple business disciplines.",
-      },
-      {
-        id: 207,
-        name: "Alliance University",
-        slug: "alliance-university",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
-        description:
-          "A university offering postgraduate management education with programs covering various areas of business administration.",
-      },
-      {
-        id: 208,
-        name: "Acharya Institute of Graduate Studies",
-        slug: "acharya-institute-of-graduate-studies",
-        location: "Bengaluru, Karnataka",
-        type: "Private",
-        description:
-          "An institution offering postgraduate management education and business-related professional programs.",
-      },
-    ],
-  },
-
-  {
-    id: "central-bba",
-    quota: "CENTRAL QUOTA",
+    id: 103,
+    name: "Kristu Jayanti College",
+    slug: "kristu-jayanti-college",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
     course: "BBA",
     description:
-      "Explore management institutions and undergraduate business programs available through national-level admission routes.",
-    colleges: [
-      {
-        id: 301,
-        name: "Indian Institute of Management Indore",
-        slug: "indian-institute-of-management-indore",
-        location: "Indore, Madhya Pradesh",
-        type: "Government",
-        description:
-          "A centrally funded management institution offering integrated and postgraduate management education.",
-      },
-      {
-        id: 302,
-        name: "Indian Institute of Management Rohtak",
-        slug: "indian-institute-of-management-rohtak",
-        location: "Rohtak, Haryana",
-        type: "Government",
-        description:
-          "A centrally funded management institution offering integrated and postgraduate programs in management.",
-      },
-      {
-        id: 303,
-        name: "Indian Institute of Management Jammu",
-        slug: "indian-institute-of-management-jammu",
-        location: "Jammu, Jammu and Kashmir",
-        type: "Government",
-        description:
-          "A management institution offering integrated and postgraduate management education.",
-      },
-      {
-        id: 304,
-        name: "Indian Institute of Management Bodh Gaya",
-        slug: "indian-institute-of-management-bodh-gaya",
-        location: "Bodh Gaya, Bihar",
-        type: "Government",
-        description:
-          "A centrally funded management institution offering integrated and postgraduate management programs.",
-      },
-      {
-        id: 305,
-        name: "Indian Institute of Management Ranchi",
-        slug: "indian-institute-of-management-ranchi",
-        location: "Ranchi, Jharkhand",
-        type: "Government",
-        description:
-          "A management institution providing undergraduate-level integrated and postgraduate management education.",
-      },
-      {
-        id: 306,
-        name: "Indian Institute of Management Amritsar",
-        slug: "indian-institute-of-management-amritsar",
-        location: "Amritsar, Punjab",
-        type: "Government",
-        description:
-          "A centrally funded management institution offering management education and professional programs.",
-      },
-      {
-        id: 307,
-        name: "Indian Institute of Management Visakhapatnam",
-        slug: "indian-institute-of-management-visakhapatnam",
-        location: "Visakhapatnam, Andhra Pradesh",
-        type: "Government",
-        description:
-          "A management institution offering professional and postgraduate education in business and management.",
-      },
-      {
-        id: 308,
-        name: "Indian Institute of Management Sirmaur",
-        slug: "indian-institute-of-management-sirmaur",
-        location: "Sirmaur, Himachal Pradesh",
-        type: "Government",
-        description:
-          "A centrally funded management institution offering programs in business administration and management.",
-      },
-    ],
+      "A Bengaluru-based institution offering business and management programs with academic learning and practical exposure.",
+    image:
+      "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=kristujayanti.edu.in&sz=128",
   },
-
   {
-    id: "central-mba",
-    quota: "CENTRAL QUOTA",
+    id: 104,
+    name: "Jain University",
+    slug: "jain-university",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "BBA / MBA",
+    description:
+      "A private university offering undergraduate and postgraduate programs in business administration and management.",
+    image:
+      "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=jainuniversity.ac.in&sz=128",
+  },
+  {
+    id: 105,
+    name: "Presidency University",
+    slug: "presidency-university",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "BBA / MBA",
+    description:
+      "A modern university offering management and business programs supported by contemporary academic facilities.",
+    image:
+      "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=presidencyuniversity.in&sz=128",
+  },
+  {
+    id: 106,
+    name: "Alliance University",
+    slug: "alliance-university",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "BBA / MBA",
+    description:
+      "A university offering business and management education across multiple areas with an industry-oriented learning approach.",
+    image:
+      "https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=alliance.edu.in&sz=128",
+  },
+  {
+    id: 107,
+    name: "Acharya Institute of Graduate Studies",
+    slug: "acharya-institute-of-graduate-studies",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "BBA / MBA",
+    description:
+      "An institution offering management, commerce and business-related programs with a focus on academic and professional development.",
+    image:
+      "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=acharya.ac.in&sz=128",
+  },
+  {
+    id: 108,
+    name: "REVA University",
+    slug: "reva-university",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "BBA / MBA",
+    description:
+      "A university offering business administration and management programs with practical and industry-oriented learning opportunities.",
+    image:
+      "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=reva.edu.in&sz=128",
+  },
+  {
+    id: 109,
+    name: "Bangalore University",
+    slug: "bangalore-university",
+    location: "Bengaluru, Karnataka",
+    type: "Government",
     course: "MBA",
     description:
-      "Explore leading management institutions and postgraduate business programs available through national-level admission routes.",
-    colleges: [
-      {
-        id: 401,
-        name: "Indian Institute of Management Ahmedabad",
-        slug: "indian-institute-of-management-ahmedabad",
-        location: "Ahmedabad, Gujarat",
-        type: "Government",
-        description:
-          "A premier management institution offering postgraduate management education, executive programs and research opportunities.",
-      },
-      {
-        id: 402,
-        name: "Indian Institute of Management Bangalore",
-        slug: "indian-institute-of-management-bangalore",
-        location: "Bengaluru, Karnataka",
-        type: "Government",
-        description:
-          "A leading management institution offering postgraduate, executive and research programs in management.",
-      },
-      {
-        id: 403,
-        name: "Indian Institute of Management Calcutta",
-        slug: "indian-institute-of-management-calcutta",
-        location: "Kolkata, West Bengal",
-        type: "Government",
-        description:
-          "A centrally funded management institution offering postgraduate management education and research programs.",
-      },
-      {
-        id: 404,
-        name: "Indian Institute of Management Lucknow",
-        slug: "indian-institute-of-management-lucknow",
-        location: "Lucknow, Uttar Pradesh",
-        type: "Government",
-        description:
-          "A management institution offering postgraduate programs across various areas of business and management.",
-      },
-      {
-        id: 405,
-        name: "Indian Institute of Management Kozhikode",
-        slug: "indian-institute-of-management-kozhikode",
-        location: "Kozhikode, Kerala",
-        type: "Government",
-        description:
-          "A centrally funded management institution offering postgraduate and executive management education.",
-      },
-      {
-        id: 406,
-        name: "Indian Institute of Management Indore",
-        slug: "indian-institute-of-management-indore",
-        location: "Indore, Madhya Pradesh",
-        type: "Government",
-        description:
-          "A management institution offering postgraduate programs in management, business administration and related disciplines.",
-      },
-      {
-        id: 407,
-        name: "Indian Institute of Management Shillong",
-        slug: "indian-institute-of-management-shillong",
-        location: "Shillong, Meghalaya",
-        type: "Government",
-        description:
-          "A centrally funded management institution offering postgraduate and executive management programs.",
-      },
-      {
-        id: 408,
-        name: "Indian Institute of Management Udaipur",
-        slug: "indian-institute-of-management-udaipur",
-        location: "Udaipur, Rajasthan",
-        type: "Government",
-        description:
-          "A management institution offering postgraduate business education and research opportunities.",
-      },
-      {
-        id: 409,
-        name: "Indian Institute of Management Tiruchirappalli",
-        slug: "indian-institute-of-management-tiruchirappalli",
-        location: "Tiruchirappalli, Tamil Nadu",
-        type: "Government",
-        description:
-          "A centrally funded management institution offering postgraduate and executive education in management.",
-      },
-      {
-        id: 410,
-        name: "Indian Institute of Management Ranchi",
-        slug: "indian-institute-of-management-ranchi",
-        location: "Ranchi, Jharkhand",
-        type: "Government",
-        description:
-          "A management institution offering postgraduate management education across business and professional disciplines.",
-      },
-    ],
+      "A public university offering postgraduate management education and business-related academic programs.",
+    image:
+      "https://images.unsplash.com/photo-1568792923760-d70635a89fdc?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=eng.bangaloreuniversity.ac.in&sz=128",
+  },
+  {
+    id: 110,
+    name: "Bangalore Institute of Technology",
+    slug: "bangalore-institute-of-technology",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "MBA",
+    description:
+      "An established Bengaluru institution offering postgraduate management education alongside professional and technical programs.",
+    image:
+      "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=bit-bangalore.edu.in&sz=128",
+  },
+  {
+    id: 111,
+    name: "B.M.S. College of Engineering",
+    slug: "bms-college-of-engineering",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "MBA",
+    description:
+      "An established institution offering professional and postgraduate management education in Bengaluru.",
+    image:
+      "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=bmsce.ac.in&sz=128",
+  },
+  {
+    id: 112,
+    name: "M.S. Ramaiah University of Applied Sciences",
+    slug: "ms-ramaiah-university-of-applied-sciences",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "MBA",
+    description:
+      "A university offering postgraduate business and management programs with practical and application-oriented education.",
+    image:
+      "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=msruas.ac.in&sz=128",
+  },
+  {
+    id: 113,
+    name: "Indian Institute of Management Ahmedabad",
+    slug: "indian-institute-of-management-ahmedabad",
+    location: "Ahmedabad, Gujarat",
+    type: "Government",
+    course: "MBA",
+    description:
+      "A premier management institution offering postgraduate management education, executive programs and research opportunities.",
+    image:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=iima.ac.in&sz=128",
+  },
+  {
+    id: 114,
+    name: "Indian Institute of Management Bangalore",
+    slug: "indian-institute-of-management-bangalore",
+    location: "Bengaluru, Karnataka",
+    type: "Government",
+    course: "MBA",
+    description:
+      "A leading management institution offering postgraduate, executive and research programs in business and management.",
+    image:
+      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=iimb.ac.in&sz=128",
+  },
+  {
+    id: 115,
+    name: "Indian Institute of Management Calcutta",
+    slug: "indian-institute-of-management-calcutta",
+    location: "Kolkata, West Bengal",
+    type: "Government",
+    course: "MBA",
+    description:
+      "A premier management institution offering postgraduate business education, executive programs and research opportunities.",
+    image:
+      "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=iimcal.ac.in&sz=128",
+  },
+  {
+    id: 116,
+    name: "Indian Institute of Management Lucknow",
+    slug: "indian-institute-of-management-lucknow",
+    location: "Lucknow, Uttar Pradesh",
+    type: "Government",
+    course: "MBA",
+    description:
+      "A leading management institution offering postgraduate programs across business, management and related disciplines.",
+    image:
+      "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=iiml.ac.in&sz=128",
+  },
+  {
+    id: 117,
+    name: "Indian Institute of Management Kozhikode",
+    slug: "indian-institute-of-management-kozhikode",
+    location: "Kozhikode, Kerala",
+    type: "Government",
+    course: "MBA",
+    description:
+      "A centrally funded management institution offering postgraduate, executive and professional management education.",
+    image:
+      "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=iimk.ac.in&sz=128",
+  },
+  {
+    id: 118,
+    name: "Indian Institute of Management Indore",
+    slug: "indian-institute-of-management-indore",
+    location: "Indore, Madhya Pradesh",
+    type: "Government",
+    course: "BBA / MBA",
+    description:
+      "A leading management institution offering integrated and postgraduate programs in business and management.",
+    image:
+      "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=iimidr.ac.in&sz=128",
+  },
+  {
+    id: 119,
+    name: "Indian Institute of Management Rohtak",
+    slug: "indian-institute-of-management-rohtak",
+    location: "Rohtak, Haryana",
+    type: "Government",
+    course: "BBA / MBA",
+    description:
+      "A management institution offering integrated and postgraduate management programs with a professional academic environment.",
+    image:
+      "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=iimrohtak.ac.in&sz=128",
+  },
+  {
+    id: 120,
+    name: "Indian Institute of Management Jammu",
+    slug: "indian-institute-of-management-jammu",
+    location: "Jammu, Jammu and Kashmir",
+    type: "Government",
+    course: "BBA / MBA",
+    description:
+      "A management institution offering integrated and postgraduate education in business and management.",
+    image:
+      "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=iimj.ac.in&sz=128",
+  },
+  {
+    id: 121,
+    name: "Indian Institute of Management Bodh Gaya",
+    slug: "indian-institute-of-management-bodh-gaya",
+    location: "Bodh Gaya, Bihar",
+    type: "Government",
+    course: "BBA / MBA",
+    description:
+      "A centrally funded management institution offering integrated and postgraduate management education.",
+    image:
+      "https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=iimbg.ac.in&sz=128",
+  },
+  {
+    id: 122,
+    name: "Indian Institute of Management Ranchi",
+    slug: "indian-institute-of-management-ranchi",
+    location: "Ranchi, Jharkhand",
+    type: "Government",
+    course: "BBA / MBA",
+    description:
+      "A management institution providing integrated and postgraduate education across business and professional disciplines.",
+    image:
+      "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=iimranchi.ac.in&sz=128",
+  },
+  {
+    id: 123,
+    name: "Indian Institute of Management Amritsar",
+    slug: "indian-institute-of-management-amritsar",
+    location: "Amritsar, Punjab",
+    type: "Government",
+    course: "BBA / MBA",
+    description:
+      "A centrally funded management institution offering professional management education and business programs.",
+    image:
+      "https://images.unsplash.com/photo-1568792923760-d70635a89fdc?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=iimamritsar.ac.in&sz=128",
+  },
+  {
+    id: 124,
+    name: "Indian Institute of Management Visakhapatnam",
+    slug: "indian-institute-of-management-visakhapatnam",
+    location: "Visakhapatnam, Andhra Pradesh",
+    type: "Government",
+    course: "MBA",
+    description:
+      "A management institution offering postgraduate and professional education in business and management.",
+    image:
+      "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=iimv.ac.in&sz=128",
+  },
+  {
+    id: 125,
+    name: "Indian Institute of Management Shillong",
+    slug: "indian-institute-of-management-shillong",
+    location: "Shillong, Meghalaya",
+    type: "Government",
+    course: "MBA",
+    description:
+      "A centrally funded management institution offering postgraduate and executive programs in management.",
+    image:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=iimshillong.ac.in&sz=128",
+  },
+  {
+    id: 126,
+    name: "Indian Institute of Management Udaipur",
+    slug: "indian-institute-of-management-udaipur",
+    location: "Udaipur, Rajasthan",
+    type: "Government",
+    course: "MBA",
+    description:
+      "A management institution offering postgraduate business education, research and professional learning opportunities.",
+    image:
+      "https://images.unsplash.com/photo-1519452575417-564c1401ecc0?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=iimu.ac.in&sz=128",
+  },
+  {
+    id: 127,
+    name: "Indian Institute of Management Tiruchirappalli",
+    slug: "indian-institute-of-management-tiruchirappalli",
+    location: "Tiruchirappalli, Tamil Nadu",
+    type: "Government",
+    course: "MBA",
+    description:
+      "A centrally funded management institution offering postgraduate and executive education in business and management.",
+    image:
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80",
+    logo:
+      "https://www.google.com/s2/favicons?domain=iimtrichy.ac.in&sz=128",
   },
 ];
 
 export default function ManagementCollegesPage() {
-  const [activeCategory, setActiveCategory] =
-    useState("state-bba");
-
   const [search, setSearch] = useState("");
-
-  const activeData =
-    categories.find(
-      (category) => category.id === activeCategory
-    ) || categories[0];
 
   const filteredColleges = useMemo(() => {
     const value = search.trim().toLowerCase();
 
     if (!value) {
-      return activeData.colleges;
+      return colleges;
     }
 
-    return activeData.colleges.filter(
+    return colleges.filter(
       (college) =>
         college.name.toLowerCase().includes(value) ||
         college.location.toLowerCase().includes(value) ||
-        college.type.toLowerCase().includes(value)
+        college.type.toLowerCase().includes(value) ||
+        college.course.toLowerCase().includes(value)
     );
-  }, [activeData, search]);
-
-  const handleCategoryChange = (id: string) => {
-    setActiveCategory(id);
-    setSearch("");
-  };
+  }, [search]);
 
   return (
     <main className="min-h-screen bg-white">
+
+      {/* BREADCRUMB */}
 
       <BreadcrumbBanner
         title="Management Colleges"
@@ -434,10 +451,10 @@ export default function ManagementCollegesPage() {
               Find The Right Management College
             </h1>
 
-            <p className="mt-5 text-[16px] leading-7 text-slate-600">
-              Explore management colleges based on your preferred
-              course and admission quota. Select an option below to
-              view the relevant college list.
+            <p className="mx-auto mt-5 max-w-3xl text-[16px] leading-7 text-slate-600">
+              Explore management colleges and discover suitable
+              BBA and MBA options based on your preferred location,
+              course and college type.
             </p>
 
           </div>
@@ -445,293 +462,236 @@ export default function ManagementCollegesPage() {
         </div>
       </section>
 
-      {/* COLLEGE FINDER */}
+      {/* COLLEGE LIST */}
 
       <section className="bg-white py-14 sm:py-20">
+
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-          <div className="grid gap-8 lg:grid-cols-[280px_minmax(0,1fr)]">
+          {/* SEARCH */}
 
-            {/* LEFT FILTER */}
+          <div className="mb-8 rounded-2xl border border-slate-200 bg-[#f8f9fc] p-5">
 
-            <aside className="h-fit lg:sticky lg:top-24">
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
 
-              <div className="rounded-2xl border border-slate-200 bg-[#f8f9fc] p-4 shadow-sm">
+              <div>
 
-                <div className="mb-5 px-2 pt-1">
+                <p className="text-xs font-bold uppercase tracking-[1.5px] text-[#a71320]">
+                  Management Education
+                </p>
 
-                  <p className="text-xs font-bold uppercase tracking-[1.5px] text-[#a71320]">
-                    Choose Admission
-                  </p>
+                <h2 className="mt-1 text-2xl font-bold text-[#2E3281] sm:text-3xl">
+                  Management Colleges
+                </h2>
 
-                  <h2 className="mt-1 text-xl font-bold text-[#2E3281]">
-                    Course & Quota
-                  </h2>
-
-                </div>
-
-                <div className="grid grid-cols-2 gap-3 lg:grid-cols-1">
-
-                  {categories.map((category) => {
-
-                    const isActive =
-                      activeCategory === category.id;
-
-                    return (
-                      <button
-                        key={category.id}
-                        type="button"
-                        onClick={() =>
-                          handleCategoryChange(category.id)
-                        }
-                        className={`group relative overflow-hidden rounded-xl border p-4 text-left transition-all duration-300 ${isActive
-                            ? "border-[#2E3281] bg-[#2E3281] shadow-lg"
-                            : "border-slate-200 bg-white hover:border-[#2E3281] hover:shadow-md"
-                          }`}
-                      >
-
-                        <div className="flex items-center justify-between gap-2">
-
-                          <div>
-
-                            <p
-                              className={`text-[11px] font-bold tracking-[1px] ${isActive
-                                  ? "text-blue-100"
-                                  : "text-[#a71320]"
-                                }`}
-                            >
-                              {category.quota}
-                            </p>
-
-                            <p
-                              className={`mt-1 text-lg font-bold ${isActive
-                                  ? "text-white"
-                                  : "text-[#2E3281]"
-                                }`}
-                            >
-                              {category.course}
-                            </p>
-
-                          </div>
-
-                          <div
-                            className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${isActive
-                                ? "bg-white/15 text-white"
-                                : "bg-[#2E3281]/10 text-[#2E3281]"
-                              }`}
-                          >
-
-                            {isActive ? (
-                              <CheckCircle2 size={18} />
-                            ) : (
-                              <ArrowRight
-                                size={17}
-                                className="transition-transform group-hover:translate-x-1"
-                              />
-                            )}
-
-                          </div>
-
-                        </div>
-
-                      </button>
-                    );
-
-                  })}
-
-                </div>
-
-                {/* GUIDANCE */}
-
-                <div className="mt-5 overflow-hidden rounded-xl bg-[#a71320] p-5 text-white">
-
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/15">
-                    <GraduationCap size={21} />
-                  </div>
-
-                  <h3 className="mt-4 font-bold">
-                    Need Guidance?
-                  </h3>
-
-                  <p className="mt-2 text-xs leading-5 text-red-100">
-                    Get guidance on management courses, colleges,
-                    counselling and admission procedures.
-                  </p>
-
-                  <Link
-                    href="/contact"
-                    className="mt-4 inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-bold text-[#a71320] transition hover:bg-slate-100"
-                  >
-                    Talk To Us
-                    <ArrowRight size={16} />
-                  </Link>
-
-                </div>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  Explore BBA and MBA colleges across India.
+                </p>
 
               </div>
 
-            </aside>
+              <div className="relative w-full sm:max-w-xs">
 
-            {/* RIGHT LIST */}
+                <Search
+                  size={18}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
+                />
 
-            <div className="min-w-0">
-
-              <div className="mb-7 rounded-2xl border border-slate-200 bg-[#f8f9fc] p-5">
-
-                <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-
-                  <div>
-
-                    <p className="text-xs font-bold uppercase tracking-[1.5px] text-[#a71320]">
-                      {activeData.quota}
-                    </p>
-
-                    <h2 className="mt-1 text-2xl font-bold text-[#2E3281] sm:text-3xl">
-                      {activeData.course} Management Colleges
-                    </h2>
-
-                    <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
-                      {activeData.description}
-                    </p>
-
-                  </div>
-
-                  {/* SEARCH */}
-
-                  <div className="relative w-full sm:max-w-xs">
-
-                    <Search
-                      size={18}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
-                    />
-
-                    <input
-                      type="text"
-                      value={search}
-                      onChange={(e) => setSearch(e.target.value)}
-                      placeholder="Search college..."
-                      className="h-12 w-full rounded-xl border border-slate-200 bg-white pl-11 pr-4 text-sm text-slate-700 outline-none transition focus:border-[#2E3281] focus:ring-2 focus:ring-[#2E3281]/10"
-                    />
-
-                  </div>
-
-                </div>
+                <input
+                  type="text"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Search college..."
+                  className="h-12 w-full rounded-xl border border-slate-200 bg-white pl-11 pr-4 text-sm text-slate-700 outline-none transition focus:border-[#2E3281] focus:ring-2 focus:ring-[#2E3281]/10"
+                />
 
               </div>
-
-              {/* COLLEGE CARDS */}
-
-              {filteredColleges.length > 0 ? (
-                <div className="grid gap-5 md:grid-cols-2">
-
-                  {filteredColleges.map((college) => (
-
-                    <article
-                      key={college.id}
-                      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#2E3281]/30 hover:shadow-xl"
-                    >
-
-                      <div className="absolute left-0 top-0 h-1 w-full bg-[#2E3281] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-                      <div className="flex items-start justify-between gap-3">
-
-                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#2E3281]/10 text-[#2E3281] transition-all duration-300 group-hover:bg-[#2E3281] group-hover:text-white">
-                          <Building2 size={22} />
-                        </div>
-
-                        <span
-                          className={`rounded-full px-3 py-1.5 text-[11px] font-bold ${college.type === "Government"
-                              ? "bg-[#2E3281]/10 text-[#2E3281]"
-                              : "bg-[#a71320]/10 text-[#a71320]"
-                            }`}
-                        >
-                          {college.type}
-                        </span>
-
-                      </div>
-
-                      <h3 className="mt-5 text-lg font-bold leading-7 text-[#2E3281] transition-colors group-hover:text-[#a71320]">
-                        {college.name}
-                      </h3>
-
-                      <div className="mt-3 flex items-start gap-2 text-sm text-slate-500">
-
-                        <MapPin
-                          size={16}
-                          className="mt-0.5 shrink-0 text-[#a71320]"
-                        />
-
-                        <span>
-                          {college.location}
-                        </span>
-
-                      </div>
-
-                      <p className="mt-4 flex-1 text-sm leading-6 text-slate-600">
-                        {college.description}
-                      </p>
-
-                      <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-4">
-
-                        <span className="text-xs font-medium text-slate-400">
-                          {activeData.course} Admission
-                        </span>
-
-                        <Link
-                          href={`/management-colleges/${college.slug}`}
-                          className="inline-flex items-center gap-2 rounded-lg bg-[#2E3281] px-4 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#a71320]"
-                        >
-                          View Details
-
-                          <ArrowRight
-                            size={16}
-                            className="transition-transform group-hover:translate-x-1"
-                          />
-
-                        </Link>
-
-                      </div>
-
-                    </article>
-
-                  ))}
-
-                </div>
-              ) : (
-
-                <div className="rounded-2xl border border-dashed border-slate-300 bg-[#f8f9fc] px-6 py-16 text-center">
-
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#2E3281]/10 text-[#2E3281]">
-                    <Search size={24} />
-                  </div>
-
-                  <h3 className="mt-5 text-xl font-bold text-[#2E3281]">
-                    No Colleges Found
-                  </h3>
-
-                  <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-500">
-                    We could not find a college matching your
-                    search. Try searching with a different name
-                    or location.
-                  </p>
-
-                  <button
-                    type="button"
-                    onClick={() => setSearch("")}
-                    className="mt-5 rounded-lg bg-[#2E3281] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#a71320]"
-                  >
-                    Clear Search
-                  </button>
-
-                </div>
-
-              )}
 
             </div>
 
           </div>
 
+          {/* RESULT COUNT */}
+
+          <div className="mb-5 flex items-center justify-between">
+
+            <p className="text-sm font-medium text-slate-500">
+              Showing{" "}
+              <span className="font-bold text-[#2E3281]">
+                {filteredColleges.length}
+              </span>{" "}
+              management colleges
+            </p>
+
+            {search && (
+              <button
+                type="button"
+                onClick={() => setSearch("")}
+                className="text-sm font-semibold text-[#a71320] transition hover:text-[#2E3281]"
+              >
+                Clear Search
+              </button>
+            )}
+
+          </div>
+
+          {/* COLLEGE CARDS */}
+
+          {filteredColleges.length > 0 ? (
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+              {filteredColleges.map((college) => (
+
+                <article
+                  key={college.id}
+                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#2E3281]/30 hover:shadow-xl"
+                >
+
+                  {/* IMAGE */}
+
+                  <div className="relative h-44 w-full overflow-hidden bg-slate-100">
+
+                    <img
+                      src={college.image}
+                      alt={college.name}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent" />
+
+                    {/* COURSE */}
+
+                    <span className="absolute bottom-3 left-3 rounded-full bg-white px-3 py-1.5 text-[10px] font-bold uppercase tracking-wide text-[#2E3281]">
+                      {college.course}
+                    </span>
+
+                    {/* TYPE */}
+
+                    <span
+                      className={`absolute right-3 top-3 rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-wide ${
+                        college.type === "Government"
+                          ? "bg-white text-[#2E3281]"
+                          : "bg-[#a71320] text-white"
+                      }`}
+                    >
+                      {college.type}
+                    </span>
+
+                  </div>
+
+                  {/* CONTENT */}
+
+                  <div className="flex flex-1 flex-col p-5">
+
+                    {/* LOGO */}
+
+                    <div className="-mt-11 relative z-10 mb-3 flex h-14 w-14 items-center justify-center overflow-hidden rounded-xl border-4 border-white bg-white shadow-md">
+
+                      <img
+                        src={college.logo}
+                        alt={`${college.name} logo`}
+                        className="h-10 w-10 object-contain"
+                      />
+
+                    </div>
+
+                    {/* NAME */}
+
+                    <h3 className="text-lg font-bold leading-7 text-[#2E3281] transition-colors group-hover:text-[#a71320]">
+                      {college.name}
+                    </h3>
+
+                    {/* LOCATION */}
+
+                    <div className="mt-3 flex items-start gap-2 text-sm text-slate-500">
+
+                      <MapPin
+                        size={16}
+                        className="mt-0.5 shrink-0 text-[#a71320]"
+                      />
+
+                      <span>
+                        {college.location}
+                      </span>
+
+                    </div>
+
+                    {/* DESCRIPTION */}
+
+                    <p className="mt-4 line-clamp-3 flex-1 text-sm leading-6 text-slate-600">
+                      {college.description}
+                    </p>
+
+                    {/* BUTTONS */}
+
+                    <div className="mt-6 grid grid-cols-2 gap-2 border-t border-slate-100 pt-4">
+
+                      <Link
+                        href={`/management-colleges/${college.slug}`}
+                        className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#2E3281] px-3 py-2.5 text-xs font-semibold text-white transition-all duration-300 hover:bg-[#a71320]"
+                      >
+                        View Details
+
+                        <ArrowRight
+                          size={14}
+                          className="transition-transform group-hover:translate-x-1"
+                        />
+                      </Link>
+
+                      <Link
+                        href="/contact"
+                        className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-[#a71320] bg-[#a71320]/5 px-3 py-2.5 text-xs font-bold text-[#a71320] transition-all duration-300 hover:bg-[#a71320] hover:text-white"
+                      >
+                        Enquiry
+                        <GraduationCap size={14} />
+                      </Link>
+
+
+                    </div>
+
+                  </div>
+
+                </article>
+
+              ))}
+
+            </div>
+
+          ) : (
+
+            /* NO RESULTS */
+
+            <div className="rounded-2xl border border-dashed border-slate-300 bg-[#f8f9fc] px-6 py-16 text-center">
+
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#2E3281]/10 text-[#2E3281]">
+                <Search size={24} />
+              </div>
+
+              <h3 className="mt-5 text-xl font-bold text-[#2E3281]">
+                No Colleges Found
+              </h3>
+
+              <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-500">
+                We could not find a management college matching
+                your search. Try another college name, location or
+                course.
+              </p>
+
+              <button
+                type="button"
+                onClick={() => setSearch("")}
+                className="mt-5 rounded-lg bg-[#2E3281] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#a71320]"
+              >
+                Clear Search
+              </button>
+
+            </div>
+
+          )}
+
         </div>
+
       </section>
 
       {/* CTA */}
@@ -757,8 +717,8 @@ export default function ManagementCollegesPage() {
               </h2>
 
               <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-blue-100 sm:text-base">
-                Get personalised guidance on management courses,
-                college options, counselling and admission procedures.
+                Get personalised guidance on BBA, MBA, college
+                options, counselling and admission procedures.
               </p>
 
               <Link
