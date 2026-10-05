@@ -1,12 +1,8 @@
-
 "use client";
 
 import Link from "next/link";
 import {
   ArrowRight,
-  Award,
-  CheckCircle2,
-  ChevronRight,
   Cpu,
   Factory,
   GraduationCap,
@@ -28,8 +24,7 @@ const engineeringCourses = [
     shortTitle: "Information Science",
     description:
       "Information Science and Engineering is a discipline that combines computer science, information technology and engineering concepts to prepare students for careers in the technology sector.",
-    image:
-      "https://www.pragaticonsultancy.com/img/post-1.jpg",
+    image: "https://www.pragaticonsultancy.com/img/post-1.jpg",
     href: "/engineering-college",
     icon: Laptop,
   },
@@ -39,8 +34,7 @@ const engineeringCourses = [
     shortTitle: "Computer Science",
     description:
       "Computer Science Engineering is a four-year degree program that focuses on computer systems, software development, programming and modern information technologies.",
-    image:
-      "https://www.pragaticonsultancy.com/img/post-5.jpg",
+    image: "https://www.pragaticonsultancy.com/img/post-5.jpg",
     href: "/engineering-college",
     icon: Cpu,
   },
@@ -50,8 +44,7 @@ const engineeringCourses = [
     shortTitle: "Electronics & Communication",
     description:
       "Electronics and Communication Engineering focuses on electronic systems, communication technologies, circuits and modern digital communication applications.",
-    image:
-      "https://www.pragaticonsultancy.com/img/post-1.jpg",
+    image: "https://www.pragaticonsultancy.com/img/post-1.jpg",
     href: "/engineering-college",
     icon: Radio,
   },
@@ -61,8 +54,7 @@ const engineeringCourses = [
     shortTitle: "Electrical & Electronics",
     description:
       "Electrical and Electronics Engineering provides knowledge of electrical systems, electronics, power systems, control systems and modern electrical technologies.",
-    image:
-      "https://www.pragaticonsultancy.com/img/post-2.jpg",
+    image: "https://www.pragaticonsultancy.com/img/post-2.jpg",
     href: "/engineering-college",
     icon: Zap,
   },
@@ -72,8 +64,7 @@ const engineeringCourses = [
     shortTitle: "Telecom Engineering",
     description:
       "Telecommunication Engineering focuses on communication networks, wireless systems, transmission technologies and the development of modern telecommunications infrastructure.",
-    image:
-      "https://www.pragaticonsultancy.com/img/post-3.jpg",
+    image: "https://www.pragaticonsultancy.com/img/post-3.jpg",
     href: "/engineering-college",
     icon: Radio,
   },
@@ -83,8 +74,7 @@ const engineeringCourses = [
     shortTitle: "Mechanical",
     description:
       "Mechanical Engineering deals with the design, development, manufacturing and maintenance of machines, mechanical systems and industrial technologies.",
-    image:
-      "https://www.pragaticonsultancy.com/img/post-4.jpg",
+    image: "https://www.pragaticonsultancy.com/img/post-4.jpg",
     href: "/engineering-college",
     icon: Settings,
   },
@@ -94,8 +84,7 @@ const engineeringCourses = [
     shortTitle: "Civil",
     description:
       "Civil Engineering focuses on planning, designing and developing buildings, infrastructure, transportation systems and other structures for a sustainable environment.",
-    image:
-      "https://www.pragaticonsultancy.com/img/post-4.jpg",
+    image: "https://www.pragaticonsultancy.com/img/post-4.jpg",
     href: "/engineering-college",
     icon: HardHat,
   },
@@ -105,8 +94,7 @@ const engineeringCourses = [
     shortTitle: "Aerospace",
     description:
       "Aerospace Engineering is one of the most specialised engineering disciplines, focusing on the design, development and maintenance of aircraft and aerospace systems.",
-    image:
-      "https://www.pragaticonsultancy.com/img/post-6.jpg",
+    image: "https://www.pragaticonsultancy.com/img/post-6.jpg",
     href: "/engineering-college",
     icon: Plane,
   },
@@ -116,8 +104,7 @@ const engineeringCourses = [
     shortTitle: "Biotech",
     description:
       "Biotechnology Engineering combines engineering and biological sciences to develop technologies and applications in healthcare, agriculture, biotechnology and related industries.",
-    image:
-      "https://www.pragaticonsultancy.com/img/post-6.jpg",
+    image: "https://www.pragaticonsultancy.com/img/post-6.jpg",
     href: "/engineering-college",
     icon: Microscope,
   },
@@ -127,8 +114,7 @@ const engineeringCourses = [
     shortTitle: "Chemical",
     description:
       "Chemical Engineering focuses on chemical processes, manufacturing systems, industrial production and the development of technologies used across various industries.",
-    image:
-      "https://www.pragaticonsultancy.com/img/post-6.jpg",
+    image: "https://www.pragaticonsultancy.com/img/post-6.jpg",
     href: "/engineering-college",
     icon: Factory,
   },
@@ -138,8 +124,7 @@ const engineeringCourses = [
     shortTitle: "Instrumentation",
     description:
       "Instrumentation and Control Engineering focuses on measurement, automation, process control and technologies used to monitor and control industrial systems.",
-    image:
-      "https://www.pragaticonsultancy.com/img/post-6.jpg",
+    image: "https://www.pragaticonsultancy.com/img/post-6.jpg",
     href: "/engineering-college",
     icon: Settings,
   },
@@ -149,73 +134,29 @@ const engineeringCourses = [
     shortTitle: "BTech / BE Lateral",
     description:
       "BTech and BE lateral entry programs provide eligible diploma students with an opportunity to enter engineering degree programs through the appropriate admission pathway.",
-    image:
-      "https://www.pragaticonsultancy.com/img/post-6.jpg",
+    image: "https://www.pragaticonsultancy.com/img/post-6.jpg",
     href: "/engineering-college",
     icon: GraduationCap,
-  },
-];
-
-const engineeringFeatures = [
-  {
-    icon: GraduationCap,
-    title: "Course Selection",
-    text: "Understand different engineering branches and choose a course that matches your academic interests and career goals.",
-  },
-  {
-    icon: Award,
-    title: "College Guidance",
-    text: "Get assistance in exploring reputed engineering colleges and universities for your preferred branch.",
-  },
-  {
-    icon: CheckCircle2,
-    title: "Admission Support",
-    text: "Receive guidance about engineering admission procedures, eligibility, documentation and available opportunities.",
-  },
-  {
-    icon: Factory,
-    title: "Career Direction",
-    text: "Get the right guidance to understand engineering specialisations and plan a strong career path.",
   },
 ];
 
 export default function EngineeringCourses() {
   return (
     <>
-      {/* =====================================================
-          BREADCRUMB
-      ===================================================== */}
-
       <BreadcrumbBanner
         title="Engineering Courses"
         description="EXPLORE ENGINEERING COURSES AND ADMISSION OPPORTUNITIES"
       />
 
-      {/* =====================================================
-          COURSES
-      ===================================================== */}
-
-      <section
-        id="engineering-courses"
-        className="relative overflow-hidden bg-slate-50 py-16 md:py-20 lg:py-24"
-      >
-        {/* Background Decorations */}
-
+      <section className="relative overflow-hidden bg-slate-50 py-16 md:py-20 lg:py-24">
         <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#a71320]/5" />
 
         <div className="absolute -right-40 bottom-20 h-96 w-96 rounded-full bg-[#2E3281]/5" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          {/* =================================================
-              SECTION HEADING
-          ================================================= */}
-
           <div className="mb-12 w-full">
             <h2 className="text-3xl font-bold leading-tight text-[#2E3281] sm:text-4xl md:text-5xl">
-              Build Your Future in{" "}
-              <span>
-                Engineering
-              </span>
+              Build Your Future in Engineering
             </h2>
 
             <p className="mt-6 text-[16px] leading-8 text-slate-600">
@@ -236,26 +177,16 @@ export default function EngineeringCourses() {
             </p>
           </div>
 
-          {/* =================================================
-              FEATURED ENGINEERING COURSE
-          ================================================= */}
-
           <div className="group relative mb-8 min-h-[520px] overflow-hidden rounded-[2rem] shadow-xl">
-            {/* Background Image */}
-
             <img
               src={engineeringCourses[0].image}
               alt={engineeringCourses[0].title}
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
 
-            {/* Overlay */}
-
             <div className="absolute inset-0 bg-[#10162d]/70" />
 
             <div className="absolute inset-0 bg-gradient-to-r from-[#10162d]/95 via-[#10162d]/70 to-transparent" />
-
-            {/* Content */}
 
             <div className="relative flex min-h-[520px] items-end p-7 md:p-10 lg:p-14">
               <div className="max-w-3xl">
@@ -283,17 +214,17 @@ export default function EngineeringCourses() {
 
                 <div className="mt-7 grid gap-3 sm:grid-cols-3">
                   <div className="flex items-center gap-2 text-sm font-semibold text-white">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-red-300" />
+                    <span className="text-red-300">✓</span>
                     Engineering Education
                   </div>
 
                   <div className="flex items-center gap-2 text-sm font-semibold text-white">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-red-300" />
+                    <span className="text-red-300">✓</span>
                     College Guidance
                   </div>
 
                   <div className="flex items-center gap-2 text-sm font-semibold text-white">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-red-300" />
+                    <span className="text-red-300">✓</span>
                     Admission Support
                   </div>
                 </div>
@@ -310,10 +241,6 @@ export default function EngineeringCourses() {
             </div>
           </div>
 
-          {/* =================================================
-              OTHER ENGINEERING COURSES
-          ================================================= */}
-
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {engineeringCourses.slice(1).map((course) => {
               const Icon = course.icon;
@@ -324,29 +251,19 @@ export default function EngineeringCourses() {
                   href={course.href}
                   className="group relative min-h-[370px] overflow-hidden rounded-[1.75rem] shadow-lg"
                 >
-                  {/* Background Image */}
-
                   <img
                     src={course.image}
                     alt={course.title}
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
 
-                  {/* Base Overlay */}
-
                   <div className="absolute inset-0 bg-[#10162d]/45 transition-all duration-500 group-hover:bg-[#10162d]/70" />
 
-                  {/* Gradient */}
-
                   <div className="absolute inset-0 bg-gradient-to-t from-[#10162d] via-[#10162d]/40 to-transparent" />
-
-                  {/* Number */}
 
                   <span className="absolute left-5 top-5 flex h-10 min-w-10 items-center justify-center rounded-full bg-white/95 px-3 text-xs font-bold text-[#a71320] shadow-lg">
                     {course.number}
                   </span>
-
-                  {/* Content */}
 
                   <div className="absolute inset-x-0 bottom-0 p-6 md:p-7">
                     <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#a71320] text-white shadow-lg transition-all duration-300 group-hover:scale-110">
@@ -377,10 +294,6 @@ export default function EngineeringCourses() {
           </div>
         </div>
       </section>
-
-   
-
-     
     </>
   );
 }

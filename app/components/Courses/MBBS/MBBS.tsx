@@ -1,24 +1,34 @@
+
 "use client";
 
 import Link from "next/link";
 import {
   ArrowRight,
   Award,
-  BookOpen,
   CheckCircle2,
-
-  GraduationCap,
+ 
   HeartPulse,
   Hospital,
   Microscope,
   Pill,
   Stethoscope,
   Syringe,
+  type LucideIcon,
 } from "lucide-react";
 
 import BreadcrumbBanner from "@/app/components/BreadcrumbBanner";
 
-const medicalCourses = [
+type MedicalCourse = {
+  number: string;
+  title: string;
+  shortTitle: string;
+  description: string;
+  image: string;
+  href: string;
+  icon: LucideIcon;
+};
+
+const medicalCourses: MedicalCourse[] = [
   {
     number: "01",
     title: "MBBS Courses",
@@ -98,83 +108,66 @@ const medicalCourses = [
   },
 ];
 
-
 export default function MedicalCourses() {
+  const featuredCourse = medicalCourses[0];
+
   return (
     <>
-      {/* =====================================================
-          BREADCRUMB
-      ===================================================== */}
-
       <BreadcrumbBanner
         title="Medical Courses"
         description="EXPLORE MEDICAL COURSES AND ADMISSION OPPORTUNITIES"
       />
 
-      {/* =====================================================
-          HERO - BACKGROUND IMAGE
-      ===================================================== */}
-
-
-
-      {/* =====================================================
-          COURSES
-      ===================================================== */}
-
-      <section
-        id="medical-courses"
-        className="relative overflow-hidden bg-slate-50 py-16 md:py-20 lg:py-24"
-      >
-        {/* Background Decoration */}
-
+      <section className="relative overflow-hidden bg-slate-50 py-16 md:py-20 lg:py-24">
         <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#a71320]/5" />
 
         <div className="absolute -right-40 bottom-20 h-96 w-96 rounded-full bg-[#2E3281]/5" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          {/* SECTION HEADING */}
-
           <div className="mb-12 w-full">
-
-
             <h2 className="text-3xl font-bold leading-tight text-[#2E3281] sm:text-4xl md:text-5xl">
-              Find Your Path in{" "}
-              <span>Medical Education</span>
+              Find Your Path in Medical Education
             </h2>
 
             <p className="mt-6 text-[16px] leading-8 text-slate-600">
-              Bachelor of surgeon / Medicine is a professional course. Students After completion there PUC in the relevant sector their approach for these professional courses (MBBS). The tenure of this course is 5.5years in this tenure their select the specialization as a medicine or a surgeon related course. Our Pragati consultancy Aim is to provide the best and the quality education in the medical field by providing the admissions in top-rated colleges/universities in Bangalore. The colleges and courses are regulated by the Medical Council of India. Below are the several branches/courses regarding Medical? Approach Pragati consultants for getting the proper details about these courses. And take the admission in the best colleges from Bangalore.
+              Bachelor of Medicine and Bachelor of Surgery is a professional
+              course. Students who have completed their PUC or equivalent
+              qualification can pursue professional medical courses such as
+              MBBS. The duration of the MBBS course is 5.5 years, including
+              internship. Students can choose their preferred area of
+              specialisation based on their interests and career goals.
+            </p>
+
+            <p className="mt-5 text-[16px] leading-8 text-slate-600">
+              Pragati Consultancy aims to provide quality guidance for students
+              seeking education in the medical field and help them explore
+              reputed colleges and universities in Bangalore. There are several
+              branches and courses available in the medical and healthcare
+              sector. Approach Pragati Consultants for proper information about
+              courses, colleges, eligibility and admission opportunities.
             </p>
           </div>
 
-          {/* FEATURED MBBS */}
-
           <div className="group relative mb-8 min-h-[520px] overflow-hidden rounded-[2rem] shadow-xl">
-            {/* Background */}
-
             <img
-              src={medicalCourses[0].image}
-              alt={medicalCourses[0].title}
+              src={featuredCourse.image}
+              alt={featuredCourse.title}
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-
-            {/* Overlay */}
 
             <div className="absolute inset-0 bg-[#10162d]/70" />
 
             <div className="absolute inset-0 bg-gradient-to-r from-[#10162d]/95 via-[#10162d]/70 to-transparent" />
 
-            {/* Content */}
-
             <div className="relative flex min-h-[520px] items-end p-7 md:p-10 lg:p-14">
               <div className="max-w-2xl">
-                <div className="mb-5 flex items-center gap-3">
+                <div className="mb-5 flex flex-wrap items-center gap-3">
                   <span className="rounded-full bg-white/95 px-4 py-2 text-xs font-bold tracking-[1.5px] text-[#a71320]">
                     FEATURED COURSE
                   </span>
 
                   <span className="text-5xl font-bold text-white/25">
-                    {medicalCourses[0].number}
+                    {featuredCourse.number}
                   </span>
                 </div>
 
@@ -183,11 +176,11 @@ export default function MedicalCourses() {
                 </div>
 
                 <h3 className="mt-6 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
-                  {medicalCourses[0].title}
+                  {featuredCourse.title}
                 </h3>
 
                 <p className="mt-5 text-[16px] leading-8 text-white/75">
-                  {medicalCourses[0].description}
+                  {featuredCourse.description}
                 </p>
 
                 <div className="mt-7 grid gap-3 sm:grid-cols-3">
@@ -208,7 +201,7 @@ export default function MedicalCourses() {
                 </div>
 
                 <Link
-                  href={medicalCourses[0].href}
+                  href={featuredCourse.href}
                   className="group/link mt-8 inline-flex items-center gap-2 rounded-xl bg-[#a71320] px-6 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#8d101c] hover:shadow-xl"
                 >
                   View MBBS Colleges
@@ -218,8 +211,6 @@ export default function MedicalCourses() {
               </div>
             </div>
           </div>
-
-          {/* OTHER COURSES */}
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {medicalCourses.slice(1).map((course) => {
@@ -231,36 +222,26 @@ export default function MedicalCourses() {
                   href={course.href}
                   className="group relative min-h-[370px] overflow-hidden rounded-[1.75rem] shadow-lg"
                 >
-                  {/* Background Image */}
-
                   <img
                     src={course.image}
                     alt={course.title}
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
 
-                  {/* Base Overlay */}
-
                   <div className="absolute inset-0 bg-[#10162d]/45 transition-all duration-500 group-hover:bg-[#10162d]/70" />
 
-                  {/* Gradient */}
-
                   <div className="absolute inset-0 bg-gradient-to-t from-[#10162d] via-[#10162d]/40 to-transparent" />
-
-                  {/* Number */}
 
                   <span className="absolute left-5 top-5 flex h-10 min-w-10 items-center justify-center rounded-full bg-white/95 px-3 text-xs font-bold text-[#a71320] shadow-lg">
                     {course.number}
                   </span>
-
-                  {/* Content */}
 
                   <div className="absolute inset-x-0 bottom-0 p-6 md:p-7">
                     <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#a71320] text-white shadow-lg transition-all duration-300 group-hover:scale-110">
                       <Icon className="h-6 w-6" />
                     </div>
 
-                    <h3 className="mt-5 text-2xl font-bold text-white">
+                    <h3 className="mt-5 text-2xl font-bold leading-tight text-white">
                       {course.title}
                     </h3>
 
@@ -284,11 +265,6 @@ export default function MedicalCourses() {
           </div>
         </div>
       </section>
-
-      {/* =====================================================
-          WHY CHOOSE PRAGATI - BACKGROUND IMAGE
-      ===================================================== */}
-
     </>
   );
 }
