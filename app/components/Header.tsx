@@ -13,13 +13,15 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CloseIcon from "@mui/icons-material/Close";
 
+type MenuChild = {
+  label: string;
+  href: string;
+};
+
 type MenuItem = {
   label: string;
   href?: string;
-  children?: {
-    label: string;
-    href: string;
-  }[];
+  children?: MenuChild[];
 };
 
 const menuItems: MenuItem[] = [
@@ -33,7 +35,7 @@ const menuItems: MenuItem[] = [
     children: [
       {
         label: "About Us",
-        href: "/aboutUs",
+        href: "/about-us",
       },
       {
         label: "Why Choose Us",
@@ -43,13 +45,12 @@ const menuItems: MenuItem[] = [
   },
 
   {
-  label: "Courses",
-  children: [
-    {
-      label: "MBBS",
-      href: "/mbbs",
-    },
-  
+    label: "Courses",
+    children: [
+      {
+        label: "MBBS",
+        href: "/mbbs",
+      },
       {
         label: "Engineering",
         href: "/engineering",
@@ -70,30 +71,33 @@ const menuItems: MenuItem[] = [
     children: [
       {
         label: "Education Services",
-        href: "education-services",
+        href: "/education-services",
       },
-
     ],
   },
 
+  /*
+   * IMPORTANT:
+   * All college routes are absolute and use the correct plural URLs.
+   */
   {
     label: "Colleges",
     children: [
       {
         label: "Medical Colleges",
-        href: "medical-college",
+        href: "/medicalcolleges",
       },
       {
         label: "Engineering Colleges",
-        href: "engineering-college",
+        href: "/engineeringcolleges",
       },
       {
         label: "Management Colleges",
-        href: "management-college",
+        href: "/managementcolleges",
       },
       {
         label: "Nursing Colleges",
-        href: "nursing-college",
+        href: "/nursingcolleges",
       },
     ],
   },
@@ -102,10 +106,6 @@ const menuItems: MenuItem[] = [
     label: "Blogs",
     href: "/blogs",
   },
-  // {
-  //   label: "Updates",
-  //   href: "/updates",
-  // },
 
   {
     label: "Entrance Exams",
@@ -124,7 +124,6 @@ const menuItems: MenuItem[] = [
       },
     ],
   },
-
 ];
 
 export default function Header() {
@@ -244,14 +243,17 @@ export default function Header() {
             {menuItems.map((item) => {
 
               const hasDropdown =
-                item.children && item.children.length > 0;
+                !!item.children && item.children.length > 0;
 
-              /* NORMAL MENU */
+
+              {/* ===============================
+                  NORMAL MENU
+              =============================== */}
               if (!hasDropdown) {
                 return (
                   <Link
                     key={item.label}
-                    href={item.href || "#"}
+                    href={item.href || "/"}
                     className="
                       relative
                       flex
@@ -269,7 +271,6 @@ export default function Header() {
                       whitespace-nowrap
                     "
                   >
-
                     <span>{item.label}</span>
 
                     <span
@@ -287,13 +288,14 @@ export default function Header() {
                         origin-left
                       "
                     />
-
                   </Link>
                 );
               }
 
 
-              /* DROPDOWN MENU */
+              {/* ===============================
+                  DROPDOWN MENU
+              =============================== */}
               return (
                 <div
                   key={item.label}
@@ -319,7 +321,6 @@ export default function Header() {
                       whitespace-nowrap
                     "
                   >
-
                     <span>{item.label}</span>
 
                     <ExpandMoreIcon
@@ -346,7 +347,6 @@ export default function Header() {
                         origin-left
                       "
                     />
-
                   </button>
 
 
@@ -382,6 +382,7 @@ export default function Header() {
                     >
 
                       {item.children?.map((child) => (
+
                         <Link
                           key={child.href}
                           href={child.href}
@@ -411,11 +412,11 @@ export default function Header() {
                               text-gray-400
                               transition-transform
                               duration-200
-                              group-hover:text-blue-600
                             "
                           />
 
                         </Link>
+
                       ))}
 
                     </div>
@@ -449,7 +450,6 @@ export default function Header() {
               "
               aria-label="Search"
             >
-
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -463,11 +463,10 @@ export default function Header() {
                   d="M21 21l-6-6m2-5a7 7 0 11-14 0a7 7 0 0114 0z"
                 />
               </svg>
-
             </button>
 
 
-            {/* SIGN IN */}
+            {/* GET IN TOUCH */}
             <Link
               href="/contact"
               className="
@@ -478,14 +477,12 @@ export default function Header() {
                 gap-1
               "
             >
-
               <span>Get In Touch</span>
 
               <ChevronRightIcon
                 className="sign-in-gradient-icon"
                 fontSize="small"
               />
-
             </Link>
 
 
@@ -546,14 +543,15 @@ export default function Header() {
                 {menuItems.map((item) => {
 
                   const hasDropdown =
-                    item.children && item.children.length > 0;
+                    !!item.children && item.children.length > 0;
 
-                  /* NORMAL MOBILE LINK */
+
+                  {/* NORMAL MOBILE LINK */}
                   if (!hasDropdown) {
                     return (
                       <Link
                         key={item.label}
-                        href={item.href || "#"}
+                        href={item.href || "/"}
                         onClick={closeMobileMenu}
                         className="
                           flex
@@ -570,20 +568,18 @@ export default function Header() {
                           transition
                         "
                       >
-
                         <span>{item.label}</span>
 
                         <ChevronRightIcon
                           fontSize="small"
                           className="text-gray-400"
                         />
-
                       </Link>
                     );
                   }
 
 
-                  /* MOBILE DROPDOWN */
+                  {/* MOBILE DROPDOWN */}
                   const isDropdownOpen =
                     mobileDropdown === item.label;
 
@@ -619,9 +615,10 @@ export default function Header() {
                           className={`
                             transition-transform
                             duration-300
-                            ${isDropdownOpen
-                              ? "rotate-180 text-blue-600"
-                              : ""
+                            ${
+                              isDropdownOpen
+                                ? "rotate-180 text-blue-600"
+                                : ""
                             }
                           `}
                         />
@@ -635,9 +632,10 @@ export default function Header() {
                           overflow-hidden
                           transition-all
                           duration-300
-                          ${isDropdownOpen
-                            ? "max-h-[500px] opacity-100"
-                            : "max-h-0 opacity-0"
+                          ${
+                            isDropdownOpen
+                              ? "max-h-[500px] opacity-100"
+                              : "max-h-0 opacity-0"
                           }
                         `}
                       >
@@ -645,6 +643,7 @@ export default function Header() {
                         <div className="ml-4 mb-2 border-l-2 border-blue-100">
 
                           {item.children?.map((child) => (
+
                             <Link
                               key={child.href}
                               href={child.href}
@@ -671,6 +670,7 @@ export default function Header() {
                               />
 
                             </Link>
+
                           ))}
 
                         </div>
@@ -682,11 +682,11 @@ export default function Header() {
                 })}
 
 
-                {/* MOBILE SIGN IN */}
+                {/* MOBILE GET IN TOUCH */}
                 <div className="pt-3 mt-2 border-t border-gray-100">
 
                   <Link
-                    href="/colleges"
+                    href="/contact"
                     onClick={closeMobileMenu}
                     className="
                       sign-in-gradient-btn
@@ -698,7 +698,7 @@ export default function Header() {
                     "
                   >
 
-                    <span>Sign In</span>
+                    <span>Get In Touch</span>
 
                     <ChevronRightIcon
                       className="sign-in-gradient-icon"

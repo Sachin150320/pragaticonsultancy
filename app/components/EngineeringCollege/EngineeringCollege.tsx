@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useMemo, useState } from "react";
@@ -15,567 +16,524 @@ import BreadcrumbBanner from "@/app/components/BreadcrumbBanner";
 type College = {
   id: number;
   name: string;
-  slug: string;
   location: string;
   type: string;
   description: string;
   image: string;
   logo: string;
+  href: string;
 };
 
 /* =========================================================
-   ALL ENGINEERING COLLEGES - BENGALURU
+   ALL ENGINEERING COLLEGES
+   URL STRUCTURE:
+   /engineering-colleges/college-slug
 ========================================================= */
 
 const colleges: College[] = [
   {
     id: 1,
     name: "Acharya Institute of Technology",
-    slug: "acharya-institute-of-technology",
     location: "Soladevanahalli, Bengaluru",
     type: "Private",
     image: "/images/Collges/1.jpg",
     logo: "/images/Collges/logo/1.png",
+    href: "/engineering-colleges/acharya-institute-of-technology",
     description:
       "An established engineering institution offering undergraduate and postgraduate programs in engineering, technology and related disciplines.",
   },
-
   {
     id: 2,
     name: "Akash Institute of Engineering and Technology",
-    slug: "akash-institute-of-engineering-and-technology",
     location: "Devanahalli, Bengaluru Rural",
     type: "Private",
     image: "/images/Collges/2.jpg",
     logo: "/images/Collges/logo/2.png",
+    href: "/engineering-colleges/akash-institute-of-engineering-and-technology",
     description:
       "An engineering institution providing technical education with undergraduate programs and industry-oriented learning opportunities.",
   },
-
   {
     id: 3,
     name: "AMC Engineering College",
-    slug: "amc-engineering-college",
     location: "Bannerghatta Road, Bengaluru",
     type: "Private",
     image: "/images/Collges/3.jpg",
     logo: "/images/Collges/logo/3.png",
+    href: "/engineering-colleges/amc-engineering-college",
     description:
       "A Bengaluru engineering college offering undergraduate and postgraduate technical education across multiple engineering disciplines.",
   },
-
   {
     id: 4,
     name: "Atria Institute of Technology",
-    slug: "atria-institute-of-technology",
     location: "Hebbal, Bengaluru",
     type: "Private",
     image: "/images/Collges/4.jpg",
     logo: "/images/Collges/logo/4.png",
+    href: "/engineering-colleges/atria-institute-of-technology",
     description:
       "A technology-focused institution in Bengaluru offering engineering programs and opportunities for academic and professional development.",
   },
-
   {
     id: 5,
     name: "Bangalore Technological Institute",
-    slug: "bangalore-technological-institute",
     location: "Chikkanayakanahalli Dinne, Bengaluru",
     type: "Private",
     image: "/images/Collges/5.jpg",
     logo: "/images/Collges/logo/5.jpg",
+    href: "/engineering-colleges/bangalore-technological-institute",
     description:
       "An engineering institution offering professional technical education and undergraduate engineering programs.",
   },
-
   {
     id: 6,
     name: "BMS College of Engineering",
-    slug: "bms-college-of-engineering",
     location: "Basavanagudi, Bengaluru",
     type: "Private",
     image: "/images/Collges/6.jpg",
     logo: "/images/Collges/logo/6.png",
+    href: "/engineering-colleges/bms-college-of-engineering",
     description:
       "One of Bengaluru's established engineering institutions offering undergraduate, postgraduate and research programs.",
   },
-
   {
     id: 7,
     name: "BMS Institute of Technology & Management",
-    slug: "bms-institute-of-technology-management",
     location: "Yelahanka, Bengaluru",
     type: "Private",
     image: "/images/Collges/7.jpg",
     logo: "/images/Collges/logo/7.png",
+    href: "/engineering-colleges/bms-institute-of-technology-management",
     description:
       "An engineering and technology institution providing undergraduate and postgraduate education with a focus on technical skills.",
   },
-
   {
     id: 8,
     name: "Brindavan College of Engineering",
-    slug: "brindavan-college-of-engineering",
     location: "Yelahanka, Bengaluru",
     type: "Private",
     image: "/images/Collges/8.jpg",
     logo: "/images/Collges/logo/8.png",
+    href: "/engineering-colleges/brindavan-college-of-engineering",
     description:
       "An engineering college offering professional degree programs and technical education in a range of engineering disciplines.",
   },
-
   {
     id: 9,
     name: "C.M.R. Institute of Technology",
-    slug: "cmr-institute-of-technology",
     location: "Brookefield, Bengaluru",
     type: "Private",
     image: "/images/Collges/9.jpg",
     logo: "/images/Collges/logo/9.png",
+    href: "/engineering-colleges/cmr-institute-of-technology",
     description:
       "A prominent Bengaluru engineering institution offering undergraduate and postgraduate programs in engineering and technology.",
   },
-
   {
     id: 10,
     name: "Cambridge Institute of Technology",
-    slug: "cambridge-institute-of-technology",
     location: "K R Puram, Bengaluru",
     type: "Private",
     image: "/images/Collges/10.jpg",
     logo: "/images/Collges/logo/10.png",
+    href: "/engineering-colleges/cambridge-institute-of-technology",
     description:
       "An engineering and technology institution offering undergraduate, postgraduate and research-oriented academic programs.",
   },
-
   {
     id: 11,
     name: "Dayananda Sagar Academy of Technology & Management",
-    slug: "dayananda-sagar-academy-of-technology-management",
     location: "Kanakapura Road, Bengaluru",
     type: "Private",
     image: "/images/Collges/11.jpg",
     logo: "/images/Collges/logo/11.png",
+    href: "/engineering-colleges/dayananda-sagar-academy-of-technology-management",
     description:
       "A multidisciplinary institution offering engineering, technology and management education with modern academic facilities.",
   },
-
   {
     id: 12,
     name: "Dayananda Sagar College of Engineering",
-    slug: "dayananda-sagar-college-of-engineering",
     location: "Kumaraswamy Layout, Bengaluru",
     type: "Private",
     image: "/images/Collges/12.jpg",
     logo: "/images/Collges/logo/12.png",
+    href: "/engineering-colleges/dayananda-sagar-college-of-engineering",
     description:
       "An established engineering institution offering undergraduate and postgraduate programs across several technical disciplines.",
   },
-
   {
     id: 13,
     name: "DON BOSCO Institute of Technology",
-    slug: "don-bosco-institute-of-technology",
     location: "Kumbalgodu, Bengaluru",
     type: "Private",
     image: "/images/Collges/13.jpg",
     logo: "/images/Collges/logo/13.png",
+    href: "/engineering-colleges/don-bosco-institute-of-technology",
     description:
       "An engineering institution providing professional technical education with undergraduate and postgraduate programs.",
   },
-
   {
     id: 14,
     name: "Dr. Ambedkar Institute of Technology",
-    slug: "dr-ambedkar-institute-of-technology",
     location: "Malathahalli, Bengaluru",
     type: "Government Aided",
     image: "/images/Collges/14.jpg",
     logo: "/images/Collges/logo/14.png",
+    href: "/engineering-colleges/dr-ambedkar-institute-of-technology",
     description:
       "A well-established technical institution in Bengaluru offering engineering education and advanced technical programs.",
   },
-
   {
     id: 15,
     name: "East Point College of Engineering and Technology",
-    slug: "east-point-college-of-engineering-and-technology",
     location: "Avalahalli, Bengaluru",
     type: "Private",
     image: "/images/Collges/15.jpg",
     logo: "/images/Collges/logo/15.jpg",
+    href: "/engineering-colleges/east-point-college-of-engineering-and-technology",
     description:
       "An engineering institution providing undergraduate and postgraduate technical education with industry-focused learning.",
   },
-
   {
     id: 16,
     name: "East West Institute of Technology",
-    slug: "east-west-institute-of-technology",
     location: "BEL Layout, Bengaluru",
     type: "Private",
     image: "/images/Collges/16.jpg",
     logo: "/images/Collges/logo/16.png",
+    href: "/engineering-colleges/east-west-institute-of-technology",
     description:
       "An engineering and technology institution offering professional degree programs and technical education.",
   },
-
   {
     id: 17,
     name: "Global Academy of Technology",
-    slug: "global-academy-of-technology",
     location: "Rajarajeshwari Nagar, Bengaluru",
     type: "Private",
     image: "/images/Collges/17.jpg",
     logo: "/images/Collges/logo/17.jpg",
+    href: "/engineering-colleges/global-academy-of-technology",
     description:
       "A Bengaluru engineering institution offering undergraduate and postgraduate programs with emphasis on technical excellence.",
   },
-
   {
     id: 18,
     name: "SS Academy of Technical Education",
-    slug: "ss-academy-of-technical-education",
     location: "Kengeri Main Road, Bengaluru",
     type: "Private",
     image: "/images/Collges/18.jpg",
     logo: "/images/Collges/logo/18.jpg",
+    href: "/engineering-colleges/ss-academy-of-technical-education",
     description:
       "A technical education institution offering engineering programs and professional learning opportunities.",
   },
-
   {
     id: 19,
     name: "M.S. Engineering College",
-    slug: "ms-engineering-college",
     location: "Sadahalli, Bengaluru",
     type: "Private",
     image: "/images/Collges/19.jpg",
     logo: "/images/Collges/logo/19.jpg",
+    href: "/engineering-colleges/ms-engineering-college",
     description:
       "An engineering institution near Bengaluru offering undergraduate technical education across multiple disciplines.",
   },
-
-  { 
+  {
     id: 20,
     name: "M.S. Ramaiah Institute of Technology",
-    slug: "ms-ramaiah-institute-of-technology",
     location: "MSR Nagar, Bengaluru",
     type: "Private",
     image: "/images/Collges/20.jpg",
     logo: "/images/Collges/logo/20.png",
+    href: "/engineering-colleges/ms-ramaiah-institute-of-technology",
     description:
       "A renowned Bengaluru engineering institution offering undergraduate, postgraduate and research programs in technology.",
   },
-
   {
     id: 21,
     name: "Nagarjuna College of Engineering & Technology",
-    slug: "nagarjuna-college-of-engineering-technology",
     location: "Devanahalli, Bengaluru",
     type: "Private",
     image: "/images/Collges/21.jpg",
     logo: "/images/Collges/logo/21.png",
+    href: "/engineering-colleges/nagarjuna-college-of-engineering-technology",
     description:
       "An engineering college located near Bengaluru offering undergraduate and postgraduate programs in engineering and technology.",
   },
-
   {
     id: 22,
     name: "PES University",
-    slug: "pes-university",
     location: "Bengaluru, Karnataka",
     type: "University",
     image: "/images/Collges/22.jpg",
     logo: "/images/Collges/logo/22.png",
+    href: "/engineering-colleges/pes-university",
     description:
       "A leading Bengaluru university offering engineering, technology, computer science and other professional programs.",
   },
-
   {
     id: 23,
     name: "R.V. College of Engineering",
-    slug: "rv-college-of-engineering",
     location: "Mysore Road, Bengaluru",
     type: "Private",
     image: "/images/Collges/23.jpg",
     logo: "/images/Collges/logo/23.png",
+    href: "/engineering-colleges/rv-college-of-engineering",
     description:
       "A highly reputed engineering institution offering undergraduate, postgraduate and research opportunities across engineering disciplines.",
   },
-
   {
     id: 24,
     name: "R.R. Institute of Technology",
-    slug: "rr-institute-of-technology",
     location: "Chikkabanavara, Bengaluru",
     type: "Private",
     image: "/images/Collges/24.jpg",
     logo: "/images/Collges/logo/24.png",
+    href: "/engineering-colleges/rr-institute-of-technology",
     description:
       "An engineering institution offering undergraduate and postgraduate technical programs with practical learning opportunities.",
   },
-
   {
     id: 25,
     name: "Raja Rajeswari College of Engineering",
-    slug: "raja-rajeswari-college-of-engineering",
     location: "Kumbalgodu, Bengaluru",
     type: "Private",
     image: "/images/Collges/25.jpg",
     logo: "/images/Collges/logo/25.png",
+    href: "/engineering-colleges/raja-rajeswari-college-of-engineering",
     description:
       "An engineering college offering professional technical education and undergraduate and postgraduate engineering programs.",
   },
-
   {
     id: 26,
     name: "RNS Institute of Technology",
-    slug: "rns-institute-of-technology",
     location: "R R Nagar, Bengaluru",
     type: "Private",
     image: "/images/Collges/26.jpg",
     logo: "/images/Collges/logo/26.png",
+    href: "/engineering-colleges/rns-institute-of-technology",
     description:
       "A well-known engineering institution offering undergraduate, postgraduate and research programs in engineering and technology.",
   },
-
   {
     id: 27,
     name: "SJB Institute of Technology",
-    slug: "sjb-institute-of-technology",
     location: "Kengeri, Bengaluru",
     type: "Private",
     image: "/images/Collges/27.jpg",
     logo: "/images/Collges/logo/27.png",
+    href: "/engineering-colleges/sjb-institute-of-technology",
     description:
       "An engineering and technology institution offering undergraduate and postgraduate professional programs.",
   },
-
   {
     id: 28,
     name: "S.E.A. College of Engineering & Technology",
-    slug: "sea-college-of-engineering-technology",
     location: "K R Puram, Bengaluru",
     type: "Private",
     image: "/images/Collges/28.jpg",
     logo: "/images/Collges/logo/28.jpg",
+    href: "/engineering-colleges/sea-college-of-engineering-technology",
     description:
       "An engineering college offering professional degree programs and technical education in several engineering disciplines.",
   },
-
   {
     id: 29,
     name: "Sambhram Institute of Technology",
-    slug: "sambhram-institute-of-technology",
     location: "Jalahalli East, Bengaluru",
     type: "Private",
     image: "/images/Collges/29.jpg",
     logo: "/images/Collges/logo/29.png",
+    href: "/engineering-colleges/sambhram-institute-of-technology",
     description:
       "An engineering and technology institution providing professional education and technical learning opportunities.",
   },
-
   {
     id: 30,
     name: "SAPTHAGIRI NPS UNIVERSITY",
-    slug: "sapthagiri-nps-university",
     location: "Hesaraghatta Main Road, Bengaluru",
     type: "University",
     image: "/images/Collges/30.jpg",
     logo: "/images/Collges/logo/30.png",
+    href: "/engineering-colleges/sapthagiri-nps-university",
     description:
       "A Bengaluru university offering professional and technical education with programs across engineering and other disciplines.",
   },
-
   {
     id: 31,
     name: "Sir M. Visvesvaraya Institute of Technology",
-    slug: "sir-m-visvesvaraya-institute-of-technology",
     location: "Yelahanka, Bengaluru",
     type: "Private",
     image: "/images/Collges/31.jpg",
     logo: "/images/Collges/logo/31.jpg",
+    href: "/engineering-colleges/sir-m-visvesvaraya-institute-of-technology",
     description:
       "A respected engineering institution offering undergraduate and postgraduate technical programs in Bengaluru.",
   },
-
   {
     id: 32,
     name: "Sri Krishna Institute of Technology",
-    slug: "sri-krishna-institute-of-technology",
     location: "Chikkabanavara, Bengaluru",
     type: "Private",
     image: "/images/Collges/32.jpg",
     logo: "/images/Collges/logo/32.jpg",
+    href: "/engineering-colleges/sri-krishna-institute-of-technology",
     description:
       "An engineering institution offering undergraduate technical programs with practical and industry-oriented learning.",
   },
-
   {
     id: 33,
     name: "Sri Venkateshwara College of Engineering",
-    slug: "sri-venkateshwara-college-of-engineering",
     location: "KIAL Road, Bengaluru",
     type: "Private",
     image: "/images/Collges/33.jpg",
     logo: "/images/Collges/logo/33.png",
+    href: "/engineering-colleges/sri-venkateshwara-college-of-engineering",
     description:
       "An engineering institution near Bengaluru offering undergraduate and postgraduate education in engineering and technology.",
   },
-
   {
     id: 34,
     name: "T. John Institute of Technology",
-    slug: "t-john-institute-of-technology",
     location: "Bannerghatta Road, Bengaluru",
     type: "Private",
     image: "/images/Collges/34.jpg",
     logo: "/images/Collges/logo/34.png",
+    href: "/engineering-colleges/t-john-institute-of-technology",
     description:
       "An engineering college offering professional undergraduate programs with an emphasis on technical and practical education.",
   },
-
   {
     id: 35,
     name: "Cambridge Institute of Technology (North Campus)",
-    slug: "cambridge-institute-of-technology-north-campus",
     location: "Kundana, Bengaluru",
     type: "Private",
     image: "/images/Collges/35.jpg",
     logo: "/images/Collges/logo/35.png",
+    href: "/engineering-colleges/cambridge-institute-of-technology-north-campus",
     description:
       "The North Campus of Cambridge Institute of Technology offering professional engineering and technology education.",
   },
-
   {
     id: 36,
     name: "Reva University",
-    slug: "reva-university",
     location: "Yelahanka, Bengaluru",
     type: "University",
     image: "/images/Collges/36.jpg",
     logo: "/images/Collges/logo/36.png",
+    href: "/engineering-colleges/reva-university",
     description:
       "A multidisciplinary university in Bengaluru offering engineering, technology and other professional higher education programs.",
   },
-
   {
     id: 37,
     name: "Alliance College of Engineering & Design, Alliance University",
-    slug: "alliance-college-of-engineering-design",
     location: "Anekal, Bengaluru",
     type: "University",
     image: "/images/Collges/37.jpg",
     logo: "/images/Collges/logo/37.png",
+    href: "/engineering-colleges/alliance-college-of-engineering-design",
     description:
       "A university-based engineering and design institution offering technology-focused professional education.",
   },
-
   {
     id: 38,
     name: "GITAM (Deemed to be University)",
-    slug: "gitam-deemed-to-be-university",
     location: "Doddaballapur Taluk, Bengaluru",
     type: "University",
     image: "/images/Collges/38.jpg",
     logo: "/images/Collges/logo/38.png",
+    href: "/engineering-colleges/gitam-deemed-to-be-university",
     description:
       "A deemed-to-be university offering engineering, technology and professional higher education programs.",
   },
-
   {
     id: 39,
     name: "Presidency University",
-    slug: "presidency-university",
     location: "Yelahanka, Bengaluru",
     type: "University",
     image: "/images/Collges/39.jpg",
     logo: "/images/Collges/logo/39.jpg",
+    href: "/engineering-colleges/presidency-university",
     description:
       "A multidisciplinary university in Bengaluru offering engineering, technology and professional academic programs.",
   },
-
   {
     id: 40,
     name: "CMR University",
-    slug: "cmr-university",
     location: "Bagalur Chagalatti, Bengaluru",
     type: "University",
     image: "/images/Collges/40.jpg",
     logo: "/images/Collges/logo/40.jpg",
+    href: "/engineering-colleges/cmr-university",
     description:
       "A Bengaluru-based multidisciplinary university offering engineering, technology and professional degree programs.",
   },
-
   {
     id: 41,
     name: "M.S. Ramaiah University of Applied Sciences",
-    slug: "ms-ramaiah-university-of-applied-sciences",
     location: "MSR Nagar, Bengaluru",
     type: "University",
     image: "/images/Collges/41.jpg",
     logo: "/images/Collges/logo/41.jpg",
+    href: "/engineering-colleges/ms-ramaiah-university-of-applied-sciences",
     description:
       "A university focused on applied sciences, engineering, technology and industry-oriented professional education.",
   },
-
   {
     id: 42,
     name: "R V Institute of Technology and Management",
-    slug: "rv-institute-of-technology-and-management",
     location: "J P Nagar, Bengaluru",
     type: "Private",
     image: "/images/Collges/42.jpg",
     logo: "/images/Collges/logo/42.png",
+    href: "/engineering-colleges/rv-institute-of-technology-and-management",
     description:
       "An engineering and technology institution offering professional undergraduate and postgraduate programs in Bengaluru.",
   },
-
   {
     id: 43,
     name: "Amruta Institute of Engineering and Management Science",
-    slug: "amruta-institute-of-engineering-and-management-science",
     location: "Bidadi, Ramnagar Taluk, Bengaluru Rural",
     type: "Private",
     image: "/images/Collges/43.jpg",
     logo: "/images/Collges/logo/43.png",
+    href: "/engineering-colleges/amruta-institute-of-engineering-and-management-science",
     description:
       "An engineering and management education institution offering professional programs in technical and management disciplines.",
   },
-
   {
     id: 44,
     name: "BGS College of Engineering and Technology",
-    slug: "bgs-college-of-engineering-and-technology",
     location: "Mahalaxmipuram, Bengaluru",
     type: "Private",
     image: "/images/Collges/44.jpg",
     logo: "/images/Collges/logo/44.jpg",
+    href: "/engineering-colleges/bgs-college-of-engineering-and-technology",
     description:
       "An engineering and technology institution offering undergraduate and postgraduate programs with modern academic facilities.",
   },
-
   {
     id: 45,
     name: "Harsha Institute of Technology",
-    slug: "harsha-institute-of-technology",
     location: "Nelamangala Taluk, Bengaluru Rural",
     type: "Private",
     image: "/images/Collges/45.jpg",
     logo: "/images/Collges/logo/45.png",
+    href: "/engineering-colleges/harsha-institute-of-technology",
     description:
       "An engineering institution in the Bengaluru region providing professional technical education and career-focused learning.",
   },
-
   {
     id: 46,
     name: "Ramaiah University College of Engineering",
-    slug: "ramaiah-university-college-of-engineering",
     location: "Jigani, Bengaluru",
     type: "University",
     image: "/images/Collges/46.jpg",
     logo: "/images/Collges/logo/46.jpg",
+    href: "/engineering-colleges/ramaiah-university-college-of-engineering",
     description:
       "A university engineering college offering applied engineering and technology education with industry-oriented programs.",
   },
@@ -807,26 +765,28 @@ export default function EngineeringCollegesPage() {
 
                     <div className="mt-6 grid grid-cols-2 gap-2 border-t border-slate-100 pt-4">
 
+                      {/* INTERNAL NEXT.JS LINK */}
+
                       <Link
-                        href={`/engineering-colleges/${college.slug}`}
+                        href={college.href}
                         className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#2E3281] px-3 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:bg-[#a71320]"
                       >
                         View Details
 
                         <ArrowRight
                           size={14}
-                          className="transition-transform group-hover:translate-x-1"
+                          className="transition-transform duration-300 group-hover:translate-x-1"
                         />
                       </Link>
+
+                      {/* ENQUIRY */}
 
                       <Link
                         href="/contact"
                         className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-[#a71320] bg-[#a71320]/5 px-3 py-2.5 text-xs font-bold text-[#a71320] transition-all duration-300 hover:bg-[#a71320] hover:text-white"
                       >
                         Enquiry
-
                         <GraduationCap size={14} />
-
                       </Link>
 
                     </div>
@@ -876,7 +836,7 @@ export default function EngineeringCollegesPage() {
       </section>
 
       {/* =====================================================
-          CTA / ENGINEERING COLLEGES CONTENT
+          ENGINEERING COLLEGES CONTENT
       ===================================================== */}
 
       <section className="bg-[#f8f9fc] py-14 sm:py-16">
@@ -885,21 +845,18 @@ export default function EngineeringCollegesPage() {
 
           <div className="w-full text-center">
 
-            <h2 className="mt-1 text-2xl font-bold text-[#2E3281] sm:text-3xl">
+            <h2 className="text-2xl font-bold text-[#2E3281] sm:text-3xl">
               Engineering Colleges
             </h2>
 
             <p className="mx-auto mt-5 w-full text-[16px] leading-7 text-slate-600">
               Engineering students design and develop applications or the
-              structures of the machine or any other inventor, which is
-              controlled by humans. Engineering is a responsible course which
-              is having huge demand and the competition among the students, in
-              this course is having many branches. For direct admission in top
-              engineering colleges contact Pragati consultancy. It is one of
-              the best engineering admission consultants in Bangalore. If you
-              approach a right and best consultants will provide the right
-              suggestion and give the right path for admissions to the students
-              for building their career.
+              structures of machines or other inventions controlled by humans.
+              Engineering is a responsible course with huge demand and many
+              specialised branches. For direct admission in top engineering
+              colleges, contact Pragati Consultancy. Our admission consultants
+              in Bangalore can help students choose suitable colleges,
+              courses and admission pathways for building their careers.
             </p>
 
           </div>
@@ -909,7 +866,7 @@ export default function EngineeringCollegesPage() {
       </section>
 
       {/* =====================================================
-          FINAL ADMISSION CTA
+          FINAL CTA
       ===================================================== */}
 
       <section className="bg-[#f8f9fc] py-14 sm:py-16">
@@ -933,8 +890,8 @@ export default function EngineeringCollegesPage() {
               </h2>
 
               <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-blue-100 sm:text-base">
-                Get personalised guidance on engineering courses,
-                college options, counselling and admission procedures.
+                Get personalised guidance on engineering courses, college
+                options, counselling and admission procedures.
               </p>
 
               <Link
