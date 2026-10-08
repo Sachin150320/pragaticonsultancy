@@ -396,38 +396,31 @@ export default function AkashInstituteOfEngineeringAndTechnologyPage() {
       {/* =========================================================
           TABS
       ========================================================= */}
-      <section className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur-md">
+        <section className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur-md">
+                <div className="mx-auto max-w-7xl px-3 sm:px-5 lg:px-10">
+                    <div className="flex overflow-x-auto scrollbar-hide">
+                        {tabs.map((tab) => {
+                            const Icon = tab.icon;
+                            const isActive = activeTab === tab.id;
 
-        <div className="mx-auto max-w-7xl px-3 sm:px-5 lg:px-10">
-
-          <div className="flex overflow-x-auto scrollbar-hide">
-
-            {tabs.map((tab) => {
-              const Icon = tab.icon;
-              const isActive = activeTab === tab.id;
-
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`flex min-w-max items-center gap-2 border-b-3 px-4 py-4 text-sm font-bold transition-all sm:px-5 ${
-                    isActive
-                      ? "border-[#a71320] bg-[#a71320]/5 text-[#a71320]"
-                      : "border-transparent text-slate-500 hover:bg-slate-50 hover:text-[#2E3281]"
-                  }`}
-                >
-                  <Icon className="h-4 w-4" />
-                  {tab.label}
-                </button>
-              );
-            })}
-
-          </div>
-
-        </div>
-
-      </section>
+                            return (
+                                <button
+                                    key={tab.id}
+                                    type="button"
+                                    onClick={() => setActiveTab(tab.id)}
+                                    className={`flex min-w-max items-center gap-2 border-b-4 px-4 py-4 text-sm font-bold transition-all duration-300 sm:px-5 ${isActive
+                                            ? "border-[#a71320] bg-[#a71320] text-white"
+                                            : "border-transparent text-slate-500 hover:bg-[#2E3281] hover:text-white"
+                                        }`}
+                                >
+                                    <Icon className="h-4 w-4" />
+                                    {tab.label}
+                                </button>
+                            );
+                        })}
+                    </div>
+                </div>
+            </section>
 
       {/* =========================================================
           TAB CONTENT
