@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useMemo, useState } from "react";
@@ -6,8 +7,6 @@ import Link from "next/link";
 import {
   ArrowRight,
   GraduationCap,
-
-  HeartPulse,
   MapPin,
   Search,
 } from "lucide-react";
@@ -20,6 +19,7 @@ type College = {
   slug: string;
   location: string;
   type: string;
+  course: string;
   description: string;
   image: string;
   logo: string;
@@ -27,280 +27,556 @@ type College = {
 
 const colleges: College[] = [
   {
-    id: 101,
-    name: "Government College of Nursing, Bengaluru",
-    slug: "government-college-of-nursing-bengaluru",
-    location: "Bengaluru, Karnataka",
-    type: "Government",
-    description:
-      "A government nursing institution offering quality nursing education with clinical and practical training.",
-    image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=karunadu.karnataka.gov.in&sz=128",
-  },
-  {
-    id: 102,
-    name: "Government College of Nursing, Mysuru",
-    slug: "government-college-of-nursing-mysuru",
-    location: "Mysuru, Karnataka",
-    type: "Government",
-    description:
-      "A government nursing college providing undergraduate education with clinical and healthcare learning.",
-    image:
-      "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=karunadu.karnataka.gov.in&sz=128",
-  },
-  {
-    id: 103,
-    name: "Government College of Nursing, Hassan",
-    slug: "government-college-of-nursing-hassan",
-    location: "Hassan, Karnataka",
-    type: "Government",
-    description:
-      "A nursing institution offering professional education with practical and hospital-based training.",
-    image:
-      "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=karunadu.karnataka.gov.in&sz=128",
-  },
-  {
-    id: 104,
-    name: "Government College of Nursing, Mandya",
-    slug: "government-college-of-nursing-mandya",
-    location: "Mandya, Karnataka",
-    type: "Government",
-    description:
-      "A government nursing college offering nursing education with practical healthcare exposure.",
-    image:
-      "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=karunadu.karnataka.gov.in&sz=128",
-  },
-  {
-    id: 105,
-    name: "Government College of Nursing, Ballari",
-    slug: "government-college-of-nursing-ballari",
-    location: "Ballari, Karnataka",
-    type: "Government",
-    description:
-      "A government nursing institution providing nursing education and clinical training opportunities.",
-    image:
-      "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=karunadu.karnataka.gov.in&sz=128",
-  },
-  {
-    id: 106,
-    name: "Government College of Nursing, Shivamogga",
-    slug: "government-college-of-nursing-shivamogga",
-    location: "Shivamogga, Karnataka",
-    type: "Government",
-    description:
-      "A nursing education institution offering undergraduate nursing programs with clinical exposure.",
-    image:
-      "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=karunadu.karnataka.gov.in&sz=128",
-  },
-  {
-    id: 107,
-    name: "Government College of Nursing, Belagavi",
-    slug: "government-college-of-nursing-belagavi",
-    location: "Belagavi, Karnataka",
-    type: "Government",
-    description:
-      "A government nursing institution providing nursing education and practical healthcare training.",
-    image:
-      "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=karunadu.karnataka.gov.in&sz=128",
-  },
-  {
-    id: 108,
-    name: "Government College of Nursing, Kalaburagi",
-    slug: "government-college-of-nursing-kalaburagi",
-    location: "Kalaburagi, Karnataka",
-    type: "Government",
-    description:
-      "A government nursing institution offering nursing education with clinical learning opportunities.",
-    image:
-      "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=karunadu.karnataka.gov.in&sz=128",
-  },
-
-  {
-    id: 109,
-    name: "Bangalore Baptist Hospital College of Nursing",
-    slug: "bangalore-baptist-hospital-college-of-nursing",
+    id: 1,
+    name: "Ramaiah Institute of Nursing Education and Research (RINER)",
+    slug: "ramaiah-institute-of-nursing-education-and-research",
     location: "Bengaluru, Karnataka",
     type: "Private",
+    course: "B.Sc Nursing",
     description:
-      "A nursing institution associated with a healthcare facility offering academic and clinical learning.",
-    image:
-      "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=bbh.org.in&sz=128",
+      "A nursing education institution offering nursing studies and professional healthcare learning opportunities.",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=msruas.ac.in&sz=128",
   },
   {
-    id: 110,
-    name: "St. John's College of Nursing",
-    slug: "st-johns-college-of-nursing",
+    id: 2,
+    name: "RV College of Nursing",
+    slug: "rv-college-of-nursing",
     location: "Bengaluru, Karnataka",
     type: "Private",
+    course: "B.Sc Nursing",
     description:
-      "A professional nursing institution offering nursing education with strong clinical learning opportunities.",
-    image:
-      "https://images.unsplash.com/photo-1580281658223-9b93f18ae9ae?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=stjohns.in&sz=128",
+      "A nursing college focused on nursing education, clinical learning and healthcare professional development.",
+    image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=rvcn.edu.in&sz=128",
   },
   {
-    id: 111,
-    name: "Vydehi Institute of Nursing Sciences",
+    id: 3,
+    name: "Dr. B R Ambedkar Institute of Nursing",
+    slug: "dr-br-ambedkar-institute-of-nursing",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing / GNM",
+    description:
+      "An institution offering nursing education and foundational preparation for professional healthcare careers.",
+    image: "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+  },
+  {
+    id: 4,
+    name: "Karnataka College of Nursing",
+    slug: "karnataka-college-of-nursing",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing / GNM",
+    description:
+      "A nursing college providing nursing education and practical preparation for healthcare services.",
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+  },
+  {
+    id: 5,
+    name: "PES University (PESU)",
+    slug: "pes-university",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing / B.Pharmacy",
+    description:
+      "A Bengaluru-based university offering professional education across selected academic and technical disciplines.",
+    image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=pes.edu&sz=128",
+  },
+  {
+    id: 6,
+    name: "East West College of Nursing (EWCN)",
+    slug: "east-west-college-of-nursing",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing / GNM",
+    description:
+      "A nursing education college focused on academic study and clinical preparation for nursing careers.",
+    image: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=eastwestgroup.in&sz=128",
+  },
+  {
+    id: 7,
+    name: "The Oxford College of Nursing",
+    slug: "the-oxford-college-of-nursing",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing",
+    description:
+      "A nursing college providing healthcare education and practical learning in nursing and patient care.",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=theoxford.edu&sz=128",
+  },
+  {
+    id: 8,
+    name: "Sapthagiri Institute of Medical Sciences and Research Centre (SIMSRC)",
+    slug: "sapthagiri-institute-of-medical-sciences",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing / GNM",
+    description:
+      "A medical and healthcare institution associated with professional education and clinical learning.",
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=sapthagiri.edu.in&sz=128",
+  },
+  {
+    id: 9,
+    name: "Rajarajeswari Medical College and Hospital (RRMCH)",
+    slug: "rajarajeswari-medical-college-and-hospital",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing",
+    description:
+      "A medical education and hospital institution supporting healthcare education and clinical exposure.",
+    image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=rrmch.org&sz=128",
+  },
+  {
+    id: 10,
+    name: "VIMS Bangalore",
+    slug: "vims-bangalore",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing",
+    description:
+      "A healthcare education institution offering learning opportunities in medical and allied healthcare fields.",
+    image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+  },
+  {
+    id: 11,
+    name: "MVM Group of Institutions",
+    slug: "mvm-group-of-institutions",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing / GNM / B.Pharmacy",
+    description:
+      "A group of educational institutions offering professional courses in healthcare and related disciplines.",
+    image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+  },
+  {
+    id: 12,
+    name: "Aakash Group of Institutions",
+    slug: "aakash-group-of-institutions",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing / B.Pharmacy",
+    description:
+      "An educational group offering professional and healthcare-related study opportunities.",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=aakash.ac.in&sz=128",
+  },
+  {
+    id: 13,
+    name: "RR College of Nursing",
+    slug: "rr-college-of-nursing",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing",
+    description:
+      "A nursing college focused on professional nursing education and healthcare skills development.",
+    image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=rrinstitutions.com&sz=128",
+  },
+  {
+    id: 14,
+    name: "Manjunatha College of Nursing",
+    slug: "manjunatha-college-of-nursing",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing",
+    description:
+      "A nursing education institution providing academic instruction and practical healthcare learning.",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+  },
+  {
+    id: 15,
+    name: "Harsha Institutions",
+    slug: "harsha-institutions",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing / B.Pharmacy",
+    description:
+      "An educational institution group offering professional courses, including healthcare-related programs.",
+    image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=harsha.ac.in&sz=128",
+  },
+  {
+    id: 16,
+    name: "VYMAK Group of Institutions",
+    slug: "vymak-group-of-institutions",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing",
+    description:
+      "An educational group offering professional education and training in selected disciplines.",
+    image: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+  },
+  {
+    id: 17,
+    name: "Sapthagiri NPS University",
+    slug: "sapthagiri-nps-university",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing",
+    description:
+      "A higher education institution offering academic programs and professional learning opportunities.",
+    image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=sapthagiri.edu.in&sz=128",
+  },
+  {
+    id: 18,
+    name: "East Point Group of Institutions (EPGI)",
+    slug: "east-point-group-of-institutions",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing / B.Pharmacy",
+    description:
+      "An educational group offering professional and healthcare-related programs in Bengaluru.",
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain eastpoint.ac.in&sz=128",
+  },
+  {
+    id: 19,
+    name: "Acharya Institute of Health Sciences (AIHS)",
+    slug: "acharya-institute-of-health-sciences",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing",
+    description:
+      "An institution focused on healthcare education and preparation for professional healthcare careers.",
+    image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=acharya.ac.in&sz=128",
+  },
+  {
+    id: 20,
+    name: "Smt. Nagarathnamma College of Nursing (SNCN)",
+    slug: "smt-nagarathnamma-college-of-nursing",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing",
+    description:
+      "A nursing college providing academic education and clinical preparation for nursing students.",
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=acharya.ac.in&sz=128",
+  },
+  {
+    id: 21,
+    name: "MVJ College of Nursing (MVJCON)",
+    slug: "mvj-college-of-nursing",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing",
+    description:
+      "A nursing college offering professional education and practical preparation for healthcare careers.",
+    image: "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=mvjce.edu.in&sz=128",
+  },
+  {
+    id: 22,
+    name: "Krupanidhi College of Nursing (KCON)",
+    slug: "krupanidhi-college-of-nursing",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing / GNM",
+    description:
+      "A nursing education institution offering professional learning in nursing and patient care.",
+    image: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=krupanidhi.edu.in&sz=128",
+  },
+  {
+    id: 23,
+    name: "Vydehi Institute of Nursing Sciences and Research Centre",
     slug: "vydehi-institute-of-nursing-sciences",
     location: "Bengaluru, Karnataka",
     type: "Private",
+    course: "B.Sc Nursing",
     description:
-      "A nursing institution offering professional education supported by academic and clinical facilities.",
-    image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=vydehi.edu.in&sz=128",
-  },
-
-  {
-    id: 112,
-    name: "AIIMS New Delhi",
-    slug: "aiims-new-delhi-bsc-nursing",
-    location: "New Delhi",
-    type: "Government",
-    description:
-      "A leading central medical institution offering nursing education with extensive clinical learning facilities.",
-    image:
-      "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=aiims.edu&sz=128",
+      "A healthcare education institution offering nursing studies and clinical learning opportunities.",
+    image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=vydehi.org&sz=128",
   },
   {
-    id: 113,
-    name: "AIIMS Rishikesh",
-    slug: "aiims-rishikesh-bsc-nursing",
-    location: "Rishikesh, Uttarakhand",
-    type: "Government",
+    id: 24,
+    name: "SJB College of Nursing",
+    slug: "sjb-college-of-nursing",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing",
     description:
-      "A central medical institution providing nursing education supported by hospital-based clinical learning.",
-    image:
-      "https://images.unsplash.com/photo-1504439468489-c8920d796a29?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=aiimsrishikesh.edu.in&sz=128",
+      "A nursing college providing academic and practical education for aspiring healthcare professionals.",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
   },
   {
-    id: 114,
-    name: "AIIMS Bhopal",
-    slug: "aiims-bhopal-bsc-nursing",
-    location: "Bhopal, Madhya Pradesh",
-    type: "Government",
+    id: 25,
+    name: "Sri Lakshmi College of Nursing",
+    slug: "sri-lakshmi-college-of-nursing",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing",
     description:
-      "A centrally funded medical institution offering nursing education and clinical healthcare training.",
-    image:
-      "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=aiimsbhopal.edu.in&sz=128",
+      "A nursing college focused on nursing education and professional healthcare development.",
+    image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
   },
   {
-    id: 115,
-    name: "AIIMS Bhubaneswar",
-    slug: "aiims-bhubaneswar-bsc-nursing",
-    location: "Bhubaneswar, Odisha",
-    type: "Government",
+    id: 26,
+    name: "Spurthy College of Nursing",
+    slug: "spurthy-college-of-nursing",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing",
     description:
-      "A central medical institution offering nursing programs with academic and clinical facilities.",
-    image:
-      "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=aiimsbhubaneswar.nic.in&sz=128",
+      "An institution offering nursing education and professional preparation in healthcare services.",
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=spurthycollege.com&sz=128",
   },
   {
-    id: 116,
-    name: "AIIMS Jodhpur",
-    slug: "aiims-jodhpur-bsc-nursing",
-    location: "Jodhpur, Rajasthan",
-    type: "Government",
+    id: 27,
+    name: "Little Flower Group of Institutions",
+    slug: "little-flower-group-of-institutions",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Sc Nursing",
     description:
-      "A central medical institution providing nursing education and healthcare training opportunities.",
-    image:
-      "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=aiimsjodhpur.edu.in&sz=128",
+      "An educational group offering professional learning opportunities, including healthcare-related education.",
+    image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
   },
   {
-    id: 117,
-    name: "AIIMS Patna",
-    slug: "aiims-patna-bsc-nursing",
-    location: "Patna, Bihar",
-    type: "Government",
+    id: 28,
+    name: "M.S. Ramaiah University of Applied Sciences (MSRUAS)",
+    slug: "ms-ramaiah-university-of-applied-sciences",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "GNM / B.Pharmacy",
     description:
-      "A central government institution offering nursing education with clinical and practical training.",
-    image:
-      "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=aiimspatna.edu.in&sz=128",
+      "A university offering professional education across applied sciences and selected healthcare disciplines.",
+    image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=msruas.ac.in&sz=128",
   },
   {
-    id: 118,
-    name: "AIIMS Raipur",
-    slug: "aiims-raipur-bsc-nursing",
-    location: "Raipur, Chhattisgarh",
-    type: "Government",
+    id: 29,
+    name: "Padmashree Group of Institutions",
+    slug: "padmashree-group-of-institutions",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "GNM",
     description:
-      "A centrally funded medical institution offering nursing education and healthcare training.",
-    image:
-      "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=aiimsraipur.edu.in&sz=128",
+      "An educational group offering professional courses and learning opportunities in selected disciplines.",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=padmashree.org&sz=128",
   },
   {
-    id: 119,
-    name: "AIIMS Deoghar",
-    slug: "aiims-deoghar-bsc-nursing",
-    location: "Deoghar, Jharkhand",
-    type: "Government",
+    id: 30,
+    name: "Goutham College",
+    slug: "goutham-college",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "GNM",
     description:
-      "A central medical institution offering nursing education and practical healthcare learning.",
-    image:
-      "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=aiimsdeoghar.edu.in&sz=128",
-  },
-
-  {
-    id: 120,
-    name: "PGIMER Chandigarh",
-    slug: "pgimer-msc-nursing",
-    location: "Chandigarh",
-    type: "Government",
-    description:
-      "A major medical education and research institution offering advanced nursing education and clinical training.",
-    image:
-      "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=pgimer.edu.in&sz=128",
+      "An educational institution offering professional learning opportunities in healthcare-related fields.",
+    image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
   },
   {
-    id: 121,
-    name: "JIPMER Puducherry",
-    slug: "jipmer-msc-nursing",
-    location: "Puducherry",
-    type: "Government",
+    id: 31,
+    name: "Krupanidhi Group of Institutions",
+    slug: "krupanidhi-group-of-institutions",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "GNM",
     description:
-      "A centrally administered medical institution offering advanced nursing education and clinical learning.",
-    image:
-      "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=jipmer.edu.in&sz=128",
+      "An educational group offering professional programs and academic learning opportunities.",
+    image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=krupanidhi.edu.in&sz=128",
+  },
+  {
+    id: 32,
+    name: "SB Group of Institutions",
+    slug: "sb-group-of-institutions",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "GNM",
+    description:
+      "An educational institution group offering professional education and career-focused programs.",
+    image: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+  },
+  {
+    id: 33,
+    name: "Acharya & BM Reddy College of Pharmacy (ABMRCP)",
+    slug: "acharya-bm-reddy-college-of-pharmacy",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Pharmacy",
+    description:
+      "A pharmacy college focused on pharmaceutical education, laboratory learning and professional development.",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=acharya.ac.in&sz=128",
+  },
+  {
+    id: 34,
+    name: "Dayananda Sagar University (DSU)",
+    slug: "dayananda-sagar-university",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Pharmacy",
+    description:
+      "A university offering higher education and professional learning across selected academic disciplines.",
+    image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=dsu.edu.in&sz=128",
+  },
+  {
+    id: 35,
+    name: "The Oxford College of Pharmacy",
+    slug: "the-oxford-college-of-pharmacy",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Pharmacy",
+    description:
+      "A pharmacy institution offering pharmaceutical education and professional learning in drug sciences.",
+    image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=theoxford.edu&sz=128",
+  },
+  {
+    id: 36,
+    name: "T. John College of Pharmacy",
+    slug: "t-john-college-of-pharmacy",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Pharmacy",
+    description:
+      "A pharmacy college providing academic and practical learning in pharmaceutical sciences.",
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=tjohncollege.com&sz=128",
+  },
+  {
+    id: 37,
+    name: "Aditya Group of Institutions",
+    slug: "aditya-group-of-institutions",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Pharmacy",
+    description:
+      "An educational group offering professional education in selected academic and career-focused fields.",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+  },
+  {
+    id: 38,
+    name: "RR College of Pharmacy (RRCP)",
+    slug: "rr-college-of-pharmacy",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Pharmacy",
+    description:
+      "A pharmacy college offering pharmaceutical studies and practical learning opportunities.",
+    image: "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=rrinstitutions.com&sz=128",
+  },
+  {
+    id: 39,
+    name: "Oxbridge Group of Institutions",
+    slug: "oxbridge-group-of-institutions",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Pharmacy",
+    description:
+      "An educational group offering professional courses and career-oriented learning opportunities.",
+    image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+  },
+  {
+    id: 40,
+    name: "Vivekananda College of Pharmacy (VCP)",
+    slug: "vivekananda-college-of-pharmacy",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Pharmacy",
+    description:
+      "A pharmacy college focused on pharmaceutical education and professional skill development.",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+  },
+  {
+    id: 41,
+    name: "Gautham College of Pharmacy (GCP)",
+    slug: "gautham-college-of-pharmacy",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Pharmacy",
+    description:
+      "A pharmacy college offering academic education in pharmaceutical sciences and related professional areas.",
+    image: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+  },
+  {
+    id: 42,
+    name: "Mallige College of Pharmacy",
+    slug: "mallige-college-of-pharmacy",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Pharmacy",
+    description:
+      "A pharmacy institution offering pharmaceutical education and professional learning.",
+    image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+  },
+  {
+    id: 43,
+    name: "East West College of Pharmacy",
+    slug: "east-west-college-of-pharmacy",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Pharmacy",
+    description:
+      "A pharmacy college providing academic and practical education in pharmaceutical sciences.",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=eastwestgroup.in&sz=128",
+  },
+  {
+    id: 44,
+    name: "Vydehi Institute of Pharmacy (VIP)",
+    slug: "vydehi-institute-of-pharmacy",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Pharmacy",
+    description:
+      "An institution offering pharmacy education and professional learning in pharmaceutical sciences.",
+    image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=vydehi.org&sz=128",
+  },
+  {
+    id: 45,
+    name: "Nargund College of Pharmacy",
+    slug: "nargund-college-of-pharmacy",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Pharmacy",
+    description:
+      "A pharmacy college focused on pharmaceutical education and practical professional preparation.",
+    image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+  },
+  {
+    id: 46,
+    name: "Spurthy College of Pharmacy (SCP)",
+    slug: "spurthy-college-of-pharmacy",
+    location: "Bengaluru, Karnataka",
+    type: "Private",
+    course: "B.Pharmacy",
+    description:
+      "A pharmacy college providing professional education in pharmaceutical sciences and related subjects.",
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=spurthycollege.com&sz=128",
   },
 ];
 
@@ -318,79 +594,59 @@ export default function NursingCollegesPage() {
       (college) =>
         college.name.toLowerCase().includes(value) ||
         college.location.toLowerCase().includes(value) ||
-        college.type.toLowerCase().includes(value)
+        college.type.toLowerCase().includes(value) ||
+        college.course.toLowerCase().includes(value)
     );
   }, [search]);
 
   return (
     <main className="min-h-screen bg-white">
-
       {/* BREADCRUMB */}
-
       <BreadcrumbBanner
-        title="Nursing Colleges"
-        description="Explore nursing colleges, courses and admission opportunities"
+        title="Nursing & Pharmacy Colleges"
+        description="Explore nursing, GNM and pharmacy colleges and admission opportunities"
       />
 
       {/* INTRO */}
-
       <section className="bg-[#f8f9fc] py-14 sm:py-16">
-
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
           <div className="w-full text-center">
-
             <span className="inline-flex items-center gap-2 rounded-full bg-[#2E3281]/10 px-4 py-2 text-xs font-bold uppercase tracking-[1.5px] text-[#2E3281]">
-              <HeartPulse size={16} />
-              Nursing Admissions
+              <GraduationCap size={16} />
+              Healthcare Admissions
             </span>
 
             <h1 className="mt-5 text-3xl font-bold leading-tight text-[#2E3281] sm:text-4xl md:text-5xl">
-              Find The Right Nursing College
+              Find The Right Nursing & Pharmacy College
             </h1>
 
             <p className="mx-auto mt-5 max-w-3xl text-[16px] leading-7 text-slate-600">
-              Explore nursing colleges and choose the right institution
-              based on your preferred course, location and admission
-              requirements.
+              Explore colleges offering B.Sc Nursing, GNM and B.Pharmacy.
+              Search for institutions based on course and location.
             </p>
-
           </div>
-
         </div>
-
       </section>
 
-      {/* COLLEGE SECTION */}
-
+      {/* COLLEGE LIST */}
       <section className="bg-white py-14 sm:py-20">
-
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-          {/* HEADER */}
-
-
-
-
-
+          {/* SEARCH */}
           <div className="mb-8 rounded-2xl border border-slate-200 bg-[#f8f9fc] p-5">
             <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[1.5px] text-[#a71320]">
-                  Nursing Education
+                  Nursing & Pharmacy Education
                 </p>
 
                 <h2 className="mt-1 text-2xl font-bold text-[#2E3281] sm:text-3xl">
-                  Nursing Colleges
+                  Nursing & Pharmacy Colleges
                 </h2>
 
                 <p className="mt-2 text-sm leading-6 text-slate-600">
-                  Explore government and private nursing colleges offering
-                  undergraduate and postgraduate nursing programs.
+                  Explore B.Sc Nursing, GNM and B.Pharmacy colleges in Bengaluru.
                 </p>
               </div>
-
-              {/* SEARCH */}
 
               <div className="relative w-full sm:max-w-xs">
                 <Search
@@ -401,22 +657,23 @@ export default function NursingCollegesPage() {
                 <input
                   type="text"
                   value={search}
-                  onChange={(event) => setSearch(event.target.value)}
-                  placeholder="Search college..."
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Search college or course..."
                   className="h-12 w-full rounded-xl border border-slate-200 bg-white pl-11 pr-4 text-sm text-slate-700 outline-none transition focus:border-[#2E3281] focus:ring-2 focus:ring-[#2E3281]/10"
                 />
               </div>
             </div>
           </div>
 
-
-
-
-
           {/* RESULT COUNT */}
-
-          <div className="mb-6 flex items-center justify-between">
-
+          <div className="mb-5 flex items-center justify-between">
+            <p className="text-sm font-medium text-slate-500">
+              Showing{" "}
+              <span className="font-bold text-[#2E3281]">
+                {filteredColleges.length}
+              </span>{" "}
+              colleges
+            </p>
 
             {search && (
               <button
@@ -427,125 +684,107 @@ export default function NursingCollegesPage() {
                 Clear Search
               </button>
             )}
-
           </div>
 
           {/* COLLEGE CARDS */}
-
           {filteredColleges.length > 0 ? (
-
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-
               {filteredColleges.map((college) => (
-
                 <article
                   key={college.id}
                   className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#2E3281]/30 hover:shadow-xl"
                 >
-
                   {/* IMAGE */}
-
-                  <div className="relative h-44 overflow-hidden bg-slate-100">
-
+                  <div className="relative h-44 w-full overflow-hidden bg-slate-100">
                     <img
                       src={college.image}
                       alt={college.name}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent" />
+
+                    {/* COURSE TAG */}
+                    <span className="absolute top-3 left-3 max-w-[calc(100%-24px)] rounded-lg bg-white px-3 py-1.5 text-[10px] font-bold uppercase leading-4 tracking-wide text-[#2E3281] shadow-sm">
+                      {college.course.split(" / ").map((course, index) => (
+                        <span key={course}>
+                          {index > 0 && " / "}
+                          {course}
+                        </span>
+                      ))}
+                    </span>
 
                     {/* TYPE */}
-
                     <span
-                      className={`absolute right-3 top-3 rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-wide ${college.type === "Government"
-                          ? "bg-[#2E3281] text-white"
+                      className={`absolute right-3 top-3 rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-wide ${
+                        college.type === "Government"
+                          ? "bg-white text-[#2E3281]"
                           : "bg-[#a71320] text-white"
-                        }`}
+                      }`}
                     >
                       {college.type}
                     </span>
-
                   </div>
 
                   {/* CONTENT */}
-
-                  <div className="relative flex flex-1 flex-col p-5">
-
+                  <div className="flex flex-1 flex-col p-5">
                     {/* LOGO */}
-
-                    <div className="-mt-12 mb-4 flex h-14 w-14 items-center justify-center overflow-hidden rounded-xl border-4 border-white bg-white shadow-md">
-
+                    <div className="-mt-11 relative z-10 mb-3 flex h-14 w-14 items-center justify-center overflow-hidden rounded-xl border-4 border-white bg-white shadow-md">
                       <img
                         src={college.logo}
                         alt={`${college.name} logo`}
                         className="h-10 w-10 object-contain"
-                        loading="lazy"
                       />
-
                     </div>
 
                     {/* NAME */}
-
-                    <h3 className="text-lg font-bold leading-7 text-[#2E3281] transition-colors duration-300 group-hover:text-[#a71320]">
+                    <h3 className="text-lg font-bold leading-7 text-[#2E3281] transition-colors group-hover:text-[#a71320]">
                       {college.name}
                     </h3>
 
                     {/* LOCATION */}
-
                     <div className="mt-3 flex items-start gap-2 text-sm text-slate-500">
-
                       <MapPin
                         size={16}
                         className="mt-0.5 shrink-0 text-[#a71320]"
                       />
 
                       <span>{college.location}</span>
-
                     </div>
 
                     {/* DESCRIPTION */}
-
                     <p className="mt-4 line-clamp-3 flex-1 text-sm leading-6 text-slate-600">
                       {college.description}
                     </p>
 
                     {/* BUTTONS */}
-
                     <div className="mt-6 grid grid-cols-2 gap-2 border-t border-slate-100 pt-4">
-
                       <Link
                         href={`/nursing-colleges/${college.slug}`}
                         className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#2E3281] px-3 py-2.5 text-xs font-semibold text-white transition-all duration-300 hover:bg-[#a71320]"
                       >
                         View Details
-                        <ArrowRight size={14} />
+                        <ArrowRight
+                          size={14}
+                          className="transition-transform group-hover:translate-x-1"
+                        />
                       </Link>
 
-                       <Link
-                        href="/contact"
+                      <Link
+                        href="/contact-us"
                         className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-[#a71320] bg-[#a71320]/5 px-3 py-2.5 text-xs font-bold text-[#a71320] transition-all duration-300 hover:bg-[#a71320] hover:text-white"
                       >
                         Enquiry
                         <GraduationCap size={14} />
                       </Link>
-
-
                     </div>
-
                   </div>
-
                 </article>
-
               ))}
-
             </div>
-
           ) : (
-
+            /* NO RESULTS */
             <div className="rounded-2xl border border-dashed border-slate-300 bg-[#f8f9fc] px-6 py-16 text-center">
-
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#2E3281]/10 text-[#2E3281]">
                 <Search size={24} />
               </div>
@@ -555,8 +794,8 @@ export default function NursingCollegesPage() {
               </h3>
 
               <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-500">
-                We could not find a nursing college matching your
-                search. Try searching with a different name or location.
+                We could not find a college matching your search. Try another
+                college name or course.
               </p>
 
               <button
@@ -566,58 +805,43 @@ export default function NursingCollegesPage() {
               >
                 Clear Search
               </button>
-
             </div>
-
           )}
-
         </div>
-
       </section>
 
       {/* CTA */}
-
       <section className="bg-[#f8f9fc] py-14 sm:py-16">
-
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
-
           <div className="relative overflow-hidden rounded-3xl bg-[#2E3281] px-6 py-12 text-center sm:px-10">
-
             <div className="absolute -right-20 -top-20 h-52 w-52 rounded-full bg-white/5" />
-
             <div className="absolute -bottom-24 -left-20 h-60 w-60 rounded-full bg-white/5" />
 
             <div className="relative">
-
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-white/10 text-white">
-                <HeartPulse size={28} />
+                <GraduationCap size={28} />
               </div>
 
               <h2 className="mt-5 text-2xl font-bold text-white sm:text-3xl">
-                Need Help Choosing Your Nursing College?
+                Need Help Choosing Your College?
               </h2>
 
               <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-blue-100 sm:text-base">
-                Get personalised guidance on nursing courses,
+                Get guidance on B.Sc Nursing, GNM and B.Pharmacy courses,
                 college options, counselling and admission procedures.
               </p>
 
               <Link
-                href="/contact"
+                href="/contact-us"
                 className="mt-7 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-[#2E3281] transition-all hover:bg-[#a71320] hover:text-white"
               >
-                Get Nursing Admission Guidance
+                Get Admission Guidance
                 <ArrowRight size={18} />
               </Link>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
-
     </main>
   );
 }

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useMemo, useState } from "react";
@@ -32,7 +33,7 @@ const colleges: College[] = [
     slug: "christ-university",
     location: "Bengaluru, Karnataka",
     type: "Private",
-    course: "BBA / MBA",
+    course: "BBA / MBA / B.Com / BBA LLB",
     description:
       "A well-established university offering management and business programs with a strong academic and professional learning environment.",
     image:
@@ -46,7 +47,7 @@ const colleges: College[] = [
     slug: "mount-carmel-college",
     location: "Bengaluru, Karnataka",
     type: "Private",
-    course: "BBA",
+    course: "BBA / B.Com",
     description:
       "An established Bengaluru institution offering undergraduate programs in management, commerce and business-related disciplines.",
     image:
@@ -60,7 +61,7 @@ const colleges: College[] = [
     slug: "kristu-jayanti-college",
     location: "Bengaluru, Karnataka",
     type: "Private",
-    course: "BBA",
+    course: "BBA / MBA / B.Com",
     description:
       "A Bengaluru-based institution offering business and management programs with academic learning and practical exposure.",
     image:
@@ -74,7 +75,7 @@ const colleges: College[] = [
     slug: "jain-university",
     location: "Bengaluru, Karnataka",
     type: "Private",
-    course: "BBA / MBA",
+    course: "BBA / MBA / B.Com / BBA LLB",
     description:
       "A private university offering undergraduate and postgraduate programs in business administration and management.",
     image:
@@ -88,7 +89,7 @@ const colleges: College[] = [
     slug: "presidency-university",
     location: "Bengaluru, Karnataka",
     type: "Private",
-    course: "BBA / MBA",
+    course: "BBA / MBA / B.Com",
     description:
       "A modern university offering management and business programs supported by contemporary academic facilities.",
     image:
@@ -102,7 +103,7 @@ const colleges: College[] = [
     slug: "alliance-university",
     location: "Bengaluru, Karnataka",
     type: "Private",
-    course: "BBA / MBA",
+    course: "BBA / MBA / B.Com / BBA LLB",
     description:
       "A university offering business and management education across multiple areas with an industry-oriented learning approach.",
     image:
@@ -116,7 +117,7 @@ const colleges: College[] = [
     slug: "acharya-institute-of-graduate-studies",
     location: "Bengaluru, Karnataka",
     type: "Private",
-    course: "BBA / MBA",
+    course: "BBA / B.Com",
     description:
       "An institution offering management, commerce and business-related programs with a focus on academic and professional development.",
     image:
@@ -130,7 +131,7 @@ const colleges: College[] = [
     slug: "reva-university",
     location: "Bengaluru, Karnataka",
     type: "Private",
-    course: "BBA / MBA",
+    course: "BBA / MBA / B.Com",
     description:
       "A university offering business administration and management programs with practical and industry-oriented learning opportunities.",
     image:
@@ -186,9 +187,9 @@ const colleges: College[] = [
     slug: "ms-ramaiah-university-of-applied-sciences",
     location: "Bengaluru, Karnataka",
     type: "Private",
-    course: "MBA",
+    course: "MBA / B.Com / BBA LLB",
     description:
-      "A university offering postgraduate business and management programs with practical and application-oriented education.",
+      "A university offering business and management programs with practical and application-oriented education.",
     image:
       "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80",
     logo:
@@ -427,21 +428,16 @@ export default function ManagementCollegesPage() {
 
   return (
     <main className="min-h-screen bg-white">
-
       {/* BREADCRUMB */}
-
       <BreadcrumbBanner
         title="Management Colleges"
         description="Explore management colleges, courses and admission opportunities"
       />
 
       {/* INTRO */}
-
       <section className="bg-[#f8f9fc] py-14 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
           <div className="w-full text-center">
-
             <span className="inline-flex items-center gap-2 rounded-full bg-[#2E3281]/10 px-4 py-2 text-xs font-bold uppercase tracking-[1.5px] text-[#2E3281]">
               <BriefcaseBusiness size={16} />
               Management Admissions
@@ -452,30 +448,20 @@ export default function ManagementCollegesPage() {
             </h1>
 
             <p className="mx-auto mt-5 max-w-3xl text-[16px] leading-7 text-slate-600">
-              Explore management colleges and discover suitable
-              BBA and MBA options based on your preferred location,
-              course and college type.
+              Explore management colleges and discover suitable BBA and MBA
+              options based on your preferred location, course and college type.
             </p>
-
           </div>
-
         </div>
       </section>
 
       {/* COLLEGE LIST */}
-
       <section className="bg-white py-14 sm:py-20">
-
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
           {/* SEARCH */}
-
           <div className="mb-8 rounded-2xl border border-slate-200 bg-[#f8f9fc] p-5">
-
             <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-
               <div>
-
                 <p className="text-xs font-bold uppercase tracking-[1.5px] text-[#a71320]">
                   Management Education
                 </p>
@@ -485,13 +471,11 @@ export default function ManagementCollegesPage() {
                 </h2>
 
                 <p className="mt-2 text-sm leading-6 text-slate-600">
-                  Explore BBA and MBA colleges across India.
+                  Explore BBA, MBA, B.Com and BBA LLB colleges across India.
                 </p>
-
               </div>
 
               <div className="relative w-full sm:max-w-xs">
-
                 <Search
                   size={18}
                   className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
@@ -501,20 +485,15 @@ export default function ManagementCollegesPage() {
                   type="text"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  placeholder="Search college..."
+                  placeholder="Search college or course..."
                   className="h-12 w-full rounded-xl border border-slate-200 bg-white pl-11 pr-4 text-sm text-slate-700 outline-none transition focus:border-[#2E3281] focus:ring-2 focus:ring-[#2E3281]/10"
                 />
-
               </div>
-
             </div>
-
           </div>
 
           {/* RESULT COUNT */}
-
           <div className="mb-5 flex items-center justify-between">
-
             <p className="text-sm font-medium text-slate-500">
               Showing{" "}
               <span className="font-bold text-[#2E3281]">
@@ -532,26 +511,18 @@ export default function ManagementCollegesPage() {
                 Clear Search
               </button>
             )}
-
           </div>
 
           {/* COLLEGE CARDS */}
-
           {filteredColleges.length > 0 ? (
-
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-
               {filteredColleges.map((college) => (
-
                 <article
                   key={college.id}
                   className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#2E3281]/30 hover:shadow-xl"
                 >
-
                   {/* IMAGE */}
-
                   <div className="relative h-44 w-full overflow-hidden bg-slate-100">
-
                     <img
                       src={college.image}
                       alt={college.name}
@@ -560,14 +531,17 @@ export default function ManagementCollegesPage() {
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent" />
 
-                    {/* COURSE */}
-
-                    <span className="absolute bottom-3 left-3 rounded-full bg-white px-3 py-1.5 text-[10px] font-bold uppercase tracking-wide text-[#2E3281]">
-                      {college.course}
+                    {/* COURSE TAG */}
+                    <span className="absolute top-3 left-3 max-w-[calc(100%-24px)] rounded-lg bg-white px-3 py-1.5 text-[10px] font-bold uppercase leading-4 tracking-wide text-[#2E3281] shadow-sm">
+                      {college.course.split(" / ").map((course, index) => (
+                        <span key={course}>
+                          {index > 0 && " / "}
+                          {course}
+                        </span>
+                      ))}
                     </span>
 
                     {/* TYPE */}
-
                     <span
                       className={`absolute right-3 top-3 rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-wide ${
                         college.type === "Government"
@@ -577,62 +551,46 @@ export default function ManagementCollegesPage() {
                     >
                       {college.type}
                     </span>
-
                   </div>
 
                   {/* CONTENT */}
-
                   <div className="flex flex-1 flex-col p-5">
-
                     {/* LOGO */}
-
                     <div className="-mt-11 relative z-10 mb-3 flex h-14 w-14 items-center justify-center overflow-hidden rounded-xl border-4 border-white bg-white shadow-md">
-
                       <img
                         src={college.logo}
                         alt={`${college.name} logo`}
                         className="h-10 w-10 object-contain"
                       />
-
                     </div>
 
                     {/* NAME */}
-
                     <h3 className="text-lg font-bold leading-7 text-[#2E3281] transition-colors group-hover:text-[#a71320]">
                       {college.name}
                     </h3>
 
                     {/* LOCATION */}
-
                     <div className="mt-3 flex items-start gap-2 text-sm text-slate-500">
-
                       <MapPin
                         size={16}
                         className="mt-0.5 shrink-0 text-[#a71320]"
                       />
 
-                      <span>
-                        {college.location}
-                      </span>
-
+                      <span>{college.location}</span>
                     </div>
 
                     {/* DESCRIPTION */}
-
                     <p className="mt-4 line-clamp-3 flex-1 text-sm leading-6 text-slate-600">
                       {college.description}
                     </p>
 
                     {/* BUTTONS */}
-
                     <div className="mt-6 grid grid-cols-2 gap-2 border-t border-slate-100 pt-4">
-
                       <Link
                         href={`/management-colleges/${college.slug}`}
                         className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#2E3281] px-3 py-2.5 text-xs font-semibold text-white transition-all duration-300 hover:bg-[#a71320]"
                       >
                         View Details
-
                         <ArrowRight
                           size={14}
                           className="transition-transform group-hover:translate-x-1"
@@ -646,24 +604,14 @@ export default function ManagementCollegesPage() {
                         Enquiry
                         <GraduationCap size={14} />
                       </Link>
-
-
                     </div>
-
                   </div>
-
                 </article>
-
               ))}
-
             </div>
-
           ) : (
-
             /* NO RESULTS */
-
             <div className="rounded-2xl border border-dashed border-slate-300 bg-[#f8f9fc] px-6 py-16 text-center">
-
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#2E3281]/10 text-[#2E3281]">
                 <Search size={24} />
               </div>
@@ -673,9 +621,8 @@ export default function ManagementCollegesPage() {
               </h3>
 
               <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-500">
-                We could not find a management college matching
-                your search. Try another college name, location or
-                course.
+                We could not find a management college matching your search.
+                Try another college name, location or course.
               </p>
 
               <button
@@ -685,29 +632,19 @@ export default function ManagementCollegesPage() {
               >
                 Clear Search
               </button>
-
             </div>
-
           )}
-
         </div>
-
       </section>
 
       {/* CTA */}
-
       <section className="bg-[#f8f9fc] py-14 sm:py-16">
-
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
-
           <div className="relative overflow-hidden rounded-3xl bg-[#2E3281] px-6 py-12 text-center sm:px-10">
-
             <div className="absolute -right-20 -top-20 h-52 w-52 rounded-full bg-white/5" />
-
             <div className="absolute -bottom-24 -left-20 h-60 w-60 rounded-full bg-white/5" />
 
             <div className="relative">
-
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-white/10 text-white">
                 <BriefcaseBusiness size={28} />
               </div>
@@ -717,7 +654,7 @@ export default function ManagementCollegesPage() {
               </h2>
 
               <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-blue-100 sm:text-base">
-                Get personalised guidance on BBA, MBA, college
+                Get personalised guidance on BBA, MBA, B.Com, BBA LLB, college
                 options, counselling and admission procedures.
               </p>
 
@@ -728,15 +665,10 @@ export default function ManagementCollegesPage() {
                 Get Admission Guidance
                 <ArrowRight size={18} />
               </Link>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
-
     </main>
   );
 }
