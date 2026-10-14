@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -17,7 +18,6 @@ import {
 } from "lucide-react";
 
 const collegeImage = "/images/Collges/4.jpg";
-
 const collegeLogo =
   "https://www.google.com/s2/favicons?domain=atria.edu&sz=256";
 
@@ -51,130 +51,180 @@ const courses: Course[] = [
     duration: "4 Years",
     type: "B.E.",
     description:
-      "A comprehensive engineering programme covering programming, algorithms, databases, software development, computer networks and modern computing technologies.",
+      "Study programming, algorithms, databases, software engineering, computer networks and modern computing technologies.",
   },
   {
     title: "Artificial Intelligence & Machine Learning",
     duration: "4 Years",
     type: "B.E.",
     description:
-      "Focuses on artificial intelligence, machine learning, intelligent systems, data-driven applications and emerging technology solutions.",
+      "Explore artificial intelligence, machine learning, intelligent systems and data-driven applications.",
   },
   {
-    title: "Artificial Intelligence & Data Science",
+    title: "Computer Science & Engineering (Data Science)",
     duration: "4 Years",
     type: "B.E.",
     description:
-      "Combines artificial intelligence, data analytics, statistics, machine learning and data-driven computing applications.",
+      "Develop skills in data analytics, statistical modelling, machine learning and large-scale data processing.",
+  },
+  {
+    title: "Computer Science & Design",
+    duration: "4 Years",
+    type: "B.E.",
+    description:
+      "Combine computing fundamentals with user-centred design, digital experiences and application development.",
   },
   {
     title: "Information Science & Engineering",
     duration: "4 Years",
     type: "B.E.",
     description:
-      "Covers software engineering, information systems, databases, programming, networking and digital technologies.",
+      "Learn software development, information systems, databases, networking and enterprise technologies.",
   },
   {
     title: "Electronics & Communication Engineering",
     duration: "4 Years",
     type: "B.E.",
     description:
-      "Provides knowledge in electronics, communication systems, embedded systems, digital technologies and signal processing.",
+      "Study electronics, communication systems, embedded technologies, signal processing and digital systems.",
   },
   {
-    title: "Electrical & Electronics Engineering",
+    title: "Robotics & Automation",
     duration: "4 Years",
     type: "B.E.",
     description:
-      "Covers electrical systems, power systems, electronics, control systems and electrical technology applications.",
+      "Explore robotics, automation, control systems, sensors and intelligent industrial applications.",
   },
   {
     title: "Mechanical Engineering",
     duration: "4 Years",
     type: "B.E.",
     description:
-      "Focuses on mechanical design, manufacturing, thermal engineering, materials, production and industrial applications.",
+      "Learn mechanical design, manufacturing, thermal engineering, materials and industrial processes.",
   },
   {
     title: "Civil Engineering",
     duration: "4 Years",
     type: "B.E.",
     description:
-      "Covers structural engineering, construction, infrastructure, transportation, environmental engineering and related fields.",
+      "Study structural engineering, construction, infrastructure, transportation and environmental engineering.",
   },
-];
-
-const eligibility: string[] = [
-  "Candidates must satisfy the eligibility requirements prescribed by the applicable admission authority and Government of Karnataka.",
-  "Candidates seeking B.E. admission should have completed 10+2 / PUC or an equivalent qualification with the required subjects.",
-  "For Karnataka admissions, eligible candidates can participate through the applicable KCET / KEA counselling process.",
-  "Candidates may also seek admission through COMEDK UGET where applicable.",
-  "Management quota admission may be available subject to the institute's current admission rules and applicable regulations.",
-  "Minimum qualifying marks, subject combinations and entrance requirements can vary according to the admission category.",
+  {
+    title: "Master of Business Administration",
+    duration: "2 Years",
+    type: "MBA",
+    description:
+      "Develop knowledge of management, finance, marketing, business strategy and organisational leadership.",
+  },
+  {
+    title: "Master of Computer Applications",
+    duration: "2 Years",
+    type: "MCA",
+    description:
+      "Build advanced knowledge of software development, computer applications, databases and IT systems.",
+  },
+  {
+    title: "M.Tech in Computer Science & Engineering",
+    duration: "2 Years",
+    type: "M.Tech",
+    description:
+      "Pursue advanced study in computer science, specialised computing topics and technical research.",
+  },
 ];
 
 const feeRows: FeeRow[] = [
   {
-    category: "General",
-    course: "B.E. / B.Tech",
-    tuition: "₹4.86 L",
-    college: "₹46,000",
-    university: "Included / As Applicable",
-    total: "₹5.32 L",
+    category: "KCET",
+    course: "B.E. — eligible undergraduate programmes",
+    tuition: "₹98,000",
+    college: "₹20,000",
+    university: "As applicable",
+    total: "₹1,33,000*",
+  },
+  {
+    category: "COMEDK",
+    course: "B.E. — eligible undergraduate programmes",
+    tuition: "₹2,15,000",
+    college: "₹20,000",
+    university: "As applicable",
+    total: "₹2,50,000*",
+  },
+  {
+    category: "PGCET",
+    course: "MBA / MCA / M.Tech",
+    tuition: "Confirm with college",
+    college: "Confirm with college",
+    university: "As applicable",
+    total: "Confirm with college",
   },
   {
     category: "Management",
-    course: "B.E. / B.Tech",
-    tuition: "₹16.25 L",
-    college: "As Applicable",
-    university: "As Applicable",
-    total: "₹16.25 L*",
+    course: "B.E. / MBA / MCA / M.Tech",
+    tuition: "Confirm with college",
+    college: "Confirm with college",
+    university: "As applicable",
+    total: "Confirm with college",
   },
+];
+
+const eligibility = [
+  "Candidates must satisfy the academic and admission requirements applicable to their chosen programme.",
+  "For B.E. admission, candidates generally need to complete 10+2 / PUC or an equivalent qualification with the required subjects.",
+  "Eligible Karnataka candidates may apply through the KCET / KEA counselling process.",
+  "Eligible candidates may seek B.E. admission through COMEDK UGET, subject to the applicable rules.",
+  "For postgraduate programmes, candidates must meet the qualification and entrance requirements for the relevant course.",
+  "MBA, MCA and M.Tech admissions may involve PGCET or other accepted routes, depending on the programme and current rules.",
+  "Management admissions, where available, are subject to eligibility, merit, seat availability and applicable regulations.",
 ];
 
 const requiredDocuments = [
   "10th / SSLC Marks Card",
   "12th / PUC Marks Card",
-  "KCET / COMEDK Rank Card",
-  "KEA / COMEDK Allotment Letter",
+  "KCET / COMEDK Rank Card, if applicable",
+  "KEA / COMEDK Allotment Letter, if applicable",
+  "Degree Marks Cards for postgraduate courses",
+  "Degree Certificate / Provisional Certificate",
   "Transfer Certificate",
-  "Study Certificate",
-  "Migration Certificate where applicable",
-  "Income / Caste Certificate where applicable",
-  "Aadhaar Card",
+  "Study Certificate, if required",
+  "Migration Certificate, if applicable",
+  "Income / Caste Certificate, if applicable",
+  "Aadhaar Card or accepted ID proof",
   "Passport-size photographs",
 ];
 
 const tabs = [
+  { id: "admission" as Tab, label: "Admission 2026-27", icon: GraduationCap },
+  { id: "courses" as Tab, label: "Courses & Fees", icon: Building2 },
+  { id: "eligibility" as Tab, label: "Eligibility & Exams", icon: CheckCircle2 },
+  { id: "placements" as Tab, label: "Placements", icon: BriefcaseBusiness },
+  { id: "contact" as Tab, label: "Contact", icon: Phone },
+  { id: "reviews" as Tab, label: "Reviews", icon: Star },
+];
+
+const admissionSteps = [
   {
-    id: "admission" as Tab,
-    label: "Admission 2026-27",
-    icon: GraduationCap,
+    number: "01",
+    title: "Choose a Course",
+    description:
+      "Compare available programmes and choose one that matches your academic interests and career plans.",
   },
   {
-    id: "courses" as Tab,
-    label: "Courses & Fees",
-    icon: Building2,
+    number: "02",
+    title: "Check Eligibility",
+    description:
+      "Review academic qualifications, entrance exams and the applicable admission category.",
   },
   {
-    id: "eligibility" as Tab,
-    label: "Eligibility & Exams",
-    icon: CheckCircle2,
+    number: "03",
+    title: "Apply & Attend Counselling",
+    description:
+      "Follow the relevant entrance examination, counselling or application process.",
   },
   {
-    id: "placements" as Tab,
-    label: "Placements",
-    icon: BriefcaseBusiness,
-  },
-  {
-    id: "contact" as Tab,
-    label: "Contact",
-    icon: Phone,
-  },
-  {
-    id: "reviews" as Tab,
-    label: "Reviews",
-    icon: Star,
+    number: "04",
+    title: "Complete Admission",
+    description:
+      "Submit the required documents and confirm the final fees and admission formalities.",
   },
 ];
 
@@ -183,26 +233,23 @@ export default function AtriaInstituteOfTechnologyPage() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-white text-slate-800">
-      {/* =========================================================
-          HERO
-      ========================================================= */}
+      {/* HERO */}
       <section className="relative w-full overflow-hidden bg-[#061321]">
         <div className="relative h-[360px] w-full sm:h-[440px] md:h-[540px] lg:h-[620px] xl:h-[680px]">
           <img
             src={collegeImage}
-            alt="Atria Institute of Technology campus"
+            alt="Atria Institute of Technology campus in Bengaluru"
             className="absolute inset-0 h-full w-full object-cover object-center"
           />
 
-          <div className="absolute inset-0 bg-black/20" />
-
+          <div className="absolute inset-0 bg-black/25" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#061321] via-[#061321]/55 to-transparent" />
 
           <div className="absolute left-0 right-0 top-0 z-10">
             <div className="mx-auto max-w-7xl px-5 pt-6 sm:px-8 lg:px-10">
               <div className="inline-flex items-center gap-2 rounded-full bg-white/95 px-4 py-2 text-xs font-bold uppercase tracking-[1.5px] text-[#2E3281] shadow-xl">
                 <GraduationCap className="h-4 w-4" />
-                Engineering College
+                Engineering & Technology
               </div>
             </div>
           </div>
@@ -212,15 +259,13 @@ export default function AtriaInstituteOfTechnologyPage() {
               <div className="max-w-5xl">
                 <div className="mb-5 flex flex-wrap gap-2">
                   <span className="rounded-full bg-[#a71320] px-4 py-2 text-xs font-bold text-white shadow-lg">
-                    Atria
+                    AIT
                   </span>
-
                   <span className="rounded-full bg-white/95 px-4 py-2 text-xs font-bold text-[#2E3281] shadow-lg">
-                    Hebbal, Bengaluru
+                    Bengaluru
                   </span>
-
                   <span className="rounded-full bg-white/95 px-4 py-2 text-xs font-bold text-[#2E3281] shadow-lg">
-                    VTU & AICTE
+                    Autonomous Institution
                   </span>
                 </div>
 
@@ -236,14 +281,10 @@ export default function AtriaInstituteOfTechnologyPage() {
                     <MapPin className="h-4 w-4 text-[#f2b5bd]" />
                     Hebbal, Bengaluru
                   </span>
-
-                  <span className="hidden text-white/30 sm:block">
-                    |
-                  </span>
-
+                  <span className="hidden text-white/30 sm:block">|</span>
                   <span className="flex items-center gap-2">
                     <GraduationCap className="h-4 w-4 text-[#f2b5bd]" />
-                    Engineering & Technology
+                    Engineering, Management & Computer Applications
                   </span>
                 </div>
               </div>
@@ -252,9 +293,7 @@ export default function AtriaInstituteOfTechnologyPage() {
         </div>
       </section>
 
-      {/* =========================================================
-          COLLEGE INTRO
-      ========================================================= */}
+      {/* COLLEGE INTRO */}
       <section className="relative z-20 bg-[#f4f1e8]">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <div className="relative -mt-10 sm:-mt-14">
@@ -273,24 +312,18 @@ export default function AtriaInstituteOfTechnologyPage() {
                     <p className="text-xs font-bold uppercase tracking-[2px] text-[#a71320]">
                       Atria Institute of Technology
                     </p>
-
                     <h2 className="mt-2 text-2xl font-extrabold text-[#2E3281] sm:text-3xl">
                       Atria Bengaluru
                     </h2>
-
                     <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm text-slate-600">
                       <span className="flex items-center gap-1.5">
                         <MapPin className="h-4 w-4 text-[#a71320]" />
-                        Hebbal, Bengaluru
+                        Hebbal, Bengaluru, Karnataka
                       </span>
-
-                      <span className="hidden text-slate-300 sm:block">
-                        |
-                      </span>
-
+                      <span className="hidden text-slate-300 sm:block">|</span>
                       <span className="flex items-center gap-1.5">
                         <GraduationCap className="h-4 w-4 text-[#a71320]" />
-                        Engineering & Technology
+                        UG & PG Programmes
                       </span>
                     </div>
                   </div>
@@ -301,10 +334,8 @@ export default function AtriaInstituteOfTechnologyPage() {
                     href="/contact"
                     className="flex items-center justify-center gap-2 rounded-xl bg-[#a71320] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#a71320]/20 transition hover:-translate-y-0.5 hover:bg-[#8e101c]"
                   >
-                    Apply Now
-                    <ArrowRight className="h-4 w-4" />
+                    Apply Now <ArrowRight className="h-4 w-4" />
                   </Link>
-
                   <Link
                     href="/contact"
                     className="flex items-center justify-center gap-2 rounded-xl border-2 border-[#2E3281] px-6 py-3 text-sm font-bold text-[#2E3281] transition hover:bg-[#2E3281] hover:text-white"
@@ -318,17 +349,15 @@ export default function AtriaInstituteOfTechnologyPage() {
         </div>
       </section>
 
-      {/* =========================================================
-          QUICK FACTS
-      ========================================================= */}
+      {/* QUICK FACTS */}
       <section className="bg-[#eef2f8] py-8">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <div className="grid overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm sm:grid-cols-2 lg:grid-cols-4">
             {[
-              ["Institution", "Atria"],
+              ["Institution", "Atria Institute of Technology"],
               ["Location", "Hebbal, Bengaluru"],
               ["Affiliation", "VTU"],
-              ["Approval", "AICTE"],
+              ["Recognition", "AICTE Approved"],
             ].map(([label, value], index) => (
               <div
                 key={label}
@@ -341,8 +370,7 @@ export default function AtriaInstituteOfTechnologyPage() {
                 <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
                   {label}
                 </p>
-
-                <p className="mt-1 text-xl font-extrabold text-[#2E3281]">
+                <p className="mt-1 text-lg font-extrabold text-[#2E3281]">
                   {value}
                 </p>
               </div>
@@ -351,9 +379,7 @@ export default function AtriaInstituteOfTechnologyPage() {
         </div>
       </section>
 
-      {/* =========================================================
-          STICKY TABS
-      ========================================================= */}
+      {/* TABS */}
       <section className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur-md">
         <div className="mx-auto max-w-7xl px-3 sm:px-5 lg:px-10">
           <div className="flex overflow-x-auto scrollbar-hide">
@@ -381,22 +407,16 @@ export default function AtriaInstituteOfTechnologyPage() {
         </div>
       </section>
 
-      {/* =========================================================
-          TAB CONTENT
-      ========================================================= */}
+      {/* TAB CONTENT */}
       <section className="bg-[#f6f7fa]">
         <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 md:py-20 lg:px-10">
-
-          {/* =====================================================
-              ADMISSION
-          ===================================================== */}
+          {/* ADMISSION */}
           {activeTab === "admission" && (
             <div className="space-y-10">
               <div className="rounded-3xl bg-white p-7 shadow-sm sm:p-10">
                 <p className="text-sm font-bold uppercase tracking-[2px] text-[#a71320]">
                   Admission 2026-27
                 </p>
-
                 <h2 className="mt-3 text-3xl font-extrabold leading-tight text-[#2E3281] sm:text-4xl md:text-5xl">
                   Atria Institute of Technology
                   <span className="block text-[#a71320]">
@@ -406,31 +426,28 @@ export default function AtriaInstituteOfTechnologyPage() {
 
                 <div className="mt-7 max-w-5xl space-y-5 text-[16px] leading-8 text-slate-600">
                   <p>
-                    Atria Institute of Technology is an engineering institution
-                    in Bengaluru offering undergraduate education across
-                    engineering and technology disciplines.
+                    Atria Institute of Technology is an autonomous engineering
+                    institution located in Hebbal, Bengaluru, Karnataka. The
+                    institution offers undergraduate engineering programmes
+                    and postgraduate courses in areas including management and
+                    computer applications.
                   </p>
-
                   <p>
-                    Located in the Hebbal area of Bengaluru, the institute
-                    provides students with an academic environment focused on
-                    technical education, practical learning, projects and
-                    professional development.
+                    Students can explore programmes in computer science,
+                    artificial intelligence, data science, information science,
+                    electronics and communication, robotics and automation,
+                    mechanical engineering and civil engineering.
                   </p>
-
                   <p>
-                    Students can explore engineering programmes covering
-                    computer science, artificial intelligence, data science,
-                    information science, electronics and communication,
-                    electrical and electronics, mechanical and civil
-                    engineering.
+                    Admission depends on the selected course, eligibility,
+                    entrance examination, seat availability and the admission
+                    category. Candidates should confirm the latest admission
+                    rules and fees before completing the application.
                   </p>
-
                   <p>
-                    The academic environment encourages technical skills,
-                    practical projects, industry exposure, internships and
-                    career-oriented learning to help students prepare for
-                    professional opportunities.
+                    Pragati Educational Consultancy can help students
+                    understand course options, entrance examinations,
+                    documents and the admission process.
                   </p>
                 </div>
               </div>
@@ -438,42 +455,34 @@ export default function AtriaInstituteOfTechnologyPage() {
               <div className="grid gap-5 md:grid-cols-3">
                 <div className="rounded-2xl bg-[#2E3281] p-7 text-white">
                   <GraduationCap className="h-8 w-8 text-[#f2b5bd]" />
-
                   <h3 className="mt-5 text-xl font-bold">
-                    Engineering Programs
+                    UG & PG Programmes
                   </h3>
-
                   <p className="mt-3 text-sm leading-7 text-white/70">
-                    Engineering programmes covering computer science,
-                    artificial intelligence, data science, electronics and
-                    core engineering disciplines.
+                    Explore engineering, management and computer application
+                    programmes, subject to current availability.
                   </p>
                 </div>
 
                 <div className="rounded-2xl bg-white p-7 shadow-sm">
                   <Building2 className="h-8 w-8 text-[#a71320]" />
-
                   <h3 className="mt-5 text-xl font-bold text-[#2E3281]">
                     Bengaluru Campus
                   </h3>
-
                   <p className="mt-3 text-sm leading-7 text-slate-500">
-                    Located in Hebbal, Bengaluru, providing students access to
-                    the city's education, technology and professional
-                    ecosystem.
+                    Located in Hebbal, Bengaluru, with access to the city’s
+                    education and technology ecosystem.
                   </p>
                 </div>
 
                 <div className="rounded-2xl bg-[#a71320] p-7 text-white">
                   <CheckCircle2 className="h-8 w-8 text-white" />
-
                   <h3 className="mt-5 text-xl font-bold">
                     Admission Support
                   </h3>
-
                   <p className="mt-3 text-sm leading-7 text-white/75">
-                    Get guidance for course selection, eligibility,
-                    counselling, documents and admission procedures.
+                    Get guidance on course selection, eligibility,
+                    counselling, documentation and admission procedures.
                   </p>
                 </div>
               </div>
@@ -482,48 +491,24 @@ export default function AtriaInstituteOfTechnologyPage() {
                 <p className="text-sm font-bold uppercase tracking-[2px] text-[#a71320]">
                   Admission Process
                 </p>
-
                 <h2 className="mt-3 text-3xl font-extrabold text-[#2E3281] sm:text-4xl">
                   How Admission Works
                 </h2>
 
                 <div className="mt-8 grid gap-5 md:grid-cols-4">
-                  {[
-                    [
-                      "01",
-                      "Choose Course",
-                      "Select the engineering programme based on your interests and career goals.",
-                    ],
-                    [
-                      "02",
-                      "Check Eligibility",
-                      "Verify academic qualifications and applicable entrance requirements.",
-                    ],
-                    [
-                      "03",
-                      "Counselling",
-                      "Get guidance for KCET, COMEDK or applicable admission routes.",
-                    ],
-                    [
-                      "04",
-                      "Complete Admission",
-                      "Submit documents and complete the applicable admission formalities.",
-                    ],
-                  ].map(([number, title, description]) => (
+                  {admissionSteps.map((step) => (
                     <div
-                      key={number}
+                      key={step.number}
                       className="rounded-2xl border border-slate-200 bg-white p-6"
                     >
                       <span className="text-3xl font-extrabold text-[#a71320]">
-                        {number}
+                        {step.number}
                       </span>
-
                       <h3 className="mt-4 font-bold text-[#2E3281]">
-                        {title}
+                        {step.title}
                       </h3>
-
                       <p className="mt-2 text-sm leading-6 text-slate-500">
-                        {description}
+                        {step.description}
                       </p>
                     </div>
                   ))}
@@ -532,27 +517,23 @@ export default function AtriaInstituteOfTechnologyPage() {
             </div>
           )}
 
-          {/* =====================================================
-              COURSES & FEES
-          ===================================================== */}
+          {/* COURSES & FEES */}
           {activeTab === "courses" && (
             <div className="space-y-12">
               <div>
                 <p className="text-sm font-bold uppercase tracking-[2px] text-[#a71320]">
                   Courses Offered
                 </p>
-
                 <h2 className="mt-3 text-3xl font-extrabold text-[#2E3281] sm:text-4xl md:text-5xl">
                   Explore Atria
                   <span className="block text-[#a71320]">
-                    Engineering Courses
+                    Institute of Technology Courses
                   </span>
                 </h2>
-
                 <p className="mt-5 max-w-3xl text-sm leading-7 text-slate-500">
-                  Explore engineering disciplines covering computer science,
-                  artificial intelligence, data science, electronics,
-                  electrical and core engineering fields.
+                  Explore undergraduate engineering courses and postgraduate
+                  programmes. Confirm the current course list and intake with
+                  the institute before applying.
                 </p>
               </div>
 
@@ -566,7 +547,6 @@ export default function AtriaInstituteOfTechnologyPage() {
                       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#2E3281]/10 text-sm font-extrabold text-[#2E3281]">
                         {String(index + 1).padStart(2, "0")}
                       </div>
-
                       <span className="rounded-full bg-[#a71320]/10 px-3 py-1.5 text-xs font-bold text-[#a71320]">
                         {course.type}
                       </span>
@@ -575,11 +555,9 @@ export default function AtriaInstituteOfTechnologyPage() {
                     <h3 className="mt-5 text-xl font-bold leading-snug text-[#2E3281]">
                       {course.title}
                     </h3>
-
                     <p className="mt-3 text-sm leading-7 text-slate-500">
                       {course.description}
                     </p>
-
                     <div className="mt-5 flex items-center border-t border-slate-100 pt-4">
                       <span className="flex items-center gap-2 text-sm font-semibold text-slate-600">
                         <GraduationCap className="h-4 w-4 text-[#a71320]" />
@@ -590,26 +568,20 @@ export default function AtriaInstituteOfTechnologyPage() {
                 ))}
               </div>
 
-              {/* =================================================
-                  FEES
-              ================================================= */}
+              {/* FEES */}
               <div>
                 <p className="text-sm font-bold uppercase tracking-[2px] text-[#a71320]">
                   Fee Structure
                 </p>
-
                 <h2 className="mt-3 text-3xl font-extrabold text-[#2E3281] sm:text-4xl">
                   Understand the{" "}
-                  <span className="text-[#a71320]">
-                    Fees
-                  </span>
+                  <span className="text-[#a71320]">Fees</span>
                 </h2>
-
                 <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-500">
-                  Atria Institute of Technology B.E. fees vary depending on
-                  the admission category and admission route. The figures
-                  below represent the latest available fee information and
-                  should be confirmed with the college before admission.
+                  Fees vary by programme and admission route. The table below
+                  reflects fee components published on the college admissions
+                  page; confirm the applicable 2026–27 amount with the
+                  admissions office before paying.
                 </p>
               </div>
 
@@ -621,25 +593,20 @@ export default function AtriaInstituteOfTechnologyPage() {
                         <th className="px-5 py-4 text-sm font-bold">
                           Admission Category
                         </th>
-
                         <th className="px-5 py-4 text-sm font-bold">
                           Course
                         </th>
-
                         <th className="px-5 py-4 text-sm font-bold">
                           Tuition Fee
                         </th>
-
                         <th className="px-5 py-4 text-sm font-bold">
-                          College / Other Fee
+                          Other Fee
                         </th>
-
                         <th className="px-5 py-4 text-sm font-bold">
                           University Fee
                         </th>
-
                         <th className="px-5 py-4 text-sm font-bold">
-                          Total Fee
+                          Estimated Listed Total
                         </th>
                       </tr>
                     </thead>
@@ -649,31 +616,24 @@ export default function AtriaInstituteOfTechnologyPage() {
                         <tr
                           key={`${row.category}-${row.course}`}
                           className={`border-b border-slate-100 ${
-                            index % 2 === 0
-                              ? "bg-white"
-                              : "bg-slate-50"
+                            index % 2 === 0 ? "bg-white" : "bg-slate-50"
                           }`}
                         >
                           <td className="px-5 py-5 text-sm font-bold text-[#2E3281]">
                             {row.category}
                           </td>
-
-                          <td className="px-5 py-5 text-sm font-medium text-slate-600">
+                          <td className="px-5 py-5 text-sm text-slate-600">
                             {row.course}
                           </td>
-
-                          <td className="px-5 py-5 text-sm font-semibold text-slate-600">
+                          <td className="px-5 py-5 text-sm text-slate-600">
                             {row.tuition}
                           </td>
-
                           <td className="px-5 py-5 text-sm text-slate-600">
                             {row.college}
                           </td>
-
                           <td className="px-5 py-5 text-sm text-slate-600">
                             {row.university}
                           </td>
-
                           <td className="px-5 py-5 text-sm font-extrabold text-[#a71320]">
                             {row.total}
                           </td>
@@ -684,103 +644,60 @@ export default function AtriaInstituteOfTechnologyPage() {
                 </div>
               </div>
 
-              {/* FEE SUMMARY CARDS */}
-              <div className="grid gap-5 md:grid-cols-3">
-                <div className="rounded-2xl bg-[#2E3281] p-6 text-white">
-                  <IndianRupee className="h-7 w-7 text-[#f2b5bd]" />
-
-                  <p className="mt-4 text-xs font-bold uppercase tracking-wider text-white/60">
-                    Tuition Fee
+              <div className="flex gap-3 rounded-xl border border-[#a71320]/10 bg-[#a71320]/5 p-5">
+                <IndianRupee className="mt-0.5 h-5 w-5 shrink-0 text-[#a71320]" />
+                <div className="text-sm leading-6 text-slate-600">
+                  <p>
+                    <strong>Important fee note:</strong> The listed B.E. fee
+                    components shown above are based on the college website's
+                    published fee table, not a guarantee of the final payable
+                    amount for every student or for 2026–27.
                   </p>
-
-                  <h3 className="mt-2 text-2xl font-extrabold">
-                    ₹4.86 L
-                  </h3>
-
-                  <p className="mt-2 text-sm leading-6 text-white/70">
-                    Approximate tuition fee listed for the B.E. programme.
-                  </p>
-                </div>
-
-                <div className="rounded-2xl bg-white p-6 shadow-sm">
-                  <GraduationCap className="h-7 w-7 text-[#a71320]" />
-
-                  <p className="mt-4 text-xs font-bold uppercase tracking-wider text-slate-400">
-                    Total Course Fee
-                  </p>
-
-                  <h3 className="mt-2 text-2xl font-extrabold text-[#2E3281]">
-                    ₹5.32 L
-                  </h3>
-
-                  <p className="mt-2 text-sm leading-6 text-slate-500">
-                    Approximate total fee listed for the general category.
-                  </p>
-                </div>
-
-                <div className="rounded-2xl bg-[#a71320] p-6 text-white">
-                  <Building2 className="h-7 w-7 text-white" />
-
-                  <p className="mt-4 text-xs font-bold uppercase tracking-wider text-white/60">
-                    Management Quota
-                  </p>
-
-                  <h3 className="mt-2 text-2xl font-extrabold">
-                    ₹16.25 L*
-                  </h3>
-
-                  <p className="mt-2 text-sm leading-6 text-white/75">
-                    Current listed management-category fee. Confirm the
-                    final amount before admission.
+                  <p className="mt-2">
+                    *The totals add tuition, the listed other-fee component and
+                    the skill-fee component. University registration,
+                    examination, placement training, uniform, hostel and other
+                    applicable charges may be additional. Confirm the current
+                    fee breakdown with Atria before publishing or making
+                    payment.
                   </p>
                 </div>
               </div>
 
-              {/* FEE NOTE */}
-              <div className="flex gap-3 rounded-xl border border-[#a71320]/10 bg-[#a71320]/5 p-5">
-                <IndianRupee className="mt-0.5 h-5 w-5 shrink-0 text-[#a71320]" />
-
-                <div>
-                  <p className="text-sm font-bold text-[#2E3281]">
-                    Fee Information
-                  </p>
-
-                  <p className="mt-1 text-sm leading-6 text-slate-600">
-                    Current available fee sources list approximately ₹4.86
-                    lakh as tuition and ₹5.32 lakh as total B.E./B.Tech fees
-                    for the general category. Management quota is listed
-                    separately at approximately ₹16.25 lakh. Actual payable
-                    fees may change according to the admission year, branch,
-                    quota and applicable university or government charges.
-                    Please confirm the final fee with Atria Institute of
-                    Technology before admission.
-                  </p>
-                </div>
+              <div className="rounded-2xl bg-white p-6 shadow-sm sm:p-8">
+                <h3 className="text-xl font-extrabold text-[#2E3281]">
+                  Need Help Understanding the Fees?
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-500">
+                  Contact Pragati Educational Consultancy for guidance on
+                  admission categories, fee components, eligibility and
+                  documents.
+                </p>
+                <Link
+                  href="/contact"
+                  className="mt-5 inline-flex items-center gap-2 rounded-xl bg-[#a71320] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#8e101c]"
+                >
+                  Get Fee Guidance <ArrowRight className="h-4 w-4" />
+                </Link>
               </div>
             </div>
           )}
 
-          {/* =====================================================
-              ELIGIBILITY
-          ===================================================== */}
+          {/* ELIGIBILITY */}
           {activeTab === "eligibility" && (
             <div className="space-y-10">
               <div className="rounded-3xl bg-[#2E3281] p-7 text-white sm:p-10">
                 <p className="text-sm font-bold uppercase tracking-[2px] text-[#f2b5bd]">
                   Admission Eligibility
                 </p>
-
                 <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl md:text-5xl">
                   Check Your
-                  <span className="block text-[#f2b5bd]">
-                    Eligibility
-                  </span>
+                  <span className="block text-[#f2b5bd]">Eligibility</span>
                 </h2>
-
                 <p className="mt-6 max-w-3xl leading-8 text-white/70">
-                  Eligibility varies according to the programme, admission
-                  category and applicable counselling rules. Students should
-                  verify the latest requirements before applying.
+                  Eligibility depends on the programme, entrance exam,
+                  admission category and current regulations. Verify the
+                  latest requirements before applying.
                 </p>
               </div>
 
@@ -793,10 +710,7 @@ export default function AtriaInstituteOfTechnologyPage() {
                     <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#a71320]">
                       <CheckCircle2 className="h-4 w-4 text-white" />
                     </div>
-
-                    <p className="text-sm leading-7 text-slate-600">
-                      {item}
-                    </p>
+                    <p className="text-sm leading-7 text-slate-600">{item}</p>
                   </div>
                 ))}
               </div>
@@ -804,29 +718,25 @@ export default function AtriaInstituteOfTechnologyPage() {
               <div className="grid gap-5 md:grid-cols-2">
                 <div className="rounded-3xl bg-[#eef2f8] p-7 sm:p-9">
                   <GraduationCap className="h-8 w-8 text-[#2E3281]" />
-
                   <h3 className="mt-5 text-2xl font-extrabold text-[#2E3281]">
                     KCET / KEA
                   </h3>
-
                   <p className="mt-4 text-sm leading-7 text-slate-600">
-                    Eligible Karnataka candidates may participate through the
-                    applicable KCET / KEA counselling process based on the
-                    prevailing admission rules.
+                    Eligible candidates can follow the applicable KCET / KEA
+                    counselling process and seat-allotment rules for
+                    undergraduate engineering admissions.
                   </p>
                 </div>
 
                 <div className="rounded-3xl bg-[#f7eef0] p-7 sm:p-9">
                   <Building2 className="h-8 w-8 text-[#a71320]" />
-
                   <h3 className="mt-5 text-2xl font-extrabold text-[#2E3281]">
                     COMEDK UGET
                   </h3>
-
                   <p className="mt-4 text-sm leading-7 text-slate-600">
-                    Candidates may also seek admission through COMEDK UGET
-                    where applicable and subject to current admission
-                    regulations.
+                    Eligible applicants may use COMEDK UGET for engineering
+                    admissions, subject to the current examination and
+                    counselling rules.
                   </p>
                 </div>
               </div>
@@ -835,14 +745,12 @@ export default function AtriaInstituteOfTechnologyPage() {
                 <p className="text-sm font-bold uppercase tracking-[2px] text-[#a71320]">
                   Documents
                 </p>
-
                 <h2 className="mt-3 text-3xl font-extrabold text-[#2E3281] sm:text-4xl">
                   Documents Required
                 </h2>
-
                 <p className="mt-5 text-sm leading-7 text-slate-500">
-                  Students should keep their academic and supporting documents
-                  ready for counselling, verification and admission.
+                  Keep the relevant academic and supporting documents ready
+                  for counselling, verification and admission.
                 </p>
 
                 <div className="mt-7 grid gap-3 sm:grid-cols-2">
@@ -852,7 +760,6 @@ export default function AtriaInstituteOfTechnologyPage() {
                       className="flex items-center gap-3 rounded-xl bg-[#f8f9fc] p-3.5"
                     >
                       <CheckCircle2 className="h-5 w-5 shrink-0 text-[#a71320]" />
-
                       <span className="text-sm font-medium text-slate-600">
                         {document}
                       </span>
@@ -863,27 +770,24 @@ export default function AtriaInstituteOfTechnologyPage() {
             </div>
           )}
 
-          {/* =====================================================
-              PLACEMENTS
-          ===================================================== */}
+          {/* PLACEMENTS */}
           {activeTab === "placements" && (
             <div className="space-y-10">
               <div className="rounded-3xl bg-[#2E3281] p-7 text-white sm:p-10">
                 <p className="text-sm font-bold uppercase tracking-[2px] text-[#f2b5bd]">
                   Placements
                 </p>
-
                 <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl md:text-5xl">
                   Career & Placement
                   <span className="block text-[#f2b5bd]">
                     Opportunities
                   </span>
                 </h2>
-
                 <p className="mt-6 max-w-3xl leading-8 text-white/70">
-                  Students can build professional skills through technical
-                  learning, internships, industry interaction, projects and
-                  career preparation activities.
+                  Career preparation may include technical learning, projects,
+                  internships, professional development and placement-related
+                  activities. Check the latest official placement report for
+                  verified statistics.
                 </p>
               </div>
 
@@ -892,14 +796,12 @@ export default function AtriaInstituteOfTechnologyPage() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#2E3281]/10">
                     <BriefcaseBusiness className="h-6 w-6 text-[#2E3281]" />
                   </div>
-
                   <h3 className="mt-5 text-xl font-bold text-[#2E3281]">
                     Career Preparation
                   </h3>
-
                   <p className="mt-3 text-sm leading-7 text-slate-500">
-                    Students can develop technical and professional skills
-                    required for technology-driven careers.
+                    Build technical knowledge and professional skills for
+                    different career paths.
                   </p>
                 </div>
 
@@ -907,14 +809,12 @@ export default function AtriaInstituteOfTechnologyPage() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#a71320]/10">
                     <Users className="h-6 w-6 text-[#a71320]" />
                   </div>
-
                   <h3 className="mt-5 text-xl font-bold text-[#2E3281]">
-                    Industry Interaction
+                    Industry Exposure
                   </h3>
-
                   <p className="mt-3 text-sm leading-7 text-slate-500">
-                    Industry interaction and practical exposure can help
-                    students understand workplace expectations.
+                    Projects and industry interaction can help students
+                    understand workplace requirements.
                   </p>
                 </div>
 
@@ -922,14 +822,12 @@ export default function AtriaInstituteOfTechnologyPage() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#2E3281]/10">
                     <GraduationCap className="h-6 w-6 text-[#2E3281]" />
                   </div>
-
                   <h3 className="mt-5 text-xl font-bold text-[#2E3281]">
                     Internships & Projects
                   </h3>
-
                   <p className="mt-3 text-sm leading-7 text-slate-500">
-                    Practical projects and internships can provide valuable
-                    experience alongside academic learning.
+                    Practical assignments and internships can complement
+                    classroom learning.
                   </p>
                 </div>
               </div>
@@ -938,24 +836,30 @@ export default function AtriaInstituteOfTechnologyPage() {
                 <h3 className="text-2xl font-extrabold text-[#2E3281]">
                   Placement Information
                 </h3>
-
                 <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-600">
-                  Current placement statistics, highest package, average
-                  package, recruiter lists and placement percentages should be
-                  verified from the latest official Atria Institute of
-                  Technology placement information before publishing.
+                  Highest package, average package, placement percentage,
+                  recruiter names and department-wise placement figures should
+                  be added only after checking the latest official Atria
+                  placement report. Figures can vary by academic year and
+                  programme.
                 </p>
+                <a
+                  href="https://atria.edu/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-5 inline-flex items-center gap-2 font-bold text-[#a71320] hover:text-[#2E3281]"
+                >
+                  Visit Official Website <ArrowRight className="h-4 w-4" />
+                </a>
               </div>
 
               <div className="rounded-3xl bg-white p-7 shadow-sm sm:p-9">
                 <p className="text-sm font-bold uppercase tracking-[2px] text-[#a71320]">
                   Career Support
                 </p>
-
                 <h3 className="mt-3 text-3xl font-extrabold text-[#2E3281]">
                   Prepare for Your Future
                 </h3>
-
                 <div className="mt-7 grid gap-4 sm:grid-cols-2">
                   {[
                     "Technical skill development",
@@ -970,7 +874,6 @@ export default function AtriaInstituteOfTechnologyPage() {
                       className="flex items-center gap-3 rounded-xl bg-[#f8f9fc] p-4"
                     >
                       <CheckCircle2 className="h-5 w-5 text-[#a71320]" />
-
                       <span className="text-sm font-semibold text-slate-600">
                         {item}
                       </span>
@@ -981,27 +884,21 @@ export default function AtriaInstituteOfTechnologyPage() {
             </div>
           )}
 
-          {/* =====================================================
-              CONTACT
-          ===================================================== */}
+          {/* CONTACT */}
           {activeTab === "contact" && (
             <div className="space-y-10">
               <div className="rounded-3xl bg-[#2E3281] p-7 text-white sm:p-10">
                 <p className="text-sm font-bold uppercase tracking-[2px] text-[#f2b5bd]">
                   Consultancy Services
                 </p>
-
                 <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl md:text-5xl">
                   Get Admission
-                  <span className="block text-[#f2b5bd]">
-                    Guidance
-                  </span>
+                  <span className="block text-[#f2b5bd]">Guidance</span>
                 </h2>
-
                 <p className="mt-5 max-w-3xl leading-8 text-white/70">
-                  Pragati Educational Consultancy provides admission guidance
-                  for students looking for the right course, college,
-                  eligibility, counselling and admission support.
+                  Pragati Educational Consultancy can help students explore
+                  course options, understand eligibility and navigate the
+                  admission process.
                 </p>
               </div>
 
@@ -1010,14 +907,12 @@ export default function AtriaInstituteOfTechnologyPage() {
                   <p className="text-sm font-bold uppercase tracking-[2px] text-[#a71320]">
                     Our Services
                   </p>
-
                   <h2 className="mt-3 text-3xl font-extrabold text-[#2E3281] sm:text-4xl">
                     How We Can Help
                   </h2>
-
                   <p className="mt-5 text-sm leading-7 text-slate-500">
-                    Our consultancy team helps students and parents through
-                    the admission journey with personalised guidance.
+                    Our consultancy team helps students and parents understand
+                    their options and prepare for admission.
                   </p>
 
                   <div className="mt-7 grid gap-3 sm:grid-cols-2">
@@ -1036,7 +931,6 @@ export default function AtriaInstituteOfTechnologyPage() {
                         className="flex items-center gap-3 rounded-xl bg-[#f8f9fc] p-4"
                       >
                         <CheckCircle2 className="h-5 w-5 shrink-0 text-[#a71320]" />
-
                         <span className="text-sm font-semibold text-slate-600">
                           {service}
                         </span>
@@ -1049,7 +943,6 @@ export default function AtriaInstituteOfTechnologyPage() {
                   <p className="text-sm font-bold uppercase tracking-[2px] text-white/70">
                     Contact Information
                   </p>
-
                   <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">
                     Visit Our Office
                   </h2>
@@ -1059,12 +952,10 @@ export default function AtriaInstituteOfTechnologyPage() {
                       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10">
                         <MapPin className="h-5 w-5 text-white" />
                       </div>
-
                       <div>
                         <p className="text-xs font-bold uppercase tracking-wider text-white/60">
                           Office Address
                         </p>
-
                         <p className="mt-2 text-sm leading-7 text-white/90">
                           #17, 1st Floor, Opp. F.M.Silks
                           <br />
@@ -1079,19 +970,16 @@ export default function AtriaInstituteOfTechnologyPage() {
                       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10">
                         <Phone className="h-5 w-5 text-white" />
                       </div>
-
                       <div>
                         <p className="text-xs font-bold uppercase tracking-wider text-white/60">
                           Call Us
                         </p>
-
                         <a
                           href="tel:08048518464"
                           className="mt-2 block text-sm font-bold text-white hover:text-white/80"
                         >
                           080 - 4851 8464
                         </a>
-
                         <p className="mt-1 text-sm text-white/70">
                           Mon to Fri · 9am to 6pm
                         </p>
@@ -1102,12 +990,10 @@ export default function AtriaInstituteOfTechnologyPage() {
                       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10">
                         <Mail className="h-5 w-5 text-white" />
                       </div>
-
                       <div>
                         <p className="text-xs font-bold uppercase tracking-wider text-white/60">
                           Email Us
                         </p>
-
                         <a
                           href="mailto:info@pragaticonsultancy.com"
                           className="mt-2 block text-sm font-bold text-white hover:text-white/80"
@@ -1122,82 +1008,74 @@ export default function AtriaInstituteOfTechnologyPage() {
                     href="/contact"
                     className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-bold text-[#a71320] transition hover:bg-slate-100"
                   >
-                    Contact Us
-                    <ArrowRight className="h-4 w-4" />
+                    Contact Us <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
               </div>
             </div>
           )}
 
-          {/* =====================================================
-              REVIEWS
-          ===================================================== */}
+          {/* REVIEWS */}
           {activeTab === "reviews" && (
             <div className="space-y-10">
               <div className="text-center">
                 <p className="text-sm font-bold uppercase tracking-[2px] text-[#a71320]">
                   Student Reviews
                 </p>
-
                 <h2 className="mt-3 text-3xl font-extrabold text-[#2E3281] sm:text-4xl md:text-5xl">
-                  What Students
+                  Student & Parent
                   <span className="block text-[#a71320]">
-                    Say About Their Experience
+                    Experiences
                   </span>
                 </h2>
-
                 <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-500">
-                  Reviews and ratings should be updated with verified student
-                  feedback before publishing.
+                  Add verified student reviews and ratings before publishing
+                  testimonials on this page.
                 </p>
               </div>
 
               <div className="grid gap-5 md:grid-cols-3">
                 {[
                   {
-                    name: "Student Review",
-                    course: "Engineering Student",
-                    review:
-                      "The admission process and course selection guidance helped me understand my available engineering options.",
+                    title: "Course Selection",
+                    description:
+                      "Use this section for verified student feedback about course selection and academic experience.",
                   },
                   {
-                    name: "Parent Review",
-                    course: "Parent",
-                    review:
-                      "The counselling support helped us understand the admission process, eligibility and required documents.",
+                    title: "Campus Experience",
+                    description:
+                      "Add a genuine student review describing campus facilities, learning and student activities.",
                   },
                   {
-                    name: "Student Review",
-                    course: "B.E. Aspirant",
-                    review:
-                      "The guidance made it easier to compare courses and understand the next steps for engineering admission.",
+                    title: "Admission Support",
+                    description:
+                      "Include authentic feedback about the admission process after obtaining permission to publish it.",
                   },
                 ].map((review) => (
                   <div
-                    key={`${review.name}-${review.course}`}
+                    key={review.title}
                     className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm"
                   >
                     <div className="flex gap-1">
                       {[1, 2, 3, 4, 5].map((star) => (
                         <Star
                           key={star}
-                          className="h-4 w-4 fill-[#a71320] text-[#a71320]"
+                          className="h-4 w-4 text-[#a71320]"
                         />
                       ))}
                     </div>
-
-                    <p className="mt-5 text-sm leading-7 text-slate-600">
-                      “{review.review}”
+                    <h3 className="mt-5 text-lg font-bold text-[#2E3281]">
+                      {review.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-7 text-slate-600">
+                      {review.description}
                     </p>
-
                     <div className="mt-6 border-t border-slate-100 pt-5">
                       <p className="font-bold text-[#2E3281]">
-                        {review.name}
+                        Verified review needed
                       </p>
-
                       <p className="mt-1 text-xs font-medium text-slate-400">
-                        {review.course}
+                        Replace with an approved testimonial
                       </p>
                     </div>
                   </div>
@@ -1206,23 +1084,18 @@ export default function AtriaInstituteOfTechnologyPage() {
 
               <div className="rounded-3xl bg-[#f7eef0] p-7 text-center sm:p-10">
                 <Star className="mx-auto h-10 w-10 text-[#a71320]" />
-
                 <h3 className="mt-5 text-2xl font-extrabold text-[#2E3281]">
                   Need Help Choosing the Right College?
                 </h3>
-
                 <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-slate-500">
-                  Speak with Pragati Educational Consultancy for personalised
-                  guidance on engineering courses, eligibility, counselling
-                  and admissions.
+                  Speak with Pragati Educational Consultancy for guidance on
+                  courses, eligibility, counselling and admissions.
                 </p>
-
                 <Link
                   href="/contact"
                   className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#a71320] px-7 py-4 text-sm font-bold text-white transition hover:bg-[#8e101c]"
                 >
-                  Talk to a Counsellor
-                  <ArrowRight className="h-4 w-4" />
+                  Talk to a Counsellor <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             </div>
@@ -1230,14 +1103,11 @@ export default function AtriaInstituteOfTechnologyPage() {
         </div>
       </section>
 
-      {/* =========================================================
-          FINAL CTA
-      ========================================================= */}
+      {/* FINAL CTA */}
       <section className="bg-[#f7eef0] px-5 py-16 sm:px-8 md:py-20 lg:px-10">
         <div className="mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-[#a71320]">
           <div className="relative px-6 py-12 sm:px-10 md:px-14 md:py-16">
             <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/10" />
-
             <div className="absolute -bottom-32 left-1/3 h-72 w-72 rounded-full bg-black/10" />
 
             <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
@@ -1245,15 +1115,13 @@ export default function AtriaInstituteOfTechnologyPage() {
                 <p className="text-sm font-bold uppercase tracking-[2px] text-white/70">
                   Start Your Admission Journey
                 </p>
-
                 <h2 className="mt-3 text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-5xl">
                   Interested in Atria Institute of Technology?
                 </h2>
-
                 <p className="mt-5 leading-7 text-white/80">
-                  Get professional guidance for course selection,
-                  eligibility, KCET / COMEDK counselling and the Atria
-                  Institute of Technology admission process.
+                  Get guidance for course selection, eligibility, KCET /
+                  COMEDK counselling and the Atria Institute of Technology
+                  admission process.
                 </p>
               </div>
 
@@ -1262,10 +1130,8 @@ export default function AtriaInstituteOfTechnologyPage() {
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-7 py-4 text-sm font-bold text-[#a71320] shadow-xl transition hover:-translate-y-0.5 hover:bg-slate-100"
                 >
-                  Apply Now
-                  <ArrowRight className="h-4 w-4" />
+                  Apply Now <ArrowRight className="h-4 w-4" />
                 </Link>
-
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/60 px-7 py-4 text-sm font-bold text-white transition hover:bg-white/10"
