@@ -288,7 +288,7 @@ export default function HeroSection() {
               </Link>
 
               <Link
-                href="/courses"
+                href="/contact"
                 className="
                   inline-flex
                   items-center
