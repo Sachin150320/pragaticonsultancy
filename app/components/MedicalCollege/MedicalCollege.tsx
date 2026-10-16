@@ -833,7 +833,7 @@ export default function MedicalCollegesPage() {
                       </Link>
 
                       <Link
-                        href="/contact-us"
+                        href="/contact"
                         className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-[#a71320] bg-[#a71320]/5 px-3 py-2.5 text-xs font-bold text-[#a71320] transition-all duration-300 hover:bg-[#a71320] hover:text-white"
                       >
                         Enquiry
@@ -895,7 +895,7 @@ export default function MedicalCollegesPage() {
               </p>
 
               <Link
-                href="/contact-us"
+                href="/contact"
                 className="mt-7 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-[#2E3281] transition-all hover:bg-[#a71320] hover:text-white"
               >
                 Get Admission Guidance
