@@ -303,7 +303,7 @@ const requiredDocuments = [
 const tabs = [
     {
         id: "admission" as Tab,
-        label: "Admission 2026-27",
+        label: "Admission",
         icon: GraduationCap,
     },
     {
@@ -594,7 +594,7 @@ export default function SriHasanambaDentalCollegeAndHospitalHassanPage() {
                 <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 md:py-20 lg:px-10">
 
                     {/* =====================================================
-              ADMISSION 2026-27
+              Admission
           ===================================================== */}
                     {activeTab === "admission" && (
 
@@ -603,7 +603,7 @@ export default function SriHasanambaDentalCollegeAndHospitalHassanPage() {
                             <div className="rounded-3xl bg-white p-7 shadow-sm sm:p-10">
 
                                 <p className="text-sm font-bold uppercase tracking-[2px] text-[#a71320]">
-                                    Admission 2026-27
+                                    Admission
                                 </p>
 
                                 <h2 className="mt-3 text-3xl font-extrabold leading-tight text-[#2E3281] sm:text-4xl md:text-5xl">

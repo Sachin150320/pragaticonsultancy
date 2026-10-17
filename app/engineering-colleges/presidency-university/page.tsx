@@ -159,7 +159,7 @@ const requiredDocuments = [
 ];
 
 const tabs: { id: Tab; label: string; icon: typeof GraduationCap }[] = [
-  { id: "admission", label: "Admission 2026-27", icon: GraduationCap },
+  { id: "admission", label: "Admission", icon: GraduationCap },
   { id: "courses", label: "Courses & Fees", icon: Building2 },
   { id: "eligibility", label: "Eligibility & Exams", icon: CheckCircle2 },
   { id: "placements", label: "Placements", icon: BriefcaseBusiness },
