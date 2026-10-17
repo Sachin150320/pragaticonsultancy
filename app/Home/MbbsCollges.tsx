@@ -5,13 +5,13 @@ import Link from 'next/link';
 import {
     ChevronRight,
     ExpandMore,
-
     School,
 } from '@mui/icons-material';
 
 interface College {
     name: string;
     slug: string;
+    href: string;
 }
 
 interface QuotaBox {
@@ -22,666 +22,182 @@ interface QuotaBox {
     colleges: College[];
 }
 
+// Builds the URL slug from the college name.
+// If your listing page uses a different slugify, change it here so the links match.
+const slugify = (name: string): string =>
+    name
+        .toLowerCase()
+        .replace(/&/g, 'and')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+
+// Base routes for the detail pages.
+const MEDICAL_BASE = '/medical-colleges';
+const DENTAL_BASE = '/medical-colleges';
+
+// Names and types are exactly as in your `collegeData`.
+const medicalList = [
+    ["Bangalore Medical College and Research Institute", "Government"],
+    ["Mysore Medical College and Research Institute", "Government"],
+    ["Karnataka Institute of Medical Sciences", "Government"],
+    ["Vijayanagar Institute of Medical Sciences", "Government"],
+    ["Mandya Institute of Medical Sciences", "Government"],
+    ["Belgaum Institute of Medical Sciences", "Government"],
+    ["Hassan Institute of Medical Sciences", "Government"],
+    ["Shimoga Institute of Medical Sciences", "Government"],
+    ["Raichur Institute of Medical Sciences", "Government"],
+    ["Bidar Institute of Medical Sciences", "Government"],
+    ["Kidwai Cancer Institute", "Government"],
+    ["Indira Gandhi Institute of Child Health", "Government"],
+    ["Employees State Insurance Corporation Medical College", "Government"],
+    ["Jaya Jagadguru Murugharajendra Medical College", "Private"],
+    ["M.S. Ramaiah Medical College", "Private University"],
+    ["Kempegowda Institute of Medical Sciences", "Private"],
+    ["Mahadevappa Rampure Medical College", "Private"],
+    ["Adichunchanagiri Institute of Medical Sciences", "Private University"],
+    ["K. Venkataramana Gowda Medical College and Hospital", "Private"],
+    ["Dr. B.R. Ambedkar Medical College", "Private"],
+    ["Shymanuru Shivashankarappa Institute of Medical Sciences", "Private"],
+    ["S. Nijalingappa Medical College and Research Centre", "Private"],
+    ["Sri Basaveshwara Medical College and Hospital", "Private"],
+    ["Al-Ameen Medical College", "Private"],
+    ["Father Muller Institute of Medical Education and Research", "Private"],
+    ["Vydehi Institute of Medical Science and Research Centre", "Private"],
+    ["Sri Dharmasthala Manjunatheshwara Medical College", "Private University"],
+    ["M.V.J. Medical College and Research Hospital", "Private"],
+    ["Navodaya Medical College", "Private"],
+    ["A.J. Institute of Medical Sciences", "Private"],
+    ["Kasturba Medical College, Mangalore", "Deemed"],
+    ["Kasturba Medical College, Manipal", "Deemed"],
+    ["Sanjay Gandhi Institute of Trauma and Orthopaedics", "Government"],
+    ["Jagadguru Sri Shivarathreeswara Medical College", "Deemed"],
+    ["K.S. Hegde Medical Academy", "Deemed"],
+    ["Yenepoya Medical College", "Deemed"],
+    ["ESI Medical College, Bangalore", "Government"],
+    ["Khaja Bande Navaz Institute of Medical Sciences", "Private University"],
+    ["B M Patil Medical College", "Government"],
+    ["Sapthagiri Institute of Medical Sciences", "Private University"],
+    ["B G S Global Institute of Medical Sciences", "Private"],
+    ["Srinivas Institute of Medical Science and Research Centre", "Private University"],
+    ["St. Johns Medical College", "Private"],
+    ["Dharwad Institute of Mental Health and Neurosciences", "Government"],
+    ["Gadag Institute of Medical Science", "Government"],
+    ["SDS Tuberculosis Research Centre and Rajiv Gandhi Institute of Chest Diseases", "Government"],
+    ["Akash Institute of Medical Sciences and Research Centre", "Private"],
+    ["The Oxford Medical College Hospital and Research Centre", "Private"],
+    ["Sri Devi Institute of Medical Sciences and Research Centre", "Private"],
+    ["Gulbarga Institute of Medical Science", "Government"],
+    ["Koppal Institute of Medical Science", "Government"],
+    ["Kanachur Institute of Medical Science", "Private"],
+    ["Subbaiah Institute of Medical Science", "Private"],
+    ["Karwar Institute of Medical Sciences", "Government"],
+    ["Kodagu Institute of Medical Sciences", "Government"],
+    ["Chamarajanagar Institute of Medical Science", "Government"],
+    ["East Point College of Medical Sciences", "Private"],
+    ["Shri Atal Bihari Vajpayee Institute of Medical Science", "Government"],
+    ["Dr. Chandramma Dayananda Sagar Institute of Medical Education and Research", "Private University"],
+    ["Chikkamagaluru Institute of Medical Sciences", "Government"],
+    ["Chikkaballapura Institute of Medical Sciences", "Government"],
+    ["Haveri Institute of Medical Sciences", "Government"],
+    ["Siddaganga Medical College and Research Institute", "Private"],
+    ["Sri Chamundeshwari Medical College Hospital and Research Institute", "Private"],
+    ["Sri Madhusudan Sai Institute of Medical Sciences and Research", "Private University"],
+] as const;
+
+const dentalList = [
+    ["Government Dental College", "Government"],
+    ["Bapuji Dental College and Hospital", "Private Unaided"],
+    ["College of Dental Sciences", "Private Unaided"],
+    ["Academy of Medical Education Dental College", "Private Unaided"],
+    ["Dayananda Sagar College of Dental Sciences", "Private Unaided"],
+    ["HKE S Nijalingappa Dental College", "Private Unaided"],
+    ["Krishnadevaraya College of Dental Sciences", "Private Unaided"],
+    ["K. Venkataramana Gowda Dental College", "Private Unaided"],
+    ["Dr. M.R. Ambedkar Dental College and Hospital", "Private Unaided"],
+    ["M.S. Ramaiah University of Applied Sciences", "Private/Deemed University"],
+    ["D.A. Pandu Memorial RV Dental College", "Private Unaided"],
+    ["PM Nadagowda Memorial Dental College and Hospital", "Private Unaided"],
+    ["Vokkaligara Sangha Dental College and Hospital", "Private Unaided"],
+    ["K L E S Institute of Dental Sciences", "Private Unaided"],
+    ["Sri Hasanamba Dental College and Hospital", "Private Unaided"],
+    ["Maratha Mandal Dental College", "Private Unaided"],
+    ["Al-Ameen Dental College", "Minority"],
+    ["Al Badar Dental College and Hospital", "Minority"],
+    ["Bangalore Institute of Dental Sciences and Hospital", "Minority"],
+    ["Vydehi Institute of Dental Sciences and Research Centre", "Minority"],
+    ["Coorg Institute of Dental Sciences", "Minority"],
+    ["Oxford Dental College", "Minority"],
+    ["A.J. Institute of Dental Sciences", "Minority"],
+    ["K.G.F. College of Dental Sciences", "Minority"],
+    ["Sri Dharmasthala Manjunatheshwara Dental College", "Private/Deemed University"],
+    ["Navodaya Dental College", "Minority"],
+    ["Sri Rajiv Gandhi Dental College", "Private Unaided"],
+    ["Jagadguru Suttur Shivarathreeshwara Dental College", "Private/Deemed University"],
+    ["Raja Rajeshwari Dental College and Hospital", "Minority"],
+    ["Sharavathi Dental College", "Private Unaided"],
+    ["Manipal College of Dental Sciences, Mangalore", "Private/Deemed University"],
+    ["Manipal College of Dental Science, Manipal", "Private/Deemed University"],
+    ["Sri Jagadguru Murugharajendra Dental College", "Private/Deemed University"],
+    ["Srinivasa Institute of Dental Science", "Minority"],
+    ["S.B. Patil Institute of Dental Science", "Private Unaided"],
+    ["Subbaiah Institute of Dental Science", "Minority"],
+    ["Employees State Insurance Corporation Dental College", "Government"],
+] as const;
+
+const toMedicalCollege = ([name]: readonly [string, string]): College => {
+    const slug = slugify(name);
+    return { name, slug, href: `${MEDICAL_BASE}/${slug}` };
+};
+
+const toDentalCollege = ([name]: readonly [string, string]): College => {
+    const slug = slugify(name);
+    return { name, slug, href: `${DENTAL_BASE}/${slug}` };
+};
+
+const allMedicalColleges: College[] = medicalList.map(toMedicalCollege);
+
+const governmentMedicalColleges: College[] = medicalList
+    .filter(([, type]) => type === 'Government')
+    .map(toMedicalCollege);
+
+const privateMedicalColleges: College[] = medicalList
+    .filter(([, type]) => type !== 'Government')
+    .map(toMedicalCollege);
+
+const dentalColleges: College[] = dentalList.map(toDentalCollege);
+
 export default function CutoffSection(): React.ReactElement {
     const [expandedBox, setExpandedBox] = useState<number | null>(null);
     const [hoveredCollege, setHoveredCollege] = useState<string | null>(null);
-
 
     const quotaBoxes: QuotaBox[] = [
         {
             id: 1,
             title: 'MBBS',
-            quotaType: 'STATE QUOTA',
+            quotaType: 'ALL MEDICAL',
             year: '2025',
-            colleges: [
-                // Karnataka
-                {
-                    name: 'Bangalore Medical College & Research Institute',
-                    slug: 'bangalore-medical-college-research-institute',
-                },
-                {
-                    name: 'Mysore Medical College & Research Institute',
-                    slug: 'mysore-medical-college-research-institute',
-                },
-                {
-                    name: 'Karnataka Institute of Medical Sciences, Hubballi',
-                    slug: 'karnataka-institute-of-medical-sciences-hubballi',
-                },
-                {
-                    name: 'Belagavi Institute of Medical Sciences',
-                    slug: 'belagavi-institute-of-medical-sciences',
-                },
-                {
-                    name: 'Mandya Institute of Medical Sciences',
-                    slug: 'mandya-institute-of-medical-sciences',
-                },
-                {
-                    name: 'Hassan Institute of Medical Sciences',
-                    slug: 'hassan-institute-of-medical-sciences',
-                },
-                {
-                    name: 'Shimoga Institute of Medical Sciences',
-                    slug: 'shimoga-institute-of-medical-sciences',
-                },
-                {
-                    name: 'Chikkamagaluru Institute of Medical Sciences',
-                    slug: 'chikkamagaluru-institute-of-medical-sciences',
-                },
-                {
-                    name: 'Chitradurga Medical College & Research Institute',
-                    slug: 'chitradurga-medical-college-research-institute',
-                },
-                {
-                    name: 'Vijayanagar Institute of Medical Sciences',
-                    slug: 'vijayanagar-institute-of-medical-sciences',
-                },
-
-                // Maharashtra
-                {
-                    name: 'Grant Medical College & Sir J.J. Group of Hospitals',
-                    slug: 'grant-medical-college-sir-jj-group-of-hospitals',
-                },
-                {
-                    name: 'Seth Gordhandas Sunderdas Medical College',
-                    slug: 'seth-gordhandas-sunderdas-medical-college',
-                },
-                {
-                    name: 'B.J. Government Medical College, Pune',
-                    slug: 'bj-government-medical-college-pune',
-                },
-                {
-                    name: 'Government Medical College, Nagpur',
-                    slug: 'government-medical-college-nagpur',
-                },
-                {
-                    name: 'Government Medical College, Aurangabad',
-                    slug: 'government-medical-college-aurangabad',
-                },
-                {
-                    name: 'Government Medical College, Kolhapur',
-                    slug: 'government-medical-college-kolhapur',
-                },
-
-                // Tamil Nadu
-                {
-                    name: 'Madras Medical College',
-                    slug: 'madras-medical-college',
-                },
-                {
-                    name: 'Stanley Medical College',
-                    slug: 'stanley-medical-college',
-                },
-                {
-                    name: 'Government Kilpauk Medical College',
-                    slug: 'government-kilpauk-medical-college',
-                },
-                {
-                    name: 'Coimbatore Medical College',
-                    slug: 'coimbatore-medical-college',
-                },
-                {
-                    name: 'Madurai Medical College',
-                    slug: 'madurai-medical-college',
-                },
-                {
-                    name: 'Tirunelveli Medical College',
-                    slug: 'tirunelveli-medical-college',
-                },
-
-                // Telangana
-                {
-                    name: 'Osmania Medical College',
-                    slug: 'osmania-medical-college',
-                },
-                {
-                    name: 'Gandhi Medical College, Hyderabad',
-                    slug: 'gandhi-medical-college-hyderabad',
-                },
-                {
-                    name: 'Kakatiya Medical College',
-                    slug: 'kakatiya-medical-college',
-                },
-
-                // Andhra Pradesh
-                {
-                    name: 'Andhra Medical College',
-                    slug: 'andhra-medical-college',
-                },
-                {
-                    name: 'Guntur Medical College',
-                    slug: 'guntur-medical-college',
-                },
-                {
-                    name: 'Rangaraya Medical College',
-                    slug: 'rangaraya-medical-college',
-                },
-
-                // Kerala
-                {
-                    name: 'Government Medical College, Thiruvananthapuram',
-                    slug: 'government-medical-college-thiruvananthapuram',
-                },
-                {
-                    name: 'Government Medical College, Kozhikode',
-                    slug: 'government-medical-college-kozhikode',
-                },
-                {
-                    name: 'Government Medical College, Kottayam',
-                    slug: 'government-medical-college-kottayam',
-                },
-                {
-                    name: 'Government Medical College, Thrissur',
-                    slug: 'government-medical-college-thrissur',
-                },
-
-                // Gujarat
-                {
-                    name: 'B.J. Medical College, Ahmedabad',
-                    slug: 'bj-medical-college-ahmedabad',
-                },
-                {
-                    name: 'Government Medical College, Surat',
-                    slug: 'government-medical-college-surat',
-                },
-                {
-                    name: 'Government Medical College, Vadodara',
-                    slug: 'government-medical-college-vadodara',
-                },
-
-                // Rajasthan
-                {
-                    name: 'Sawai Man Singh Medical College',
-                    slug: 'sawai-man-singh-medical-college',
-                },
-                {
-                    name: 'Dr. Sampurnanand Medical College',
-                    slug: 'dr-sampurnanand-medical-college',
-                },
-                {
-                    name: 'Ravindra Nath Tagore Medical College',
-                    slug: 'ravindra-nath-tagore-medical-college',
-                },
-
-                // Uttar Pradesh
-                {
-                    name: 'King George Medical University',
-                    slug: 'king-george-medical-university',
-                },
-                {
-                    name: 'Dr. Ram Manohar Lohia Institute of Medical Sciences',
-                    slug: 'dr-ram-manohar-lohia-institute-of-medical-sciences',
-                },
-                {
-                    name: 'Sanjay Gandhi Postgraduate Institute of Medical Sciences',
-                    slug: 'sanjay-gandhi-postgraduate-institute-of-medical-sciences',
-                },
-
-                // West Bengal
-                {
-                    name: 'Medical College, Kolkata',
-                    slug: 'medical-college-kolkata',
-                },
-                {
-                    name: 'R.G. Kar Medical College & Hospital',
-                    slug: 'rg-kar-medical-college-hospital',
-                },
-                {
-                    name: 'Nil Ratan Sircar Medical College',
-                    slug: 'nil-ratan-sircar-medical-college',
-                },
-
-                // Madhya Pradesh
-                {
-                    name: 'Gandhi Medical College, Bhopal',
-                    slug: 'gandhi-medical-college-bhopal',
-                },
-                {
-                    name: 'Mahatma Gandhi Memorial Medical College, Indore',
-                    slug: 'mahatma-gandhi-memorial-medical-college-indore',
-                },
-                {
-                    name: 'Gajra Raja Medical College',
-                    slug: 'gajra-raja-medical-college',
-                },
-
-                // Odisha
-                {
-                    name: 'SCB Medical College & Hospital',
-                    slug: 'scb-medical-college-hospital',
-                },
-                {
-                    name: 'VIMSAR Burla',
-                    slug: 'vimsar-burla',
-                },
-
-                // Bihar
-                {
-                    name: 'Patna Medical College & Hospital',
-                    slug: 'patna-medical-college-hospital',
-                },
-                {
-                    name: 'Nalanda Medical College & Hospital',
-                    slug: 'nalanda-medical-college-hospital',
-                },
-
-                // Punjab
-                {
-                    name: 'Government Medical College, Amritsar',
-                    slug: 'government-medical-college-amritsar',
-                },
-                {
-                    name: 'Government Medical College, Patiala',
-                    slug: 'government-medical-college-patiala',
-                },
-
-                // Haryana
-                {
-                    name: 'Pt. B.D. Sharma PGIMS, Rohtak',
-                    slug: 'pt-bd-sharma-pgims-rohtak',
-                },
-
-                // Delhi
-                {
-                    name: 'Maulana Azad Medical College',
-                    slug: 'maulana-azad-medical-college',
-                },
-                {
-                    name: 'University College of Medical Sciences',
-                    slug: 'university-college-of-medical-sciences',
-                },
-
-                // Chandigarh
-                {
-                    name: 'Government Medical College & Hospital, Chandigarh',
-                    slug: 'government-medical-college-hospital-chandigarh',
-                },
-            ],
+            colleges: allMedicalColleges,
         },
-
         {
             id: 2,
-            title: 'MD/MS',
-            quotaType: 'STATE QUOTA',
+            title: 'MBBS',
+            quotaType: 'GOVERNMENT',
             year: '2025',
-            colleges: [
-                // Karnataka
-                {
-                    name: 'Bangalore Medical College & Research Institute',
-                    slug: 'bangalore-medical-college-research-institute',
-                },
-                {
-                    name: 'Mysore Medical College & Research Institute',
-                    slug: 'mysore-medical-college-research-institute',
-                },
-                {
-                    name: 'Karnataka Institute of Medical Sciences',
-                    slug: 'karnataka-institute-of-medical-sciences',
-                },
-                {
-                    name: 'Kasturba Medical College, Mangalore',
-                    slug: 'kasturba-medical-college-mangalore',
-                },
-                {
-                    name: 'Kasturba Medical College, Manipal',
-                    slug: 'kasturba-medical-college-manipal',
-                },
-                {
-                    name: 'Kempegowda Institute of Medical Sciences',
-                    slug: 'kempegowda-institute-of-medical-sciences',
-                },
-                {
-                    name: 'Kanachur Institute of Medical Sciences',
-                    slug: 'kanachur-institute-of-medical-sciences',
-                },
-                {
-                    name: 'Khaja Bandanawaz Institute of Medical Sciences',
-                    slug: 'khaja-bandanawaz-institute-of-medical-sciences',
-                },
-
-                // Maharashtra
-                {
-                    name: 'Grant Medical College & Sir J.J. Group of Hospitals',
-                    slug: 'grant-medical-college-sir-jj-group-of-hospitals',
-                },
-                {
-                    name: 'Seth Gordhandas Sunderdas Medical College',
-                    slug: 'seth-gordhandas-sunderdas-medical-college',
-                },
-                {
-                    name: 'B.J. Government Medical College, Pune',
-                    slug: 'bj-government-medical-college-pune',
-                },
-
-                // Tamil Nadu
-                {
-                    name: 'Madras Medical College',
-                    slug: 'madras-medical-college',
-                },
-                {
-                    name: 'Stanley Medical College',
-                    slug: 'stanley-medical-college',
-                },
-                {
-                    name: 'Madurai Medical College',
-                    slug: 'madurai-medical-college',
-                },
-
-                // Telangana
-                {
-                    name: 'Osmania Medical College',
-                    slug: 'osmania-medical-college',
-                },
-                {
-                    name: 'Gandhi Medical College, Hyderabad',
-                    slug: 'gandhi-medical-college-hyderabad',
-                },
-
-                // Kerala
-                {
-                    name: 'Government Medical College, Thiruvananthapuram',
-                    slug: 'government-medical-college-thiruvananthapuram',
-                },
-                {
-                    name: 'Government Medical College, Kozhikode',
-                    slug: 'government-medical-college-kozhikode',
-                },
-
-                // Delhi
-                {
-                    name: 'Maulana Azad Medical College',
-                    slug: 'maulana-azad-medical-college',
-                },
-                {
-                    name: 'University College of Medical Sciences',
-                    slug: 'university-college-of-medical-sciences',
-                },
-
-                // Uttar Pradesh
-                {
-                    name: 'King George Medical University',
-                    slug: 'king-george-medical-university',
-                },
-                {
-                    name: 'Dr. Ram Manohar Lohia Institute of Medical Sciences',
-                    slug: 'dr-ram-manohar-lohia-institute-of-medical-sciences',
-                },
-
-                // Rajasthan
-                {
-                    name: 'Sawai Man Singh Medical College',
-                    slug: 'sawai-man-singh-medical-college',
-                },
-                {
-                    name: 'Dr. Sampurnanand Medical College',
-                    slug: 'dr-sampurnanand-medical-college',
-                },
-
-                // Gujarat
-                {
-                    name: 'B.J. Medical College, Ahmedabad',
-                    slug: 'bj-medical-college-ahmedabad',
-                },
-
-                // West Bengal
-                {
-                    name: 'Medical College, Kolkata',
-                    slug: 'medical-college-kolkata',
-                },
-                {
-                    name: 'R.G. Kar Medical College & Hospital',
-                    slug: 'rg-kar-medical-college-hospital',
-                },
-
-                // Madhya Pradesh
-                {
-                    name: 'Gandhi Medical College, Bhopal',
-                    slug: 'gandhi-medical-college-bhopal',
-                },
-                {
-                    name: 'Mahatma Gandhi Memorial Medical College, Indore',
-                    slug: 'mahatma-gandhi-memorial-medical-college-indore',
-                },
-            ],
+            colleges: governmentMedicalColleges,
         },
-
         {
             id: 3,
             title: 'MBBS',
-            quotaType: 'CENTRAL QUOTA',
+            quotaType: 'PRIVATE & DEEMED',
             year: '2025',
-            colleges: [
-                // AIIMS
-                {
-                    name: 'AIIMS New Delhi',
-                    slug: 'aiims-new-delhi',
-                },
-                {
-                    name: 'AIIMS Bhopal',
-                    slug: 'aiims-bhopal',
-                },
-                {
-                    name: 'AIIMS Bhubaneswar',
-                    slug: 'aiims-bhubaneswar',
-                },
-                {
-                    name: 'AIIMS Jodhpur',
-                    slug: 'aiims-jodhpur',
-                },
-                {
-                    name: 'AIIMS Patna',
-                    slug: 'aiims-patna',
-                },
-                {
-                    name: 'AIIMS Raipur',
-                    slug: 'aiims-raipur',
-                },
-                {
-                    name: 'AIIMS Rishikesh',
-                    slug: 'aiims-rishikesh',
-                },
-                {
-                    name: 'AIIMS Nagpur',
-                    slug: 'aiims-nagpur',
-                },
-                {
-                    name: 'AIIMS Gorakhpur',
-                    slug: 'aiims-gorakhpur',
-                },
-                {
-                    name: 'AIIMS Kalyani',
-                    slug: 'aiims-kalyani',
-                },
-                {
-                    name: 'AIIMS Bathinda',
-                    slug: 'aiims-bathinda',
-                },
-                {
-                    name: 'AIIMS Deoghar',
-                    slug: 'aiims-deoghar',
-                },
-                {
-                    name: 'AIIMS Bibinagar',
-                    slug: 'aiims-bibinagar',
-                },
-
-                // JIPMER
-                {
-                    name: 'JIPMER Puducherry',
-                    slug: 'jipmer-puducherry',
-                },
-                {
-                    name: 'JIPMER Karaikal',
-                    slug: 'jipmer-karaikal',
-                },
-
-                // Delhi
-                {
-                    name: 'Maulana Azad Medical College',
-                    slug: 'maulana-azad-medical-college',
-                },
-                {
-                    name: 'Lady Hardinge Medical College',
-                    slug: 'lady-hardinge-medical-college',
-                },
-                {
-                    name: 'University College of Medical Sciences',
-                    slug: 'university-college-of-medical-sciences',
-                },
-
-                // Armed Forces / Central Institutions
-                {
-                    name: 'Armed Forces Medical College, Pune',
-                    slug: 'armed-forces-medical-college-pune',
-                },
-
-                // Central Universities
-                {
-                    name: 'Banaras Hindu University - Institute of Medical Sciences',
-                    slug: 'bhu-institute-of-medical-sciences',
-                },
-
-                // Other Major Institutions
-                {
-                    name: 'Jawaharlal Nehru Medical College, Aligarh',
-                    slug: 'jawaharlal-nehru-medical-college-aligarh',
-                },
-                {
-                    name: 'Institute of Medical Sciences, BHU',
-                    slug: 'institute-of-medical-sciences-bhu',
-                },
-            ],
+            colleges: privateMedicalColleges,
         },
-
         {
             id: 4,
-            title: 'MD/MS',
-            quotaType: 'CENTRAL QUOTA',
+            title: 'BDS',
+            quotaType: 'DENTAL',
             year: '2025',
-            colleges: [
-                // AIIMS
-                {
-                    name: 'AIIMS New Delhi',
-                    slug: 'aiims-new-delhi',
-                },
-                {
-                    name: 'AIIMS Bhopal',
-                    slug: 'aiims-bhopal',
-                },
-                {
-                    name: 'AIIMS Bhubaneswar',
-                    slug: 'aiims-bhubaneswar',
-                },
-                {
-                    name: 'AIIMS Jodhpur',
-                    slug: 'aiims-jodhpur',
-                },
-                {
-                    name: 'AIIMS Patna',
-                    slug: 'aiims-patna',
-                },
-                {
-                    name: 'AIIMS Raipur',
-                    slug: 'aiims-raipur',
-                },
-                {
-                    name: 'AIIMS Rishikesh',
-                    slug: 'aiims-rishikesh',
-                },
-                {
-                    name: 'AIIMS Nagpur',
-                    slug: 'aiims-nagpur',
-                },
-                {
-                    name: 'AIIMS Gorakhpur',
-                    slug: 'aiims-gorakhpur',
-                },
-                {
-                    name: 'AIIMS Kalyani',
-                    slug: 'aiims-kalyani',
-                },
-                {
-                    name: 'AIIMS Bathinda',
-                    slug: 'aiims-bathinda',
-                },
-
-                // JIPMER
-                {
-                    name: 'JIPMER Puducherry',
-                    slug: 'jipmer-puducherry',
-                },
-
-                // Delhi
-                {
-                    name: 'Maulana Azad Medical College',
-                    slug: 'maulana-azad-medical-college',
-                },
-                {
-                    name: 'Lady Hardinge Medical College',
-                    slug: 'lady-hardinge-medical-college',
-                },
-                {
-                    name: 'Vardhman Mahavir Medical College',
-                    slug: 'vardhman-mahavir-medical-college',
-                },
-
-                // Uttar Pradesh
-                {
-                    name: 'King George Medical University',
-                    slug: 'king-george-medical-university',
-                },
-
-                // Maharashtra
-                {
-                    name: 'Grant Medical College & Sir J.J. Group of Hospitals',
-                    slug: 'grant-medical-college-sir-jj-group-of-hospitals',
-                },
-
-                // Rajasthan
-                {
-                    name: 'Sawai Man Singh Medical College',
-                    slug: 'sawai-man-singh-medical-college',
-                },
-
-                // Karnataka
-                {
-                    name: 'Bangalore Medical College & Research Institute',
-                    slug: 'bangalore-medical-college-research-institute',
-                },
-                {
-                    name: 'Mysore Medical College & Research Institute',
-                    slug: 'mysore-medical-college-research-institute',
-                },
-
-                // West Bengal
-                {
-                    name: 'Medical College, Kolkata',
-                    slug: 'medical-college-kolkata',
-                },
-
-                // Gujarat
-                {
-                    name: 'B.J. Medical College, Ahmedabad',
-                    slug: 'bj-medical-college-ahmedabad',
-                },
-
-                // Tamil Nadu
-                {
-                    name: 'Madras Medical College',
-                    slug: 'madras-medical-college',
-                },
-
-                // Telangana
-                {
-                    name: 'Osmania Medical College',
-                    slug: 'osmania-medical-college',
-                },
-
-                // Kerala
-                {
-                    name: 'Government Medical College, Thiruvananthapuram',
-                    slug: 'government-medical-college-thiruvananthapuram',
-                },
-            ],
+            colleges: dentalColleges,
         },
     ];
 
@@ -743,7 +259,7 @@ export default function CutoffSection(): React.ReactElement {
 
                     {/* EXPLORE COLLEGES */}
                    <Link
-                href="/colleges"
+                href="/medicalcolleges"
                 className="explore-colleges-btn"
               >
                 <span>Explore Colleges</span>
@@ -856,7 +372,7 @@ export default function CutoffSection(): React.ReactElement {
                                         {box.colleges.map((college, idx) => (
 
                                             <div
-                                                key={idx}
+                                                key={`${college.slug}-${idx}`}
                                                 onMouseEnter={() =>
                                                     setHoveredCollege(`${box.id}-${idx}`)
                                                 }
@@ -884,6 +400,7 @@ export default function CutoffSection(): React.ReactElement {
 
                                                 {/* COLLEGE NAME */}
                                                 <span
+                                                    title={college.name}
                                                     className="line-clamp-1 text-[12px] font-medium transition-colors duration-300"
                                                     style={{
                                                         color:
@@ -897,7 +414,7 @@ export default function CutoffSection(): React.ReactElement {
 
                                                 {/* COLLEGE LINK */}
                                                 <Link
-                                                    href={`/colleges/${college.slug}`}
+                                                    href={college.href}
                                                     onClick={(e) => e.stopPropagation()}
                                                     className="flex-shrink-0 whitespace-nowrap rounded-lg px-3 py-1.5 text-xs font-bold transition-all duration-300 hover:bg-[#2E3281] hover:text-white"
                                                     style={{
@@ -931,7 +448,7 @@ export default function CutoffSection(): React.ReactElement {
                                 >
 
                                     <span>
-                                        View More
+                                        View More ({box.colleges.length})
                                     </span>
 
                                     <ExpandMore

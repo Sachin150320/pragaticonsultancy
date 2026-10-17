@@ -201,7 +201,7 @@ export default function MedicalCourses() {
                 </div>
 
                 <Link
-                  href={featuredCourse.href}
+                  href="/medicalcolleges"
                   className="group/link mt-8 inline-flex items-center gap-2 rounded-xl bg-[#a71320] px-6 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#8d101c] hover:shadow-xl"
                 >
                   View MBBS Colleges
@@ -219,7 +219,7 @@ export default function MedicalCourses() {
               return (
                 <Link
                   key={course.title}
-                  href={course.href}
+                  href="/medicalcolleges"
                   className="group relative min-h-[370px] overflow-hidden rounded-[1.75rem] shadow-lg"
                 >
                   <img

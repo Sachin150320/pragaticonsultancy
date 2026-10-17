@@ -1,11 +1,12 @@
+
 {
   "name": "medical-education",
   "version": "1.0.0",
   "description": "Medical Education Website with Next.js",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "node scripts/generate-college-search-index.mjs && next dev",
+    "build": "node scripts/generate-college-search-index.mjs && next build",
     "start": "next start",
     "lint": "next lint"
   },

@@ -230,7 +230,7 @@ export default function EngineeringCourses() {
                 </div>
 
                 <Link
-                  href={engineeringCourses[0].href}
+                  href="/engineeringcolleges"
                   className="group/link mt-8 inline-flex items-center gap-2 rounded-xl bg-[#a71320] px-6 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#8d101c] hover:shadow-xl"
                 >
                   View Colleges
@@ -248,7 +248,7 @@ export default function EngineeringCourses() {
               return (
                 <Link
                   key={course.title}
-                  href={course.href}
+                  href="/engineeringcolleges"
                   className="group relative min-h-[370px] overflow-hidden rounded-[1.75rem] shadow-lg"
                 >
                   <img

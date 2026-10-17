@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState } from 'react';
@@ -13,6 +12,7 @@ import {
 interface College {
     name: string;
     slug: string;
+    href: string;
 }
 
 interface QuotaBox {
@@ -22,6 +22,88 @@ interface QuotaBox {
     year: string;
     colleges: College[];
 }
+
+// Same names + slugs + courses as the `colleges` data on the listing page.
+// Keep this in sync with that array so every "View" link resolves.
+const collegeList = [
+    ["Ramaiah Institute of Nursing Education and Research (RINER)", "ramaiah-institute-of-nursing-education-and-research", "B.Sc Nursing"],
+    ["RV College of Nursing", "rv-college-of-nursing", "B.Sc Nursing"],
+    ["Dr. B R Ambedkar Institute of Nursing", "dr-br-ambedkar-institute-of-nursing", "B.Sc Nursing / GNM"],
+    ["Karnataka College of Nursing", "karnataka-college-of-nursing", "B.Sc Nursing / GNM"],
+    ["PES University (PESU)", "pes-university", "B.Sc Nursing / B.Pharmacy"],
+    ["East West College of Nursing (EWCN)", "east-west-college-of-nursing", "B.Sc Nursing / GNM"],
+    ["The Oxford College of Nursing", "the-oxford-college-of-nursing", "B.Sc Nursing"],
+    ["Sapthagiri Institute of Medical Sciences and Research Centre (SIMSRC)", "sapthagiri-institute-of-medical-sciences", "B.Sc Nursing / GNM"],
+    ["Rajarajeswari Medical College and Hospital (RRMCH)", "rajarajeswari-medical-college-and-hospital", "B.Sc Nursing"],
+    ["VIMS Bangalore", "vims-bangalore", "B.Sc Nursing"],
+    ["MVM Group of Institutions", "mvm-group-of-institutions", "B.Sc Nursing / GNM / B.Pharmacy"],
+    ["Aakash Group of Institutions", "aakash-group-of-institutions", "B.Sc Nursing / B.Pharmacy"],
+    ["RR College of Nursing", "rr-college-of-nursing", "B.Sc Nursing"],
+    ["Manjunatha College of Nursing", "manjunatha-college-of-nursing", "B.Sc Nursing"],
+    ["Harsha Institutions", "harsha-institutions", "B.Sc Nursing / B.Pharmacy"],
+    ["VYMAK Group of Institutions", "vymak-group-of-institutions", "B.Sc Nursing"],
+    ["Sapthagiri NPS University", "sapthagiri-nps-university", "B.Sc Nursing"],
+    ["East Point Group of Institutions (EPGI)", "east-point-group-of-institutions", "B.Sc Nursing / B.Pharmacy"],
+    ["Acharya Institute of Health Sciences (AIHS)", "acharya-institute-of-health-sciences", "B.Sc Nursing"],
+    ["Smt. Nagarathnamma College of Nursing (SNCN)", "smt-nagarathnamma-college-of-nursing", "B.Sc Nursing"],
+    ["MVJ College of Nursing (MVJCON)", "mvj-college-of-nursing", "B.Sc Nursing"],
+    ["Krupanidhi College of Nursing (KCON)", "krupanidhi-college-of-nursing", "B.Sc Nursing / GNM"],
+    ["Vydehi Institute of Nursing Sciences and Research Centre", "vydehi-institute-of-nursing-sciences", "B.Sc Nursing"],
+    ["SJB College of Nursing", "sjb-college-of-nursing", "B.Sc Nursing"],
+    ["Sri Lakshmi College of Nursing", "sri-lakshmi-college-of-nursing", "B.Sc Nursing"],
+    ["Spurthy College of Nursing", "spurthy-college-of-nursing", "B.Sc Nursing"],
+    ["Little Flower Group of Institutions", "little-flower-group-of-institutions", "B.Sc Nursing"],
+    ["M.S. Ramaiah University of Applied Sciences (MSRUAS)", "ms-ramaiah-university-of-applied-sciences", "GNM / B.Pharmacy"],
+    ["Padmashree Group of Institutions", "padmashree-group-of-institutions", "GNM"],
+    ["Goutham College", "goutham-college", "GNM"],
+    ["Krupanidhi Group of Institutions", "krupanidhi-group-of-institutions", "GNM"],
+    ["SB Group of Institutions", "sb-group-of-institutions", "GNM"],
+    ["Acharya & BM Reddy College of Pharmacy (ABMRCP)", "acharya-bm-reddy-college-of-pharmacy", "B.Pharmacy"],
+    ["Dayananda Sagar University (DSU)", "dayananda-sagar-university", "B.Pharmacy"],
+    ["The Oxford College of Pharmacy", "the-oxford-college-of-pharmacy", "B.Pharmacy"],
+    ["T. John College of Pharmacy", "t-john-college-of-pharmacy", "B.Pharmacy"],
+    ["Aditya Group of Institutions", "aditya-group-of-institutions", "B.Pharmacy"],
+    ["RR College of Pharmacy (RRCP)", "rr-college-of-pharmacy", "B.Pharmacy"],
+    ["Oxbridge Group of Institutions", "oxbridge-group-of-institutions", "B.Pharmacy"],
+    ["Vivekananda College of Pharmacy (VCP)", "vivekananda-college-of-pharmacy", "B.Pharmacy"],
+    ["Gautham College of Pharmacy (GCP)", "gautham-college-of-pharmacy", "B.Pharmacy"],
+    ["Mallige College of Pharmacy", "mallige-college-of-pharmacy", "B.Pharmacy"],
+    ["East West College of Pharmacy", "east-west-college-of-pharmacy", "B.Pharmacy"],
+    ["Vydehi Institute of Pharmacy (VIP)", "vydehi-institute-of-pharmacy", "B.Pharmacy"],
+    ["Nargund College of Pharmacy", "nargund-college-of-pharmacy", "B.Pharmacy"],
+    ["Spurthy College of Pharmacy (SCP)", "spurthy-college-of-pharmacy", "B.Pharmacy"],
+] as const;
+
+// Nursing / GNM colleges link to /nursing-colleges, pharmacy-only colleges to /pharmacy-colleges.
+// Change these two base paths if your routes are different.
+const getHref = (slug: string, course: string): string =>
+    /Nursing|GNM/.test(course)
+        ? `/nursing-colleges/${slug}`
+        : `/pharmacy-colleges/${slug}`;
+
+const toCollege = ([name, slug, course]: readonly [string, string, string]): College => ({
+    name,
+    slug,
+    href: getHref(slug, course),
+});
+
+const bscNursingColleges: College[] = collegeList
+    .filter(([, , course]) => course.includes('B.Sc Nursing'))
+    .map(toCollege);
+
+const gnmNursingColleges: College[] = collegeList
+    .filter(([, , course]) => course.includes('GNM'))
+    .map(toCollege);
+
+const bPharmacyColleges: College[] = collegeList
+    .filter(([, , course]) => course.includes('B.Pharmacy'))
+    .map(([name, slug]) => ({
+        name,
+        slug,
+        href: `/pharmacy-colleges/${slug}`,
+    }));
+
+const allColleges: College[] = collegeList.map(toCollege);
 
 export default function NursingCollegeSection(): React.ReactElement {
     const [expandedBox, setExpandedBox] = useState<number | null>(null);
@@ -33,265 +115,31 @@ export default function NursingCollegeSection(): React.ReactElement {
             title: 'B.Sc Nursing',
             quotaType: 'STATE QUOTA',
             year: '2025',
-            colleges: [
-                // Karnataka
-                {
-                    name: 'Bangalore Medical College and Research Institute',
-                    slug: 'bmcri-bangalore-bsc-nursing',
-                },
-                {
-                    name: 'St. John’s College of Nursing, Bangalore',
-                    slug: 'st-johns-college-nursing-bangalore',
-                },
-                {
-                    name: 'Vydehi Institute of Nursing Sciences, Bangalore',
-                    slug: 'vydehi-institute-nursing-bangalore',
-                },
-                {
-                    name: 'M.S. Ramaiah College of Nursing, Bangalore',
-                    slug: 'ms-ramaiah-college-nursing-bangalore',
-                },
-                {
-                    name: 'Kempegowda College of Nursing, Bangalore',
-                    slug: 'kempegowda-college-nursing-bangalore',
-                },
-                {
-                    name: 'Bangalore Baptist Hospital College of Nursing',
-                    slug: 'bangalore-baptist-hospital-college-nursing',
-                },
-                {
-                    name: 'Manipal College of Nursing, Manipal',
-                    slug: 'manipal-college-nursing',
-                },
-                {
-                    name: 'Father Muller College of Nursing, Mangalore',
-                    slug: 'father-muller-college-nursing-mangalore',
-                },
-                {
-                    name: 'AJ Institute of Medical Sciences, Mangalore',
-                    slug: 'aj-institute-medical-sciences-nursing-mangalore',
-                },
-
-                // Tamil Nadu
-                {
-                    name: 'Christian Medical College, Vellore',
-                    slug: 'cmc-vellore-bsc-nursing',
-                },
-                {
-                    name: 'Sri Ramachandra Institute of Higher Education and Research',
-                    slug: 'sri-ramachandra-bsc-nursing',
-                },
-                {
-                    name: 'Madras Medical College, Chennai',
-                    slug: 'madras-medical-college-nursing',
-                },
-
-                // Maharashtra
-                {
-                    name: 'Armed Forces Medical College, Pune',
-                    slug: 'afmc-pune-nursing',
-                },
-                {
-                    name: 'Tata Memorial Centre, Mumbai',
-                    slug: 'tata-memorial-centre-nursing',
-                },
-
-                // Kerala
-                {
-                    name: 'Amrita College of Nursing, Kochi',
-                    slug: 'amrita-college-nursing-kochi',
-                },
-                {
-                    name: 'Government College of Nursing, Thiruvananthapuram',
-                    slug: 'government-college-nursing-thiruvananthapuram',
-                },
-            ],
+            colleges: bscNursingColleges,
         },
 
         {
             id: 2,
-            title: 'B.Sc Nursing',
-            quotaType: 'NATIONAL QUOTA',
+            title: 'GNM Nursing',
+            quotaType: 'STATE QUOTA',
             year: '2025',
-            colleges: [
-                {
-                    name: 'All India Institute of Medical Sciences, New Delhi',
-                    slug: 'aiims-new-delhi-bsc-nursing',
-                },
-                {
-                    name: 'AIIMS Rishikesh',
-                    slug: 'aiims-rishikesh-bsc-nursing',
-                },
-                {
-                    name: 'AIIMS Jodhpur',
-                    slug: 'aiims-jodhpur-bsc-nursing',
-                },
-                {
-                    name: 'AIIMS Bhopal',
-                    slug: 'aiims-bhopal-bsc-nursing',
-                },
-                {
-                    name: 'AIIMS Bhubaneswar',
-                    slug: 'aiims-bhubaneswar-bsc-nursing',
-                },
-                {
-                    name: 'AIIMS Patna',
-                    slug: 'aiims-patna-bsc-nursing',
-                },
-                {
-                    name: 'AIIMS Raipur',
-                    slug: 'aiims-raipur-bsc-nursing',
-                },
-                {
-                    name: 'Jawaharlal Institute of Postgraduate Medical Education and Research',
-                    slug: 'jipmer-puducherry-bsc-nursing',
-                },
-                {
-                    name: 'Postgraduate Institute of Medical Education and Research',
-                    slug: 'pgimer-chandigarh-bsc-nursing',
-                },
-                {
-                    name: 'National Institute of Mental Health and Neuro Sciences',
-                    slug: 'nimhans-bangalore-nursing',
-                },
-                {
-                    name: 'Christian Medical College, Vellore',
-                    slug: 'cmc-vellore-nursing',
-                },
-                {
-                    name: 'Banaras Hindu University, Varanasi',
-                    slug: 'bhu-varanasi-nursing',
-                },
-                {
-                    name: 'Aligarh Muslim University, Aligarh',
-                    slug: 'amu-aligarh-nursing',
-                },
-                {
-                    name: 'Jamia Hamdard, New Delhi',
-                    slug: 'jamia-hamdard-nursing',
-                },
-            ],
+            colleges: gnmNursingColleges,
         },
 
         {
             id: 3,
-            title: 'GNM Nursing',
+            title: 'B.Pharmacy',
             quotaType: 'STATE QUOTA',
             year: '2025',
-            colleges: [
-                // Karnataka
-                {
-                    name: 'Government College of Nursing, Bangalore',
-                    slug: 'government-college-nursing-bangalore-gnm',
-                },
-                {
-                    name: 'St. Martha’s Hospital School of Nursing, Bangalore',
-                    slug: 'st-marthas-hospital-nursing-bangalore',
-                },
-                {
-                    name: 'Bangalore Baptist Hospital School of Nursing',
-                    slug: 'bangalore-baptist-hospital-gnm',
-                },
-                {
-                    name: 'St. John’s Hospital School of Nursing, Bangalore',
-                    slug: 'st-johns-hospital-nursing-bangalore-gnm',
-                },
-                {
-                    name: 'Father Muller School of Nursing, Mangalore',
-                    slug: 'father-muller-school-nursing-mangalore',
-                },
-                {
-                    name: 'Kasturba Hospital Nursing School, Manipal',
-                    slug: 'kasturba-hospital-nursing-school-manipal',
-                },
-
-                // Maharashtra
-                {
-                    name: 'Government College of Nursing, Mumbai',
-                    slug: 'government-college-nursing-mumbai-gnm',
-                },
-                {
-                    name: 'Seth GS Medical College Nursing School, Mumbai',
-                    slug: 'seth-gs-medical-college-nursing',
-                },
-
-                // Tamil Nadu
-                {
-                    name: 'Government College of Nursing, Chennai',
-                    slug: 'government-college-nursing-chennai-gnm',
-                },
-                {
-                    name: 'Madras Medical College Nursing School',
-                    slug: 'madras-medical-college-gnm',
-                },
-
-                // Kerala
-                {
-                    name: 'Government College of Nursing, Thiruvananthapuram',
-                    slug: 'government-college-nursing-thiruvananthapuram-gnm',
-                },
-                {
-                    name: 'Government College of Nursing, Kozhikode',
-                    slug: 'government-college-nursing-kozhikode-gnm',
-                },
-            ],
+            colleges: bPharmacyColleges,
         },
 
         {
             id: 4,
-            title: 'M.Sc Nursing',
-            quotaType: 'NATIONAL QUOTA',
+            title: 'All Colleges',
+            quotaType: 'ALL COURSES',
             year: '2025',
-            colleges: [
-                {
-                    name: 'All India Institute of Medical Sciences, New Delhi',
-                    slug: 'aiims-new-delhi-msc-nursing',
-                },
-                {
-                    name: 'AIIMS Rishikesh',
-                    slug: 'aiims-rishikesh-msc-nursing',
-                },
-                {
-                    name: 'AIIMS Jodhpur',
-                    slug: 'aiims-jodhpur-msc-nursing',
-                },
-                {
-                    name: 'AIIMS Bhopal',
-                    slug: 'aiims-bhopal-msc-nursing',
-                },
-                {
-                    name: 'AIIMS Bhubaneswar',
-                    slug: 'aiims-bhubaneswar-msc-nursing',
-                },
-                {
-                    name: 'PGIMER Chandigarh',
-                    slug: 'pgimer-chandigarh-msc-nursing',
-                },
-                {
-                    name: 'JIPMER Puducherry',
-                    slug: 'jipmer-puducherry-msc-nursing',
-                },
-                {
-                    name: 'Christian Medical College, Vellore',
-                    slug: 'cmc-vellore-msc-nursing',
-                },
-                {
-                    name: 'Manipal College of Nursing, Manipal',
-                    slug: 'manipal-college-nursing-msc',
-                },
-                {
-                    name: 'Amrita College of Nursing, Kochi',
-                    slug: 'amrita-college-nursing-msc',
-                },
-                {
-                    name: 'Jamia Hamdard, New Delhi',
-                    slug: 'jamia-hamdard-msc-nursing',
-                },
-                {
-                    name: 'Banaras Hindu University, Varanasi',
-                    slug: 'bhu-varanasi-msc-nursing',
-                },
-            ],
+            colleges: allColleges,
         },
     ];
 
@@ -350,7 +198,7 @@ export default function NursingCollegeSection(): React.ReactElement {
                     </div>
                     {/* EXPLORE COLLEGES */}
                    <Link
-                href="/colleges"
+                href="/nursingcolleges"
                 className="explore-colleges-btn"
               >
                 <span>Explore Colleges</span>
@@ -451,7 +299,7 @@ export default function NursingCollegeSection(): React.ReactElement {
                                         {box.colleges.map((college, idx) => (
 
                                             <div
-                                                key={idx}
+                                                key={`${college.slug}-${idx}`}
                                                 onMouseEnter={() =>
                                                     setHoveredCollege(
                                                         `${box.id}-${idx}`
@@ -498,7 +346,7 @@ export default function NursingCollegeSection(): React.ReactElement {
 
                                                 {/* COLLEGE LINK */}
                                                 <Link
-                                                    href={`/nursing-colleges/${college.slug}`}
+                                                    href={college.href}
                                                     onClick={(e) =>
                                                         e.stopPropagation()
                                                     }
@@ -533,7 +381,7 @@ export default function NursingCollegeSection(): React.ReactElement {
                                 >
 
                                     <span>
-                                        View More
+                                        View More ({box.colleges.length})
                                     </span>
 
                                     <ExpandMore
