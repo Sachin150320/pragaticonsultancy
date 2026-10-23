@@ -460,18 +460,7 @@ export default function Footer() {
 
                 </div>
 
-                <Link
-                  href="/colleges"
-                  className="
-                    text-xs
-                    font-bold
-                    text-[#2e3281]
-                    transition-colors
-                    hover:text-[#4b8fc5]
-                  "
-                >
-                  View All Colleges →
-                </Link>
+               
 
               </div>
 
@@ -549,18 +538,7 @@ export default function Footer() {
 
                 </div>
 
-                <Link
-                  href="/colleges"
-                  className="
-                    text-xs
-                    font-bold
-                    text-[#2e3281]
-                    transition-colors
-                    hover:text-[#4b8fc5]
-                  "
-                >
-                  View All Colleges →
-                </Link>
+               
 
               </div>
 
@@ -570,7 +548,7 @@ export default function Footer() {
 
                   <Link
                     key={city}
-                    href="/colleges"
+                    href="/"
                     className="
                       group
                       flex
