@@ -660,7 +660,7 @@ export default function MedicalCollegesPage() {
     <main className="min-h-screen bg-white">
       {/* BREADCRUMB */}
       <BreadcrumbBanner
-        title="Medical Colleges"
+        title="Top Medical Colleges"
         description="Explore medical colleges, courses and admission opportunities"
       />
 
@@ -871,7 +871,19 @@ export default function MedicalCollegesPage() {
           )}
         </div>
       </section>
+ {/*   Medical Colleges CONTENT */}
+      <section className="bg-[#f8f9fc] py-14 sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="w-full text-center">
+            <h2 className="text-2xl font-bold text-[#2E3281] sm:text-3xl">
+              Medical Colleges
+            </h2>
 
+            <p className="mx-auto mt-5 w-full text-[16px] leading-7 text-slate-600">
+             Bachelor of surgeon / Medicine is a professional course. Students After completion there PUC in the relevant sector their approach for these professional courses (MBBS). The tenure of this course is 5.5years in this tenure their select the specialization as a medicine or a surgeon related course. Our Pragati consultancy Aim is to provide the best and the quality education in the medical field by providing the admissions in top-rated colleges/universities in Bangalore. The colleges and courses are regulated by the Medical Council of India. Below are the several branches/courses regarding Medical? Approach Pragati consultants for getting the proper details about these courses. And take the admission in the best colleges from Bangalore. </p>
+          </div>
+        </div>
+      </section>
       {/* CTA */}
       <section className="bg-[#f8f9fc] py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">

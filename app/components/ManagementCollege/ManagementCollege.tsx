@@ -430,7 +430,7 @@ export default function ManagementCollegesPage() {
     <main className="min-h-screen bg-white">
       {/* BREADCRUMB */}
       <BreadcrumbBanner
-        title="Management Colleges"
+        title="Top Management Colleges"
         description="Explore management colleges, courses and admission opportunities"
       />
 
@@ -636,7 +636,22 @@ export default function ManagementCollegesPage() {
           )}
         </div>
       </section>
+  {/* Management Colleges CONTENT */}
+      <section className="bg-[#f8f9fc] py-14 sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="w-full text-center">
+            <h2 className="text-2xl font-bold text-[#2E3281] sm:text-3xl">
+              Management Colleges
+            </h2>
 
+            <p className="mx-auto mt-5 w-full text-[16px] leading-7 text-slate-600">
+              It is a Professional Post graduation / Graduation course which develops the students in modern society. In this course, the student studies how to progress their career in developing Management skills and leadership Qualities. After Course, completion students will get the placements in Top MNC companies.
+
+For Joining Management courses in Bangalore, Pragati consultancy is providing the admissions in top universities in Bangalore. Visit the Pragati Consultants and take the expert decision for your career. Below are the different sectors in the Management courses opt any of that course get direct admissions and be a professional management student.
+            </p>
+          </div>
+        </div>
+      </section>
       {/* CTA */}
       <section className="bg-[#f8f9fc] py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">

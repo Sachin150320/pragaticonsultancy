@@ -603,7 +603,7 @@ export default function NursingCollegesPage() {
     <main className="min-h-screen bg-white">
       {/* BREADCRUMB */}
       <BreadcrumbBanner
-        title="Nursing & Pharmacy Colleges"
+        title="Top Nursing & Pharmacy Colleges"
         description="Explore nursing, GNM and pharmacy colleges and admission opportunities"
       />
 
@@ -809,7 +809,20 @@ export default function NursingCollegesPage() {
           )}
         </div>
       </section>
+ {/*   Nursing Colleges CONTENT */}
+      <section className="bg-[#f8f9fc] py-14 sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="w-full text-center">
+            <h2 className="text-2xl font-bold text-[#2E3281] sm:text-3xl">
+             Nursing Colleges
+            </h2>
 
+            <p className="mx-auto mt-5 w-full text-[16px] leading-7 text-slate-600">
+           Nursing is one of the greatest professions. It is the sector they are continuously monitoring the patient’s condition and reporting to the Doctor's. For this course, students will apply after the SSC board of education. Pragati consultancy is one of the leading consultancies which provides the admission in top college who provides the physical training and also the theoretical classes to bringing the students in the high-level nursing staff. Students who are interested in these courses can consult Pragati education consultants their provide you the right path for your career and gives the right admission for the students in top colleges in Bangalore.
+            </p>
+          </div>
+        </div>
+      </section>
       {/* CTA */}
       <section className="bg-[#f8f9fc] py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">

@@ -33,7 +33,7 @@ const menuItems: MenuItem[] = [
   {
     label: "About Us",
     children: [
-      { label: "About Us", href: "/about-us" },
+      { label: "About Us", href: "/aboutUs" },
       { label: "Why Choose Us", href: "/why-choose-us" },
     ],
   },
@@ -75,7 +75,7 @@ const menuItems: MenuItem[] = [
 /* ---------------- SITE PAGES ---------------- */
 const searchablePages: SearchItem[] = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about-us" },
+  { label: "About Us", href: "/aboutUs" },
   { label: "Why Choose Us", href: "/why-choose-us" },
   { label: "MBBS", href: "/mbbs", keywords: "medical doctor course college" },
   { label: "Engineering", href: "/engineering", keywords: "engg be btech course college" },
