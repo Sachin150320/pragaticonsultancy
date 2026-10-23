@@ -196,7 +196,7 @@ const collegeData: CollegeInput[] = [
   {
     name: "Vydehi Institute of Medical Science and Research Centre",
     location: "Bengaluru, Karnataka",
-    type: "Private",
+    type: "Private",           
     domain: "vydehi.org",
   },
   {
