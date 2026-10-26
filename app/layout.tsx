@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next'
 import './globals.css'
 import Header from './components/Header'
@@ -8,8 +9,10 @@ export const metadata: Metadata = {
     default: 'Best Admission Consultancy in Bangalore | Pragati Educational Consultancy',
     template: '%s | Pragati Educational Consultancy',
   },
+
   description:
     'Pragati Educational Consultancy provides guidance for medical, dental, nursing and other professional admissions in Karnataka.',
+
   keywords: [
     'Admission Consultancy in Bangalore',
     'Education Consultancy Bangalore',
@@ -19,17 +22,25 @@ export const metadata: Metadata = {
     'Nursing Admission Karnataka',
     'Pragati Educational Consultancy',
   ],
+
   authors: [
     {
       name: 'Pragati Educational Consultancy',
     },
   ],
+
   robots: {
     index: true,
     follow: true,
   },
+
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/images/logos/favicon.png', sizes: 'any' },
+      { url: '/images/logos/favicon.png', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/apple-icon.png',
   },
 }
 
