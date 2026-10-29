@@ -35,17 +35,38 @@ const slugify = (value: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
-const campusImages = [
-  "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1512678080530-7760d81faba6?auto=format&fit=crop&w=1200&q=80",
+/* ------------------------------------------------------------------ */
+/*  LOCAL IMAGE PATHS                                                  */
+/*  College photo : /images/medical-coolleges/{number}.webp            */
+/*  College logo  : /images/medical-coolleges/logo/{file}.webp         */
+/* ------------------------------------------------------------------ */
+const IMAGE_PATH = "/images/medical-coolleges";
+const LOGO_PATH = "/images/medical-coolleges/logo";
+
+// Used only if a college photo fails to load.
+const FALLBACK_IMAGE = `${IMAGE_PATH}/DSC09073_JPG.webp`;
+
+// Used when a college has no logo file, or a logo fails to load.
+const FALLBACK_LOGO =
+  "https://www.google.com/s2/favicons?domain=rguhs.ac.in&sz=128";
+
+// Logo file name for each college, in the SAME ORDER as collegeData below.
+// null = no logo file available, so the fallback logo is used.
+const collegeLogos: (string | null)[] = [
+  // MEDICAL COLLEGES (1 - 65)
+  "1", "2", "3", "4", null, "6", "7", "8", "9", "10", // 1-10  (5 = Mandya: no logo file)
+  "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", // 11-20  (16 = Kempegowda)
+  "21", "22", "23", "24", "25", "26", "27", "28_png", "29", "30", // 21-30
+  "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", // 31-40
+  "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", // 41-50
+  "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", // 51-60
+  "69", "70", "71", null, "73", // 61-65  (64 = Sri Chamundeshwari: no logo file)
+
+  // DENTAL COLLEGES (66 - 102)
+  "74", "75", "76", "77", "78", "79", "72", "19", "82", "83", // 66-75  (72 = Krishnadevaraya)
+  "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", // 76-85
+  "94", null, "96", "97", "98", "99", "100", "34", "102", "103", // 86-95  (87 = Oxford Dental: no logo file)
+  "104", "104", "105", "106", "107", "108", "109", // 96-102
 ];
 
 const collegeData: CollegeInput[] = [
@@ -630,13 +651,15 @@ const collegeData: CollegeInput[] = [
 
 const colleges: College[] = collegeData.map((college, index) => {
   const slug = slugify(college.name);
+  const collegeNumber = index + 1;
+  const logoFile = collegeLogos[index];
 
   return {
     ...college,
     slug,
     description: `${college.name} is a medical or dental institution. Contact our admission counsellors for guidance about available courses, eligibility requirements and admission procedures.`,
-    image: campusImages[index % campusImages.length],
-    logo: `https://www.google.com/s2/favicons?domain=${college.domain || "rguhs.ac.in"}&sz=128`,
+    image: `${IMAGE_PATH}/${collegeNumber}.webp`,
+    logo: logoFile ? `${LOGO_PATH}/${logoFile}.webp` : FALLBACK_LOGO,
   };
 });
 
@@ -763,7 +786,7 @@ export default function MedicalCollegesPage() {
                       loading="lazy"
                       onError={(event) => {
                         event.currentTarget.onerror = null;
-                        event.currentTarget.src = campusImages[0];
+                        event.currentTarget.src = FALLBACK_IMAGE;
                       }}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -792,8 +815,7 @@ export default function MedicalCollegesPage() {
                         loading="lazy"
                         onError={(event) => {
                           event.currentTarget.onerror = null;
-                          event.currentTarget.src =
-                            "https://www.google.com/s2/favicons?domain=rguhs.ac.in&sz=128";
+                          event.currentTarget.src = FALLBACK_LOGO;
                         }}
                         className="h-10 w-10 object-contain"
                       />

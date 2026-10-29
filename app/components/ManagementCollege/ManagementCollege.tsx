@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useMemo, useState } from "react";
@@ -36,10 +35,8 @@ const colleges: College[] = [
     course: "BBA / MBA / B.Com / BBA LLB",
     description:
       "A well-established university offering management and business programs with a strong academic and professional learning environment.",
-    image:
-      "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=christuniversity.in&sz=128",
+    image: "/images/Management-Colleges/1.webp",
+    logo: "/images/Management-Colleges/logo/1.webp",
   },
   {
     id: 102,
@@ -50,10 +47,8 @@ const colleges: College[] = [
     course: "BBA / B.Com",
     description:
       "An established Bengaluru institution offering undergraduate programs in management, commerce and business-related disciplines.",
-    image:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=mccblr.edu.in&sz=128",
+    image: "/images/Management-Colleges/2.webp",
+    logo: "/images/Management-Colleges/logo/2.webp",
   },
   {
     id: 103,
@@ -64,10 +59,8 @@ const colleges: College[] = [
     course: "BBA / MBA / B.Com",
     description:
       "A Bengaluru-based institution offering business and management programs with academic learning and practical exposure.",
-    image:
-      "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=kristujayanti.edu.in&sz=128",
+    image: "/images/Management-Colleges/3.webp",
+    logo: "/images/Management-Colleges/logo/3.webp",
   },
   {
     id: 104,
@@ -78,10 +71,8 @@ const colleges: College[] = [
     course: "BBA / MBA / B.Com / BBA LLB",
     description:
       "A private university offering undergraduate and postgraduate programs in business administration and management.",
-    image:
-      "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=jainuniversity.ac.in&sz=128",
+    image: "/images/Management-Colleges/4.webp",
+    logo: "/images/Management-Colleges/logo/4.webp",
   },
   {
     id: 105,
@@ -92,10 +83,8 @@ const colleges: College[] = [
     course: "BBA / MBA / B.Com",
     description:
       "A modern university offering management and business programs supported by contemporary academic facilities.",
-    image:
-      "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=presidencyuniversity.in&sz=128",
+    image: "/images/Management-Colleges/5.webp",
+    logo: "/images/Management-Colleges/logo/5.webp",
   },
   {
     id: 106,
@@ -106,10 +95,8 @@ const colleges: College[] = [
     course: "BBA / MBA / B.Com / BBA LLB",
     description:
       "A university offering business and management education across multiple areas with an industry-oriented learning approach.",
-    image:
-      "https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=alliance.edu.in&sz=128",
+    image: "/images/Management-Colleges/6.webp",
+    logo: "/images/Management-Colleges/logo/6.webp",
   },
   {
     id: 107,
@@ -120,10 +107,8 @@ const colleges: College[] = [
     course: "BBA / B.Com",
     description:
       "An institution offering management, commerce and business-related programs with a focus on academic and professional development.",
-    image:
-      "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=acharya.ac.in&sz=128",
+    image: "/images/Management-Colleges/7.webp",
+    logo: "/images/Management-Colleges/logo/7.webp",
   },
   {
     id: 108,
@@ -134,10 +119,8 @@ const colleges: College[] = [
     course: "BBA / MBA / B.Com",
     description:
       "A university offering business administration and management programs with practical and industry-oriented learning opportunities.",
-    image:
-      "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=reva.edu.in&sz=128",
+    image: "/images/Management-Colleges/8.webp",
+    logo: "/images/Management-Colleges/logo/8.webp",
   },
   {
     id: 109,
@@ -148,10 +131,8 @@ const colleges: College[] = [
     course: "MBA",
     description:
       "A public university offering postgraduate management education and business-related academic programs.",
-    image:
-      "https://images.unsplash.com/photo-1568792923760-d70635a89fdc?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=eng.bangaloreuniversity.ac.in&sz=128",
+    image: "/images/Management-Colleges/9.webp",
+    logo: "/images/Management-Colleges/logo/9.webp",
   },
   {
     id: 110,
@@ -162,10 +143,8 @@ const colleges: College[] = [
     course: "MBA",
     description:
       "An established Bengaluru institution offering postgraduate management education alongside professional and technical programs.",
-    image:
-      "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=bit-bangalore.edu.in&sz=128",
+    image: "/images/Management-Colleges/10.webp",
+    logo: "/images/Management-Colleges/logo/10.webp",
   },
   {
     id: 111,
@@ -176,10 +155,8 @@ const colleges: College[] = [
     course: "MBA",
     description:
       "An established institution offering professional and postgraduate management education in Bengaluru.",
-    image:
-      "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=bmsce.ac.in&sz=128",
+    image: "/images/Management-Colleges/11.webp",
+    logo: "/images/Management-Colleges/logo/11.webp",
   },
   {
     id: 112,
@@ -190,10 +167,8 @@ const colleges: College[] = [
     course: "MBA / B.Com / BBA LLB",
     description:
       "A university offering business and management programs with practical and application-oriented education.",
-    image:
-      "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=msruas.ac.in&sz=128",
+    image: "/images/Management-Colleges/12.webp",
+    logo: "/images/Management-Colleges/logo/12.webp",
   },
   {
     id: 113,
@@ -204,10 +179,8 @@ const colleges: College[] = [
     course: "MBA",
     description:
       "A premier management institution offering postgraduate management education, executive programs and research opportunities.",
-    image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=iima.ac.in&sz=128",
+    image: "/images/Management-Colleges/13.webp",
+    logo: "/images/Management-Colleges/logo/13.webp",
   },
   {
     id: 114,
@@ -218,10 +191,8 @@ const colleges: College[] = [
     course: "MBA",
     description:
       "A leading management institution offering postgraduate, executive and research programs in business and management.",
-    image:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=iimb.ac.in&sz=128",
+    image: "/images/Management-Colleges/14.webp",
+    logo: "/images/Management-Colleges/logo/14.webp",
   },
   {
     id: 115,
@@ -232,10 +203,8 @@ const colleges: College[] = [
     course: "MBA",
     description:
       "A premier management institution offering postgraduate business education, executive programs and research opportunities.",
-    image:
-      "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=iimcal.ac.in&sz=128",
+    image: "/images/Management-Colleges/15.webp",
+    logo: "/images/Management-Colleges/logo/15.webp",
   },
   {
     id: 116,
@@ -246,10 +215,8 @@ const colleges: College[] = [
     course: "MBA",
     description:
       "A leading management institution offering postgraduate programs across business, management and related disciplines.",
-    image:
-      "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=iiml.ac.in&sz=128",
+    image: "/images/Management-Colleges/16.webp",
+    logo: "/images/Management-Colleges/logo/16.webp",
   },
   {
     id: 117,
@@ -260,10 +227,8 @@ const colleges: College[] = [
     course: "MBA",
     description:
       "A centrally funded management institution offering postgraduate, executive and professional management education.",
-    image:
-      "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=iimk.ac.in&sz=128",
+    image: "/images/Management-Colleges/17.webp",
+    logo: "/images/Management-Colleges/logo/17.webp",
   },
   {
     id: 118,
@@ -274,10 +239,8 @@ const colleges: College[] = [
     course: "BBA / MBA",
     description:
       "A leading management institution offering integrated and postgraduate programs in business and management.",
-    image:
-      "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=iimidr.ac.in&sz=128",
+    image: "/images/Management-Colleges/18.webp",
+    logo: "/images/Management-Colleges/logo/18.webp",
   },
   {
     id: 119,
@@ -288,10 +251,8 @@ const colleges: College[] = [
     course: "BBA / MBA",
     description:
       "A management institution offering integrated and postgraduate management programs with a professional academic environment.",
-    image:
-      "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=iimrohtak.ac.in&sz=128",
+    image: "/images/Management-Colleges/19.webp",
+    logo: "/images/Management-Colleges/logo/19.webp",
   },
   {
     id: 120,
@@ -302,10 +263,8 @@ const colleges: College[] = [
     course: "BBA / MBA",
     description:
       "A management institution offering integrated and postgraduate education in business and management.",
-    image:
-      "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=iimj.ac.in&sz=128",
+    image: "/images/Management-Colleges/20.webp",
+    logo: "/images/Management-Colleges/logo/20.webp",
   },
   {
     id: 121,
@@ -316,10 +275,8 @@ const colleges: College[] = [
     course: "BBA / MBA",
     description:
       "A centrally funded management institution offering integrated and postgraduate management education.",
-    image:
-      "https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=iimbg.ac.in&sz=128",
+    image: "/images/Management-Colleges/21.webp",
+    logo: "/images/Management-Colleges/logo/21.webp",
   },
   {
     id: 122,
@@ -330,10 +287,8 @@ const colleges: College[] = [
     course: "BBA / MBA",
     description:
       "A management institution providing integrated and postgraduate education across business and professional disciplines.",
-    image:
-      "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=iimranchi.ac.in&sz=128",
+    image: "/images/Management-Colleges/22.webp",
+    logo: "/images/Management-Colleges/logo/22.webp",
   },
   {
     id: 123,
@@ -344,10 +299,8 @@ const colleges: College[] = [
     course: "BBA / MBA",
     description:
       "A centrally funded management institution offering professional management education and business programs.",
-    image:
-      "https://images.unsplash.com/photo-1568792923760-d70635a89fdc?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=iimamritsar.ac.in&sz=128",
+    image: "/images/Management-Colleges/23.webp",
+    logo: "/images/Management-Colleges/logo/23.webp",
   },
   {
     id: 124,
@@ -358,10 +311,8 @@ const colleges: College[] = [
     course: "MBA",
     description:
       "A management institution offering postgraduate and professional education in business and management.",
-    image:
-      "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=iimv.ac.in&sz=128",
+    image: "/images/Management-Colleges/24.webp",
+    logo: "/images/Management-Colleges/logo/24.webp",
   },
   {
     id: 125,
@@ -372,10 +323,8 @@ const colleges: College[] = [
     course: "MBA",
     description:
       "A centrally funded management institution offering postgraduate and executive programs in management.",
-    image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=iimshillong.ac.in&sz=128",
+    image: "/images/Management-Colleges/25.webp",
+    logo: "/images/Management-Colleges/logo/25.webp",
   },
   {
     id: 126,
@@ -386,10 +335,8 @@ const colleges: College[] = [
     course: "MBA",
     description:
       "A management institution offering postgraduate business education, research and professional learning opportunities.",
-    image:
-      "https://images.unsplash.com/photo-1519452575417-564c1401ecc0?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=iimu.ac.in&sz=128",
+    image: "/images/Management-Colleges/26.webp",
+    logo: "/images/Management-Colleges/logo/26.webp",
   },
   {
     id: 127,
@@ -400,10 +347,8 @@ const colleges: College[] = [
     course: "MBA",
     description:
       "A centrally funded management institution offering postgraduate and executive education in business and management.",
-    image:
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80",
-    logo:
-      "https://www.google.com/s2/favicons?domain=iimtrichy.ac.in&sz=128",
+    image: "/images/Management-Colleges/27.webp",
+    logo: "/images/Management-Colleges/logo/27.webp",
   },
 ];
 

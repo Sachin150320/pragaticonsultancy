@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useMemo, useState } from "react";
@@ -35,8 +34,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing",
     description:
       "A nursing education institution offering nursing studies and professional healthcare learning opportunities.",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=msruas.ac.in&sz=128",
+    image: "/images/nursing-colleges/1.webp",
+    logo: "/images/nursing-colleges/logo/1.webp",
   },
   {
     id: 2,
@@ -47,8 +46,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing",
     description:
       "A nursing college focused on nursing education, clinical learning and healthcare professional development.",
-    image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=rvcn.edu.in&sz=128",
+    image: "/images/nursing-colleges/2.webp",
+    logo: "/images/nursing-colleges/logo/2.webp",
   },
   {
     id: 3,
@@ -59,8 +58,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing / GNM",
     description:
       "An institution offering nursing education and foundational preparation for professional healthcare careers.",
-    image: "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    image: "/images/nursing-colleges/3.webp",
+    logo: "/images/nursing-colleges/logo/3.webp",
   },
   {
     id: 4,
@@ -71,8 +70,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing / GNM",
     description:
       "A nursing college providing nursing education and practical preparation for healthcare services.",
-    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    image: "/images/nursing-colleges/4.webp",
+    logo: "/images/nursing-colleges/logo/4.webp",
   },
   {
     id: 5,
@@ -83,8 +82,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing / B.Pharmacy",
     description:
       "A Bengaluru-based university offering professional education across selected academic and technical disciplines.",
-    image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=pes.edu&sz=128",
+    image: "/images/nursing-colleges/5.webp",
+    logo: "/images/nursing-colleges/logo/5.webp",
   },
   {
     id: 6,
@@ -95,8 +94,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing / GNM",
     description:
       "A nursing education college focused on academic study and clinical preparation for nursing careers.",
-    image: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=eastwestgroup.in&sz=128",
+    image: "/images/nursing-colleges/6.webp",
+    logo: "/images/nursing-colleges/logo/6.webp",
   },
   {
     id: 7,
@@ -107,8 +106,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing",
     description:
       "A nursing college providing healthcare education and practical learning in nursing and patient care.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=theoxford.edu&sz=128",
+    image: "/images/nursing-colleges/7.webp",
+    logo: "/images/nursing-colleges/logo/7.webp",
   },
   {
     id: 8,
@@ -119,8 +118,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing / GNM",
     description:
       "A medical and healthcare institution associated with professional education and clinical learning.",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=sapthagiri.edu.in&sz=128",
+    image: "/images/nursing-colleges/8.webp",
+    logo: "/images/nursing-colleges/logo/8.webp",
   },
   {
     id: 9,
@@ -131,8 +130,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing",
     description:
       "A medical education and hospital institution supporting healthcare education and clinical exposure.",
-    image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=rrmch.org&sz=128",
+    image: "/images/nursing-colleges/9.webp",
+    logo: "/images/nursing-colleges/logo/9.webp",
   },
   {
     id: 10,
@@ -143,8 +142,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing",
     description:
       "A healthcare education institution offering learning opportunities in medical and allied healthcare fields.",
-    image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    image: "/images/nursing-colleges/10.webp",
+    logo: "/images/nursing-colleges/logo/10.webp",
   },
   {
     id: 11,
@@ -155,8 +154,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing / GNM / B.Pharmacy",
     description:
       "A group of educational institutions offering professional courses in healthcare and related disciplines.",
-    image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    image: "/images/nursing-colleges/11.webp",
+    logo: "/images/nursing-colleges/logo/11.webp",
   },
   {
     id: 12,
@@ -167,8 +166,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing / B.Pharmacy",
     description:
       "An educational group offering professional and healthcare-related study opportunities.",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=aakash.ac.in&sz=128",
+    image: "/images/nursing-colleges/12.webp",
+    logo: "/images/nursing-colleges/logo/12.webp",
   },
   {
     id: 13,
@@ -179,8 +178,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing",
     description:
       "A nursing college focused on professional nursing education and healthcare skills development.",
-    image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=rrinstitutions.com&sz=128",
+    image: "/images/nursing-colleges/13.webp",
+    logo: "/images/nursing-colleges/logo/13.webp",
   },
   {
     id: 14,
@@ -191,8 +190,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing",
     description:
       "A nursing education institution providing academic instruction and practical healthcare learning.",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    image: "/images/nursing-colleges/14.webp",
+    logo: "/images/nursing-colleges/logo/14.webp",
   },
   {
     id: 15,
@@ -203,8 +202,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing / B.Pharmacy",
     description:
       "An educational institution group offering professional courses, including healthcare-related programs.",
-    image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=harsha.ac.in&sz=128",
+    image: "/images/nursing-colleges/15.webp",
+    logo: "/images/nursing-colleges/logo/15.webp",
   },
   {
     id: 16,
@@ -215,8 +214,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing",
     description:
       "An educational group offering professional education and training in selected disciplines.",
-    image: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    image: "/images/nursing-colleges/16.webp",
+    logo: "/images/nursing-colleges/logo/16.webp",
   },
   {
     id: 17,
@@ -227,8 +226,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing",
     description:
       "A higher education institution offering academic programs and professional learning opportunities.",
-    image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=sapthagiri.edu.in&sz=128",
+    image: "/images/nursing-colleges/17.webp",
+    logo: "/images/nursing-colleges/logo/17.webp",
   },
   {
     id: 18,
@@ -239,8 +238,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing / B.Pharmacy",
     description:
       "An educational group offering professional and healthcare-related programs in Bengaluru.",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain eastpoint.ac.in&sz=128",
+    image: "/images/nursing-colleges/18.webp",
+    logo: "/images/nursing-colleges/logo/18.webp",
   },
   {
     id: 19,
@@ -251,8 +250,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing",
     description:
       "An institution focused on healthcare education and preparation for professional healthcare careers.",
-    image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=acharya.ac.in&sz=128",
+    image: "/images/nursing-colleges/19.webp",
+    logo: "/images/nursing-colleges/logo/19.webp",
   },
   {
     id: 20,
@@ -263,8 +262,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing",
     description:
       "A nursing college providing academic education and clinical preparation for nursing students.",
-    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=acharya.ac.in&sz=128",
+    image: "/images/nursing-colleges/20.webp",
+    logo: "/images/nursing-colleges/logo/20.webp",
   },
   {
     id: 21,
@@ -275,8 +274,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing",
     description:
       "A nursing college offering professional education and practical preparation for healthcare careers.",
-    image: "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=mvjce.edu.in&sz=128",
+    image: "/images/nursing-colleges/21.webp",
+    logo: "/images/nursing-colleges/logo/21.webp",
   },
   {
     id: 22,
@@ -287,8 +286,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing / GNM",
     description:
       "A nursing education institution offering professional learning in nursing and patient care.",
-    image: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=krupanidhi.edu.in&sz=128",
+    image: "/images/nursing-colleges/22.webp",
+    logo: "/images/nursing-colleges/logo/22.webp",
   },
   {
     id: 23,
@@ -299,8 +298,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing",
     description:
       "A healthcare education institution offering nursing studies and clinical learning opportunities.",
-    image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=vydehi.org&sz=128",
+    image: "/images/nursing-colleges/23.webp",
+    logo: "/images/nursing-colleges/logo/23.webp",
   },
   {
     id: 24,
@@ -311,8 +310,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing",
     description:
       "A nursing college providing academic and practical education for aspiring healthcare professionals.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    image: "/images/nursing-colleges/24.webp",
+    logo: "/images/nursing-colleges/logo/24.webp",
   },
   {
     id: 25,
@@ -323,8 +322,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing",
     description:
       "A nursing college focused on nursing education and professional healthcare development.",
-    image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    image: "/images/nursing-colleges/25.webp",
+    logo: "/images/nursing-colleges/logo/25.webp",
   },
   {
     id: 26,
@@ -335,8 +334,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing",
     description:
       "An institution offering nursing education and professional preparation in healthcare services.",
-    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=spurthycollege.com&sz=128",
+    image: "/images/nursing-colleges/26.webp",
+    logo: "/images/nursing-colleges/logo/26.webp",
   },
   {
     id: 27,
@@ -347,8 +346,8 @@ const colleges: College[] = [
     course: "B.Sc Nursing",
     description:
       "An educational group offering professional learning opportunities, including healthcare-related education.",
-    image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    image: "/images/nursing-colleges/27.webp",
+    logo: "/images/nursing-colleges/logo/27.webp",
   },
   {
     id: 28,
@@ -359,8 +358,8 @@ const colleges: College[] = [
     course: "GNM / B.Pharmacy",
     description:
       "A university offering professional education across applied sciences and selected healthcare disciplines.",
-    image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=msruas.ac.in&sz=128",
+    image: "/images/nursing-colleges/28.webp",
+    logo: "/images/nursing-colleges/logo/28.webp",
   },
   {
     id: 29,
@@ -371,8 +370,8 @@ const colleges: College[] = [
     course: "GNM",
     description:
       "An educational group offering professional courses and learning opportunities in selected disciplines.",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=padmashree.org&sz=128",
+    image: "/images/nursing-colleges/29.webp",
+    logo: "/images/nursing-colleges/logo/29.webp",
   },
   {
     id: 30,
@@ -383,8 +382,8 @@ const colleges: College[] = [
     course: "GNM",
     description:
       "An educational institution offering professional learning opportunities in healthcare-related fields.",
-    image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    image: "/images/nursing-colleges/30.webp",
+    logo: "/images/nursing-colleges/logo/30.webp",
   },
   {
     id: 31,
@@ -395,8 +394,8 @@ const colleges: College[] = [
     course: "GNM",
     description:
       "An educational group offering professional programs and academic learning opportunities.",
-    image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=krupanidhi.edu.in&sz=128",
+    image: "/images/nursing-colleges/31.webp",
+    logo: "/images/nursing-colleges/logo/31.webp",
   },
   {
     id: 32,
@@ -407,8 +406,8 @@ const colleges: College[] = [
     course: "GNM",
     description:
       "An educational institution group offering professional education and career-focused programs.",
-    image: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    image: "/images/nursing-colleges/32.webp",
+    logo: "/images/nursing-colleges/logo/32.webp",
   },
   {
     id: 33,
@@ -419,8 +418,8 @@ const colleges: College[] = [
     course: "B.Pharmacy",
     description:
       "A pharmacy college focused on pharmaceutical education, laboratory learning and professional development.",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=acharya.ac.in&sz=128",
+    image: "/images/nursing-colleges/33.webp",
+    logo: "/images/nursing-colleges/logo/33.webp",
   },
   {
     id: 34,
@@ -431,8 +430,8 @@ const colleges: College[] = [
     course: "B.Pharmacy",
     description:
       "A university offering higher education and professional learning across selected academic disciplines.",
-    image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=dsu.edu.in&sz=128",
+    image: "/images/nursing-colleges/34.webp",
+    logo: "/images/nursing-colleges/logo/34.webp",
   },
   {
     id: 35,
@@ -443,8 +442,8 @@ const colleges: College[] = [
     course: "B.Pharmacy",
     description:
       "A pharmacy institution offering pharmaceutical education and professional learning in drug sciences.",
-    image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=theoxford.edu&sz=128",
+    image: "/images/nursing-colleges/35.webp",
+    logo: "/images/nursing-colleges/logo/35.webp",
   },
   {
     id: 36,
@@ -455,8 +454,8 @@ const colleges: College[] = [
     course: "B.Pharmacy",
     description:
       "A pharmacy college providing academic and practical learning in pharmaceutical sciences.",
-    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=tjohncollege.com&sz=128",
+    image: "/images/nursing-colleges/36.webp",
+    logo: "/images/nursing-colleges/logo/36.webp",
   },
   {
     id: 37,
@@ -467,8 +466,8 @@ const colleges: College[] = [
     course: "B.Pharmacy",
     description:
       "An educational group offering professional education in selected academic and career-focused fields.",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    image: "/images/nursing-colleges/37.webp",
+    logo: "/images/nursing-colleges/logo/37.webp",
   },
   {
     id: 38,
@@ -479,8 +478,8 @@ const colleges: College[] = [
     course: "B.Pharmacy",
     description:
       "A pharmacy college offering pharmaceutical studies and practical learning opportunities.",
-    image: "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=rrinstitutions.com&sz=128",
+    image: "/images/nursing-colleges/38.webp",
+    logo: "/images/nursing-colleges/logo/38.webp",
   },
   {
     id: 39,
@@ -491,8 +490,8 @@ const colleges: College[] = [
     course: "B.Pharmacy",
     description:
       "An educational group offering professional courses and career-oriented learning opportunities.",
-    image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    image: "/images/nursing-colleges/39.webp",
+    logo: "/images/nursing-colleges/logo/39.webp",
   },
   {
     id: 40,
@@ -503,8 +502,8 @@ const colleges: College[] = [
     course: "B.Pharmacy",
     description:
       "A pharmacy college focused on pharmaceutical education and professional skill development.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    image: "/images/nursing-colleges/40.webp",
+    logo: "/images/nursing-colleges/logo/40.webp",
   },
   {
     id: 41,
@@ -515,8 +514,8 @@ const colleges: College[] = [
     course: "B.Pharmacy",
     description:
       "A pharmacy college offering academic education in pharmaceutical sciences and related professional areas.",
-    image: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    image: "/images/nursing-colleges/41.webp",
+    logo: "/images/nursing-colleges/logo/41.webp",
   },
   {
     id: 42,
@@ -527,8 +526,8 @@ const colleges: College[] = [
     course: "B.Pharmacy",
     description:
       "A pharmacy institution offering pharmaceutical education and professional learning.",
-    image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    image: "/images/nursing-colleges/42.webp",
+    logo: "/images/nursing-colleges/logo/42.webp",
   },
   {
     id: 43,
@@ -539,8 +538,8 @@ const colleges: College[] = [
     course: "B.Pharmacy",
     description:
       "A pharmacy college providing academic and practical education in pharmaceutical sciences.",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=eastwestgroup.in&sz=128",
+    image: "/images/nursing-colleges/43.webp",
+    logo: "/images/nursing-colleges/logo/43.webp",
   },
   {
     id: 44,
@@ -551,8 +550,8 @@ const colleges: College[] = [
     course: "B.Pharmacy",
     description:
       "An institution offering pharmacy education and professional learning in pharmaceutical sciences.",
-    image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=vydehi.org&sz=128",
+    image: "/images/nursing-colleges/44.webp",
+    logo: "/images/nursing-colleges/logo/44.webp",
   },
   {
     id: 45,
@@ -563,8 +562,8 @@ const colleges: College[] = [
     course: "B.Pharmacy",
     description:
       "A pharmacy college focused on pharmaceutical education and practical professional preparation.",
-    image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    image: "/images/nursing-colleges/45.webp",
+    logo: "/images/nursing-colleges/logo/45.webp",
   },
   {
     id: 46,
@@ -575,8 +574,8 @@ const colleges: College[] = [
     course: "B.Pharmacy",
     description:
       "A pharmacy college providing professional education in pharmaceutical sciences and related subjects.",
-    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=spurthycollege.com&sz=128",
+    image: "/images/nursing-colleges/46.webp",
+    logo: "/images/nursing-colleges/logo/46.webp",
   },
 ];
 

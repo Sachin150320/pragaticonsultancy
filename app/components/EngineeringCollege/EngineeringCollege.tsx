@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useMemo, useState } from "react";
@@ -24,16 +23,11 @@ type College = {
   href: string;
 };
 
-// Online image thumbnails. Verify image accuracy before publishing.
-const campusImage = (name: string) =>
-  `https://tse1.mm.bing.net/th?q=${encodeURIComponent(
-    `${name} college campus Bengaluru`
-  )}&w=800&h=450&c=7&rs=1&p=0`;
+// Local images: /public/images/Engg-collegs/{id}.webp
+// Local logos:  /public/images/Engg-collegs/logo/{id}.webp
+const campusImage = (id: number) => `/images/Engg-collegs/${id}.webp`;
 
-const collegeLogo = (name: string) =>
-  `https://tse1.mm.bing.net/th?q=${encodeURIComponent(
-    `${name} official college logo`
-  )}&w=200&h=200&c=7&rs=1&p=0`;
+const collegeLogo = (id: number) => `/images/Engg-collegs/logo/${id}.webp`;
 
 const collegeList = [
   ["Acharya Institute of Technology", "Soladevanahalli, Bengaluru", "Private", "acharya-institute-of-technology"],
@@ -87,8 +81,8 @@ const colleges: College[] = collegeList.map(
     location,
     type,
     description: `Explore courses, campus facilities and admission opportunities at ${name}. Contact Pragati Consultancy for guidance on college selection and admissions.`,
-    image: campusImage(name),
-    logo: collegeLogo(name),
+    image: campusImage(index + 1),
+    logo: collegeLogo(index + 1),
     href: `/engineering-colleges/${slug}`,
   })
 );
