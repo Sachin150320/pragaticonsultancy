@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D11
-const collegeImage = "/images/Collges/d-a-pandu-memorial-rv-dental-college-j-p-nagar-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/76.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/84.webp";
 
 const college = {
     "name": "D.A. Pandu Memorial RV Dental College",

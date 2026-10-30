@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M48
-const collegeImage = "/images/Collges/st-johns-medical-college-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/43.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=stjohns.in&sz=256";
+const collegeLogo = "/images/medical-coolleges/logo/51.webp";
 
 const college = {
     "name": "St. Johns Medical College",

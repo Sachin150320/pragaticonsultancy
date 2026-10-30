@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D01
-const collegeImage = "/images/Collges/government-dental-college-fort-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/66.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/74.webp";
 
 const college = {
     "name": "Government Dental College",

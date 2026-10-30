@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M23
-const collegeImage = "/images/Collges/sri-basaveshwara-medical-college-and-hospital-chitradurga.jpg";
+const collegeImage = "/images/medical-coolleges/23.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/23.webp";
 
 const college = {
     "name": "Sri Basaveshwara Medical College and Hospital",

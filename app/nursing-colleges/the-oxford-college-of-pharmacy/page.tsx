@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 35
-const collegeImage =
-    "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/nursing-colleges/35.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=theoxford.edu&sz=128";
+const collegeLogo = "/images/nursing-colleges/logo/35.webp";
 
 const college = {
     "name": "The Oxford College of Pharmacy",

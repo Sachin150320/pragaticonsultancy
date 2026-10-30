@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D04
-const collegeImage = "/images/Collges/academy-of-medical-education-dental-college-raichur.jpg";
+const collegeImage = "/images/medical-coolleges/69.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/77.webp";
 
 const college = {
     "name": "Academy of Medical Education Dental College",

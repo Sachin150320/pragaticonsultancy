@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M61
-const collegeImage = "/images/Collges/kodagu-institute-of-medical-sciences-kodagu.jpg";
+const collegeImage = "/images/medical-coolleges/55.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/63.webp";
 
 const college = {
     "name": "Kodagu Institute of Medical Sciences",

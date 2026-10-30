@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D43
-const collegeImage = "/images/Collges/subbaiah-institute-of-dental-science-shimoga.jpg";
+const collegeImage = "/images/medical-coolleges/101.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/108.webp";
 
 const college = {
     "name": "Subbaiah Institute of Dental Science",

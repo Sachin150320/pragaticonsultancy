@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M22
-const collegeImage = "/images/Collges/s-nijalingappa-medical-college-and-research-centre-bagalkot.jpg";
+const collegeImage = "/images/medical-coolleges/22.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/22.webp";
 
 const college = {
     "name": "S. Nijalingappa Medical College and Research Centre",

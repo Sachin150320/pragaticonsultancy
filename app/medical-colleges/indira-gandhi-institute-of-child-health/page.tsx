@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M12
-const collegeImage = "/images/Collges/indira-gandhi-institute-of-child-health-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/12.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/12.webp";
 
 const college = {
     "name": "Indira Gandhi Institute of Child Health",

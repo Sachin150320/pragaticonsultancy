@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 39
-const collegeImage =
-    "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/nursing-colleges/39.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/nursing-colleges/logo/39.webp";
 
 const college = {
     "name": "Oxbridge Group of Institutions",

@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M21
-const collegeImage = "/images/Collges/shymanuru-shivashankarappa-institute-of-medical-sciences-davangere.jpg";
+const collegeImage = "/images/medical-coolleges/21.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/21.webp";
 
 const college = {
     "name": "Shymanuru Shivashankarappa Institute of Medical Sciences",

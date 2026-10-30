@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M16
-const collegeImage = "/images/Collges/kempegowda-institute-of-medical-sciences-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/16.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/16.webp";
 
 const college = {
     "name": "Kempegowda Institute of Medical Sciences",

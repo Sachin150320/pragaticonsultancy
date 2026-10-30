@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D26
-const collegeImage = "/images/Collges/k-g-f-college-of-dental-sciences-k-g-f.jpg";
+const collegeImage = "/images/medical-coolleges/89.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/97.webp";
 
 const college = {
     "name": "K.G.F. College of Dental Sciences",

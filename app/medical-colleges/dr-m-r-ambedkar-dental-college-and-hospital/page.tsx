@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D09
-const collegeImage = "/images/Collges/dr-m-r-ambedkar-dental-college-and-hospital-cooke-town-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/74.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/82.webp";
 
 const college = {
     "name": "Dr. M.R. Ambedkar Dental College and Hospital",

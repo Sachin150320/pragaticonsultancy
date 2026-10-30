@@ -16,9 +16,8 @@ import {
   BriefcaseBusiness,
 } from "lucide-react";
 
-const collegeImage = "/images/Collges/rvitm.jpg";
-const collegeLogo =
-  "https://www.google.com/s2/favicons?domain=rvitm.edu.in&sz=256";
+const collegeImage = "/images/Engg-collegs/35.webp";
+const collegeLogo = "/images/Engg-collegs/logo/35.webp";
 
 type Course = {
   title: string;

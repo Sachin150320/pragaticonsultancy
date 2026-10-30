@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M57
-const collegeImage = "/images/Collges/koppal-institute-of-medical-science-koppal.jpg";
+const collegeImage = "/images/medical-coolleges/51.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/59.webp";
 
 const college = {
     "name": "Koppal Institute of Medical Science",

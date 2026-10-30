@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 102
-const collegeImage =
-    "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/Management-Colleges/2.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=mccblr.edu.in&sz=128";
+const collegeLogo = "/images/Management-Colleges/logo/2.webp";
 
 const college = {
     "name": "Mount Carmel College",

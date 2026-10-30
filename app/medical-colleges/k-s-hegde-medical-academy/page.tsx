@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M36
-const collegeImage = "/images/Collges/k-s-hegde-medical-academy-mangalore.jpg";
+const collegeImage = "/images/medical-coolleges/35.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/35.webp";
 
 const college = {
     "name": "K.S. Hegde Medical Academy",

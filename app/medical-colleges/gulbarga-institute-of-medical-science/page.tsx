@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M55
-const collegeImage = "/images/Collges/gulbarga-institute-of-medical-science-gulbarga.jpg";
+const collegeImage = "/images/medical-coolleges/50.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/58.webp";
 
 const college = {
     "name": "Gulbarga Institute of Medical Science",

@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M39
-const collegeImage = "/images/Collges/khaja-bande-navaz-institute-of-medical-sciences-gulbarga.jpg";
+const collegeImage = "/images/medical-coolleges/38.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/38.webp";
 
 const college = {
     "name": "Khaja Bande Navaz Institute of Medical Sciences",

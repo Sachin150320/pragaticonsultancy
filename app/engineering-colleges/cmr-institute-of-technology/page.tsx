@@ -16,10 +16,9 @@ import {
   BriefcaseBusiness,
 } from "lucide-react";
 
-const collegeImage = "/images/Collges/1.jpg";
+const collegeImage = "/images/Engg-collegs/10.webp";
 
-const collegeLogo =
-  "https://www.google.com/s2/favicons?domain=cmrit.ac.in&sz=256";
+const collegeLogo = "/images/Engg-collegs/logo/10.webp";
 
 type Course = {
   title: string;

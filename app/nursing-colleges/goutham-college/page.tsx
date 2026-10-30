@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 30
-const collegeImage =
-    "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/nursing-colleges/30.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/nursing-colleges/logo/30.webp";
 
 const college = {
     "name": "Goutham College",

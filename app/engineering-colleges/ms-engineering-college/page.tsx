@@ -17,9 +17,8 @@ import {
   BriefcaseBusiness,
 } from "lucide-react";
 
-const collegeImage = "/images/Collges/1.jpg";
-const collegeLogo =
-  "https://www.google.com/s2/favicons?domain=msec.ac.in&sz=256";
+const collegeImage = "/images/Engg-collegs/17.webp";
+const collegeLogo = "/images/Engg-collegs/logo/17.webp";
 
 type Course = {
   title: string;

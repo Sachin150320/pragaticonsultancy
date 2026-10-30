@@ -17,10 +17,9 @@ import {
     BriefcaseBusiness,
 } from "lucide-react";
 
-const collegeImage = "/images/Collges/1.jpg";
+const collegeImage = "/images/Engg-collegs/9.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=brindavancollege.edu.in&sz=256";
+const collegeLogo = "/images/Engg-collegs/logo/9.webp";
 
 type Course = {
     title: string;

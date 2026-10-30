@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M07
-const collegeImage = "/images/Collges/hassan-institute-of-medical-sciences-hassan.jpg";
+const collegeImage = "/images/medical-coolleges/7.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/7.webp";
 
 const college = {
     "name": "Hassan Institute of Medical Sciences",

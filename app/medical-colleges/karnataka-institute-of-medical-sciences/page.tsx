@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M03
-const collegeImage = "/images/Collges/karnataka-institute-of-medical-sciences-hubli.jpg";
+const collegeImage = "/images/medical-coolleges/3.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/3.webp";
 
 const college = {
     "name": "Karnataka Institute of Medical Sciences",

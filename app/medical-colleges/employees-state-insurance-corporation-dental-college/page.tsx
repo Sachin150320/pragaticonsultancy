@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D44
-const collegeImage = "/images/Collges/employees-state-insurance-corporation-dental-college-gulbarga.jpg";
+const collegeImage = "/images/medical-coolleges/102.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/109.webp";
 
 const college = {
     "name": "Employees State Insurance Corporation Dental College",

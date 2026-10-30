@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 108
-const collegeImage =
-    "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/Management-Colleges/8.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=reva.edu.in&sz=128";
+const collegeLogo = "/images/Management-Colleges/logo/8.webp";
 
 const college = {
     "name": "REVA University",

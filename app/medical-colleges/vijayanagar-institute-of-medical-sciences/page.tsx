@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M04
-const collegeImage = "/images/Collges/vijayanagar-institute-of-medical-sciences-bellary.jpg";
+const collegeImage = "/images/medical-coolleges/4.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/4.webp";
 
 const college = {
     "name": "Vijayanagar Institute of Medical Sciences",

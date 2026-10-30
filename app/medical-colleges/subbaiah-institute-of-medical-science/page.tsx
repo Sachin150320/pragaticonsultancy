@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M59
-const collegeImage = "/images/Collges/subbaiah-institute-of-medical-science-shimoga.jpg";
+const collegeImage = "/images/medical-coolleges/53.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/61.webp";
 
 const college = {
     "name": "Subbaiah Institute of Medical Science",

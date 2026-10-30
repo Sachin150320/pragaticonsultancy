@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M06
-const collegeImage = "/images/Collges/belgaum-institute-of-medical-sciences-belgaum.jpg";
+const collegeImage = "/images/medical-coolleges/6.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/6.webp";
 
 const college = {
     "name": "Belgaum Institute of Medical Sciences",

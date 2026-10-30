@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 121
-const collegeImage =
-    "https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/Management-Colleges/21.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=iimbg.ac.in&sz=128";
+const collegeLogo = "/images/Management-Colleges/logo/21.webp";
 
 const college = {
     "name": "Indian Institute of Management Bodh Gaya",

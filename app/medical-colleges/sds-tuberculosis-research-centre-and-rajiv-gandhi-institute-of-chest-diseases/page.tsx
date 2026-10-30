@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M51
-const collegeImage = "/images/Collges/sds-tuberculosis-research-centre-and-rajiv-gandhi-institute-of-chest-diseases-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/46.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/54.webp";
 
 const college = {
     "name": "SDS Tuberculosis Research Centre and Rajiv Gandhi Institute of Chest Diseases",

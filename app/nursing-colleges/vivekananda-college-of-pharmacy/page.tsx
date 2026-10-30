@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 40
-const collegeImage =
-    "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/nursing-colleges/40.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/nursing-colleges/logo/40.webp";
 
 const college = {
     "name": "Vivekananda College of Pharmacy",

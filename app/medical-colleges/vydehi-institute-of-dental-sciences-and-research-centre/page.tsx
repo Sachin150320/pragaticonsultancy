@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D22
-const collegeImage = "/images/Collges/vydehi-institute-of-dental-sciences-and-research-centre-whitefield-road-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/85.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/93.webp";
 
 const college = {
     "name": "Vydehi Institute of Dental Sciences and Research Centre",

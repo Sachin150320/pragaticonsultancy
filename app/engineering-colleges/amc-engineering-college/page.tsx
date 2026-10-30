@@ -16,10 +16,9 @@ import {
   BriefcaseBusiness,
 } from "lucide-react";
 
-const collegeImage = "/images/Collges/3.jpg";
+const collegeImage = "/images/Engg-collegs/3.webp";
 
-const collegeLogo =
-  "https://www.google.com/s2/favicons?domain=amcgroup.edu.in&sz=256";
+const collegeLogo = "/images/Engg-collegs/logo/3.webp";
 
 type Course = {
   title: string;

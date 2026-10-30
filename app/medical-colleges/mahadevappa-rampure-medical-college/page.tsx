@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M17
-const collegeImage = "/images/Collges/mahadevappa-rampure-medical-college-gulbarga.jpg";
+const collegeImage = "/images/medical-coolleges/17.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/17.webp";
 
 const college = {
     "name": "Mahadevappa Rampure Medical College",

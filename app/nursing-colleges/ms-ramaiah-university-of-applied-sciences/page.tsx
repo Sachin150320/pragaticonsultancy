@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 28
-const collegeImage =
-    "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/nursing-colleges/28.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=msruas.ac.in&sz=128";
+const collegeLogo = "/images/nursing-colleges/logo/28.webp";
 
 const college = {
     "name": "M.S. Ramaiah University of Applied Sciences",

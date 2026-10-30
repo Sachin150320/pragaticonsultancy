@@ -22,7 +22,7 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M05
-const collegeImage = "/images/Collges/mandya-institute-of-medical-sciences-mandya.jpg";
+const collegeImage = "/images/medical-coolleges/5.webp";
 
 const collegeLogo =
     "";

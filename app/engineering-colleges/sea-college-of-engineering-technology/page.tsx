@@ -17,10 +17,9 @@ import {
     BriefcaseBusiness,
 } from "lucide-react";
 
-const collegeImage = "/images/Collges/1.jpg";
+const collegeImage = "/images/Engg-collegs/23.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=seacet.edu.in&sz=256";
+const collegeLogo = "/images/Engg-collegs/logo/23.webp";
 
 type Course = {
     title: string;

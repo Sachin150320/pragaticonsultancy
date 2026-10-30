@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M26
-const collegeImage = "/images/Collges/vydehi-institute-of-medical-science-and-research-centre-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/26.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/26.webp";
 
 const college = {
     "name": "Vydehi Institute of Medical Science and Research Centre",

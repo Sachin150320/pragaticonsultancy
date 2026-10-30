@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D12
-const collegeImage = "/images/Collges/pm-nadagowda-memorial-dental-college-and-hospital-bagalkot.jpg";
+const collegeImage = "/images/medical-coolleges/77.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/85.webp";
 
 const college = {
     "name": "PM Nadagowda Memorial Dental College and Hospital",

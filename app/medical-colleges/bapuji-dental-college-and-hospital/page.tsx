@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D02
-const collegeImage = "/images/Collges/bapuji-dental-college-and-hospital-davangere.jpg";
+const collegeImage = "/images/medical-coolleges/67.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/75.webp";
 
 const college = {
     "name": "Bapuji Dental College and Hospital",

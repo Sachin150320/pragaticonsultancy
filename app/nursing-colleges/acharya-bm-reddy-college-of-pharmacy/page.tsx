@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 33
-const collegeImage =
-    "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/nursing-colleges/33.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=acharya.ac.in&sz=128";
+const collegeLogo = "/images/nursing-colleges/logo/33.webp";
 
 const college = {
     "name": "Acharya & BM Reddy College of Pharmacy",

@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 42
-const collegeImage =
-    "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/nursing-colleges/42.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/nursing-colleges/logo/42.webp";
 
 const college = {
     "name": "Mallige College of Pharmacy",

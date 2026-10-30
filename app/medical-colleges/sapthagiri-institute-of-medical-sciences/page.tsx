@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M43
-const collegeImage = "/images/Collges/sapthagiri-institute-of-medical-sciences-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/40.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/40.webp";
 
 const college = {
     "name": "Sapthagiri Institute of Medical Sciences",

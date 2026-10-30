@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D34
-const collegeImage = "/images/Collges/sharavathi-dental-college-shimoga.jpg";
+const collegeImage = "/images/medical-coolleges/95.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/103.webp";
 
 const college = {
     "name": "Sharavathi Dental College",

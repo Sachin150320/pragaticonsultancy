@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D33
-const collegeImage = "/images/Collges/raja-rajeshwari-dental-college-and-hospital-kumbalagodu-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/94.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/102.webp";
 
 const college = {
     "name": "Raja Rajeshwari Dental College and Hospital",

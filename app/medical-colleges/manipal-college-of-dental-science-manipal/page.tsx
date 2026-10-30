@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D36
-const collegeImage = "/images/Collges/manipal-college-of-dental-science-manipal.jpg";
+const collegeImage = "/images/medical-coolleges/97.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=manipal.edu&sz=256";
+const collegeLogo = "/images/medical-coolleges/logo/104.webp";
 
 const college = {
     "name": "Manipal College of Dental Science",

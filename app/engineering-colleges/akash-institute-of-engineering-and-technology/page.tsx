@@ -16,10 +16,9 @@ import {
   BriefcaseBusiness,
 } from "lucide-react";
 
-const collegeImage = "/images/Collges/2.jpg";
+const collegeImage = "/images/Engg-collegs/2.webp";
 
-const collegeLogo =
-  "https://www.google.com/s2/favicons?domain=akashiet.com&sz=256";
+const collegeLogo = "/images/Engg-collegs/logo/2.webp";
 
 type Course = {
   title: string;

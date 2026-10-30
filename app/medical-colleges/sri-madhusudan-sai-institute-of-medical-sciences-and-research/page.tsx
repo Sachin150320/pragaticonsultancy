@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M71
-const collegeImage = "/images/Collges/sri-madhusudan-sai-institute-of-medical-sciences-and-research-muddenahalli-chikkaballapura.jpg";
+const collegeImage = "/images/medical-coolleges/65.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/73.webp";
 
 const college = {
     "name": "Sri Madhusudan Sai Institute of Medical Sciences and Research",

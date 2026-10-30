@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D05
-const collegeImage = "/images/Collges/dayananda-sagar-college-of-dental-sciences-kumaraswamy-layout-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/70.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/78.webp";
 
 const college = {
     "name": "Dayananda Sagar College of Dental Sciences",

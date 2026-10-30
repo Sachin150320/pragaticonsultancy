@@ -20,10 +20,9 @@ const collegeName = "Aditya College of Engineering and Technology";
 const collegeShortName = "ACET";
 const collegeLocation = "Bengaluru";
 
-const collegeImage = "/images/Collges/1.jpg";
+const collegeImage = "/images/Engg-collegs/37.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=acet.ac.in&sz=256";
+const collegeLogo = "/images/Engg-collegs/logo/37.webp";
 
 type Course = {
     title: string;

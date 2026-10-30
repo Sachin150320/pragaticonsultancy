@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 116
-const collegeImage =
-    "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/Management-Colleges/16.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=iiml.ac.in&sz=128";
+const collegeLogo = "/images/Management-Colleges/logo/16.webp";
 
 const college = {
     "name": "Indian Institute of Management Lucknow",

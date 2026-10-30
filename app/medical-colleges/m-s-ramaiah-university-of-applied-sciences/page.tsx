@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D10
-const collegeImage = "/images/Collges/m-s-ramaiah-university-of-applied-sciences-msr-nagar-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/75.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=msruas.ac.in&sz=256";
+const collegeLogo = "/images/medical-coolleges/logo/83.webp";
 
 const college = {
     "name": "M.S. Ramaiah University of Applied Sciences",

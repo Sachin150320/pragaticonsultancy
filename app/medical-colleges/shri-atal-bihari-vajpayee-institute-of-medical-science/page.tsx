@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M64
-const collegeImage = "/images/Collges/shri-atal-bihari-vajpayee-institute-of-medical-science.jpg";
+const collegeImage = "/images/medical-coolleges/58.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/66.webp";
 
 const college = {
     "name": "Shri Atal Bihari Vajpayee Institute of Medical Science",

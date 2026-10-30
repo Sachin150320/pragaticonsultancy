@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D40
-const collegeImage = "/images/Collges/sri-jagadguru-murugharajendra-dental-college-chitradurga.jpg";
+const collegeImage = "/images/medical-coolleges/98.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/105.webp";
 
 const college = {
     "name": "Sri Jagadguru Murugharajendra Dental College",

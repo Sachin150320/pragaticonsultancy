@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 18
-const collegeImage =
-    "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/nursing-colleges/18.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=eastpoint.ac.in&sz=128";
+const collegeLogo = "/images/nursing-colleges/logo/18.webp";
 
 const college = {
     "name": "East Point Group of Institutions",

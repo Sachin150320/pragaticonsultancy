@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M37
-const collegeImage = "/images/Collges/yenepoya-medical-college-mangalore.jpg";
+const collegeImage = "/images/medical-coolleges/36.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=yenepoya.edu.in&sz=256";
+const collegeLogo = "/images/medical-coolleges/logo/36.webp";
 
 const college = {
     "name": "Yenepoya Medical College",

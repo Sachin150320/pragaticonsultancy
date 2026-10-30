@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 37
-const collegeImage =
-    "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/nursing-colleges/37.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/nursing-colleges/logo/37.webp";
 
 const college = {
     "name": "Aditya Group of Institutions",

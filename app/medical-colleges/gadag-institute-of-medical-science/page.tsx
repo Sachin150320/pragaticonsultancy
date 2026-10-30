@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M50
-const collegeImage = "/images/Collges/gadag-institute-of-medical-science-gadag.jpg";
+const collegeImage = "/images/medical-coolleges/45.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/53.webp";
 
 const college = {
     "name": "Gadag Institute of Medical Science",

@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M30
-const collegeImage = "/images/Collges/navodaya-medical-college-raichur.jpg";
+const collegeImage = "/images/medical-coolleges/29.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/29.webp";
 
 const college = {
     "name": "Navodaya Medical College",

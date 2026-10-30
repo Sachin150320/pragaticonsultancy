@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D21
-const collegeImage = "/images/Collges/bangalore-institute-of-dental-sciences-and-hospital-hosur-main-road-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/84.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/92.webp";
 
 const college = {
     "name": "Bangalore Institute of Dental Sciences and Hospital",

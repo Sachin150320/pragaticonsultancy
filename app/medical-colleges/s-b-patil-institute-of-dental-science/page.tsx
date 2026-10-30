@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D42
-const collegeImage = "/images/Collges/s-b-patil-institute-of-dental-science-bidar.jpg";
+const collegeImage = "/images/medical-coolleges/100.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/107.webp";
 
 const college = {
     "name": "S.B. Patil Institute of Dental Science",

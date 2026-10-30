@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M38
-const collegeImage = "/images/Collges/esi-medical-college-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/37.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/37.webp";
 
 const college = {
     "name": "ESI Medical College",

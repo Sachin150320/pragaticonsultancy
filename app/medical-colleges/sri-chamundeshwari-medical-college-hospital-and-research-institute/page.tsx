@@ -22,7 +22,7 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M70
-const collegeImage = "/images/Collges/sri-chamundeshwari-medical-college-hospital-and-research-institute-channapatna-ramanagara.jpg";
+const collegeImage = "/images/medical-coolleges/64.webp";
 
 const collegeLogo =
     "";

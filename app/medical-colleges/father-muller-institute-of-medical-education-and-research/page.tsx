@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M25
-const collegeImage = "/images/Collges/father-muller-institute-of-med-education-and-research-mangalore.jpg";
+const collegeImage = "/images/medical-coolleges/25.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/25.webp";
 
 const college = {
     "name": "Father Muller Institute of Med. Education and Research",

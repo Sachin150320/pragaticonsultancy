@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M20
-const collegeImage = "/images/Collges/dr-b-r-ambedkar-medical-college-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/20.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/20.webp";
 
 const college = {
     "name": "Dr. B.R. Ambedkar Medical College",

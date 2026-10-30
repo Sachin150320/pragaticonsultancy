@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D41
-const collegeImage = "/images/Collges/srinivasa-institute-of-dental-science-mangalore.jpg";
+const collegeImage = "/images/medical-coolleges/99.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/106.webp";
 
 const college = {
     "name": "Srinivasa Institute of Dental Science",

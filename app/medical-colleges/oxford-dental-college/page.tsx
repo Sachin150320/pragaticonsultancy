@@ -22,7 +22,7 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D24
-const collegeImage = "/images/Collges/oxford-dental-college-bommanahalli-hosur-road-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/87.webp";
 
 const collegeLogo =
     "";

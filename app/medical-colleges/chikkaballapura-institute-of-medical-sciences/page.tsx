@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M67
-const collegeImage = "/images/Collges/chikkaballapura-institute-of-medical-sciences.jpg";
+const collegeImage = "/images/medical-coolleges/61.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/69.webp";
 
 const college = {
     "name": "Chikkaballapura Institute of Medical Sciences",

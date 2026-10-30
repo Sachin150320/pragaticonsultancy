@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M27
-const collegeImage = "/images/Collges/sri-dharmasthala-manjunatheshwara-medical-college-dharwad.jpg";
+const collegeImage = "/images/medical-coolleges/27.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/27.webp";
 
 const college = {
     "name": "Sri Dharmasthala Manjunatheshwara Medical College",

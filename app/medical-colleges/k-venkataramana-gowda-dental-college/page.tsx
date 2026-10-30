@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D08
-const collegeImage = "/images/Collges/k-venkataramana-gowda-dental-college-sullia.jpg";
+const collegeImage = "/images/medical-coolleges/73.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/19.webp";
 
 const college = {
     "name": "K. Venkataramana Gowda Dental College",

@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 21
-const collegeImage =
-    "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/nursing-colleges/21.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=mvjce.edu.in&sz=128";
+const collegeLogo = "/images/nursing-colleges/logo/21.webp";
 
 const college = {
     "name": "MVJ College of Nursing",

@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D07
-const collegeImage = "/images/Collges/krishnadevaraya-college-of-dental-sciences-h-m-halli-yelahanka-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/72.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/72.webp";
 
 const college = {
     "name": "Krishnadevaraya College of Dental Sciences",

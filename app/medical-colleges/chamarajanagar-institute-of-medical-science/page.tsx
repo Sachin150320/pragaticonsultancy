@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M62
-const collegeImage = "/images/Collges/chamarajanagar-institute-of-medical-science-chamarajanagar.jpg";
+const collegeImage = "/images/medical-coolleges/56.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/64.webp";
 
 const college = {
     "name": "Chamarajanagar Institute of Medical Science",

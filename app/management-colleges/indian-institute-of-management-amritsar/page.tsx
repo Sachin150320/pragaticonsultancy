@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 123
-const collegeImage =
-    "https://images.unsplash.com/photo-1568792923760-d70635a89fdc?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/Management-Colleges/23.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=iimamritsar.ac.in&sz=128";
+const collegeLogo = "/images/Management-Colleges/logo/23.webp";
 
 const college = {
     "name": "Indian Institute of Management Amritsar",

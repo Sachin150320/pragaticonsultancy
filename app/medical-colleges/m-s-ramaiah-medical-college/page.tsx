@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M15
-const collegeImage = "/images/Collges/m-s-ramaiah-medical-college-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/15.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=msruas.ac.in&sz=256";
+const collegeLogo = "/images/medical-coolleges/logo/15.webp";
 
 const college = {
     "name": "M.S. Ramaiah Medical College",

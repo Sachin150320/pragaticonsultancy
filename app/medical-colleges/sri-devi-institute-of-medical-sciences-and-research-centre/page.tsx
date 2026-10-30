@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M54
-const collegeImage = "/images/Collges/sri-devi-institute-of-medical-sciences-and-research-centre-tumkur.jpg";
+const collegeImage = "/images/medical-coolleges/49.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/57.webp";
 
 const college = {
     "name": "Sri Devi Institute of Medical Sciences and Research Centre",

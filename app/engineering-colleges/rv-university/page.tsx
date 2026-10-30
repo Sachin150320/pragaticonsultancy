@@ -17,8 +17,8 @@ import {
     BriefcaseBusiness,
 } from "lucide-react";
 
-const collegeImage = "/images/Collges/1.jpg";
-const collegeLogo = "/images/Collges/logo/rv-university.png";
+const collegeImage = "/images/Engg-collegs/41.webp";
+const collegeLogo = "/images/Engg-collegs/logo/41.webp";
 
 type Course = {
     title: string;

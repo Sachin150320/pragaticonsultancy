@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 122
-const collegeImage =
-    "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/Management-Colleges/22.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=iimranchi.ac.in&sz=128";
+const collegeLogo = "/images/Management-Colleges/logo/22.webp";
 
 const college = {
     "name": "Indian Institute of Management Ranchi",

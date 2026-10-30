@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M60
-const collegeImage = "/images/Collges/karwar-institute-of-medical-sciences-karwar.jpg";
+const collegeImage = "/images/medical-coolleges/54.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/62.webp";
 
 const college = {
     "name": "Karwar Institute of Medical Sciences",

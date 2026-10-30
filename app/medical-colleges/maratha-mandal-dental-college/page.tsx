@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D17
-const collegeImage = "/images/Collges/maratha-mandal-dental-college-belgaum.jpg";
+const collegeImage = "/images/medical-coolleges/81.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/89.webp";
 
 const college = {
     "name": "Maratha Mandal Dental College",

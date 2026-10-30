@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 3
-const collegeImage =
-    "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/nursing-colleges/3.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/nursing-colleges/logo/3.webp";
 
 const college = {
     "name": "Dr. B R Ambedkar Institute of Nursing",

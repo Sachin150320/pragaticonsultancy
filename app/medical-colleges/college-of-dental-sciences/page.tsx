@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D03
-const collegeImage = "/images/Collges/college-of-dental-sciences-davangere.jpg";
+const collegeImage = "/images/medical-coolleges/68.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/76.webp";
 
 const college = {
     "name": "College of Dental Sciences",

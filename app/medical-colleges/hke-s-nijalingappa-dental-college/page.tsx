@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D06
-const collegeImage = "/images/Collges/hke-s-nijalingappa-dental-college-gulbarga.jpg";
+const collegeImage = "/images/medical-coolleges/71.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/79.webp";
 
 const college = {
     "name": "HKE S Nijalingappa Dental College",

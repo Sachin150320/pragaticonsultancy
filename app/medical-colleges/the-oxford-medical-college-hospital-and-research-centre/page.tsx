@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M53
-const collegeImage = "/images/Collges/the-oxford-medical-college-hospital-and-research-centre-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/48.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/56.webp";
 
 const college = {
     "name": "The Oxford Medical College Hospital and Research Centre",

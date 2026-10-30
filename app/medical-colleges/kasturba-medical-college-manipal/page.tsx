@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M33
-const collegeImage = "/images/Collges/kasturba-medical-college-manipal.jpg";
+const collegeImage = "/images/medical-coolleges/32.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=manipal.edu&sz=256";
+const collegeLogo = "/images/medical-coolleges/logo/32.webp";
 
 const college = {
     "name": "Kasturba Medical College",

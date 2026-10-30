@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M09
-const collegeImage = "/images/Collges/raichur-institute-of-medical-sciences-raichur.jpg";
+const collegeImage = "/images/medical-coolleges/9.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/9.webp";
 
 const college = {
     "name": "Raichur Institute of Medical Sciences",

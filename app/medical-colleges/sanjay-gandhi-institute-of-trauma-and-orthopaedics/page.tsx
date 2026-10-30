@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M34
-const collegeImage = "/images/Collges/sanjay-gandhi-institute-of-trauma-and-orthopaedics-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/33.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/33.webp";
 
 const college = {
     "name": "Sanjay Gandhi Institute of Trauma and Orthopaedics",

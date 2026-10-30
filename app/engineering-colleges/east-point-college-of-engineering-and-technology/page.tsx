@@ -17,10 +17,9 @@ import {
   BriefcaseBusiness,
 } from "lucide-react";
 
-const collegeImage = "/images/Collges/1.jpg";
+const collegeImage = "/images/Engg-collegs/14.webp";
 
-const collegeLogo =
-  "https://www.google.com/s2/favicons?domain=eastpoint.ac.in&sz=256";
+const collegeLogo = "/images/Engg-collegs/logo/14.webp";
 
 type Course = {
   title: string;

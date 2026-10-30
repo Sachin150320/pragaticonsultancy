@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D23
-const collegeImage = "/images/Collges/coorg-institute-of-dental-sciences-virajpet.jpg";
+const collegeImage = "/images/medical-coolleges/86.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/94.webp";
 
 const college = {
     "name": "Coorg Institute of Dental Sciences",

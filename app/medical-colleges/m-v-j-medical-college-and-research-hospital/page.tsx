@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M28
-const collegeImage = "/images/Collges/m-v-j-medical-college-and-research-hospital-channasandra-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/28.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/28_png.webp";
 
 const college = {
     "name": "M.V.J. Medical College and Research Hospital",

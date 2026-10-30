@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 20
-const collegeImage =
-    "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/nursing-colleges/20.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=acharya.ac.in&sz=128";
+const collegeLogo = "/images/nursing-colleges/logo/20.webp";
 
 const college = {
     "name": "Smt. Nagarathnamma College of Nursing",

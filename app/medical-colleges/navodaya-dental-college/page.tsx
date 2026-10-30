@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D28
-const collegeImage = "/images/Collges/navodaya-dental-college-raichur.jpg";
+const collegeImage = "/images/medical-coolleges/91.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/99.webp";
 
 const college = {
     "name": "Navodaya Dental College",

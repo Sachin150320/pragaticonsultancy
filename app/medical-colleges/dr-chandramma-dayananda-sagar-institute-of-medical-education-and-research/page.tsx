@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M65
-const collegeImage = "/images/Collges/dr-chandramma-dayananda-sagar-institute-of-medical-education-and-research-harohalli.jpg";
+const collegeImage = "/images/medical-coolleges/59.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/67.webp";
 
 const college = {
     "name": "Dr. Chandramma Dayananda Sagar Institute of Medical Education & Research",

@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 109
-const collegeImage =
-    "https://images.unsplash.com/photo-1568792923760-d70635a89fdc?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/Management-Colleges/9.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=eng.bangaloreuniversity.ac.in&sz=128";
+const collegeLogo = "/images/Management-Colleges/logo/9.webp";
 
 const college = {
     "name": "Bangalore University",

@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M52
-const collegeImage = "/images/Collges/akash-institute-of-medical-sciences-and-research-centre-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/47.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/55.webp";
 
 const college = {
     "name": "Akash Institute of Medical Sciences and Research Centre",

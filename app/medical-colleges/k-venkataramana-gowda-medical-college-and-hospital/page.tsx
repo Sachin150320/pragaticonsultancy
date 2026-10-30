@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M19
-const collegeImage = "/images/Collges/k-venkataramana-gowda-medical-college-and-hospital-sullia.jpg";
+const collegeImage = "/images/medical-coolleges/19.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/19.webp";
 
 const college = {
     "name": "K. Venkataramana Gowda Medical College and Hospital",

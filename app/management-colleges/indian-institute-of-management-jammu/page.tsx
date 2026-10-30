@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 120
-const collegeImage =
-    "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/Management-Colleges/20.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=iimj.ac.in&sz=128";
+const collegeLogo = "/images/Management-Colleges/logo/20.webp";
 
 const college = {
     "name": "Indian Institute of Management Jammu",

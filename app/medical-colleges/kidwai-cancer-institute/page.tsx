@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M11
-const collegeImage = "/images/Collges/kidwai-cancer-institute-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/11.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/11.webp";
 
 const college = {
     "name": "Kidwai Cancer Institute",

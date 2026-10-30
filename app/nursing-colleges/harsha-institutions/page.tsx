@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 15
-const collegeImage =
-    "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/nursing-colleges/15.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=harsha.ac.in&sz=128";
+const collegeLogo = "/images/nursing-colleges/logo/15.webp";
 
 const college = {
     "name": "Harsha Institutions",

@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M49
-const collegeImage = "/images/Collges/dharwad-institute-of-mental-health-and-neurosciences-dharwad.jpg";
+const collegeImage = "/images/medical-coolleges/44.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/52.webp";
 
 const college = {
     "name": "Dharwad Institute of Mental Health and Neurosciences",

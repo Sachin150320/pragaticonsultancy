@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M46
-const collegeImage = "/images/Collges/b-g-s-global-institute-of-medical-sciences-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/41.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/49.webp";
 
 const college = {
     "name": "B G S Global Institute of Medical Sciences",

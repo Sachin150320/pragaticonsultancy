@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D19
-const collegeImage = "/images/Collges/al-badar-dental-college-and-hospital-gulbarga.jpg";
+const collegeImage = "/images/medical-coolleges/83.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/91.webp";
 
 const college = {
     "name": "Al Badar Dental College and Hospital",

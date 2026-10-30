@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M66
-const collegeImage = "/images/Collges/chikkamagaluru-institute-of-medical-sciences-chikkamagaluru.jpg";
+const collegeImage = "/images/medical-coolleges/60.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/68.webp";
 
 const college = {
     "name": "Chikkamagaluru Institute of Medical Sciences",

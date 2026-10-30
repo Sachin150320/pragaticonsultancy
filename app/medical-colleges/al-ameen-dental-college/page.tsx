@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D18
-const collegeImage = "/images/Collges/al-ameen-dental-college-bijapur.jpg";
+const collegeImage = "/images/medical-coolleges/82.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/90.webp";
 
 const college = {
     "name": "Al-Ameen Dental College",

@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M02
-const collegeImage = "/images/Collges/mysore-medical-college-and-research-institute-mysore.jpg";
+const collegeImage = "/images/medical-coolleges/2.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/2.webp";
 
 const college = {
     "name": "Mysore Medical College and Research Institute",

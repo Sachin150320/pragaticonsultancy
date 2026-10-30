@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M40
-const collegeImage = "/images/Collges/b-m-patil-medical-college-vijayapura.jpg";
+const collegeImage = "/images/medical-coolleges/39.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/39.webp";
 
 const college = {
     "name": "B M Patil Medical College",

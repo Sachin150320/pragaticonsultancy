@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M58
-const collegeImage = "/images/Collges/kanachur-institute-of-medical-science-mangalore.jpg";
+const collegeImage = "/images/medical-coolleges/52.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/60.webp";
 
 const college = {
     "name": "Kanachur Institute of Medical Science",

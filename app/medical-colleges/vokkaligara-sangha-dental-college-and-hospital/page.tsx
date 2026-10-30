@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D13
-const collegeImage = "/images/Collges/vokkaligara-sangha-dental-college-and-hospital-v-v-puram-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/78.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/86.webp";
 
 const college = {
     "name": "Vokkaligara Sangha Dental College and Hospital",

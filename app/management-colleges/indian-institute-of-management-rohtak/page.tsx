@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 119
-const collegeImage =
-    "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/Management-Colleges/19.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=iimrohtak.ac.in&sz=128";
+const collegeLogo = "/images/Management-Colleges/logo/19.webp";
 
 const college = {
     "name": "Indian Institute of Management Rohtak",

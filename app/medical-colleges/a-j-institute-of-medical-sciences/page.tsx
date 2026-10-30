@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M31
-const collegeImage = "/images/Collges/a-j-institute-of-medical-sciences-mangalore.jpg";
+const collegeImage = "/images/medical-coolleges/30.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/30.webp";
 
 const college = {
     "name": "A.J. Institute of Medical Sciences",

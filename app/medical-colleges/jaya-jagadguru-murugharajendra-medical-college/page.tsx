@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M14
-const collegeImage = "/images/Collges/jaya-jagadguru-murugharajendra-medical-college-davangere.jpg";
+const collegeImage = "/images/medical-coolleges/14.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/14.webp";
 
 const college = {
     "name": "Jaya Jagadguru Murugharajendra Medical College",

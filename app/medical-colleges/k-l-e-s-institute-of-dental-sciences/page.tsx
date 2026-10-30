@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D14
-const collegeImage = "/images/Collges/k-l-e-s-institute-of-dental-sciences-yeshwanthpur-bangalore.jpg";
+const collegeImage = "/images/medical-coolleges/79.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/87.webp";
 
 const college = {
     "name": "K L E S Institute of Dental Sciences",

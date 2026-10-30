@@ -17,9 +17,8 @@ import {
   BriefcaseBusiness,
 } from "lucide-react";
 
-const collegeImage = "/images/Collges/1.jpg";
-const collegeLogo =
-  "https://www.google.com/s2/favicons?domain=ewit.edu.in&sz=256";
+const collegeImage = "/images/Engg-collegs/15.webp";
+const collegeLogo = "/images/Engg-collegs/logo/15.webp";
 
 type Course = {
   title: string;

@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 23
-const collegeImage =
-    "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/nursing-colleges/23.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=vydehi.org&sz=128";
+const collegeLogo = "/images/nursing-colleges/logo/23.webp";
 
 const college = {
     "name": "Vydehi Institute of Nursing Sciences and Research Centre",

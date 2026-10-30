@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 27
-const collegeImage =
-    "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/nursing-colleges/27.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/nursing-colleges/logo/27.webp";
 
 const college = {
     "name": "Little Flower Group of Institutions",

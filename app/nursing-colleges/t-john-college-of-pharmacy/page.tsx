@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 36
-const collegeImage =
-    "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/nursing-colleges/36.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=tjohncollege.com&sz=128";
+const collegeLogo = "/images/nursing-colleges/logo/36.webp";
 
 const college = {
     "name": "T. John College of Pharmacy",

@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: M08
-const collegeImage = "/images/Collges/shimoga-institute-of-medical-sciences-shimoga.jpg";
+const collegeImage = "/images/medical-coolleges/8.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/8.webp";
 
 const college = {
     "name": "Shimoga Institute of Medical Sciences",

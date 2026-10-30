@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D30
-const collegeImage = "/images/Collges/jagadguru-suttur-shivarathreeshwara-dental-college-mysore.jpg";
+const collegeImage = "/images/medical-coolleges/93.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=jssuni.edu.in&sz=256";
+const collegeLogo = "/images/medical-coolleges/logo/34.webp";
 
 const college = {
     "name": "Jagadguru Suttur Shivarathreeshwara Dental College",

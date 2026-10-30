@@ -22,10 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // KEA code: D15
-const collegeImage = "/images/Collges/sri-hasanamba-dental-college-and-hospital-hassan.jpg";
+const collegeImage = "/images/medical-coolleges/80.webp";
 
-const collegeLogo =
-    "";
+const collegeLogo = "/images/medical-coolleges/logo/88.webp";
 
 const college = {
     "name": "Sri Hasanamba Dental College and Hospital",

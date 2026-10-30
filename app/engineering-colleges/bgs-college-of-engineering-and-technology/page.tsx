@@ -17,11 +17,9 @@ import {
     BriefcaseBusiness,
 } from "lucide-react";
 
-const collegeImage =
-    "/images/Collges/bgs-college-of-engineering-and-technology.jpg";
+const collegeImage = "/images/Engg-collegs/36.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=bgscet.ac.in&sz=256";
+const collegeLogo = "/images/Engg-collegs/logo/36.webp";
 
 type Course = {
     title: string;

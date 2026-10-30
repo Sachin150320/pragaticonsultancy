@@ -22,11 +22,9 @@ import {
    Sources and open items: see README.md
 ========================================================= */
 // Source id: 22
-const collegeImage =
-    "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80";
+const collegeImage = "/images/nursing-colleges/22.webp";
 
-const collegeLogo =
-    "https://www.google.com/s2/favicons?domain=krupanidhi.edu.in&sz=128";
+const collegeLogo = "/images/nursing-colleges/logo/22.webp";
 
 const college = {
     "name": "Krupanidhi College of Nursing",
